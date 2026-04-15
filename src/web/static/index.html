@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>리포트 대시보드</title>
+<style>
+:root {
+  --bg: #f8f9fa;
+  --card-bg: #fff;
+  --border: #dee2e6;
+  --accent: #1a73e8;
+  --text: #212529;
+  --muted: #6c757d;
+  --success: #28a745;
+  --tag-bg: #e9ecef;
+  --danger: #dc3545;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Header */
+.header {
+  background: var(--accent);
+  color: #fff;
+  padding: .8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.header h1 { font-size: 1.1rem; font-weight: 600; }
+.header a { color: rgba(255,255,255,.85); font-size: .85rem; }
+.header a:hover { color: #fff; }
+
+/* Container */
+.container { max-width: 1040px; margin: 0 auto; padding: 1.5rem 1rem; }
+
+/* Stat cards */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: .75rem;
+  margin-bottom: 1.5rem;
+}
+.stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .8rem 1rem;
+  text-align: center;
+}
+.stat-card .value { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.stat-card .label { font-size: .8rem; color: var(--muted); }
+
+/* Date bar */
+.date-bar {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.date-bar select, .date-bar input {
+  padding: .4rem .6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: .9rem;
+}
+
+/* Section */
+h2 { font-size: 1.2rem; color: var(--accent); margin: 1.5rem 0 .75rem; }
+h3 { font-size: 1rem; margin: 1rem 0 .5rem; padding-left: .5rem; border-left: 3px solid var(--accent); }
+
+/* Chips */
+.chip-group { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
+.chip {
+  display: inline-block;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: .25rem .75rem;
+  font-size: .82rem;
+  cursor: pointer;
+  transition: all .15s;
+}
+.chip:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.chip .count { font-weight: 600; color: var(--accent); margin-left: .2rem; }
+.chip:hover .count { color: #fff; }
+
+/* Report card */
+.report-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin-bottom: .6rem;
+  cursor: pointer;
+  transition: box-shadow .15s;
+}
+.report-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+.report-card .title { font-weight: 700; font-size: .95rem; margin-bottom: .3rem; }
+.report-card .meta { font-size: .82rem; color: var(--muted); margin-bottom: .3rem; }
+.report-card .meta span { margin-right: .6rem; }
+.tag {
+  display: inline-block;
+  background: var(--tag-bg);
+  border-radius: 4px;
+  padding: .1rem .4rem;
+  font-size: .78rem;
+}
+.report-card .one-line {
+  font-size: .88rem;
+  color: var(--text);
+  margin-top: .4rem;
+  padding: .5rem .7rem;
+  background: #f1f3f5;
+  border-radius: 6px;
+}
+
+/* Filters bar */
+.filter-bar {
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.filter-bar select {
+  padding: .35rem .5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: .85rem;
+}
+.btn {
+  padding: .35rem .8rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card-bg);
+  cursor: pointer;
+  font-size: .85rem;
+}
+.btn:hover { background: var(--tag-bg); }
+.btn-accent { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-accent:hover { opacity: .9; }
+
+/* Detail page */
+.detail-header { margin-bottom: 1.5rem; }
+.detail-header .title { font-size: 1.3rem; font-weight: 700; margin-bottom: .5rem; }
+.detail-meta { font-size: .88rem; color: var(--muted); margin-bottom: .3rem; }
+.detail-meta span { margin-right: 1rem; }
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: .6rem;
+  margin: 1rem 0;
+}
+.info-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .7rem 1rem;
+}
+.info-box .label { font-size: .78rem; color: var(--muted); }
+.info-box .value { font-size: 1rem; font-weight: 600; }
+.summary-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+}
+.summary-section .one-line { font-weight: 600; margin-bottom: .5rem; }
+.summary-section ul { padding-left: 1.2rem; margin: .3rem 0; }
+.summary-section li { margin-bottom: .2rem; font-size: .9rem; }
+.body-text {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  white-space: pre-wrap;
+  font-size: .88rem;
+  line-height: 1.7;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+/* Pipeline table */
+table.stats {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .88rem;
+  margin-top: .5rem;
+}
+table.stats th, table.stats td {
+  border: 1px solid var(--border);
+  padding: .4rem .7rem;
+  text-align: left;
+}
+table.stats th { background: var(--tag-bg); font-weight: 600; }
+
+/* Back link */
+.back { display: inline-block; margin-bottom: 1rem; font-size: .88rem; }
+
+/* Loading */
+.loading { text-align: center; padding: 3rem; color: var(--muted); }
+
+/* Empty state */
+.empty { text-align: center; padding: 2rem; color: var(--muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>리포트 대시보드</h1>
+  <a href="#/">홈</a>
+</div>
+<div class="container" id="app">
+  <div class="loading">로딩 중...</div>
+</div>
+
+<script>
+const $ = (sel, ctx=document) => ctx.querySelector(sel);
+const $$ = (sel, ctx=document) => [...ctx.querySelectorAll(sel)];
+const app = document.getElementById('app');
+
+async function api(path) {
+  const r = await fetch(path);
+  if (!r.ok) throw new Error(`${r.status}`);
+  return r.json();
+}
+
+function esc(s) {
+  if (!s) return '';
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+function fmtPrice(v) {
+  if (v == null) return '-';
+  return Number(v).toLocaleString('ko-KR') + '원';
+}
+
+// --- Router ---
+window.addEventListener('hashchange', route);
+window.addEventListener('DOMContentLoaded', route);
+
+function route() {
+  const hash = location.hash || '#/';
+  if (hash.startsWith('#/detail/')) return renderDetail(hash);
+  if (hash.startsWith('#/reports/')) return renderReportList(hash);
+  return renderDashboard();
+}
+
+// --- Dashboard ---
+let cachedDates = null;
+
+async function renderDashboard() {
+  app.innerHTML = '<div class="loading">로딩 중...</div>';
+  try {
+    if (!cachedDates) cachedDates = (await api('/api/dates')).dates;
+    const dates = cachedDates;
+    if (!dates.length) {
+      app.innerHTML = '<div class="empty">아직 생성된 리포트가 없습니다.<br>파이프라인을 먼저 실행해주세요.</div>';
+      return;
+    }
+
+    const params = new URLSearchParams(location.hash.split('?')[1] || '');
+    const selectedDate = params.get('date') || dates[0];
+
+    const summary = await api(`/api/reports/${selectedDate}/summary`);
+
+    let html = `
+      <div class="date-bar">
+        <label><strong>날짜</strong></label>
+        <select id="date-select">
+          ${dates.map(d => `<option value="${d}" ${d===selectedDate?'selected':''}>${d}</option>`).join('')}
+        </select>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card"><div class="value">${summary.report_count}</div><div class="label">수집 리포트</div></div>
+        <div class="stat-card"><div class="value">${summary.total_validated}</div><div class="label">검증 통과</div></div>
+        <div class="stat-card"><div class="value">${summary.total_deduplicated}</div><div class="label">중복 제거 후</div></div>
+        <div class="stat-card"><div class="value">${summary.summary_count}</div><div class="label">요약 생성</div></div>
+        <div class="stat-card"><div class="value">${(summary.pipeline_stats.duration_ms/1000).toFixed(1)}s</div><div class="label">소요 시간</div></div>
+      </div>
+    `;
+
+    // Brokerage chips
+    const brokerages = Object.entries(summary.brokerage_counts).sort((a,b) => b[1]-a[1]);
+    if (brokerages.length) {
+      html += `<h2>증권사별</h2><div class="chip-group">`;
+      for (const [name, cnt] of brokerages) {
+        html += `<span class="chip" onclick="location.hash='#/reports/${selectedDate}?brokerage=${encodeURIComponent(name)}'">${esc(name)} <span class="count">${cnt}</span></span>`;
+      }
+      html += `</div>`;
+    }
+
+    // Ticker chips
+    const tickers = Object.entries(summary.ticker_counts).sort((a,b) => b[1]-a[1]);
+    const stockNames = summary.stock_names || {};
+    if (tickers.length) {
+      html += `<h2>종목별</h2><div class="chip-group">`;
+      for (const [ticker, cnt] of tickers) {
+        const name = stockNames[ticker] || ticker;
+        html += `<span class="chip" onclick="location.hash='#/reports/${selectedDate}?ticker=${encodeURIComponent(ticker)}'">${esc(name)} <span class="count">${cnt}</span></span>`;
+      }
+      html += `</div>`;
+    }
+
+    // Pipeline stats
+    const ps = summary.pipeline_stats;
+    html += `
+      <h2>파이프라인 통계</h2>
+      <table class="stats">
+        <thead><tr><th>단계</th><th>수량</th></tr></thead>
+        <tbody>
+          <tr><td>발견</td><td>${ps.total_discovered||0}</td></tr>
+          <tr><td>다운로드</td><td>${ps.total_fetched||0}</td></tr>
+          <tr><td>파싱</td><td>${ps.total_parsed||0}</td></tr>
+          <tr><td>검증 통과</td><td>${ps.total_validated||0}</td></tr>
+          <tr><td>중복 제거 후</td><td>${ps.total_deduplicated||0}</td></tr>
+          <tr><td>요약 생성</td><td>${ps.total_summarized||0}</td></tr>
+          <tr><td>소요 시간</td><td>${ps.duration_ms||0}ms</td></tr>
+        </tbody>
+      </table>
+    `;
+
+    app.innerHTML = html;
+
+    // Date change handler
+    $('#date-select').addEventListener('change', e => {
+      location.hash = `#/?date=${e.target.value}`;
+    });
+  } catch (err) {
+    app.innerHTML = `<div class="empty">데이터 로드 실패: ${esc(err.message)}</div>`;
+  }
+}
+
+// --- Report List ---
+async function renderReportList(hash) {
+  app.innerHTML = '<div class="loading">로딩 중...</div>';
+  try {
+    const parts = hash.replace('#/reports/', '').split('?');
+    const targetDate = parts[0];
+    const params = new URLSearchParams(parts[1] || '');
+    const brokerage = params.get('brokerage') || '';
+    const ticker = params.get('ticker') || '';
+
+    const summary = await api(`/api/reports/${targetDate}/summary`);
+
+    let apiUrl = `/api/reports/${targetDate}/list`;
+    const qp = [];
+    if (brokerage) qp.push(`brokerage=${encodeURIComponent(brokerage)}`);
+    if (ticker) qp.push(`ticker=${encodeURIComponent(ticker)}`);
+    if (qp.length) apiUrl += '?' + qp.join('&');
+
+    const data = await api(apiUrl);
+    const stockNames = summary.stock_names || {};
+
+    let filterTitle = '';
+    if (brokerage) filterTitle = brokerage;
+    else if (ticker) filterTitle = `${stockNames[ticker]||ticker} (${ticker})`;
+
+    let html = `<a class="back" href="#/">< 대시보드</a>`;
+    html += `<h2>리포트 목록 — ${targetDate}${filterTitle ? ' / '+esc(filterTitle) : ''}</h2>`;
+
+    // Filter bar
+    const brokerageOpts = Object.keys(summary.brokerage_counts).sort();
+    const tickerOpts = Object.keys(summary.ticker_counts).sort();
+    html += `<div class="filter-bar">
+      <select id="f-brokerage">
+        <option value="">전체 증권사</option>
+        ${brokerageOpts.map(b => `<option value="${esc(b)}" ${b===brokerage?'selected':''}>${esc(b)}</option>`).join('')}
+      </select>
+      <select id="f-ticker">
+        <option value="">전체 종목</option>
+        ${tickerOpts.map(t => `<option value="${esc(t)}" ${t===ticker?'selected':''}>${esc(stockNames[t]||t)} (${esc(t)})</option>`).join('')}
+      </select>
+      <button class="btn" onclick="location.hash='#/reports/${targetDate}'">초기화</button>
+    </div>`;
+
+    html += `<div style="font-size:.85rem;color:var(--muted);margin-bottom:.8rem">${data.count}건</div>`;
+
+    for (const r of data.reports) {
+      const sm = r.summary;
+      const oneLine = sm ? esc(sm.generated.one_line) : '';
+      const stockLabel = r.stock_name ? `${esc(r.stock_name)} (${esc(r.ticker)})` : (r.ticker || '');
+      html += `
+        <div class="report-card" onclick="location.hash='#/detail/${targetDate}/${r.canonical_id}'">
+          <div class="title">${esc(r.title)}</div>
+          <div class="meta">
+            <span>${esc(r.brokerage)}</span>
+            ${stockLabel ? `<span class="tag">${stockLabel}</span>` : ''}
+            ${sm && sm.extracted.rating ? `<span class="tag">${esc(sm.extracted.rating)}</span>` : ''}
+            ${sm && sm.extracted.target_price != null ? `<span class="tag">목표가 ${fmtPrice(sm.extracted.target_price)}</span>` : ''}
+          </div>
+          ${oneLine ? `<div class="one-line">${oneLine}</div>` : ''}
+        </div>
+      `;
+    }
+
+    if (!data.reports.length) {
+      html += '<div class="empty">해당 조건의 리포트가 없습니다.</div>';
+    }
+
+    app.innerHTML = html;
+
+    // Filter handlers
+    $('#f-brokerage').addEventListener('change', e => {
+      const v = e.target.value;
+      location.hash = v ? `#/reports/${targetDate}?brokerage=${encodeURIComponent(v)}` : `#/reports/${targetDate}`;
+    });
+    $('#f-ticker').addEventListener('change', e => {
+      const v = e.target.value;
+      location.hash = v ? `#/reports/${targetDate}?ticker=${encodeURIComponent(v)}` : `#/reports/${targetDate}`;
+    });
+  } catch (err) {
+    app.innerHTML = `<div class="empty">로드 실패: ${esc(err.message)}</div>`;
+  }
+}
+
+// --- Report Detail ---
+async function renderDetail(hash) {
+  app.innerHTML = '<div class="loading">로딩 중...</div>';
+  try {
+    const m = hash.match(/#\/detail\/([^/]+)\/(.+)/);
+    if (!m) { location.hash = '#/'; return; }
+    const [, targetDate, cid] = m;
+
+    const data = await api(`/api/reports/${targetDate}/detail/${cid}`);
+    const sm = data.summary;
+
+    let html = `<a class="back" href="#/reports/${targetDate}">< 목록으로</a>`;
+
+    html += `<div class="detail-header">
+      <div class="title">${esc(data.title)}</div>
+      <div class="detail-meta">
+        <span>증권사: ${esc(data.brokerage)}</span>
+        <span>애널리스트: ${esc(data.analyst)}</span>
+      </div>
+      <div class="detail-meta">
+        ${data.stock_name ? `<span>종목: ${esc(data.stock_name)} (${esc(data.ticker)})</span>` : ''}
+        <span>발행일: ${data.published_date}</span>
+      </div>
+      <div class="detail-meta">
+        <span>원본: <a href="${esc(data.primary_url)}" target="_blank">${esc(data.primary_url)}</a></span>
+      </div>
+    </div>`;
+
+    // Extracted info
+    if (sm) {
+      const ext = sm.extracted;
+      html += `<h2>추출 정보</h2>
+        <div class="info-grid">
+          <div class="info-box"><div class="label">목표주가</div><div class="value">${fmtPrice(ext.target_price)}</div></div>
+          <div class="info-box"><div class="label">투자의견</div><div class="value">${esc(ext.rating) || '-'}</div></div>
+          <div class="info-box"><div class="label">실적</div><div class="value">${esc(ext.earnings) || '-'}</div></div>
+        </div>`;
+
+      // Generated summary
+      const gen = sm.generated;
+      html += `<h2>AI 요약</h2>
+        <div class="summary-section">
+          <div class="one-line">${esc(gen.one_line)}</div>
+          ${gen.key_points && gen.key_points.length ? `<ul>${gen.key_points.map(p => `<li>${esc(p)}</li>`).join('')}</ul>` : ''}
+          ${gen.opinion_summary ? `<p style="margin-top:.5rem;font-size:.88rem;color:var(--muted)"><strong>의견:</strong> ${esc(gen.opinion_summary)}</p>` : ''}
+        </div>`;
+    }
+
+    // Body text
+    if (data.body_text) {
+      html += `<h2>본문</h2><div class="body-text">${esc(data.body_text)}</div>`;
+    }
+
+    app.innerHTML = html;
+  } catch (err) {
+    app.innerHTML = `<div class="empty">로드 실패: ${esc(err.message)}</div>`;
+  }
+}
+</script>
+</body>
+</html>

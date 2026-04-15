@@ -1,0 +1,24 @@
+sites:
+  - site_id: naver_research
+    name: "네이버 리서치"
+    base_url: "https://finance.naver.com/research/company_list.naver"
+    parser_type: naver_research
+    rate_limit_rps: 1.0
+    auth_type: none
+    enabled: true
+
+  - site_id: hankyung_consensus
+    name: "한경컨센서스"
+    base_url: "https://consensus.hankyung.com"
+    parser_type: hankyung_consensus
+    rate_limit_rps: 1.0
+    auth_type: none
+    enabled: true
+
+  - site_id: broker_direct
+    name: "증권사 직접 리서치센터"
+    base_url: "https://example-broker.com/research"
+    parser_type: broker_direct
+    rate_limit_rps: 0.5
+    auth_type: none
+    enabled: false

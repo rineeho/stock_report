@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash .specify/extensions/git/scripts/bash/create-new-feature.sh --json --short-name \"daily-report-agent\" \"여러 금융/증권사 사이트에서 매일 발행되는 주식 리포트를 자동으로 수집하고 당일 리포트만 선별하여 정리하는 agent 기반 시스템\")",
+      "Bash(bash .specify/scripts/bash/setup-plan.sh --json)",
+      "Bash(bash .specify/scripts/bash/update-agent-context.sh claude)",
+      "Bash(bash .specify/scripts/bash/check-prerequisites.sh --json --paths-only)",
+      "Bash(bash .specify/scripts/bash/check-prerequisites.sh:*)"
+    ]
+  }
+}

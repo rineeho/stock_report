@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CanonicalReport",
+  "description": "중복 제거 후 최종 대표 리포트 스키마",
+  "type": "object",
+  "required": [
+    "canonical_id",
+    "title",
+    "published_date",
+    "brokerage",
+    "analyst",
+    "source_urls",
+    "primary_url",
+    "has_revision",
+    "duplicate_count"
+  ],
+  "properties": {
+    "canonical_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "고유 식별자"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "정규화된 리포트 제목"
+    },
+    "published_date": {
+      "type": "string",
+      "format": "date",
+      "description": "발행일 (ISO 8601, KST 기준)"
+    },
+    "brokerage": {
+      "type": "string",
+      "minLength": 1,
+      "description": "정규화된 증권사명"
+    },
+    "analyst": {
+      "type": "string",
+      "minLength": 1,
+      "description": "애널리스트명"
+    },
+    "ticker": {
+      "type": ["string", "null"],
+      "description": "종목 코드 (없으면 null)"
+    },
+    "stock_name": {
+      "type": ["string", "null"],
+      "description": "종목명 (없으면 null)"
+    },
+    "sector": {
+      "type": ["string", "null"],
+      "description": "산업/섹터 (없으면 null)"
+    },
+    "source_urls": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" },
+      "minItems": 1,
+      "description": "모든 출처 URL"
+    },
+    "primary_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "대표 URL"
+    },
+    "has_revision": {
+      "type": "boolean",
+      "description": "수정본 존재 여부"
+    },
+    "duplicate_count": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "발견된 중복 수 (자기 자신 포함)"
+    }
+  },
+  "additionalProperties": false
+}

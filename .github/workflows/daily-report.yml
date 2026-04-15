@@ -1,0 +1,85 @@
+name: Daily Report Pipeline
+
+on:
+  schedule:
+    # KST 자정 = UTC 15:00, 월~금만
+    - cron: '0 15 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Target date (YYYY-MM-DD, default: yesterday KST)'
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  collect-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -e ".[dev]"
+
+      - name: Calculate target date
+        id: date
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            echo "target=${{ github.event.inputs.date }}" >> $GITHUB_OUTPUT
+          else
+            echo "target=$(TZ=Asia/Seoul date -d 'yesterday' +%Y-%m-%d)" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run pipeline
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          LLM_PROVIDER: openai
+        run: |
+          python -m src.main run --date ${{ steps.date.outputs.target }} --verbose || true
+
+      - name: Prepare and deploy to gh-pages
+        run: |
+          TARGET=${{ steps.date.outputs.target }}
+
+          # Prepare deploy directory
+          mkdir -p deploy/data
+
+          # Pull existing data from gh-pages if it exists
+          if git ls-remote --heads origin gh-pages | grep -q gh-pages; then
+            git fetch origin gh-pages
+            git checkout origin/gh-pages -- data/ 2>/dev/null && mv data/* deploy/data/ 2>/dev/null || true
+            git checkout main -- .
+          fi
+
+          # Copy new day's JSON
+          if [ -f "data/output/${TARGET}/daily_report.json" ]; then
+            cp "data/output/${TARGET}/daily_report.json" "deploy/data/${TARGET}.json"
+            echo "Copied daily_report.json for ${TARGET}"
+          else
+            echo "No daily_report.json found for ${TARGET}"
+          fi
+
+          # Build static site
+          python -m src.main build-site \
+            --data-dir deploy/data \
+            --output-dir deploy/site
+          cp -r deploy/data deploy/site/data 2>/dev/null || true
+
+          # Deploy to gh-pages branch
+          cd deploy/site
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Deploy report for ${TARGET}"
+          git push --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:gh-pages

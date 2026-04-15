@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PipelineStageContract",
+  "description": "Agent 간 데이터 전달 계약. 각 단계의 입출력 스키마 정의.",
+  "definitions": {
+    "stage_envelope": {
+      "type": "object",
+      "required": ["stage", "target_date", "timestamp", "items", "stats"],
+      "properties": {
+        "stage": {
+          "type": "string",
+          "enum": [
+            "discovered",
+            "fetched",
+            "parsed",
+            "validated",
+            "normalized",
+            "deduplicated",
+            "summarized",
+            "classified",
+            "aggregated"
+          ]
+        },
+        "target_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "items": {
+          "type": "array",
+          "description": "해당 단계의 처리 결과 항목들"
+        },
+        "stats": {
+          "type": "object",
+          "required": ["total_input", "total_output", "total_failed", "total_skipped"],
+          "properties": {
+            "total_input": { "type": "integer", "minimum": 0 },
+            "total_output": { "type": "integer", "minimum": 0 },
+            "total_failed": { "type": "integer", "minimum": 0 },
+            "total_skipped": { "type": "integer", "minimum": 0 },
+            "duration_ms": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["item_id", "error_type", "message"],
+            "properties": {
+              "item_id": { "type": "string" },
+              "error_type": { "type": "string" },
+              "message": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "summary_output": {
+      "type": "object",
+      "required": ["summary_id", "canonical_id", "extracted", "generated"],
+      "properties": {
+        "summary_id": { "type": "string", "format": "uuid" },
+        "canonical_id": { "type": "string", "format": "uuid" },
+        "extracted": {
+          "type": "object",
+          "required": ["target_price", "rating", "earnings"],
+          "properties": {
+            "target_price": { "type": ["number", "null"] },
+            "rating": { "type": ["string", "null"] },
+            "earnings": { "type": ["string", "null"] }
+          }
+        },
+        "generated": {
+          "type": "object",
+          "required": ["key_points", "one_line"],
+          "properties": {
+            "key_points": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 1,
+              "maxItems": 5
+            },
+            "one_line": { "type": "string", "minLength": 1 },
+            "opinion_summary": { "type": ["string", "null"] }
+          }
+        }
+      }
+    }
+  }
+}

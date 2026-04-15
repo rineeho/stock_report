@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment variables
+.env
+
+# Data directories (runtime generated)
+data/cache/
+data/output/
+data/logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Static site build output
+_site/
+
+# Claude temp files
+tmpclaude-*
+2.0
