@@ -48,7 +48,7 @@ class BaseSiteParser(ABC):
             ParsedReport with extracted metadata.
         """
 
-    def get_page_url(self, base_url: str, page: int) -> str | None:
+    def get_page_url(self, base_url: str, page: int, target_date: date | None = None) -> str | None:
         """Return URL for the given page number (1-indexed).
 
         Returns None if pagination is not supported.

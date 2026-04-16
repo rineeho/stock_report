@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import re
+from datetime import date
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
@@ -34,7 +35,7 @@ class NaverResearchParser(BaseSiteParser):
     def site_id(self) -> str:
         return "naver_research"
 
-    def get_page_url(self, base_url: str, page: int) -> str | None:
+    def get_page_url(self, base_url: str, page: int, target_date: date | None = None) -> str | None:
         return f"{LIST_URL}?&page={page}"
 
     async def discover_reports(self, html_content: str, base_url: str) -> list[RawReport]:

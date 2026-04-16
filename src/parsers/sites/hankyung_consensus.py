@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import re
+from datetime import date
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
@@ -33,8 +34,9 @@ class HankyungConsensusParser(BaseSiteParser):
     def site_id(self) -> str:
         return "hankyung_consensus"
 
-    def get_page_url(self, base_url: str, page: int) -> str | None:
-        return f"{BASE}/analysis/list?now_page={page}"
+    def get_page_url(self, base_url: str, page: int, target_date: date | None = None) -> str | None:
+        date_str = target_date.isoformat() if target_date else ""
+        return f"{BASE}/analysis/list?sdate={date_str}&edate={date_str}&now_page={page}"
 
     async def discover_reports(self, html_content: str, base_url: str) -> list[RawReport]:
         """Parse consensus list page and return one RawReport per row."""

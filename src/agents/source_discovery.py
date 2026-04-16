@@ -54,9 +54,12 @@ class SourceDiscoveryAgent(BaseAgent):
             try:
                 max_pages = site.max_pages
                 for page in range(1, max_pages + 1):
-                    page_url = parser.get_page_url(site.base_url, page) if page > 1 else site.base_url
-                    if page_url is None and page > 1:
-                        break
+                    if page == 1:
+                        page_url = parser.get_page_url(site.base_url, 1, target_date=target_date) or site.base_url
+                    else:
+                        page_url = parser.get_page_url(site.base_url, page, target_date=target_date)
+                        if page_url is None:
+                            break
 
                     response = await self.http.get(page_url, site_id=site.site_id)
                     html = response.text
