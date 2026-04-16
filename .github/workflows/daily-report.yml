@@ -44,16 +44,43 @@ jobs:
         run: |
           python -c "
           import httpx
-          # Naver
-          r1 = httpx.get('https://finance.naver.com/research/company_list.naver', follow_redirects=True, timeout=15)
-          with open('debug_naver.html', 'w') as f: f.write(r1.text[:5000])
-          print('=== NAVER HTML (first 3000 chars) ===')
-          print(r1.text[:3000])
+          headers = {
+              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+              'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+              'Accept-Language': 'ko-KR,ko;q=0.9',
+          }
+          # Naver page 1
+          r1 = httpx.get('https://finance.naver.com/research/company_list.naver', headers=headers, follow_redirects=True, timeout=15)
+          print('=== NAVER status:', r1.status_code, 'length:', len(r1.text))
+          # Find table
+          import re
+          m = re.search(r'<table[^>]*class=\"type_1\"[^>]*>(.*?)</table>', r1.text, re.DOTALL)
+          if m:
+              table_html = m.group(0)
+              rows = re.findall(r'<tr>', table_html)
+              print(f'  table.type_1 found, {len(rows)} rows')
+              print(table_html[:2000])
+          else:
+              print('  table.type_1 NOT found')
+              print(r1.text[3000:6000])
+          # Naver page 2
+          r1p2 = httpx.get('https://finance.naver.com/research/company_list.naver?&page=2', headers=headers, follow_redirects=True, timeout=15)
+          m2 = re.search(r'<table[^>]*class=\"type_1\"[^>]*>(.*?)</table>', r1p2.text, re.DOTALL)
+          if m2:
+              rows2 = re.findall(r'<tr>', m2.group(0))
+              print(f'  Naver page 2: {len(rows2)} rows')
+          else:
+              print('  Naver page 2: table not found')
           # Hankyung
-          r2 = httpx.get('https://consensus.hankyung.com/analysis/list', follow_redirects=True, timeout=15)
-          with open('debug_hankyung.html', 'w') as f: f.write(r2.text[:5000])
-          print('=== HANKYUNG HTML (first 3000 chars) ===')
-          print(r2.text[:3000])
+          r2 = httpx.get('https://consensus.hankyung.com/analysis/list', headers=headers, follow_redirects=True, timeout=15)
+          print('=== HANKYUNG status:', r2.status_code, 'length:', len(r2.text))
+          if 'Block access' in r2.text:
+              print('  BLOCKED!')
+          else:
+              # Find table structure
+              tables = re.findall(r'<table[^>]*class=\"([^\"]+)\"', r2.text)
+              print(f'  Tables found: {tables}')
+              print(r2.text[2000:5000])
           "
 
       - name: Run pipeline
