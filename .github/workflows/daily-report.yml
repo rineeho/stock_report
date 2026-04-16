@@ -40,6 +40,22 @@ jobs:
             echo "target=$(TZ=Asia/Seoul date -d 'yesterday' +%Y-%m-%d)" >> $GITHUB_OUTPUT
           fi
 
+      - name: Debug - fetch real HTML structure
+        run: |
+          python -c "
+          import httpx
+          # Naver
+          r1 = httpx.get('https://finance.naver.com/research/company_list.naver', follow_redirects=True, timeout=15)
+          with open('debug_naver.html', 'w') as f: f.write(r1.text[:5000])
+          print('=== NAVER HTML (first 3000 chars) ===')
+          print(r1.text[:3000])
+          # Hankyung
+          r2 = httpx.get('https://consensus.hankyung.com/analysis/list', follow_redirects=True, timeout=15)
+          with open('debug_hankyung.html', 'w') as f: f.write(r2.text[:5000])
+          print('=== HANKYUNG HTML (first 3000 chars) ===')
+          print(r2.text[:3000])
+          "
+
       - name: Run pipeline
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
