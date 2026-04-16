@@ -487,6 +487,7 @@ async function renderReportList(hash) {
             ${stockLabel ? `<span class="tag">${stockLabel}</span>` : ''}
             ${sm && sm.extracted.rating ? `<span class="tag">${esc(sm.extracted.rating)}</span>` : ''}
             ${sm && sm.extracted.target_price != null ? `<span class="tag">목표가 ${fmtPrice(sm.extracted.target_price)}</span>` : ''}
+            ${r.pdf_url ? `<a href="${esc(r.pdf_url)}" target="_blank" class="tag" style="color:var(--accent);text-decoration:none" onclick="event.stopPropagation()">PDF</a>` : ''}
           </div>
           ${oneLine ? `<div class="one-line">${oneLine}</div>` : ''}
         </div>
@@ -539,6 +540,7 @@ async function renderDetail(hash) {
       </div>
       <div class="detail-meta">
         <span>원본: <a href="${esc(data.primary_url)}" target="_blank">${esc(data.primary_url)}</a></span>
+        ${data.pdf_url ? `<span><a href="${esc(data.pdf_url)}" target="_blank" class="btn-accent" style="display:inline-block;padding:.2rem .6rem;border-radius:4px;font-size:.82rem;text-decoration:none">PDF 다운로드</a></span>` : ''}
       </div>
     </div>`;
 

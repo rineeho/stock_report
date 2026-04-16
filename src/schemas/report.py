@@ -85,6 +85,7 @@ class ParsedReport(BaseModel):
     source_url: str = ""
     parse_status: ParseStatus = ParseStatus.FAILED
     parse_errors: list[str] = Field(default_factory=list)
+    pdf_url: str | None = None
 
 
 class ValidatedReport(BaseModel):
@@ -107,6 +108,7 @@ class ValidatedReport(BaseModel):
     sector: str | None = None
     body_text: str | None = None
     source_url: str = ""
+    pdf_url: str | None = None
 
 
 class NormalizedReport(BaseModel):
@@ -123,6 +125,7 @@ class NormalizedReport(BaseModel):
     sector: str | None = None
     source_url: str
     body_text: str | None = None
+    pdf_url: str | None = None
 
 
 class DeduplicationGroup(BaseModel):
@@ -150,5 +153,6 @@ class CanonicalReport(BaseModel):
     source_urls: list[str]
     primary_url: str
     body_text: str | None = None
+    pdf_url: str | None = None
     has_revision: bool = False
     duplicate_count: int = 1

@@ -63,6 +63,7 @@ class DeduplicationAgent(BaseAgent):
                     source_urls=all_urls,
                     primary_url=canonical.source_url,
                     body_text=canonical.body_text,
+                    pdf_url=canonical.pdf_url,
                     has_revision=group.is_revision,
                     duplicate_count=len(group.member_ids),
                 )

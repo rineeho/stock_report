@@ -85,6 +85,7 @@ class NormalizationAgent(BaseAgent):
                     sector=validated.sector,
                     source_url=source_url,
                     body_text=body_text,
+                    pdf_url=validated.pdf_url,
                 )
             )
 

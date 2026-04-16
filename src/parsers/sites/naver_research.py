@@ -217,6 +217,9 @@ class NaverResearchParser(BaseSiteParser):
             ParseStatus.PARTIAL if title else ParseStatus.FAILED
         )
 
+        # PDF URL from hint
+        pdf_url: str | None = hint.get("pdf_url") if hint else None
+
         return ParsedReport(
             raw_id=raw.raw_id,
             title=title,
@@ -230,6 +233,7 @@ class NaverResearchParser(BaseSiteParser):
             source_url=raw.discovered_url,
             parse_status=status,
             parse_errors=errors,
+            pdf_url=pdf_url if pdf_url else None,
         )
 
     def _load_hint(self, content: str | None) -> dict | None:

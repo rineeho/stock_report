@@ -79,6 +79,7 @@ class ValidationAgent(BaseAgent):
                     sector=parsed.sector,
                     body_text=parsed.body_text,
                     source_url=parsed.source_url,
+                    pdf_url=parsed.pdf_url,
                 )
             )
 
