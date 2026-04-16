@@ -97,19 +97,29 @@ jobs:
           # Prepare deploy directory
           mkdir -p deploy/data
 
-          # Pull existing data from gh-pages if it exists
-          if git ls-remote --heads origin gh-pages | grep -q gh-pages; then
-            git fetch origin gh-pages
-            git checkout origin/gh-pages -- data/ 2>/dev/null && mv data/* deploy/data/ 2>/dev/null || true
-            git checkout main -- .
-          fi
-
-          # Copy new day's JSON
+          # Copy new day's JSON FIRST (before any git checkout that could clobber data/)
           if [ -f "data/output/${TARGET}/daily_report.json" ]; then
             cp "data/output/${TARGET}/daily_report.json" "deploy/data/${TARGET}.json"
-            echo "Copied daily_report.json for ${TARGET}"
+            echo "Copied daily_report.json for ${TARGET} ($(wc -c < "data/output/${TARGET}/daily_report.json") bytes)"
           else
             echo "No daily_report.json found for ${TARGET}"
+          fi
+
+          # Pull existing data from gh-pages (older dates only, don't overwrite today's new data)
+          if git ls-remote --heads origin gh-pages | grep -q gh-pages; then
+            git fetch origin gh-pages
+            git worktree add /tmp/gh-pages origin/gh-pages 2>/dev/null || true
+            if [ -d /tmp/gh-pages/data ]; then
+              for f in /tmp/gh-pages/data/*.json; do
+                fname=$(basename "$f")
+                # Don't overwrite today's fresh data
+                if [ ! -f "deploy/data/$fname" ]; then
+                  cp "$f" "deploy/data/$fname"
+                  echo "Restored $fname from gh-pages"
+                fi
+              done
+            fi
+            git worktree remove /tmp/gh-pages 2>/dev/null || true
           fi
 
           # Build static site
@@ -117,6 +127,13 @@ jobs:
             --data-dir deploy/data \
             --output-dir deploy/site
           cp -r deploy/data deploy/site/data 2>/dev/null || true
+
+          # Show what we're deploying
+          echo "=== Deploy contents ==="
+          ls -la deploy/site/data/ || true
+          for f in deploy/site/data/*.json; do
+            echo "$f: $(python -c "import json; d=json.load(open('$f')); print(len(d.get('reports',[])), 'reports')" 2>/dev/null || echo 'N/A')"
+          done
 
           # Deploy to gh-pages branch
           cd deploy/site
