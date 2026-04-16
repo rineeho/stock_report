@@ -4,40 +4,46 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>리포트 대시보드</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #f8f9fa;
-  --card-bg: #fff;
-  --border: #dee2e6;
-  --accent: #1a73e8;
-  --text: #212529;
-  --muted: #6c757d;
-  --success: #28a745;
-  --tag-bg: #e9ecef;
-  --danger: #dc3545;
+  --bg: #0a0a0a;
+  --card-bg: #141414;
+  --border: #2a2a2a;
+  --accent: #ffd60a;
+  --accent-dim: #b89a00;
+  --text: #e8e8e8;
+  --muted: #777;
+  --success: #4ade80;
+  --tag-bg: #1e1e1e;
+  --danger: #ef4444;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 300;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a:hover { text-decoration: underline; color: #fff; }
 
 /* Header */
 .header {
-  background: var(--accent);
-  color: #fff;
+  background: #000;
+  color: var(--accent);
   padding: .8rem 1.5rem;
   display: flex;
   align-items: center;
   gap: 1rem;
+  border-bottom: 2px solid var(--accent);
 }
-.header h1 { font-size: 1.1rem; font-weight: 600; }
-.header a { color: rgba(255,255,255,.85); font-size: .85rem; }
-.header a:hover { color: #fff; }
+.header h1 { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em; color: var(--accent); }
+.header a { color: rgba(255,214,10,.7); font-size: .85rem; }
+.header a:hover { color: var(--accent); }
 
 /* Container */
 .container { max-width: 1040px; margin: 0 auto; padding: 1.5rem 1rem; }
@@ -56,7 +62,7 @@ a:hover { text-decoration: underline; }
   padding: .8rem 1rem;
   text-align: center;
 }
-.stat-card .value { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+.stat-card .value { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
 .stat-card .label { font-size: .8rem; color: var(--muted); }
 
 /* Date bar */
@@ -71,11 +77,13 @@ a:hover { text-decoration: underline; }
   padding: .4rem .6rem;
   border: 1px solid var(--border);
   border-radius: 6px;
-  font-size: .9rem;
+  font-size: .85rem;
+  background: var(--card-bg);
+  color: var(--text);
 }
 
 /* Section */
-h2 { font-size: 1.2rem; color: var(--accent); margin: 1.5rem 0 .75rem; }
+h2 { font-size: 1.3rem; font-weight: 700; color: var(--accent); margin: 1.8rem 0 .75rem; letter-spacing: -0.02em; }
 h3 { font-size: 1rem; margin: 1rem 0 .5rem; padding-left: .5rem; border-left: 3px solid var(--accent); }
 
 /* Chips */
@@ -90,9 +98,9 @@ h3 { font-size: 1rem; margin: 1rem 0 .5rem; padding-left: .5rem; border-left: 3p
   cursor: pointer;
   transition: all .15s;
 }
-.chip:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-.chip .count { font-weight: 600; color: var(--accent); margin-left: .2rem; }
-.chip:hover .count { color: #fff; }
+.chip:hover { background: var(--accent); color: #000; border-color: var(--accent); }
+.chip .count { font-weight: 700; color: var(--accent); margin-left: .2rem; }
+.chip:hover .count { color: #000; }
 
 /* Report card */
 .report-card {
@@ -104,8 +112,8 @@ h3 { font-size: 1rem; margin: 1rem 0 .5rem; padding-left: .5rem; border-left: 3p
   cursor: pointer;
   transition: box-shadow .15s;
 }
-.report-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,.08); }
-.report-card .title { font-weight: 700; font-size: .95rem; margin-bottom: .3rem; }
+.report-card:hover { box-shadow: 0 2px 12px rgba(255,214,10,.08); border-color: var(--accent-dim); }
+.report-card .title { font-weight: 700; font-size: .95rem; margin-bottom: .3rem; color: #fff; }
 .report-card .meta { font-size: .82rem; color: var(--muted); margin-bottom: .3rem; }
 .report-card .meta span { margin-right: .6rem; }
 .tag {
@@ -114,14 +122,17 @@ h3 { font-size: 1rem; margin: 1rem 0 .5rem; padding-left: .5rem; border-left: 3p
   border-radius: 4px;
   padding: .1rem .4rem;
   font-size: .78rem;
+  color: var(--accent);
+  border: 1px solid var(--border);
 }
 .report-card .one-line {
   font-size: .88rem;
   color: var(--text);
   margin-top: .4rem;
   padding: .5rem .7rem;
-  background: #f1f3f5;
+  background: #1a1a1a;
   border-radius: 6px;
+  border-left: 2px solid var(--accent-dim);
 }
 
 /* Filters bar */
@@ -137,22 +148,25 @@ h3 { font-size: 1rem; margin: 1rem 0 .5rem; padding-left: .5rem; border-left: 3p
   border: 1px solid var(--border);
   border-radius: 6px;
   font-size: .85rem;
+  background: var(--card-bg);
+  color: var(--text);
 }
 .btn {
   padding: .35rem .8rem;
   border: 1px solid var(--border);
   border-radius: 6px;
   background: var(--card-bg);
+  color: var(--text);
   cursor: pointer;
   font-size: .85rem;
 }
 .btn:hover { background: var(--tag-bg); }
-.btn-accent { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-accent { background: var(--accent); color: #000; border-color: var(--accent); font-weight: 500; }
 .btn-accent:hover { opacity: .9; }
 
 /* Detail page */
 .detail-header { margin-bottom: 1.5rem; }
-.detail-header .title { font-size: 1.3rem; font-weight: 700; margin-bottom: .5rem; }
+.detail-header .title { font-size: 1.4rem; font-weight: 700; margin-bottom: .5rem; letter-spacing: -0.02em; color: #fff; }
 .detail-meta { font-size: .88rem; color: var(--muted); margin-bottom: .3rem; }
 .detail-meta span { margin-right: 1rem; }
 .info-grid {
@@ -168,7 +182,7 @@ h3 { font-size: 1rem; margin: 1rem 0 .5rem; padding-left: .5rem; border-left: 3p
   padding: .7rem 1rem;
 }
 .info-box .label { font-size: .78rem; color: var(--muted); }
-.info-box .value { font-size: 1rem; font-weight: 600; }
+.info-box .value { font-size: 1rem; font-weight: 700; }
 .summary-section {
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -204,7 +218,8 @@ table.stats th, table.stats td {
   padding: .4rem .7rem;
   text-align: left;
 }
-table.stats th { background: var(--tag-bg); font-weight: 600; }
+table.stats th { background: var(--tag-bg); font-weight: 600; color: var(--accent); }
+table.stats td:last-child { font-weight: 700; }
 
 /* Back link */
 .back { display: inline-block; margin-bottom: 1rem; font-size: .88rem; }

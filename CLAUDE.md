@@ -26,4 +26,9 @@ Python 3.11+: Follow standard conventions
 - 001-daily-report-agent: Added Python 3.11+ + httpx (HTTP client), beautifulsoup4 (HTML parsing),
 
 <!-- MANUAL ADDITIONS START -->
+
+## Design Guidelines
+
+UI/UX 디자인 관련 가이드라인은 [design.md](./design.md)를 참고할 것.
+
 <!-- MANUAL ADDITIONS END -->
