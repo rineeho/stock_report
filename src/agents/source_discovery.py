@@ -52,16 +52,26 @@ class SourceDiscoveryAgent(BaseAgent):
                 continue
 
             try:
-                response = await self.http.get(site.base_url, site_id=site.site_id)
-                html = response.text
+                max_pages = site.max_pages
+                for page in range(1, max_pages + 1):
+                    page_url = parser.get_page_url(site.base_url, page) if page > 1 else site.base_url
+                    if page_url is None and page > 1:
+                        break
 
-                site_reports = await parser.discover_reports(html, base_url=site.base_url)
-                logger.info(
-                    "site_discovered",
-                    site_id=site.site_id,
-                    count=len(site_reports),
-                )
-                all_reports.extend(site_reports)
+                    response = await self.http.get(page_url, site_id=site.site_id)
+                    html = response.text
+
+                    page_reports = await parser.discover_reports(html, base_url=site.base_url)
+                    if not page_reports:
+                        break
+
+                    logger.info(
+                        "site_discovered",
+                        site_id=site.site_id,
+                        page=page,
+                        count=len(page_reports),
+                    )
+                    all_reports.extend(page_reports)
 
             except Exception as exc:
                 # Per FR-018: isolate site failure, continue with other sites

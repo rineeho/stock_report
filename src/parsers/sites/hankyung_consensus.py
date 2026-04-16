@@ -33,6 +33,9 @@ class HankyungConsensusParser(BaseSiteParser):
     def site_id(self) -> str:
         return "hankyung_consensus"
 
+    def get_page_url(self, base_url: str, page: int) -> str | None:
+        return f"{BASE}/analysis/list?now_page={page}"
+
     async def discover_reports(self, html_content: str, base_url: str) -> list[RawReport]:
         """Parse consensus list page and return one RawReport per row."""
         soup = BeautifulSoup(html_content, "lxml")

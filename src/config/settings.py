@@ -37,6 +37,7 @@ class SiteConfig:
     auth_type: str = "none"
     auth_config: dict = field(default_factory=dict)
     enabled: bool = True
+    max_pages: int = 5
 
 
 @dataclass

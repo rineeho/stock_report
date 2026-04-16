@@ -48,6 +48,14 @@ class BaseSiteParser(ABC):
             ParsedReport with extracted metadata.
         """
 
+    def get_page_url(self, base_url: str, page: int) -> str | None:
+        """Return URL for the given page number (1-indexed).
+
+        Returns None if pagination is not supported.
+        Subclasses should override this to enable multi-page discovery.
+        """
+        return None
+
     def extract_date_multi_strategy(self, html_content: str) -> tuple[date | None, DateSource | None]:
         """Multi-strategy date extraction per R10.
 
