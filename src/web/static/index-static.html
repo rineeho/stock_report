@@ -290,6 +290,8 @@ async function getDailyResult(dateStr) {
 function computeSummary(dr) {
   const brokerageCounts = {};
   const tickerCounts = {};
+  const sectorCounts = {};
+  const analystCounts = {};
   const stockNames = {};
   if (dr.classifications) {
     for (const [k, v] of Object.entries(dr.classifications.by_brokerage || {})) {
@@ -298,38 +300,44 @@ function computeSummary(dr) {
     for (const [k, v] of Object.entries(dr.classifications.by_ticker || {})) {
       tickerCounts[k] = v.length;
     }
+    for (const [k, v] of Object.entries(dr.classifications.by_sector || {})) {
+      sectorCounts[k] = v.length;
+    }
+    for (const [k, v] of Object.entries(dr.classifications.by_analyst || {})) {
+      analystCounts[k] = v.length;
+    }
   }
   for (const r of (dr.reports || [])) {
     if (r.ticker && r.stock_name) stockNames[r.ticker] = r.stock_name;
   }
   return {
     target_date: dr.target_date,
-    total_discovered: dr.total_discovered || 0,
-    total_fetched: dr.total_fetched || 0,
-    total_validated: dr.total_validated || 0,
-    total_unverified: dr.total_unverified || 0,
-    total_deduplicated: dr.total_deduplicated || 0,
     report_count: (dr.reports || []).length,
-    summary_count: (dr.summaries || []).length,
-    pipeline_stats: dr.pipeline_stats || {},
     brokerage_counts: brokerageCounts,
     ticker_counts: tickerCounts,
+    sector_counts: sectorCounts,
+    analyst_counts: analystCounts,
     stock_names: stockNames,
   };
 }
 
 // Filter reports from full DailyResult
-function getFilteredReports(dr, brokerage, ticker) {
+function getFilteredReports(dr, {brokerage, ticker, sector, analyst} = {}) {
   const summaryMap = {};
   for (const s of (dr.summaries || [])) {
     summaryMap[s.canonical_id] = s;
   }
 
   let allowedIds = null;
-  if (brokerage && dr.classifications && dr.classifications.by_brokerage[brokerage]) {
-    allowedIds = new Set(dr.classifications.by_brokerage[brokerage]);
-  } else if (ticker && dr.classifications && dr.classifications.by_ticker[ticker]) {
-    allowedIds = new Set(dr.classifications.by_ticker[ticker]);
+  const cls = dr.classifications;
+  if (brokerage && cls && cls.by_brokerage[brokerage]) {
+    allowedIds = new Set(cls.by_brokerage[brokerage]);
+  } else if (ticker && cls && cls.by_ticker[ticker]) {
+    allowedIds = new Set(cls.by_ticker[ticker]);
+  } else if (sector && cls && cls.by_sector[sector]) {
+    allowedIds = new Set(cls.by_sector[sector]);
+  } else if (analyst && cls && cls.by_analyst[analyst]) {
+    allowedIds = new Set(cls.by_analyst[analyst]);
   }
 
   const items = [];
@@ -401,20 +409,18 @@ function groupDatesByRange(dates, mode) {
 }
 
 async function getMultiDayResult(dateStrs) {
-  const merged = { reports: [], summaries: [], classifications: { by_brokerage: {}, by_ticker: {} }, pipeline_stats: {} };
+  const merged = { reports: [], summaries: [], classifications: { by_brokerage: {}, by_ticker: {}, by_sector: {}, by_analyst: {} } };
   for (const ds of dateStrs) {
     try {
       const dr = await getDailyResult(ds);
       merged.reports.push(...(dr.reports || []));
       merged.summaries.push(...(dr.summaries || []));
       if (dr.classifications) {
-        for (const [k, v] of Object.entries(dr.classifications.by_brokerage || {})) {
-          if (!merged.classifications.by_brokerage[k]) merged.classifications.by_brokerage[k] = [];
-          merged.classifications.by_brokerage[k].push(...v);
-        }
-        for (const [k, v] of Object.entries(dr.classifications.by_ticker || {})) {
-          if (!merged.classifications.by_ticker[k]) merged.classifications.by_ticker[k] = [];
-          merged.classifications.by_ticker[k].push(...v);
+        for (const cat of ['by_brokerage', 'by_ticker', 'by_sector', 'by_analyst']) {
+          for (const [k, v] of Object.entries(dr.classifications[cat] || {})) {
+            if (!merged.classifications[cat][k]) merged.classifications[cat][k] = [];
+            merged.classifications[cat][k].push(...v);
+          }
         }
       }
     } catch(e) { /* skip missing dates */ }
@@ -502,6 +508,26 @@ async function renderDashboard() {
       html += `</div>`;
     }
 
+    // Sector chips
+    const sectors = Object.entries(summary.sector_counts).sort((a,b) => b[1]-a[1]);
+    if (sectors.length) {
+      html += `<h2>섹터별</h2><div class="chip-group">`;
+      for (const [name, cnt] of sectors) {
+        html += `<span class="chip" onclick="location.hash='#/reports/${reportDates}?sector=${encodeURIComponent(name)}'">${esc(name)} <span class="count">${cnt}</span></span>`;
+      }
+      html += `</div>`;
+    }
+
+    // Analyst chips
+    const analysts = Object.entries(summary.analyst_counts).sort((a,b) => b[1]-a[1]);
+    if (analysts.length) {
+      html += `<h2>애널리스트별</h2><div class="chip-group">`;
+      for (const [name, cnt] of analysts) {
+        html += `<span class="chip" onclick="location.hash='#/reports/${reportDates}?analyst=${encodeURIComponent(name)}'">${esc(name)} <span class="count">${cnt}</span></span>`;
+      }
+      html += `</div>`;
+    }
+
     app.innerHTML = html;
 
     $('#date-select').addEventListener('change', e => {
@@ -522,6 +548,8 @@ async function renderReportList(hash) {
     const params = new URLSearchParams(parts[1] || '');
     const brokerage = params.get('brokerage') || '';
     const ticker = params.get('ticker') || '';
+    const sector = params.get('sector') || '';
+    const analyst = params.get('analyst') || '';
 
     // Support comma-separated dates for multi-day ranges
     const dateList = datesPart.split(',').filter(Boolean);
@@ -529,7 +557,7 @@ async function renderReportList(hash) {
       ? await getDailyResult(dateList[0])
       : await getMultiDayResult(dateList);
     const summary = computeSummary(dr);
-    const reports = getFilteredReports(dr, brokerage, ticker);
+    const reports = getFilteredReports(dr, {brokerage, ticker, sector, analyst});
     const stockNames = summary.stock_names || {};
 
     const dateLabel = dateList.length === 1 ? dateList[0] : `${dateList[0]} ~ ${dateList[dateList.length-1]}`;
@@ -537,6 +565,8 @@ async function renderReportList(hash) {
     let filterTitle = '';
     if (brokerage) filterTitle = brokerage;
     else if (ticker) filterTitle = `${stockNames[ticker]||ticker} (${ticker})`;
+    else if (sector) filterTitle = sector;
+    else if (analyst) filterTitle = analyst;
 
     let html = `<a class="back" href="#/">< 대시보드</a>`;
     html += `<h2>리포트 목록 — ${dateLabel}${filterTitle ? ' / '+esc(filterTitle) : ''}</h2>`;
@@ -544,6 +574,8 @@ async function renderReportList(hash) {
     // Filter bar
     const brokerageOpts = Object.keys(summary.brokerage_counts).sort();
     const tickerOpts = Object.keys(summary.ticker_counts).sort();
+    const sectorOpts = Object.keys(summary.sector_counts).sort();
+    const analystOpts = Object.keys(summary.analyst_counts).sort();
     html += `<div class="filter-bar">
       <select id="f-brokerage">
         <option value="">전체 증권사</option>
@@ -552,6 +584,14 @@ async function renderReportList(hash) {
       <select id="f-ticker">
         <option value="">전체 종목</option>
         ${tickerOpts.map(t => `<option value="${esc(t)}" ${t===ticker?'selected':''}>${esc(stockNames[t]||t)} (${esc(t)})</option>`).join('')}
+      </select>
+      <select id="f-sector">
+        <option value="">전체 섹터</option>
+        ${sectorOpts.map(s => `<option value="${esc(s)}" ${s===sector?'selected':''}>${esc(s)}</option>`).join('')}
+      </select>
+      <select id="f-analyst">
+        <option value="">전체 애널리스트</option>
+        ${analystOpts.map(a => `<option value="${esc(a)}" ${a===analyst?'selected':''}>${esc(a)}</option>`).join('')}
       </select>
       <button class="btn" onclick="location.hash='#/reports/${datesPart}'">초기화</button>
     </div>`;
@@ -587,14 +627,16 @@ async function renderReportList(hash) {
 
     app.innerHTML = html;
 
-    $('#f-brokerage').addEventListener('change', e => {
-      const v = e.target.value;
-      location.hash = v ? `#/reports/${datesPart}?brokerage=${encodeURIComponent(v)}` : `#/reports/${datesPart}`;
-    });
-    $('#f-ticker').addEventListener('change', e => {
-      const v = e.target.value;
-      location.hash = v ? `#/reports/${datesPart}?ticker=${encodeURIComponent(v)}` : `#/reports/${datesPart}`;
-    });
+    const mkFilter = (id, key) => {
+      $(id).addEventListener('change', e => {
+        const v = e.target.value;
+        location.hash = v ? `#/reports/${datesPart}?${key}=${encodeURIComponent(v)}` : `#/reports/${datesPart}`;
+      });
+    };
+    mkFilter('#f-brokerage', 'brokerage');
+    mkFilter('#f-ticker', 'ticker');
+    mkFilter('#f-sector', 'sector');
+    mkFilter('#f-analyst', 'analyst');
   } catch (err) {
     app.innerHTML = `<div class="empty">로드 실패: ${esc(err.message)}</div>`;
   }
