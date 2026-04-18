@@ -62,6 +62,7 @@ class RawReport(BaseModel):
     discovered_url: str
     content_type: ContentType = ContentType.UNKNOWN
     raw_content: str | None = None
+    pdf_text: str | None = None  # PDF에서 추출된 텍스트
     metadata_hint: str | None = None  # JSON hint from discover, preserved through fetch
     fetch_status: FetchStatus = FetchStatus.SKIPPED
     fetch_error: str | None = None

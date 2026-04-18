@@ -115,6 +115,7 @@ class NaverResearchParser(BaseSiteParser):
         """Extract metadata from a naver_research report page HTML.
 
         Uses metadata_hint from discover step, supplemented by HTML parsing.
+        When PDF text is available (via fetch stage), extracts analyst and sector.
         """
         errors: list[str] = []
 
@@ -129,6 +130,7 @@ class NaverResearchParser(BaseSiteParser):
         published_date = None
         published_date_source = None
         analyst: str | None = None
+        sector: str | None = None
         body_text: str | None = None
 
         # --- Full HTML parsing (when raw_content is full HTML) ---
@@ -197,13 +199,28 @@ class NaverResearchParser(BaseSiteParser):
                 if date_el:
                     published_date = parse_date_kst(date_el.get_text(strip=True))
 
-            # Body text: try real page structure, then fallback
+            # Body text: from HTML page
             body_el = soup.select_one("td.view_cnt, .view_text, .research_body")
             body_text = body_el.get_text(separator="\n", strip=True) if body_el else None
 
         # --- Date from hint (date_hint field) ---
         if published_date is None and hint and hint.get("date_hint"):
             published_date = parse_date_kst(hint["date_hint"])
+
+        # --- PDF text analysis: analyst and sector extraction ---
+        if raw.pdf_text:
+            from src.parsers.pdf_extractor import (
+                extract_analyst_from_pdf_text,
+                extract_sector_from_pdf_text,
+            )
+
+            if not analyst:
+                analyst = extract_analyst_from_pdf_text(raw.pdf_text)
+            if not sector:
+                sector = extract_sector_from_pdf_text(raw.pdf_text)
+            # Use PDF text as body when HTML body is missing or very short
+            if not body_text or len(body_text) < 100:
+                body_text = raw.pdf_text
 
         # Required fields check
         if not title:
@@ -229,6 +246,7 @@ class NaverResearchParser(BaseSiteParser):
             analyst=analyst,
             ticker=ticker,
             stock_name=stock_name,
+            sector=sector,
             body_text=body_text,
             source_url=raw.discovered_url,
             parse_status=status,

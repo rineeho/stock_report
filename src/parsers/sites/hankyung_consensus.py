@@ -1,7 +1,13 @@
 """hankyung_consensus site parser.
 
-Discovers reports from: https://consensus.hankyung.com
-Parses individual report pages for 한경컨센서스.
+Discovers reports from: https://consensus.hankyung.com/analysis/list
+Parses individual report pages for 한경컨센서스 기업분석.
+
+Listing page columns:
+  작성일 | 제목 | 적정가격 | 투자의견 | 작성자 | 제공출처
+
+Each report title links to a PDF download URL (/analysis/downpdf?report_idx=...).
+FetchAgent handles the PDF response directly (ContentType.PDF branch).
 """
 
 from __future__ import annotations
@@ -25,6 +31,7 @@ from src.schemas.report import (
 from src.utils.timezone import parse_date_kst
 
 BASE = "https://consensus.hankyung.com"
+LIST_PATH = "/analysis/list"
 
 
 class HankyungConsensusParser(BaseSiteParser):
@@ -36,48 +43,66 @@ class HankyungConsensusParser(BaseSiteParser):
 
     def get_page_url(self, base_url: str, page: int, target_date: date | None = None) -> str | None:
         date_str = target_date.isoformat() if target_date else ""
-        return f"{BASE}/analysis/list?sdate={date_str}&edate={date_str}&now_page={page}"
+        return (
+            f"{BASE}{LIST_PATH}?skinType=business"
+            f"&sdate={date_str}&edate={date_str}&now_page={page}"
+        )
 
     async def discover_reports(self, html_content: str, base_url: str) -> list[RawReport]:
-        """Parse consensus list page and return one RawReport per row."""
+        """Parse consensus list page and return one RawReport per row.
+
+        Actual HTML structure:
+          <div class="table_style01"><table><tbody><tr>...
+        Columns (9): 작성일 | 제목 | 적정가격 | 투자의견 | 작성자 | 제공출처 | 기업정보 | 차트 | 첨부파일
+        Title link points to PDF download (/analysis/downpdf?report_idx=...).
+        """
         soup = BeautifulSoup(html_content, "lxml")
-        table = soup.find("table", class_="tb_type01")
+        wrapper = soup.find("div", class_="table_style01")
+        table = wrapper.find("table") if wrapper else soup.find("table", class_="tb_type01")
         if not table:
             return []
 
+        tbody = table.find("tbody")
         reports: list[RawReport] = []
-        for row in table.find_all("tr", class_="row"):
+        rows = tbody.find_all("tr") if tbody else table.find_all("tr")
+        for row in rows:
             cells = row.find_all("td")
             if len(cells) < 6:
                 continue
 
             date_cell = cells[0]
-            stock_cell = cells[1]
-            title_cell = cells[2]
-            broker_cell = cells[3]
+            title_cell = cells[1]
+            price_cell = cells[2]
+            opinion_cell = cells[3]
+            analyst_cell = cells[4]
+            broker_cell = cells[5]
 
+            # Title link → PDF download URL
             title_link = title_cell.find("a")
             if not title_link:
                 continue
 
             href = title_link.get("href", "")
-            report_url = urljoin(BASE, href) if href else ""
-            if not report_url:
+            pdf_url = urljoin(BASE, href) if href else ""
+            if not pdf_url:
                 continue
 
-            stock_link = stock_cell.find("a")
-            stock_text = stock_link.get_text(strip=True) if stock_link else ""
-            # Extract stock_name and ticker from format like "삼성전자(005930)"
+            title_text = title_link.get_text(strip=True)
+
+            # Stock name and ticker from title: "[종목명(코드)] 제목" or "종목명(코드) 제목"
             stock_name = ""
             ticker = ""
-            m = re.match(r"(.+?)\((\d+)\)", stock_text)
+            m = re.match(r"\[?([^(\[]+?)\((\d{6})\)\]?\s*(.*)", title_text)
             if m:
-                stock_name = m.group(1)
+                stock_name = m.group(1).strip()
                 ticker = m.group(2)
+                title_text = m.group(3).strip() if m.group(3).strip() else title_text
 
-            brokerage = broker_cell.get_text(strip=True)
             date_hint = date_cell.get_text(strip=True)
-            title_text = title_link.get_text(strip=True)
+            analyst = analyst_cell.get_text(strip=True) or None
+            brokerage = broker_cell.get_text(strip=True)
+            target_price = price_cell.get_text(strip=True) or None
+            opinion = opinion_cell.get_text(strip=True) or None
 
             hint = json.dumps(
                 {
@@ -86,6 +111,10 @@ class HankyungConsensusParser(BaseSiteParser):
                     "stock_name": stock_name,
                     "ticker": ticker,
                     "date_hint": date_hint,
+                    "analyst": analyst,
+                    "target_price": target_price,
+                    "opinion": opinion,
+                    "pdf_url": pdf_url,
                 },
                 ensure_ascii=False,
             )
@@ -93,9 +122,9 @@ class HankyungConsensusParser(BaseSiteParser):
             reports.append(
                 RawReport(
                     site_id=self.site_id,
-                    discovered_url=report_url,
-                    content_type=ContentType.HTML,
-                    raw_content=hint,
+                    discovered_url=pdf_url,
+                    content_type=ContentType.PDF,
+                    metadata_hint=hint,
                     fetch_status=FetchStatus.SKIPPED,
                 )
             )
@@ -103,22 +132,34 @@ class HankyungConsensusParser(BaseSiteParser):
         return reports
 
     async def parse_report(self, raw: RawReport) -> ParsedReport:
-        """Extract metadata from a hankyung_consensus report page."""
+        """Extract metadata from a hankyung_consensus report.
+
+        Sources (checked in order, earlier wins for each field):
+        1. metadata_hint from discover (listing-page metadata)
+        2. raw_content HTML (if the fetched page is HTML)
+        3. pdf_text from FetchAgent (analyst/sector/body fallback)
+        """
         errors: list[str] = []
 
-        hint = self._load_hint(raw.raw_content)
+        hint = self._load_hint(raw.metadata_hint)
 
         title: str | None = hint.get("title") if hint else None
         brokerage: str | None = hint.get("brokerage") if hint else None
         stock_name: str | None = hint.get("stock_name") if hint else None
         ticker: str | None = hint.get("ticker") if hint else None
+        analyst: str | None = hint.get("analyst") if hint else None
+        sector: str | None = None
+        body_text: str | None = None
+        pdf_url: str | None = hint.get("pdf_url") if hint else None
 
         published_date = None
         published_date_source = None
-        analyst: str | None = None
-        body_text: str | None = None
 
-        # Full HTML parsing
+        # Date from hint
+        if hint and hint.get("date_hint"):
+            published_date = parse_date_kst(hint["date_hint"])
+
+        # Full HTML parsing (when raw_content is HTML)
         if raw.raw_content and raw.raw_content.strip().startswith("<"):
             soup = BeautifulSoup(raw.raw_content, "lxml")
 
@@ -130,8 +171,9 @@ class HankyungConsensusParser(BaseSiteParser):
                 brok_el = soup.select_one(".broker_name")
                 brokerage = brok_el.get_text(strip=True) if brok_el else None
 
-            analyst_el = soup.select_one(".analyst_name")
-            analyst = analyst_el.get_text(strip=True) if analyst_el else None
+            if not analyst:
+                analyst_el = soup.select_one(".analyst_name")
+                analyst = analyst_el.get_text(strip=True) if analyst_el else None
 
             if not stock_name:
                 name_el = soup.select_one(".stock_name")
@@ -141,9 +183,10 @@ class HankyungConsensusParser(BaseSiteParser):
                 code_el = soup.select_one(".stock_code")
                 ticker = code_el.get_text(strip=True) if code_el else None
 
-            published_date, published_date_source = self.extract_date_multi_strategy(
-                raw.raw_content
-            )
+            if not published_date:
+                published_date, published_date_source = self.extract_date_multi_strategy(
+                    raw.raw_content
+                )
 
             if not published_date:
                 date_el = soup.select_one(".date")
@@ -151,12 +194,24 @@ class HankyungConsensusParser(BaseSiteParser):
                     published_date = parse_date_kst(date_el.get_text(strip=True))
 
             body_el = soup.select_one(".report_body")
-            body_text = body_el.get_text(separator="\n", strip=True) if body_el else None
+            if body_el:
+                body_text = body_el.get_text(separator="\n", strip=True)
 
-        # Date from hint
-        if published_date is None and hint and hint.get("date_hint"):
-            published_date = parse_date_kst(hint["date_hint"])
+        # PDF text analysis: supplement analyst/sector, provide body
+        if raw.pdf_text:
+            from src.parsers.pdf_extractor import (
+                extract_analyst_from_pdf_text,
+                extract_sector_from_pdf_text,
+            )
 
+            if not analyst:
+                analyst = extract_analyst_from_pdf_text(raw.pdf_text)
+            if not sector:
+                sector = extract_sector_from_pdf_text(raw.pdf_text)
+            if not body_text or len(body_text) < 100:
+                body_text = raw.pdf_text
+
+        # Required fields check
         if not title:
             errors.append("title_missing")
         if not brokerage:
@@ -177,17 +232,19 @@ class HankyungConsensusParser(BaseSiteParser):
             analyst=analyst,
             ticker=ticker,
             stock_name=stock_name,
+            sector=sector,
             body_text=body_text,
             source_url=raw.discovered_url,
             parse_status=status,
             parse_errors=errors,
+            pdf_url=pdf_url,
         )
 
-    def _load_hint(self, raw_content: str | None) -> dict | None:
-        if not raw_content:
+    def _load_hint(self, content: str | None) -> dict | None:
+        if not content:
             return None
         try:
-            data = json.loads(raw_content)
+            data = json.loads(content)
             if isinstance(data, dict):
                 return data
         except (ValueError, TypeError):

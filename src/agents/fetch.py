@@ -2,12 +2,14 @@
 
 from __future__ import annotations
 
+import json
 from datetime import date, datetime
 from typing import Any
 
 import structlog
 
 from src.agents.base import BaseAgent
+from src.parsers.pdf_extractor import extract_text_from_pdf
 from src.schemas.report import ContentType, FetchStatus, RawReport
 from src.utils.http import RateLimitedClient
 
@@ -39,6 +41,7 @@ class FetchAgent(BaseAgent):
 
         Reports that already have full HTML content (raw_content starts with '<')
         are passed through without a second fetch.
+        Also downloads and extracts text from PDF when pdf_url is in metadata_hint.
         """
         results: list[RawReport] = []
 
@@ -51,6 +54,7 @@ class FetchAgent(BaseAgent):
                         "fetched_at": datetime.now().astimezone(),
                     }
                 )
+                updated = await self._enrich_with_pdf(updated)
                 results.append(updated)
                 continue
 
@@ -60,6 +64,27 @@ class FetchAgent(BaseAgent):
                     raw.discovered_url,
                     response.headers.get("content-type", ""),
                 )
+
+                if content_type == ContentType.PDF:
+                    # PDF response: extract text directly, don't store binary as text
+                    result = extract_text_from_pdf(response.content)
+                    updated = raw.model_copy(
+                        update={
+                            "content_type": ContentType.PDF,
+                            "pdf_text": result.text if result.success else None,
+                            "fetch_status": FetchStatus.SUCCESS,
+                            "fetched_at": datetime.now().astimezone(),
+                        }
+                    )
+                    results.append(updated)
+                    logger.debug(
+                        "fetched_pdf",
+                        url=raw.discovered_url,
+                        pages=result.page_count,
+                        success=result.success,
+                    )
+                    continue
+
                 updated = raw.model_copy(
                     update={
                         "raw_content": response.text,
@@ -68,6 +93,7 @@ class FetchAgent(BaseAgent):
                         "fetched_at": datetime.now().astimezone(),
                     }
                 )
+                updated = await self._enrich_with_pdf(updated)
                 results.append(updated)
                 logger.debug("fetched", url=raw.discovered_url, status=response.status_code)
 
@@ -84,3 +110,43 @@ class FetchAgent(BaseAgent):
                 results.append(updated)
 
         return results
+
+    async def _enrich_with_pdf(self, raw: RawReport) -> RawReport:
+        """Download PDF and extract text if pdf_url is in metadata_hint.
+
+        PDF text is extracted using pdfplumber (text-selectable PDFs only).
+        On failure, returns the original RawReport unchanged.
+        """
+        if not raw.metadata_hint:
+            return raw
+
+        try:
+            hint = json.loads(raw.metadata_hint)
+        except (ValueError, TypeError):
+            return raw
+
+        pdf_url = hint.get("pdf_url")
+        if not pdf_url:
+            return raw
+
+        try:
+            response = await self.http.get(pdf_url, site_id=raw.site_id)
+            result = extract_text_from_pdf(response.content)
+            if result.success:
+                logger.info(
+                    "pdf_extracted",
+                    url=pdf_url,
+                    pages=result.page_count,
+                    chars=result.char_count,
+                )
+                return raw.model_copy(update={"pdf_text": result.text})
+            else:
+                logger.debug(
+                    "pdf_extraction_unsuccessful",
+                    url=pdf_url,
+                    error=result.error,
+                )
+        except Exception as exc:
+            logger.warning("pdf_fetch_failed", url=pdf_url, error=str(exc))
+
+        return raw
