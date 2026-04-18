@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>리포트 대시보드</title>
+<title>Stock Research</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -81,6 +81,24 @@ a:hover { text-decoration: underline; color: #fff; }
   background: var(--card-bg);
   color: var(--text);
 }
+.mode-toggle {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.mode-toggle button {
+  padding: .35rem .7rem;
+  border: none;
+  background: var(--card-bg);
+  color: var(--muted);
+  font-size: .82rem;
+  cursor: pointer;
+  transition: all .15s;
+  font-family: inherit;
+}
+.mode-toggle button:not(:last-child) { border-right: 1px solid var(--border); }
+.mode-toggle button.active { background: var(--accent); color: #000; font-weight: 500; }
 
 /* Section */
 h2 { font-size: 1.3rem; font-weight: 700; color: var(--accent); margin: 1.8rem 0 .75rem; letter-spacing: -0.02em; }
@@ -234,7 +252,7 @@ table.stats td:last-child { font-weight: 700; }
 <body>
 
 <div class="header">
-  <h1>리포트 대시보드</h1>
+  <h1>Stock Research</h1>
   <a href="#/">홈</a>
 </div>
 <div class="container" id="app">
@@ -342,6 +360,68 @@ function fmtPrice(v) {
   return Number(v).toLocaleString('ko-KR') + '원';
 }
 
+function getSourceName(url) {
+  if (!url) return '';
+  try {
+    const host = new URL(url).hostname.replace('www.', '');
+    const map = {
+      'finance.naver.com': '네이버 리서치',
+      'naver.com': '네이버',
+      'consensus.hankyung.com': '한경 컨센서스',
+      'hankyung.com': '한국경제',
+    };
+    return map[host] || host;
+  } catch { return ''; }
+}
+
+// --- Date range helpers ---
+function getWeekLabel(dateStr) {
+  const d = new Date(dateStr + 'T00:00:00');
+  const day = d.getDay() || 7;
+  const mon = new Date(d);
+  mon.setDate(d.getDate() - day + 1);
+  const sun = new Date(mon);
+  sun.setDate(mon.getDate() + 6);
+  const fmt = dt => `${dt.getMonth()+1}/${dt.getDate()}`;
+  return `${mon.getFullYear()}-${String(mon.getMonth()+1).padStart(2,'0')}-${String(mon.getDate()).padStart(2,'0')}~${fmt(sun)}`;
+}
+
+function getMonthLabel(dateStr) {
+  return dateStr.slice(0, 7);
+}
+
+function groupDatesByRange(dates, mode) {
+  const groups = {};
+  for (const d of dates) {
+    const key = mode === 'week' ? getWeekLabel(d) : mode === 'month' ? getMonthLabel(d) : d;
+    if (!groups[key]) groups[key] = [];
+    groups[key].push(d);
+  }
+  return groups;
+}
+
+async function getMultiDayResult(dateStrs) {
+  const merged = { reports: [], summaries: [], classifications: { by_brokerage: {}, by_ticker: {} }, pipeline_stats: {} };
+  for (const ds of dateStrs) {
+    try {
+      const dr = await getDailyResult(ds);
+      merged.reports.push(...(dr.reports || []));
+      merged.summaries.push(...(dr.summaries || []));
+      if (dr.classifications) {
+        for (const [k, v] of Object.entries(dr.classifications.by_brokerage || {})) {
+          if (!merged.classifications.by_brokerage[k]) merged.classifications.by_brokerage[k] = [];
+          merged.classifications.by_brokerage[k].push(...v);
+        }
+        for (const [k, v] of Object.entries(dr.classifications.by_ticker || {})) {
+          if (!merged.classifications.by_ticker[k]) merged.classifications.by_ticker[k] = [];
+          merged.classifications.by_ticker[k].push(...v);
+        }
+      }
+    } catch(e) { /* skip missing dates */ }
+  }
+  return merged;
+}
+
 // --- Router ---
 window.addEventListener('hashchange', route);
 window.addEventListener('DOMContentLoaded', route);
@@ -364,25 +444,39 @@ async function renderDashboard() {
     }
 
     const params = new URLSearchParams(location.hash.split('?')[1] || '');
-    const selectedDate = params.get('date') || dates[0];
+    const mode = params.get('mode') || 'day';
+    const selectedKey = params.get('date') || params.get('range') || null;
 
-    const dr = await getDailyResult(selectedDate);
+    // Group dates by mode
+    const groups = groupDatesByRange(dates, mode);
+    const groupKeys = Object.keys(groups).sort().reverse();
+    const activeKey = selectedKey && groups[selectedKey] ? selectedKey : groupKeys[0];
+    const activeDates = groups[activeKey] || [];
+
+    // Load data for all dates in the active range
+    const dr = activeDates.length === 1
+      ? await getDailyResult(activeDates[0])
+      : await getMultiDayResult(activeDates);
     const summary = computeSummary(dr);
+
+    // For routing to report list, we encode the range
+    const rangeParam = mode === 'day' ? `date=${activeKey}` : `range=${encodeURIComponent(activeKey)}&mode=${mode}`;
+    const reportDates = activeDates.join(',');
 
     let html = `
       <div class="date-bar">
-        <label><strong>날짜</strong></label>
+        <div class="mode-toggle">
+          <button class="${mode==='day'?'active':''}" onclick="location.hash='#/?mode=day'">일별</button>
+          <button class="${mode==='week'?'active':''}" onclick="location.hash='#/?mode=week'">주별</button>
+          <button class="${mode==='month'?'active':''}" onclick="location.hash='#/?mode=month'">월별</button>
+        </div>
         <select id="date-select">
-          ${dates.map(d => `<option value="${d}" ${d===selectedDate?'selected':''}>${d}</option>`).join('')}
+          ${groupKeys.map(k => `<option value="${k}" ${k===activeKey?'selected':''}>${k}</option>`).join('')}
         </select>
       </div>
 
       <div class="stat-grid">
         <div class="stat-card"><div class="value">${summary.report_count}</div><div class="label">수집 리포트</div></div>
-        <div class="stat-card"><div class="value">${summary.total_validated}</div><div class="label">검증 통과</div></div>
-        <div class="stat-card"><div class="value">${summary.total_deduplicated}</div><div class="label">중복 제거 후</div></div>
-        <div class="stat-card"><div class="value">${summary.summary_count}</div><div class="label">요약 생성</div></div>
-        <div class="stat-card"><div class="value">${((summary.pipeline_stats.duration_ms||0)/1000).toFixed(1)}s</div><div class="label">소요 시간</div></div>
       </div>
     `;
 
@@ -391,7 +485,7 @@ async function renderDashboard() {
     if (brokerages.length) {
       html += `<h2>증권사별</h2><div class="chip-group">`;
       for (const [name, cnt] of brokerages) {
-        html += `<span class="chip" onclick="location.hash='#/reports/${selectedDate}?brokerage=${encodeURIComponent(name)}'">${esc(name)} <span class="count">${cnt}</span></span>`;
+        html += `<span class="chip" onclick="location.hash='#/reports/${reportDates}?brokerage=${encodeURIComponent(name)}'">${esc(name)} <span class="count">${cnt}</span></span>`;
       }
       html += `</div>`;
     }
@@ -403,33 +497,16 @@ async function renderDashboard() {
       html += `<h2>종목별</h2><div class="chip-group">`;
       for (const [ticker, cnt] of tickers) {
         const name = stockNames[ticker] || ticker;
-        html += `<span class="chip" onclick="location.hash='#/reports/${selectedDate}?ticker=${encodeURIComponent(ticker)}'">${esc(name)} <span class="count">${cnt}</span></span>`;
+        html += `<span class="chip" onclick="location.hash='#/reports/${reportDates}?ticker=${encodeURIComponent(ticker)}'">${esc(name)} <span class="count">${cnt}</span></span>`;
       }
       html += `</div>`;
     }
 
-    // Pipeline stats
-    const ps = summary.pipeline_stats;
-    html += `
-      <h2>파이프라인 통계</h2>
-      <table class="stats">
-        <thead><tr><th>단계</th><th>수량</th></tr></thead>
-        <tbody>
-          <tr><td>발견</td><td>${ps.total_discovered||0}</td></tr>
-          <tr><td>다운로드</td><td>${ps.total_fetched||0}</td></tr>
-          <tr><td>파싱</td><td>${ps.total_parsed||0}</td></tr>
-          <tr><td>검증 통과</td><td>${ps.total_validated||0}</td></tr>
-          <tr><td>중복 제거 후</td><td>${ps.total_deduplicated||0}</td></tr>
-          <tr><td>요약 생성</td><td>${ps.total_summarized||0}</td></tr>
-          <tr><td>소요 시간</td><td>${ps.duration_ms||0}ms</td></tr>
-        </tbody>
-      </table>
-    `;
-
     app.innerHTML = html;
 
     $('#date-select').addEventListener('change', e => {
-      location.hash = `#/?date=${e.target.value}`;
+      const param = mode === 'day' ? 'date' : 'range';
+      location.hash = `#/?mode=${mode}&${param}=${encodeURIComponent(e.target.value)}`;
     });
   } catch (err) {
     app.innerHTML = `<div class="empty">데이터 로드 실패: ${esc(err.message)}</div>`;
@@ -441,22 +518,28 @@ async function renderReportList(hash) {
   app.innerHTML = '<div class="loading">로딩 중...</div>';
   try {
     const parts = hash.replace('#/reports/', '').split('?');
-    const targetDate = parts[0];
+    const datesPart = parts[0];
     const params = new URLSearchParams(parts[1] || '');
     const brokerage = params.get('brokerage') || '';
     const ticker = params.get('ticker') || '';
 
-    const dr = await getDailyResult(targetDate);
+    // Support comma-separated dates for multi-day ranges
+    const dateList = datesPart.split(',').filter(Boolean);
+    const dr = dateList.length === 1
+      ? await getDailyResult(dateList[0])
+      : await getMultiDayResult(dateList);
     const summary = computeSummary(dr);
     const reports = getFilteredReports(dr, brokerage, ticker);
     const stockNames = summary.stock_names || {};
+
+    const dateLabel = dateList.length === 1 ? dateList[0] : `${dateList[0]} ~ ${dateList[dateList.length-1]}`;
 
     let filterTitle = '';
     if (brokerage) filterTitle = brokerage;
     else if (ticker) filterTitle = `${stockNames[ticker]||ticker} (${ticker})`;
 
     let html = `<a class="back" href="#/">< 대시보드</a>`;
-    html += `<h2>리포트 목록 — ${targetDate}${filterTitle ? ' / '+esc(filterTitle) : ''}</h2>`;
+    html += `<h2>리포트 목록 — ${dateLabel}${filterTitle ? ' / '+esc(filterTitle) : ''}</h2>`;
 
     // Filter bar
     const brokerageOpts = Object.keys(summary.brokerage_counts).sort();
@@ -470,7 +553,7 @@ async function renderReportList(hash) {
         <option value="">전체 종목</option>
         ${tickerOpts.map(t => `<option value="${esc(t)}" ${t===ticker?'selected':''}>${esc(stockNames[t]||t)} (${esc(t)})</option>`).join('')}
       </select>
-      <button class="btn" onclick="location.hash='#/reports/${targetDate}'">초기화</button>
+      <button class="btn" onclick="location.hash='#/reports/${datesPart}'">초기화</button>
     </div>`;
 
     html += `<div style="font-size:.85rem;color:var(--muted);margin-bottom:.8rem">${reports.length}건</div>`;
@@ -479,14 +562,18 @@ async function renderReportList(hash) {
       const sm = r.summary;
       const oneLine = sm ? esc(sm.generated.one_line) : '';
       const stockLabel = r.stock_name ? `${esc(r.stock_name)} (${esc(r.ticker)})` : (r.ticker || '');
+      // Determine target date for detail routing - use report's own date or first date
+      const detailDate = dateList.length === 1 ? dateList[0] : (r.published_date || dateList[0]);
+      const sourceName = getSourceName(r.primary_url);
       html += `
-        <div class="report-card" onclick="location.hash='#/detail/${targetDate}/${r.canonical_id}'">
+        <div class="report-card" onclick="location.hash='#/detail/${detailDate}/${r.canonical_id}'">
           <div class="title">${esc(r.title)}</div>
           <div class="meta">
             <span>${esc(r.brokerage)}</span>
             ${stockLabel ? `<span class="tag">${stockLabel}</span>` : ''}
             ${sm && sm.extracted.rating ? `<span class="tag">${esc(sm.extracted.rating)}</span>` : ''}
             ${sm && sm.extracted.target_price != null ? `<span class="tag">목표가 ${fmtPrice(sm.extracted.target_price)}</span>` : ''}
+            ${sourceName ? `<span class="tag">${esc(sourceName)}</span>` : ''}
             ${r.pdf_url ? `<a href="${esc(r.pdf_url)}" target="_blank" class="tag" style="color:var(--accent);text-decoration:none" onclick="event.stopPropagation()">PDF</a>` : ''}
           </div>
           ${oneLine ? `<div class="one-line">${oneLine}</div>` : ''}
@@ -502,11 +589,11 @@ async function renderReportList(hash) {
 
     $('#f-brokerage').addEventListener('change', e => {
       const v = e.target.value;
-      location.hash = v ? `#/reports/${targetDate}?brokerage=${encodeURIComponent(v)}` : `#/reports/${targetDate}`;
+      location.hash = v ? `#/reports/${datesPart}?brokerage=${encodeURIComponent(v)}` : `#/reports/${datesPart}`;
     });
     $('#f-ticker').addEventListener('change', e => {
       const v = e.target.value;
-      location.hash = v ? `#/reports/${targetDate}?ticker=${encodeURIComponent(v)}` : `#/reports/${targetDate}`;
+      location.hash = v ? `#/reports/${datesPart}?ticker=${encodeURIComponent(v)}` : `#/reports/${datesPart}`;
     });
   } catch (err) {
     app.innerHTML = `<div class="empty">로드 실패: ${esc(err.message)}</div>`;
@@ -542,6 +629,7 @@ async function renderDetail(hash) {
         <span>원본: <a href="${esc(data.primary_url)}" target="_blank">${esc(data.primary_url)}</a></span>
         ${data.pdf_url ? `<span><a href="${esc(data.pdf_url)}" target="_blank" class="btn-accent" style="display:inline-block;padding:.2rem .6rem;border-radius:4px;font-size:.82rem;text-decoration:none">PDF 다운로드</a></span>` : ''}
       </div>
+      ${getSourceName(data.primary_url) ? `<div class="detail-meta"><span>출처: ${esc(getSourceName(data.primary_url))}</span></div>` : ''}
     </div>`;
 
     // Extracted info
