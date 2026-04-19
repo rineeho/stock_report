@@ -1,105 +1,145 @@
 # Stock Research Agent - Design Reference
 
+## Design System
+
+디자인 시스템: `Stock Research Design System` (Pretendard + JetBrains Mono)
+레퍼런스: 토스증권 — clean modernism with Korean market conventions.
+
+---
+
 ## Design Direction
 
-다크 모드 기반, 블랙 + 옐로우 컬러 스킴. 프리미엄 금융 터미널 느낌.
+다크 모드 기반 프리미엄 금융 터미널. Ink scale neutral palette + amber accent.
 
-- dark background (#0a0a0a)
-- golden yellow accent (#ffd60a)
-- generous whitespace
-- simple card layout on dark surfaces
-- subtle borders (#2a2a2a)
-- clean typography with high contrast
-- structured dashboard layout
+- App background: `--ink-950` (#0A0B0D)
+- Surface: `--ink-900` (#111317)
+- Amber accent: `--accent-500` (#F5A524)
+- Generous whitespace (4px base spacing)
+- Card layout with 12px radius
+- Subtle borders (`--ink-800` #1E222A)
+- Semantic color tokens throughout
 
 ---
 
 ## Visual Keywords
 
 - dark premium
-- minimal
+- minimal, editorial
 - high contrast
-- editorial
 - data-friendly
 - financial terminal aesthetic
-- bold accent on dark
+- Korean market conventions (red=up, blue=down)
 
 ---
 
 ## Typography
 
-Typography instantly signals quality. Avoid using boring, generic fonts.
+### Font Stack
 
-**Never use**: Inter, Roboto, Open Sans, Lato, default system fonts
-
-Good, impactful choices:
-- Code aesthetic: JetBrains Mono, Fira Code, Space Grotesk
-- Editorial: Playfair Display, Crimson Pro
-- Technical: IBM Plex family, Source Sans 3
-- Distinctive: Bricolage Grotesque, Newsreader
-
-### Font Pairing
-
-High contrast = interesting. Display + monospace, serif + geometric sans, variable font across weights.
-
-Use extremes: 100/200 weight vs 800/900, not 400 vs 600. Size jumps of 3x+, not 1.5x.
-
-Pick one distinctive font, use it decisively. Load from Google Fonts.
-
-### Current Font Stack
-
-- Display/Headings: **Playfair Display** (700, 900) — editorial serif
-- Body/UI: **Space Grotesk** (300, 400, 500, 700) — geometric sans
-- Data/Numbers: **JetBrains Mono** (400, 700) — monospace
+- **Body/UI**: Pretendard Variable — 한글 최적화 sans-serif
+- **Data/Numbers**: JetBrains Mono — tabular-nums monospace
 
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 ```
+
+### Type Scale
+
+| Token    | Size | Usage               |
+|----------|------|---------------------|
+| --fs-11  | 11px | Eyebrow, caption    |
+| --fs-12  | 12px | Small text, chips   |
+| --fs-13  | 13px | Body small          |
+| --fs-14  | 14px | Body (base)         |
+| --fs-16  | 16px | H4, body large      |
+| --fs-18  | 18px | H3                  |
+| --fs-22  | 22px | H2, detail title    |
+| --fs-28  | 28px | H1, stat values     |
+
+### Section Labels
+
+Section headings use **eyebrow** style: 11px, uppercase, letter-spacing 0.08em, `--fg-muted` color.
 
 ---
 
 ## Color Palette
 
-| Token       | Value     | Usage                |
-|-------------|-----------|----------------------|
-| --bg        | #0a0a0a   | Page background      |
-| --card-bg   | #141414   | Card background      |
-| --border    | #2a2a2a   | Borders              |
-| --accent    | #ffd60a   | Primary accent (yellow) |
-| --accent-dim| #b89a00   | Dimmed accent        |
-| --text      | #e8e8e8   | Body text            |
-| --muted     | #777      | Secondary text       |
-| --success   | #4ade80   | Positive indicators  |
-| --danger    | #ef4444   | Negative indicators  |
-| --tag-bg    | #1e1e1e   | Tag backgrounds      |
+### Ink Scale (Dark Neutrals)
+
+| Token      | Value   | Usage            |
+|------------|---------|------------------|
+| --ink-950  | #0A0B0D | App background   |
+| --ink-900  | #111317 | Surface/cards    |
+| --ink-850  | #171A1F | Hover row        |
+| --ink-800  | #1E222A | Raised/borders   |
+| --ink-700  | #2A2F38 | Divider          |
+| --ink-500  | #5A6172 | Muted text       |
+| --ink-400  | #7A8090 | Secondary text   |
+| --ink-200  | #C4C8D2 | Body text        |
+| --ink-100  | #E3E5EB | Primary text     |
+| --ink-50   | #F4F5F8 | Display/headline |
+
+### Semantic
+
+| Token         | Value   | Usage                   |
+|---------------|---------|-------------------------|
+| --accent-500  | #F5A524 | Primary CTA, highlights |
+| --accent-300  | #FFCB5C | Hover state             |
+| --up-500      | #F23645 | 상승 (red, Korean)      |
+| --down-500    | #2F63E0 | 하락 (blue, Korean)     |
+| --success     | #12B76A | Buy rating              |
+| --warning     | #F59E0B | Hold rating             |
+| --danger      | #E5484D | Sell rating             |
 
 ---
 
-## Page Layout
+## Components
 
-기본 구조는 아래 3단 또는 2단 레이아웃을 사용한다.
+### Cards
+- Background: `--bg-surface`
+- Border: 1px solid `--border-default`
+- Radius: 12px (`--r-lg`)
+- Hover: border-color → `--border-strong`
 
-```html
-<div class="app">
-  <header class="header"></header>
-  <div class="layout">
-    <aside class="sidebar"></aside>
-    <main class="main"></main>
-    <aside class="panel"></aside>
-  </div>
-</div>
-```
+### Chips (pill)
+- Radius: 9999px (pill)
+- Background: `--bg-surface`
+- Border: 1px solid `--border-default`
+- Count badge: `--accent-500`, mono font
 
-- Max width: 1040px, centered
-- Card-based layout with subtle dark borders
-- Responsive grid for stat cards and info boxes
-- Chip/pill components for category navigation
+### Rating Badges
+- Buy: `--success-bg` bg, `--success` text
+- Hold: `--warning-bg` bg, `--warning` text
+- Sell: `--danger-bg` bg, `--danger` text
+- Size: 11px, font-weight 600, padding 3px 8px, radius 4px
+
+### Report Cards
+- Eyebrow: brokerage · sector (11px, uppercase)
+- Title: 15px, bold, hover → `--accent-500`
+- Meta: tags + rating badges in flex row
+- One-line: 13px, `--fg-secondary`
+
+### Header
+- Sticky, glassmorphism (backdrop-filter: blur(16px))
+- Background: rgba(10,11,13,0.8)
+- Border-bottom: 1px solid `--border-default`
 
 ---
 
 ## Interaction
 
-- Cards: hover로 golden glow shadow + accent border
-- Chips: hover로 accent 배경 + 블랙 텍스트
-- Links: accent yellow, underline on hover → white
-- Transitions: 0.15s ease
+- Cards: hover → border-color transition (120ms)
+- Report title: hover → accent color
+- Chips: hover → border-strong + bg-hover
+- Links: border-bottom on hover
+- Transitions: 120ms ease-out `cubic-bezier(0.2, 0.8, 0.2, 1)`
+
+---
+
+## Responsive
+
+- Container max-width: 1040px
+- Mobile (<640px): padding 16px
+- Grid: `auto-fit` + `minmax()` for stat cards, info boxes
+- prefers-reduced-motion: disable animations
