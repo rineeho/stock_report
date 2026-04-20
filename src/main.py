@@ -130,7 +130,7 @@ async def run_pipeline(args: argparse.Namespace) -> int:
     agents = [
         SourceDiscoveryAgent(sites=sites, http_client=http_client),
         FetchAgent(http_client=http_client),
-        ParseAgent(),
+        ParseAgent(llm_config=settings.llm),
         ValidationAgent(),
         NormalizationAgent(),
     ]

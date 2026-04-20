@@ -197,10 +197,12 @@ class HankyungConsensusParser(BaseSiteParser):
             if body_el:
                 body_text = body_el.get_text(separator="\n", strip=True)
 
-        # PDF text analysis: supplement analyst/sector, provide body
+        # PDF text analysis: supplement analyst/sector/market_type, provide body
+        market_type: str | None = None
         if raw.pdf_text:
             from src.parsers.pdf_extractor import (
                 extract_analyst_from_pdf_text,
+                extract_market_type_from_pdf_text,
                 extract_sector_from_pdf_text,
             )
 
@@ -208,6 +210,7 @@ class HankyungConsensusParser(BaseSiteParser):
                 analyst = extract_analyst_from_pdf_text(raw.pdf_text)
             if not sector:
                 sector = extract_sector_from_pdf_text(raw.pdf_text)
+            market_type = extract_market_type_from_pdf_text(raw.pdf_text)
             if not body_text or len(body_text) < 100:
                 body_text = raw.pdf_text
 
@@ -233,6 +236,7 @@ class HankyungConsensusParser(BaseSiteParser):
             ticker=ticker,
             stock_name=stock_name,
             sector=sector,
+            market_type=market_type,
             body_text=body_text,
             source_url=raw.discovered_url,
             parse_status=status,

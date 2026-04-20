@@ -490,20 +490,6 @@ h3 {
   color: var(--fg-body);
 }
 
-/* Body text */
-.body-text {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-default);
-  border-radius: var(--r-lg);
-  padding: 20px;
-  margin: 16px 0;
-  white-space: pre-wrap;
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--fg-body);
-  max-height: 600px;
-  overflow-y: auto;
-}
 
 /* ──────────────────────────────────────
    Table
@@ -940,7 +926,7 @@ async function renderReportList(hash) {
       const stockLabel = r.stock_name ? `${esc(r.stock_name)} (${esc(r.ticker)})` : (r.ticker || '');
       const detailDate = dateList.length === 1 ? dateList[0] : (r.published_date || dateList[0]);
       const sourceName = getSourceName(r.primary_url);
-      const eyebrow = [r.brokerage, r.sector].filter(Boolean).map(esc).join(' · ');
+      const eyebrow = [r.brokerage, r.sector, r.market_type].filter(Boolean).map(esc).join(' · ');
 
       // Rating badge
       let ratingHtml = '';
@@ -1016,6 +1002,8 @@ async function renderDetail(hash) {
       </div>
       <div class="detail-meta">
         ${data.stock_name ? `<span>종목: ${esc(data.stock_name)} (${esc(data.ticker)})</span>` : ''}
+        ${data.sector ? `<span>섹터: ${esc(data.sector)}</span>` : ''}
+        ${data.market_type ? `<span class="tag">${esc(data.market_type)}</span>` : ''}
         <span>발행일: ${data.published_date}</span>
       </div>
       <div class="detail-meta">
@@ -1045,11 +1033,6 @@ async function renderDetail(hash) {
           ${gen.key_points && gen.key_points.length ? `<ul>${gen.key_points.map(p => `<li>${esc(p)}</li>`).join('')}</ul>` : ''}
           ${gen.opinion_summary ? `<p style="margin-top:12px;font-size:13px;color:var(--fg-secondary)"><strong style="color:var(--fg-primary)">의견:</strong> ${esc(gen.opinion_summary)}</p>` : ''}
         </div>`;
-    }
-
-    // Body text
-    if (data.body_text) {
-      html += `<h2>본문</h2><div class="body-text">${esc(data.body_text)}</div>`;
     }
 
     app.innerHTML = html;

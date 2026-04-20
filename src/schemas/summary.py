@@ -17,6 +17,8 @@ class ExtractedInfo(BaseModel):
     target_price: float | None = None
     rating: str | None = None
     earnings: str | None = None
+    analyst: str | None = None
+    sector: str | None = None
 
 
 class GeneratedSummary(BaseModel):
@@ -25,6 +27,7 @@ class GeneratedSummary(BaseModel):
     key_points: list[str] = Field(min_length=1, max_length=5)
     one_line: str = Field(min_length=1)
     opinion_summary: str | None = None
+    full_summary: str | None = None
 
 
 class Summary(BaseModel):

@@ -77,6 +77,7 @@ class ValidationAgent(BaseAgent):
                     ticker=parsed.ticker,
                     stock_name=parsed.stock_name,
                     sector=parsed.sector,
+                    market_type=parsed.market_type,
                     body_text=parsed.body_text,
                     source_url=parsed.source_url,
                     pdf_url=parsed.pdf_url,
