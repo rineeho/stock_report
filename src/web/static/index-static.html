@@ -8,15 +8,15 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ──────────────────────────────────────
    Design tokens
    ────────────────────────────────────── */
 :root {
   /* Font families */
-  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-sans: "Cascadia Mono", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+  --font-mono: "Cascadia Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   /* Ink scale (dark) */
   --ink-950: #0A0B0D;
@@ -147,16 +147,22 @@ a:hover { border-bottom-color: currentColor; }
 .header h1 .accent { color: var(--accent-500); }
 .header-nav {
   display: flex;
-  gap: 4px;
+  gap: 2px;
   margin-left: auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
+.header-nav::-webkit-scrollbar { display: none; }
 .header-nav a {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--fg-secondary);
   border-bottom: none;
-  padding: 5px 10px;
+  padding: 4px 8px;
   border-radius: var(--r-md);
   transition: all var(--dur-micro) var(--ease-out);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .header-nav a:hover { color: var(--fg-primary); background: var(--bg-hover); }
 .header-nav a.nav-active { color: var(--fg-display); background: var(--bg-active); font-weight: 600; }
@@ -870,6 +876,21 @@ table.stats tr:hover td { background: var(--bg-hover); }
    Utility
    ────────────────────────────────────── */
 .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+/* ──────────────────────────────────────
+   Mobile overrides
+   ────────────────────────────────────── */
+@media (max-width: 640px) {
+  .header { gap: 8px; padding: 10px 12px; }
+  .header h1 { font-size: 14px; flex-shrink: 0; }
+  .header-nav a { font-size: 11px; padding: 4px 6px; }
+  .date-bar { gap: 6px; }
+  .date-bar select { font-size: 12px; padding: 6px 8px; }
+  .mode-toggle button { padding: 5px 8px; font-size: 11px; }
+  .dash-tabs button { font-size: 12px; padding: 7px 4px; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .count-card { min-width: 0; width: auto; }
+}
 </style>
 </head>
 <body>
@@ -879,7 +900,7 @@ table.stats tr:hover td { background: var(--bg-hover); }
   <nav class="header-nav">
     <a href="#/">홈</a>
     <a href="#/dashboard?tab=ticker">종목별</a>
-    <a href="#/dashboard?tab=sector">섹터별</a>
+    <a href="#/dashboard?tab=theme">테마별</a>
     <a href="#/dashboard?tab=analyst">애널리스트별</a>
     <a href="#/dashboard?tab=brokerage">증권사별</a>
   </nav>
@@ -919,7 +940,7 @@ async function getDailyResult(dateStr) {
 function computeSummary(dr) {
   const brokerageCounts = {};
   const tickerCounts = {};
-  const sectorCounts = {};
+  const themeCounts = {};
   const analystCounts = {};
   const stockNames = {};
   if (dr.classifications) {
@@ -929,8 +950,8 @@ function computeSummary(dr) {
     for (const [k, v] of Object.entries(dr.classifications.by_ticker || {})) {
       tickerCounts[k] = v.length;
     }
-    for (const [k, v] of Object.entries(dr.classifications.by_sector || {})) {
-      sectorCounts[k] = v.length;
+    for (const [k, v] of Object.entries(dr.classifications.by_theme || {})) {
+      themeCounts[k] = v.length;
     }
     for (const [k, v] of Object.entries(dr.classifications.by_analyst || {})) {
       analystCounts[k] = v.length;
@@ -944,14 +965,14 @@ function computeSummary(dr) {
     report_count: (dr.reports || []).length,
     brokerage_counts: brokerageCounts,
     ticker_counts: tickerCounts,
-    sector_counts: sectorCounts,
+    theme_counts: themeCounts,
     analyst_counts: analystCounts,
     stock_names: stockNames,
   };
 }
 
 // Filter reports from full DailyResult
-function getFilteredReports(dr, {brokerage, ticker, sector, analyst} = {}) {
+function getFilteredReports(dr, {brokerage, ticker, theme, analyst} = {}) {
   const summaryMap = {};
   for (const s of (dr.summaries || [])) {
     summaryMap[s.canonical_id] = s;
@@ -963,8 +984,8 @@ function getFilteredReports(dr, {brokerage, ticker, sector, analyst} = {}) {
     allowedIds = new Set(cls.by_brokerage[brokerage]);
   } else if (ticker && cls && cls.by_ticker[ticker]) {
     allowedIds = new Set(cls.by_ticker[ticker]);
-  } else if (sector && cls && cls.by_sector[sector]) {
-    allowedIds = new Set(cls.by_sector[sector]);
+  } else if (theme && cls && cls.by_theme[theme]) {
+    allowedIds = new Set(cls.by_theme[theme]);
   } else if (analyst && cls && cls.by_analyst[analyst]) {
     allowedIds = new Set(cls.by_analyst[analyst]);
   }
@@ -1054,14 +1075,14 @@ function groupDatesByRange(dates, mode) {
 }
 
 async function getMultiDayResult(dateStrs) {
-  const merged = { reports: [], summaries: [], classifications: { by_brokerage: {}, by_ticker: {}, by_sector: {}, by_analyst: {} } };
+  const merged = { reports: [], summaries: [], classifications: { by_brokerage: {}, by_ticker: {}, by_theme: {}, by_analyst: {} } };
   for (const ds of dateStrs) {
     try {
       const dr = await getDailyResult(ds);
       merged.reports.push(...(dr.reports || []));
       merged.summaries.push(...(dr.summaries || []));
       if (dr.classifications) {
-        for (const cat of ['by_brokerage', 'by_ticker', 'by_sector', 'by_analyst']) {
+        for (const cat of ['by_brokerage', 'by_ticker', 'by_theme', 'by_analyst']) {
           for (const [k, v] of Object.entries(dr.classifications[cat] || {})) {
             if (!merged.classifications[cat][k]) merged.classifications[cat][k] = [];
             merged.classifications[cat][k].push(...v);
@@ -1145,13 +1166,13 @@ async function renderHome() {
     </div>`;
 
     // Section 1: Keywords / Themes
-    const sectorEntries = Object.entries(summary.sector_counts).sort((a,b) => b[1] - a[1]);
-    if (sectorEntries.length) {
+    const themeEntries = Object.entries(summary.theme_counts).sort((a,b) => b[1] - a[1]);
+    if (themeEntries.length) {
       html += `<div class="home-section">
         <div class="section-title">오늘의 키워드 / 테마</div>
         <div class="keyword-chips">`;
-      for (const [name, cnt] of sectorEntries.slice(0, 12)) {
-        html += `<span class="keyword-chip" onclick="location.hash='#/dashboard?tab=sector'">${esc(name)} <span class="kw-count">${cnt}</span></span>`;
+      for (const [name, cnt] of themeEntries.slice(0, 12)) {
+        html += `<span class="keyword-chip" onclick="location.hash='#/reports/${latestDate}?theme=${encodeURIComponent(name)}'">${esc(name)} <span class="kw-count">${cnt}</span></span>`;
       }
       html += `</div></div>`;
     }
@@ -1309,17 +1330,14 @@ async function renderDashboard(hash) {
         <select id="date-select">
           ${groupKeys.map(k => `<option value="${k}" ${k===activeKey?'selected':''}>${k}</option>`).join('')}
         </select>
-        <div class="stat-card" style="padding:8px 16px;margin:0">
-          <span class="value" style="font-size:18px">${summary.report_count}</span>
-          <span class="label" style="margin:0;margin-left:6px;display:inline">건</span>
-        </div>
+        <span class="count-label" style="margin:0;font-size:13px;font-weight:600;color:var(--fg-secondary)">${summary.report_count}건</span>
       </div>
     `;
 
     // Tabs
     const tabDef = [
       { key: 'ticker', label: '종목별' },
-      { key: 'sector', label: '섹터별' },
+      { key: 'theme', label: '테마별' },
       { key: 'analyst', label: '애널리스트별' },
       { key: 'brokerage', label: '증권사별' },
     ];
@@ -1338,9 +1356,9 @@ async function renderDashboard(hash) {
       const entries = Object.entries(summary.ticker_counts).map(([k, v]) => [stockNames[k] || k, v, k]);
       // Need to pass ticker code for the filter, not stock name
       html += buildTickerCardSection(entries, reportDates);
-    } else if (tab === 'sector') {
-      const entries = Object.entries(summary.sector_counts);
-      html += buildCardSection(entries, 'sector', reportDates);
+    } else if (tab === 'theme') {
+      const entries = Object.entries(summary.theme_counts);
+      html += buildCardSection(entries, 'theme', reportDates);
     } else if (tab === 'analyst') {
       const entries = Object.entries(summary.analyst_counts);
       html += buildCardSection(entries, 'analyst', reportDates);
@@ -1409,7 +1427,7 @@ async function renderReportList(hash) {
     const params = new URLSearchParams(parts[1] || '');
     const brokerage = params.get('brokerage') || '';
     const ticker = params.get('ticker') || '';
-    const sector = params.get('sector') || '';
+    const theme = params.get('theme') || '';
     const analyst = params.get('analyst') || '';
 
     // Support comma-separated dates for multi-day ranges
@@ -1418,7 +1436,7 @@ async function renderReportList(hash) {
       ? await getDailyResult(dateList[0])
       : await getMultiDayResult(dateList);
     const summary = computeSummary(dr);
-    const reports = getFilteredReports(dr, {brokerage, ticker, sector, analyst});
+    const reports = getFilteredReports(dr, {brokerage, ticker, theme, analyst});
     const stockNames = summary.stock_names || {};
 
     const dateLabel = dateList.length === 1 ? dateList[0] : `${dateList[0]} ~ ${dateList[dateList.length-1]}`;
@@ -1426,7 +1444,7 @@ async function renderReportList(hash) {
     let filterTitle = '';
     if (brokerage) filterTitle = brokerage;
     else if (ticker) filterTitle = `${stockNames[ticker]||ticker} (${ticker})`;
-    else if (sector) filterTitle = sector;
+    else if (theme) filterTitle = theme;
     else if (analyst) filterTitle = analyst;
 
     let html = `<a class="back" href="#/">&larr; 홈</a>`;
@@ -1435,7 +1453,7 @@ async function renderReportList(hash) {
     // Filter bar
     const brokerageOpts = Object.keys(summary.brokerage_counts).sort();
     const tickerOpts = Object.keys(summary.ticker_counts).sort();
-    const sectorOpts = Object.keys(summary.sector_counts).sort();
+    const themeOpts = Object.keys(summary.theme_counts).sort();
     const analystOpts = Object.keys(summary.analyst_counts).sort();
     html += `<div class="filter-bar">
       <select id="f-brokerage">
@@ -1446,9 +1464,9 @@ async function renderReportList(hash) {
         <option value="">전체 종목</option>
         ${tickerOpts.map(t => `<option value="${esc(t)}" ${t===ticker?'selected':''}>${esc(stockNames[t]||t)} (${esc(t)})</option>`).join('')}
       </select>
-      <select id="f-sector">
-        <option value="">전체 섹터</option>
-        ${sectorOpts.map(s => `<option value="${esc(s)}" ${s===sector?'selected':''}>${esc(s)}</option>`).join('')}
+      <select id="f-theme">
+        <option value="">전체 테마</option>
+        ${themeOpts.map(s => `<option value="${esc(s)}" ${s===theme?'selected':''}>${esc(s)}</option>`).join('')}
       </select>
       <select id="f-analyst">
         <option value="">전체 애널리스트</option>
@@ -1512,7 +1530,7 @@ async function renderReportList(hash) {
     };
     mkFilter('#f-brokerage', 'brokerage');
     mkFilter('#f-ticker', 'ticker');
-    mkFilter('#f-sector', 'sector');
+    mkFilter('#f-theme', 'theme');
     mkFilter('#f-analyst', 'analyst');
   } catch (err) {
     app.innerHTML = `<div class="empty">로드 실패: ${esc(err.message)}</div>`;
@@ -1547,11 +1565,10 @@ async function renderDetail(hash) {
         ${data.market_type ? `<span class="tag">${esc(data.market_type)}</span>` : ''}
         <span>발행일: ${data.published_date}</span>
       </div>
-      <div class="detail-meta">
-        <span>원본: <a href="${esc(data.primary_url)}" target="_blank">${esc(data.primary_url)}</a></span>
-        ${data.pdf_url ? `<span><a href="${esc(data.pdf_url)}" target="_blank" style="display:inline-block;padding:4px 12px;border-radius:6px;font-size:12px;border-bottom:none;background:var(--accent-500);color:#1a1a1a;font-weight:600">PDF 다운로드</a></span>` : ''}
+      <div class="detail-meta" style="gap:8px;margin-top:10px">
+        <a href="${esc(data.primary_url)}" target="_blank" style="display:inline-flex;align-items:center;gap:4px;padding:6px 14px;border-radius:6px;font-size:12px;border-bottom:none;background:var(--bg-active);border:1px solid var(--border-default);color:var(--fg-primary);font-weight:600">원본 보기${getSourceName(data.primary_url) ? ` (${esc(getSourceName(data.primary_url))})` : ''}</a>
+        ${data.pdf_url ? `<a href="${esc(data.pdf_url)}" target="_blank" style="display:inline-flex;align-items:center;gap:4px;padding:6px 14px;border-radius:6px;font-size:12px;border-bottom:none;background:var(--accent-500);color:#1a1a1a;font-weight:600">PDF 다운로드</a>` : ''}
       </div>
-      ${getSourceName(data.primary_url) ? `<div class="detail-meta"><span>출처: ${esc(getSourceName(data.primary_url))}</span></div>` : ''}
     </div>`;
 
     // Extracted info
@@ -1561,9 +1578,9 @@ async function renderDetail(hash) {
 
       html += `<h2>추출 정보</h2>
         <div class="info-grid">
-          <div class="info-box"><div class="label">목표주가</div><div class="value" style="font-family:var(--font-sans)">${fmtPrice(ext.target_price)}</div></div>
+          <div class="info-box" style="grid-column:1/-1"><div class="label">실적</div><div class="value" style="font-family:var(--font-sans);font-size:13px;font-weight:500">${esc(ext.earnings) || '-'}</div></div>
           <div class="info-box"><div class="label">투자의견</div><div class="value"><span class="rating ${rc}">${getRatingLabel(ext.rating) || '-'}</span></div></div>
-          <div class="info-box"><div class="label">실적</div><div class="value" style="font-family:var(--font-sans)">${esc(ext.earnings) || '-'}</div></div>
+          <div class="info-box"><div class="label">목표주가</div><div class="value" style="font-family:var(--font-sans)">${fmtPrice(ext.target_price)}</div></div>
         </div>`;
 
       // Generated summary

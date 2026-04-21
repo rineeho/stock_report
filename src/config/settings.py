@@ -60,6 +60,10 @@ class Settings:
     def logs_dir(self) -> Path:
         return self.data_dir / "logs"
 
+    @property
+    def theme_mapping_path(self) -> Path:
+        return self.data_dir / "mapping" / "theme_stock_mapping.json"
+
     def enabled_sites(self) -> list[SiteConfig]:
         return [s for s in self.sites if s.enabled]
 

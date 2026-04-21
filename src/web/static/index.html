@@ -317,6 +317,16 @@ async function renderDashboard() {
       html += `</div>`;
     }
 
+    // Theme chips
+    const themes = Object.entries(summary.theme_counts || {}).sort((a,b) => b[1]-a[1]);
+    if (themes.length) {
+      html += `<h2>테마별</h2><div class="chip-group">`;
+      for (const [theme, cnt] of themes) {
+        html += `<span class="chip" onclick="location.hash='#/reports/${selectedDate}?theme=${encodeURIComponent(theme)}'">${esc(theme)} <span class="count">${cnt}</span></span>`;
+      }
+      html += `</div>`;
+    }
+
     // Pipeline stats
     const ps = summary.pipeline_stats;
     html += `
@@ -355,6 +365,7 @@ async function renderReportList(hash) {
     const params = new URLSearchParams(parts[1] || '');
     const brokerage = params.get('brokerage') || '';
     const ticker = params.get('ticker') || '';
+    const theme = params.get('theme') || '';
 
     const summary = await api(`/api/reports/${targetDate}/summary`);
 
@@ -362,6 +373,7 @@ async function renderReportList(hash) {
     const qp = [];
     if (brokerage) qp.push(`brokerage=${encodeURIComponent(brokerage)}`);
     if (ticker) qp.push(`ticker=${encodeURIComponent(ticker)}`);
+    if (theme) qp.push(`theme=${encodeURIComponent(theme)}`);
     if (qp.length) apiUrl += '?' + qp.join('&');
 
     const data = await api(apiUrl);
@@ -370,6 +382,7 @@ async function renderReportList(hash) {
     let filterTitle = '';
     if (brokerage) filterTitle = brokerage;
     else if (ticker) filterTitle = `${stockNames[ticker]||ticker} (${ticker})`;
+    else if (theme) filterTitle = `테마: ${theme}`;
 
     let html = `<a class="back" href="#/">< 대시보드</a>`;
     html += `<h2>리포트 목록 — ${targetDate}${filterTitle ? ' / '+esc(filterTitle) : ''}</h2>`;

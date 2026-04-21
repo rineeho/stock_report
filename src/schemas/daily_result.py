@@ -22,6 +22,7 @@ class ClassificationResult(BaseModel):
     by_ticker: dict[str, list[str]] = Field(default_factory=dict)
     by_sector: dict[str, list[str]] = Field(default_factory=dict)
     by_analyst: dict[str, list[str]] = Field(default_factory=dict)
+    by_theme: dict[str, list[str]] = Field(default_factory=dict)
 
 
 class PipelineStats(BaseModel):

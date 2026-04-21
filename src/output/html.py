@@ -183,6 +183,22 @@ def generate_html(daily_result: DailyResult) -> str:
                 summary = summary_map.get(cid)
                 h.append(_render_report_card(report, summary))
 
+    # 테마별
+    if daily_result.classifications.by_theme:
+        h.append("<h2>테마별</h2>")
+        sorted_themes = sorted(
+            daily_result.classifications.by_theme.items(),
+            key=lambda x: -len(x[1]),
+        )
+        for theme, cids in sorted_themes:
+            h.append(f"<h3>{_e(theme)} — {len(cids)}건</h3>")
+            for cid in cids:
+                report = report_map.get(cid)
+                if not report:
+                    continue
+                summary = summary_map.get(cid)
+                h.append(_render_report_card(report, summary))
+
     # Pipeline stats
     h.append("<hr>")
     h.append("<h2>파이프라인 통계</h2>")

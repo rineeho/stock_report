@@ -80,6 +80,14 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     build_parser.add_argument("--data-dir", default=None, help="데이터 디렉토리 (기본: data/output)")
     build_parser.add_argument("--output-dir", default=None, help="출력 디렉토리 (기본: _site)")
 
+    # theme-map command
+    theme_parser = subparsers.add_parser("theme-map", help="네이버 금융 테마-종목 매핑 관리")
+    theme_sub = theme_parser.add_subparsers(dest="theme_command")
+    theme_sub.add_parser("update", help="크롤링 → JSON 매핑 파일 갱신")
+    theme_sub.add_parser("show", help="매핑 통계 출력")
+    lookup_parser = theme_sub.add_parser("lookup", help="특정 종목의 테마 조회")
+    lookup_parser.add_argument("query", help="종목명 또는 티커코드")
+
     return parser.parse_args(argv)
 
 
@@ -206,6 +214,8 @@ def main(argv: list[str] | None = None) -> None:
         _handle_serve(args)
     elif args.command == "build-site":
         _handle_build_site(args)
+    elif args.command == "theme-map":
+        _handle_theme_map(args)
     else:
         parse_args(["--help"])
 
@@ -299,6 +309,115 @@ def _handle_build_site(args: argparse.Namespace) -> None:
     output_dir = Path(args.output_dir) if args.output_dir else None
     result = build_static_site(data_dir=data_dir, output_dir=output_dir)
     print(f"Static site built: {result}", file=sys.stderr)
+
+
+def _handle_theme_map(args: argparse.Namespace) -> None:
+    """Handle theme-map subcommands."""
+    if args.theme_command == "update":
+        asyncio.run(_theme_map_update())
+    elif args.theme_command == "show":
+        _theme_map_show()
+    elif args.theme_command == "lookup":
+        _theme_map_lookup(args.query)
+    else:
+        print("Usage: report-agent theme-map {update|show|lookup}", file=sys.stderr)
+
+
+async def _theme_map_update() -> None:
+    """크롤링하여 테마-종목 매핑 JSON 생성."""
+    from src.config.settings import load_settings
+    from src.scrapers.naver_theme import (
+        SITE_ID,
+        THEME_RPS,
+        build_theme_mapping,
+        save_mapping,
+    )
+    from src.utils.http import RateLimitedClient
+
+    settings = load_settings()
+    client = RateLimitedClient()
+    client.set_rate_limit(SITE_ID, THEME_RPS)
+
+    try:
+        mapping = await build_theme_mapping(client)
+        save_mapping(mapping, settings.theme_mapping_path)
+        meta = mapping["meta"]
+        print(f"테마 매핑 갱신 완료: {meta['theme_count']}개 테마, {meta['stock_count']}개 종목")
+        print(f"저장 경로: {settings.theme_mapping_path}")
+    finally:
+        await client.close()
+
+
+def _theme_map_show() -> None:
+    """저장된 매핑 통계 출력."""
+    from src.config.settings import load_settings
+    from src.scrapers.naver_theme import load_mapping
+
+    settings = load_settings()
+    mapping = load_mapping(settings.theme_mapping_path)
+    if not mapping:
+        print(f"매핑 파일 없음: {settings.theme_mapping_path}", file=sys.stderr)
+        print("먼저 'report-agent theme-map update'를 실행하세요.", file=sys.stderr)
+        sys.exit(1)
+
+    meta = mapping["meta"]
+    print(f"최종 갱신: {meta['updated']}")
+    print(f"테마 수: {meta['theme_count']}")
+    print(f"종목 수: {meta['stock_count']}")
+    print()
+
+    # 종목 수 기준 상위 10개 테마
+    themes = mapping.get("themes", {})
+    sorted_themes = sorted(themes.items(), key=lambda x: len(x[1]), reverse=True)
+    print("상위 10개 테마 (종목 수 기준):")
+    for name, tickers in sorted_themes[:10]:
+        print(f"  {name}: {len(tickers)}개 종목")
+
+
+def _theme_map_lookup(query: str) -> None:
+    """특정 종목의 테마 조회."""
+    from src.config.settings import load_settings
+    from src.scrapers.naver_theme import load_mapping
+
+    settings = load_settings()
+    mapping = load_mapping(settings.theme_mapping_path)
+    if not mapping:
+        print(f"매핑 파일 없음: {settings.theme_mapping_path}", file=sys.stderr)
+        print("먼저 'report-agent theme-map update'를 실행하세요.", file=sys.stderr)
+        sys.exit(1)
+
+    ticker_to_themes = mapping.get("ticker_to_themes", {})
+    stock_to_themes = mapping.get("stock_to_themes", {})
+    ticker_to_name = mapping.get("ticker_to_name", {})
+
+    # 티커로 검색
+    if query in ticker_to_themes:
+        name = ticker_to_name.get(query, query)
+        themes = ticker_to_themes[query]
+        print(f"{name} ({query}): {len(themes)}개 테마")
+        for t in themes:
+            print(f"  - {t}")
+        return
+
+    # 종목명으로 검색
+    if query in stock_to_themes:
+        themes = stock_to_themes[query]
+        print(f"{query}: {len(themes)}개 테마")
+        for t in themes:
+            print(f"  - {t}")
+        return
+
+    # 부분 매칭 (종목명)
+    partial = [(name, th) for name, th in stock_to_themes.items() if query in name]
+    if partial:
+        for name, themes in partial:
+            print(f"{name}: {len(themes)}개 테마")
+            for t in themes:
+                print(f"  - {t}")
+        return
+
+    print(f"'{query}'에 해당하는 종목을 찾을 수 없습니다.", file=sys.stderr)
+    sys.exit(1)
 
 
 if __name__ == "__main__":

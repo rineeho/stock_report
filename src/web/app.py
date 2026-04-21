@@ -35,6 +35,7 @@ def create_app(data_dir: Path = DATA_OUTPUT_DIR) -> FastAPI:
             "pipeline_stats": result.pipeline_stats.model_dump(mode="json"),
             "brokerage_counts": {k: len(v) for k, v in result.classifications.by_brokerage.items()},
             "ticker_counts": {k: len(v) for k, v in result.classifications.by_ticker.items()},
+            "theme_counts": {k: len(v) for k, v in result.classifications.by_theme.items()},
             "stock_names": {
                 r.ticker: r.stock_name
                 for r in result.reports
@@ -47,6 +48,7 @@ def create_app(data_dir: Path = DATA_OUTPUT_DIR) -> FastAPI:
         target_date: str,
         brokerage: str | None = Query(None),
         ticker: str | None = Query(None),
+        theme: str | None = Query(None),
     ):
         result = load_daily_result(target_date, data_dir)
         if result is None:
@@ -58,6 +60,8 @@ def create_app(data_dir: Path = DATA_OUTPUT_DIR) -> FastAPI:
             allowed_ids = set(result.classifications.by_brokerage[brokerage])
         elif ticker and ticker in result.classifications.by_ticker:
             allowed_ids = set(result.classifications.by_ticker[ticker])
+        elif theme and theme in result.classifications.by_theme:
+            allowed_ids = set(result.classifications.by_theme[theme])
         else:
             allowed_ids = None
 
