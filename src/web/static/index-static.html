@@ -145,12 +145,184 @@ a:hover { border-bottom-color: currentColor; }
   color: var(--fg-display);
 }
 .header h1 .accent { color: var(--accent-500); }
-.header a {
+.header-nav {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+.header-nav a {
   font-size: 13px;
   color: var(--fg-secondary);
   border-bottom: none;
+  padding: 5px 10px;
+  border-radius: var(--r-md);
+  transition: all var(--dur-micro) var(--ease-out);
 }
-.header a:hover { color: var(--fg-primary); }
+.header-nav a:hover { color: var(--fg-primary); background: var(--bg-hover); }
+.header-nav a.nav-active { color: var(--fg-display); background: var(--bg-active); font-weight: 600; }
+
+/* ──────────────────────────────────────
+   Home hero & sections
+   ────────────────────────────────────── */
+.home-hero {
+  padding: 24px 0 8px;
+}
+.home-hero .hero-date {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--fg-display);
+}
+.home-hero .hero-sub {
+  font-size: 13px;
+  color: var(--fg-secondary);
+  margin-top: 4px;
+}
+
+.home-section {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.home-section .section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fg-primary);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.keyword-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.keyword-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245, 165, 36, 0.10);
+  border: 1px solid rgba(245, 165, 36, 0.25);
+  border-radius: 9999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent-300);
+  cursor: pointer;
+  transition: all var(--dur-micro) var(--ease-out);
+}
+.keyword-chip:hover { background: rgba(245, 165, 36, 0.18); border-color: var(--accent-500); }
+.keyword-chip .kw-count {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--accent-500);
+}
+
+.alert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.alert-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--bg-hover);
+  border-radius: var(--r-md);
+  font-size: 13px;
+  color: var(--fg-body);
+  cursor: pointer;
+  transition: background var(--dur-micro) var(--ease-out);
+}
+.alert-item:hover { background: var(--bg-active); }
+.alert-item .alert-badge {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 13px;
+  min-width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgba(245, 165, 36, 0.18);
+  color: var(--accent-500);
+  flex-shrink: 0;
+}
+
+.weekly-top {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+.weekly-top::-webkit-scrollbar { height: 4px; }
+
+.weekly-top-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 130px;
+  width: 130px;
+  height: 80px;
+  padding: 12px;
+  background: var(--bg-hover);
+  border: 1px solid var(--border-default);
+  border-radius: var(--r-lg);
+  cursor: pointer;
+  transition: all var(--dur-micro) var(--ease-out);
+  flex-shrink: 0;
+}
+.weekly-top-card:hover { border-color: var(--accent-500); background: var(--bg-active); }
+.weekly-top-card .wtc-rank {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-500);
+}
+.weekly-top-card .wtc-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fg-display);
+  text-align: center;
+  line-height: 1.3;
+  word-break: keep-all;
+}
+.weekly-top-card .wtc-count {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  color: var(--fg-secondary);
+}
+
+.home-section .view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 14px;
+  padding: 7px 16px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--r-md);
+  background: var(--bg-active);
+  color: var(--fg-primary);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--dur-micro) var(--ease-out);
+}
+.home-section .view-all-btn:hover { background: var(--ink-700); color: var(--fg-display); }
 
 /* ──────────────────────────────────────
    Container
@@ -255,8 +427,153 @@ h3 {
 }
 
 /* ──────────────────────────────────────
-   Chips (pill)
+   Dashboard tabs
    ────────────────────────────────────── */
+.dash-tabs {
+  display: flex;
+  gap: 2px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--r-md);
+  padding: 3px;
+  margin-bottom: 20px;
+}
+.dash-tabs button {
+  flex: 1;
+  padding: 8px 6px;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--fg-muted);
+  font-size: 13px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--dur-micro) var(--ease-out);
+  white-space: nowrap;
+}
+.dash-tabs button:hover { color: var(--fg-primary); background: var(--bg-hover); }
+.dash-tabs button.active { background: var(--ink-100); color: var(--ink-950); font-weight: 600; }
+
+/* TOP horizontal scroll */
+.top-section { margin-bottom: 20px; }
+.top-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.top-label span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg-primary);
+}
+.top-label .see-all {
+  font-size: 12px;
+  color: var(--fg-secondary);
+  cursor: pointer;
+  border-bottom: none;
+}
+.top-label .see-all:hover { color: var(--accent-500); }
+
+.top-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+.top-scroll::-webkit-scrollbar { height: 4px; }
+
+/* Count cards — fixed size */
+.count-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 140px;
+  width: 140px;
+  height: 48px;
+  padding: 0 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: all var(--dur-micro) var(--ease-out);
+  flex-shrink: 0;
+}
+.count-card:hover { border-color: var(--border-strong); background: var(--bg-hover); }
+.count-card .card-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+.count-card .card-badge {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 14px;
+  min-width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.badge-high  { background: rgba(245,165,36,0.18); color: var(--accent-500); }
+.badge-mid   { background: rgba(47,99,224,0.14); color: #5B8DEF; }
+.badge-low   { background: var(--ink-800); color: var(--fg-secondary); }
+.badge-uniform { background: rgba(245,165,36,0.18); color: var(--accent-500); }
+
+/* TOP card — larger variant */
+.count-card.top-card {
+  min-width: 150px;
+  width: 150px;
+  height: 72px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+}
+.count-card.top-card .card-name { text-align: center; font-size: 13px; line-height: 1.3; overflow: visible; white-space: normal; word-break: keep-all; }
+.count-card.top-card .card-badge { font-size: 18px; min-width: 28px; height: 28px; }
+
+/* Grid for full list */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+/* More button */
+.more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px dashed var(--border-default);
+  border-radius: var(--r-md);
+  background: transparent;
+  color: var(--fg-muted);
+  font-size: 13px;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: all var(--dur-micro) var(--ease-out);
+}
+.more-btn:hover { border-color: var(--border-strong); color: var(--fg-primary); background: var(--bg-hover); }
+
+/* Chips — kept for backward compat in report list */
 .chip-group { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
 .chip {
   display: inline-flex;
@@ -559,7 +876,13 @@ table.stats tr:hover td { background: var(--bg-hover); }
 
 <div class="header">
   <h1><span class="accent">Stock</span> Research</h1>
-  <a href="#/">홈</a>
+  <nav class="header-nav">
+    <a href="#/">홈</a>
+    <a href="#/dashboard?tab=ticker">종목별</a>
+    <a href="#/dashboard?tab=sector">섹터별</a>
+    <a href="#/dashboard?tab=analyst">애널리스트별</a>
+    <a href="#/dashboard?tab=brokerage">증권사별</a>
+  </nav>
 </div>
 <div class="container" id="app">
   <div class="loading">로딩 중...</div>
@@ -758,11 +1081,31 @@ function route() {
   const hash = location.hash || '#/';
   if (hash.startsWith('#/detail/')) return renderDetail(hash);
   if (hash.startsWith('#/reports/')) return renderReportList(hash);
-  return renderDashboard();
+  if (hash.startsWith('#/dashboard')) return renderDashboard(hash);
+  return renderHome();
 }
 
-// --- Dashboard ---
-async function renderDashboard() {
+// --- Update nav active state ---
+function updateNavActive() {
+  const hash = location.hash || '#/';
+  document.querySelectorAll('.header-nav a').forEach(a => {
+    a.classList.remove('nav-active');
+    const href = a.getAttribute('href');
+    if (hash === '#/' && href === '#/') {
+      a.classList.add('nav-active');
+    } else if (href !== '#/' && hash.startsWith('#/dashboard')) {
+      const params = new URLSearchParams(hash.split('?')[1] || '');
+      const hrefParams = new URLSearchParams(href.split('?')[1] || '');
+      if (params.get('tab') === hrefParams.get('tab')) {
+        a.classList.add('nav-active');
+      }
+    }
+  });
+}
+
+// --- Home ---
+async function renderHome() {
+  updateNavActive();
   app.innerHTML = '<div class="loading">로딩 중...</div>';
   try {
     const dates = await getDates();
@@ -771,8 +1114,173 @@ async function renderDashboard() {
       return;
     }
 
-    const params = new URLSearchParams(location.hash.split('?')[1] || '');
+    const latestDate = dates[0];
+    const dr = await getDailyResult(latestDate);
+    const summary = computeSummary(dr);
+    const stockNames = summary.stock_names || {};
+
+    // Get same-week dates for weekly summary
+    const latestD = new Date(latestDate + 'T00:00:00');
+    const dayOfWeek = latestD.getDay() || 7;
+    const monday = new Date(latestD);
+    monday.setDate(latestD.getDate() - dayOfWeek + 1);
+    const weekDates = dates.filter(d => {
+      const dt = new Date(d + 'T00:00:00');
+      return dt >= monday && dt <= latestD;
+    });
+
+    let weekSummary = summary;
+    if (weekDates.length > 1) {
+      const weekDr = await getMultiDayResult(weekDates);
+      weekSummary = computeSummary(weekDr);
+    }
+
+    // Build HTML
+    let html = '';
+
+    // Hero
+    html += `<div class="home-hero">
+      <div class="hero-date">오늘의 리서치 요약</div>
+      <div class="hero-sub">${esc(latestDate)} · ${summary.report_count}건의 리포트</div>
+    </div>`;
+
+    // Section 1: Keywords / Themes
+    const sectorEntries = Object.entries(summary.sector_counts).sort((a,b) => b[1] - a[1]);
+    if (sectorEntries.length) {
+      html += `<div class="home-section">
+        <div class="section-title">오늘의 키워드 / 테마</div>
+        <div class="keyword-chips">`;
+      for (const [name, cnt] of sectorEntries.slice(0, 12)) {
+        html += `<span class="keyword-chip" onclick="location.hash='#/dashboard?tab=sector'">${esc(name)} <span class="kw-count">${cnt}</span></span>`;
+      }
+      html += `</div></div>`;
+    }
+
+    // Section 2: Alerts (tickers mentioned >= 2 times)
+    const alertTickers = Object.entries(summary.ticker_counts)
+      .filter(([, cnt]) => cnt >= 2)
+      .sort((a, b) => b[1] - a[1]);
+    if (alertTickers.length) {
+      html += `<div class="home-section">
+        <div class="section-title">주목할 종목</div>
+        <div class="alert-list">`;
+      for (const [ticker, cnt] of alertTickers.slice(0, 8)) {
+        const name = stockNames[ticker] || ticker;
+        html += `<div class="alert-item" onclick="location.hash='#/reports/${latestDate}?ticker=${encodeURIComponent(ticker)}'">
+          <span class="alert-badge">${cnt}</span>
+          <span>${esc(name)} <span style="color:var(--fg-muted);font-size:12px">(${esc(ticker)})</span> — 오늘 ${cnt}건의 리포트</span>
+        </div>`;
+      }
+      html += `</div></div>`;
+    }
+
+    // Section 3: Weekly TOP 5
+    const weekTickerEntries = Object.entries(weekSummary.ticker_counts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 5);
+    const weekStockNames = weekSummary.stock_names || stockNames;
+    if (weekTickerEntries.length) {
+      const weekLabel = weekDates.length > 1
+        ? `${weekDates[weekDates.length-1]} ~ ${weekDates[0]}`
+        : latestDate;
+      html += `<div class="home-section">
+        <div class="section-title">이번주 가장 많이 언급된 종목 TOP 5</div>
+        <div style="font-size:12px;color:var(--fg-muted);margin-bottom:12px">${esc(weekLabel)}</div>
+        <div class="weekly-top">`;
+      weekTickerEntries.forEach(([ticker, cnt], i) => {
+        const name = weekStockNames[ticker] || ticker;
+        html += `<div class="weekly-top-card" onclick="location.hash='#/reports/${weekDates.join(',')}?ticker=${encodeURIComponent(ticker)}'">
+          <span class="wtc-rank">#${i + 1}</span>
+          <span class="wtc-name">${esc(name)}</span>
+          <span class="wtc-count">${cnt}건</span>
+        </div>`;
+      });
+      html += `</div>
+        <button class="view-all-btn" onclick="location.hash='#/dashboard?tab=ticker'">전체 보기 &rarr;</button>
+      </div>`;
+    }
+
+    app.innerHTML = html;
+  } catch (err) {
+    app.innerHTML = `<div class="empty">데이터를 불러오지 못했어요: ${esc(err.message)}</div>`;
+  }
+}
+
+// --- Dashboard ---
+
+function badgeClass(cnt) {
+  if (cnt >= 5) return 'badge-high';
+  if (cnt >= 2) return 'badge-mid';
+  return 'badge-low';
+}
+
+function buildCardSection(entries, filterKey, reportDates, topCount = 5, initialCount = 12, uniformBadge = false) {
+  if (!entries.length) return '<div class="empty">데이터 없음</div>';
+
+  const sorted = entries.sort((a,b) => b[1] - a[1]);
+  const rest = sorted.slice(0);
+  const showInitial = Math.min(initialCount, rest.length);
+  const bc = cnt => uniformBadge ? 'badge-uniform' : badgeClass(cnt);
+
+  let html = '';
+
+  // TOP section (skip if topCount=0)
+  if (topCount > 0) {
+    const top = sorted.slice(0, topCount);
+    html += `<div class="top-section">
+      <div class="top-label"><span>많이 언급된 TOP</span></div>
+      <div class="top-scroll">`;
+    for (const [name, cnt] of top) {
+      html += `<div class="count-card top-card" onclick="location.hash='#/reports/${reportDates}?${filterKey}=${encodeURIComponent(name)}'">
+        <span class="card-badge ${bc(cnt)}">${cnt}</span>
+        <span class="card-name">${esc(name)}</span>
+      </div>`;
+    }
+    html += `</div></div>`;
+  }
+
+  // Full grid
+  html += `<div class="top-label"><span>전체 (${rest.length}개)</span></div>`;
+  html += `<div class="card-grid" id="card-grid-${filterKey}">`;
+  for (let i = 0; i < rest.length; i++) {
+    const [name, cnt] = rest[i];
+    const hidden = i >= showInitial ? ' style="display:none"' : '';
+    html += `<div class="count-card" data-idx="${i}"${hidden} onclick="location.hash='#/reports/${reportDates}?${filterKey}=${encodeURIComponent(name)}'">
+      <span class="card-name">${esc(name)}</span>
+      <span class="card-badge ${bc(cnt)}">${cnt}</span>
+    </div>`;
+  }
+  html += `</div>`;
+
+  if (rest.length > showInitial) {
+    html += `<button class="more-btn" id="more-${filterKey}" onclick="dashExpandGrid('${filterKey}', ${rest.length})">+ 더보기 (${rest.length - showInitial}개)</button>`;
+  }
+
+  return html;
+}
+
+// Global expand function
+window.dashExpandGrid = function(filterKey, total) {
+  const grid = document.getElementById('card-grid-' + filterKey);
+  if (!grid) return;
+  for (const card of grid.children) { card.style.display = ''; }
+  const btn = document.getElementById('more-' + filterKey);
+  if (btn) btn.style.display = 'none';
+};
+
+async function renderDashboard(hash) {
+  updateNavActive();
+  app.innerHTML = '<div class="loading">로딩 중...</div>';
+  try {
+    const dates = await getDates();
+    if (!dates.length) {
+      app.innerHTML = '<div class="empty">아직 추가한 리포트가 없어요.</div>';
+      return;
+    }
+
+    const params = new URLSearchParams((hash || location.hash).split('?')[1] || '');
     const mode = params.get('mode') || 'day';
+    const tab = params.get('tab') || 'ticker';
     const selectedKey = params.get('date') || params.get('range') || null;
 
     // Group dates by mode
@@ -781,84 +1289,115 @@ async function renderDashboard() {
     const activeKey = selectedKey && groups[selectedKey] ? selectedKey : groupKeys[0];
     const activeDates = groups[activeKey] || [];
 
-    // Load data for all dates in the active range
+    // Load data
     const dr = activeDates.length === 1
       ? await getDailyResult(activeDates[0])
       : await getMultiDayResult(activeDates);
     const summary = computeSummary(dr);
-
-    // For routing to report list, we encode the range
-    const rangeParam = mode === 'day' ? `date=${activeKey}` : `range=${encodeURIComponent(activeKey)}&mode=${mode}`;
     const reportDates = activeDates.join(',');
+    const stockNames = summary.stock_names || {};
 
-    let html = `
+    // Date & mode selector
+    let html = `<a class="back" href="#/">&larr; 홈</a>`;
+    html += `
       <div class="date-bar">
         <div class="mode-toggle">
-          <button class="${mode==='day'?'active':''}" onclick="location.hash='#/?mode=day'">일별</button>
-          <button class="${mode==='week'?'active':''}" onclick="location.hash='#/?mode=week'">주별</button>
-          <button class="${mode==='month'?'active':''}" onclick="location.hash='#/?mode=month'">월별</button>
+          <button class="${mode==='day'?'active':''}" onclick="location.hash='#/dashboard?mode=day&tab=${tab}'">일별</button>
+          <button class="${mode==='week'?'active':''}" onclick="location.hash='#/dashboard?mode=week&tab=${tab}'">주별</button>
+          <button class="${mode==='month'?'active':''}" onclick="location.hash='#/dashboard?mode=month&tab=${tab}'">월별</button>
         </div>
         <select id="date-select">
           ${groupKeys.map(k => `<option value="${k}" ${k===activeKey?'selected':''}>${k}</option>`).join('')}
         </select>
-      </div>
-
-      <div class="stat-grid">
-        <div class="stat-card"><div class="value">${summary.report_count}</div><div class="label">수집 리포트</div></div>
+        <div class="stat-card" style="padding:8px 16px;margin:0">
+          <span class="value" style="font-size:18px">${summary.report_count}</span>
+          <span class="label" style="margin:0;margin-left:6px;display:inline">건</span>
+        </div>
       </div>
     `;
 
-    // Brokerage chips
-    const brokerages = Object.entries(summary.brokerage_counts).sort((a,b) => b[1]-a[1]);
-    if (brokerages.length) {
-      html += `<h2>증권사별</h2><div class="chip-group">`;
-      for (const [name, cnt] of brokerages) {
-        html += `<span class="chip" onclick="location.hash='#/reports/${reportDates}?brokerage=${encodeURIComponent(name)}'">${esc(name)} <span class="count">${cnt}</span></span>`;
-      }
-      html += `</div>`;
+    // Tabs
+    const tabDef = [
+      { key: 'ticker', label: '종목별' },
+      { key: 'sector', label: '섹터별' },
+      { key: 'analyst', label: '애널리스트별' },
+      { key: 'brokerage', label: '증권사별' },
+    ];
+    const dateParam = mode === 'day' ? `date=${activeKey}` : `range=${encodeURIComponent(activeKey)}`;
+    html += `<div class="dash-tabs">`;
+    for (const t of tabDef) {
+      html += `<button class="${tab===t.key?'active':''}" onclick="location.hash='#/dashboard?mode=${mode}&${dateParam}&tab=${t.key}'">${t.label}</button>`;
     }
+    html += `</div>`;
 
-    // Ticker chips
-    const tickers = Object.entries(summary.ticker_counts).sort((a,b) => b[1]-a[1]);
-    const stockNames = summary.stock_names || {};
-    if (tickers.length) {
-      html += `<h2>종목별</h2><div class="chip-group">`;
-      for (const [ticker, cnt] of tickers) {
-        const name = stockNames[ticker] || ticker;
-        html += `<span class="chip" onclick="location.hash='#/reports/${reportDates}?ticker=${encodeURIComponent(ticker)}'">${esc(name)} <span class="count">${cnt}</span></span>`;
-      }
-      html += `</div>`;
-    }
-
-    // Sector chips
-    const sectors = Object.entries(summary.sector_counts).sort((a,b) => b[1]-a[1]);
-    if (sectors.length) {
-      html += `<h2>섹터별</h2><div class="chip-group">`;
-      for (const [name, cnt] of sectors) {
-        html += `<span class="chip" onclick="location.hash='#/reports/${reportDates}?sector=${encodeURIComponent(name)}'">${esc(name)} <span class="count">${cnt}</span></span>`;
-      }
-      html += `</div>`;
-    }
-
-    // Analyst chips
-    const analysts = Object.entries(summary.analyst_counts).sort((a,b) => b[1]-a[1]);
-    if (analysts.length) {
-      html += `<h2>애널리스트별</h2><div class="chip-group">`;
-      for (const [name, cnt] of analysts) {
-        html += `<span class="chip" onclick="location.hash='#/reports/${reportDates}?analyst=${encodeURIComponent(name)}'">${esc(name)} <span class="count">${cnt}</span></span>`;
-      }
-      html += `</div>`;
+    // Tab content
+    if (tab === 'brokerage') {
+      const entries = Object.entries(summary.brokerage_counts);
+      html += buildCardSection(entries, 'brokerage', reportDates, 0, 12, true);
+    } else if (tab === 'ticker') {
+      const entries = Object.entries(summary.ticker_counts).map(([k, v]) => [stockNames[k] || k, v, k]);
+      // Need to pass ticker code for the filter, not stock name
+      html += buildTickerCardSection(entries, reportDates);
+    } else if (tab === 'sector') {
+      const entries = Object.entries(summary.sector_counts);
+      html += buildCardSection(entries, 'sector', reportDates);
+    } else if (tab === 'analyst') {
+      const entries = Object.entries(summary.analyst_counts);
+      html += buildCardSection(entries, 'analyst', reportDates);
     }
 
     app.innerHTML = html;
 
     $('#date-select').addEventListener('change', e => {
       const param = mode === 'day' ? 'date' : 'range';
-      location.hash = `#/?mode=${mode}&${param}=${encodeURIComponent(e.target.value)}`;
+      location.hash = `#/dashboard?mode=${mode}&${param}=${encodeURIComponent(e.target.value)}&tab=${tab}`;
     });
   } catch (err) {
     app.innerHTML = `<div class="empty">데이터를 불러오지 못했어요: ${esc(err.message)}</div>`;
   }
+}
+
+// Special card section for tickers (needs ticker code for filter, stock name for display)
+function buildTickerCardSection(entries, reportDates, topCount = 5, initialCount = 12) {
+  if (!entries.length) return '<div class="empty">데이터 없음</div>';
+
+  const sorted = entries.sort((a,b) => b[1] - a[1]);
+  const top = sorted.slice(0, topCount);
+  const rest = sorted.slice(0);
+  const showInitial = Math.min(initialCount, rest.length);
+
+  let html = '';
+
+  html += `<div class="top-section">
+    <div class="top-label"><span>많이 언급된 종목 TOP</span></div>
+    <div class="top-scroll">`;
+  for (const [name, cnt, ticker] of top) {
+    const code = ticker || name;
+    html += `<div class="count-card top-card" onclick="location.hash='#/reports/${reportDates}?ticker=${encodeURIComponent(code)}'">
+      <span class="card-badge ${badgeClass(cnt)}">${cnt}</span>
+      <span class="card-name">${esc(name)}</span>
+    </div>`;
+  }
+  html += `</div></div>`;
+
+  html += `<div class="top-label"><span>전체 종목 (${rest.length}개)</span></div>`;
+  html += `<div class="card-grid" id="card-grid-ticker">`;
+  for (let i = 0; i < rest.length; i++) {
+    const [name, cnt, ticker] = rest[i];
+    const code = ticker || name;
+    const hidden = i >= showInitial ? ' style="display:none"' : '';
+    html += `<div class="count-card" data-idx="${i}"${hidden} onclick="location.hash='#/reports/${reportDates}?ticker=${encodeURIComponent(code)}'">
+      <span class="card-name">${esc(name)}</span>
+      <span class="card-badge ${badgeClass(cnt)}">${cnt}</span>
+    </div>`;
+  }
+  html += `</div>`;
+
+  if (rest.length > showInitial) {
+    html += `<button class="more-btn" id="more-ticker" onclick="dashExpandGrid('ticker', ${rest.length})">+ 더보기 (${rest.length - showInitial}개)</button>`;
+  }
+
+  return html;
 }
 
 // --- Report List ---
@@ -890,7 +1429,7 @@ async function renderReportList(hash) {
     else if (sector) filterTitle = sector;
     else if (analyst) filterTitle = analyst;
 
-    let html = `<a class="back" href="#/">&larr; 대시보드</a>`;
+    let html = `<a class="back" href="#/">&larr; 홈</a>`;
     html += `<h3>리포트 목록 &mdash; ${dateLabel}${filterTitle ? ' / '+esc(filterTitle) : ''}</h3>`;
 
     // Filter bar
@@ -1010,7 +1549,7 @@ async function renderDetail(hash) {
       </div>
       <div class="detail-meta">
         <span>원본: <a href="${esc(data.primary_url)}" target="_blank">${esc(data.primary_url)}</a></span>
-        ${data.pdf_url ? `<span><a href="${esc(data.pdf_url)}" target="_blank" class="btn-accent" style="display:inline-block;padding:4px 12px;border-radius:6px;font-size:12px;border-bottom:none">PDF 다운로드</a></span>` : ''}
+        ${data.pdf_url ? `<span><a href="${esc(data.pdf_url)}" target="_blank" style="display:inline-block;padding:4px 12px;border-radius:6px;font-size:12px;border-bottom:none;background:var(--accent-500);color:#1a1a1a;font-weight:600">PDF 다운로드</a></span>` : ''}
       </div>
       ${getSourceName(data.primary_url) ? `<div class="detail-meta"><span>출처: ${esc(getSourceName(data.primary_url))}</span></div>` : ''}
     </div>`;
@@ -1022,9 +1561,9 @@ async function renderDetail(hash) {
 
       html += `<h2>추출 정보</h2>
         <div class="info-grid">
-          <div class="info-box"><div class="label">목표주가</div><div class="value">${fmtPrice(ext.target_price)}</div></div>
+          <div class="info-box"><div class="label">목표주가</div><div class="value" style="font-family:var(--font-sans)">${fmtPrice(ext.target_price)}</div></div>
           <div class="info-box"><div class="label">투자의견</div><div class="value"><span class="rating ${rc}">${getRatingLabel(ext.rating) || '-'}</span></div></div>
-          <div class="info-box"><div class="label">실적</div><div class="value">${esc(ext.earnings) || '-'}</div></div>
+          <div class="info-box"><div class="label">실적</div><div class="value" style="font-family:var(--font-sans)">${esc(ext.earnings) || '-'}</div></div>
         </div>`;
 
       // Generated summary
