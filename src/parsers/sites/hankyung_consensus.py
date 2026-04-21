@@ -199,13 +199,16 @@ class HankyungConsensusParser(BaseSiteParser):
 
         # PDF text analysis: supplement analyst/sector/market_type, provide body
         market_type: str | None = None
+        is_ai_generated = False
         if raw.pdf_text:
             from src.parsers.pdf_extractor import (
+                detect_ai_generated,
                 extract_analyst_from_pdf_text,
                 extract_market_type_from_pdf_text,
                 extract_sector_from_pdf_text,
             )
 
+            is_ai_generated = detect_ai_generated(raw.pdf_text)
             if not analyst:
                 analyst = extract_analyst_from_pdf_text(raw.pdf_text)
             if not sector:
@@ -237,6 +240,7 @@ class HankyungConsensusParser(BaseSiteParser):
             stock_name=stock_name,
             sector=sector,
             market_type=market_type,
+            is_ai_generated=is_ai_generated,
             body_text=body_text,
             source_url=raw.discovered_url,
             parse_status=status,

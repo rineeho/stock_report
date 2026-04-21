@@ -61,6 +61,7 @@ class DeduplicationAgent(BaseAgent):
                     stock_name=canonical.stock_name,
                     sector=canonical.sector,
                     market_type=canonical.market_type,
+                    is_ai_generated=canonical.is_ai_generated,
                     source_urls=all_urls,
                     primary_url=canonical.source_url,
                     body_text=canonical.body_text,

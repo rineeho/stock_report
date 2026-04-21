@@ -83,6 +83,7 @@ class ParsedReport(BaseModel):
     stock_name: str | None = None
     sector: str | None = None
     market_type: str | None = None  # "KOSPI" or "KOSDAQ"
+    is_ai_generated: bool = False
     body_text: str | None = None
     source_url: str = ""
     parse_status: ParseStatus = ParseStatus.FAILED
@@ -109,6 +110,7 @@ class ValidatedReport(BaseModel):
     stock_name: str | None = None
     sector: str | None = None
     market_type: str | None = None
+    is_ai_generated: bool = False
     body_text: str | None = None
     source_url: str = ""
     pdf_url: str | None = None
@@ -127,6 +129,7 @@ class NormalizedReport(BaseModel):
     stock_name: str | None = None
     sector: str | None = None
     market_type: str | None = None
+    is_ai_generated: bool = False
     source_url: str
     body_text: str | None = None
     pdf_url: str | None = None
@@ -155,6 +158,7 @@ class CanonicalReport(BaseModel):
     stock_name: str | None = None
     sector: str | None = None
     market_type: str | None = None
+    is_ai_generated: bool = False
     source_urls: list[str]
     primary_url: str
     body_text: str | None = None

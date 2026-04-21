@@ -950,6 +950,7 @@ async function renderReportList(hash) {
             ${stockLabel ? `<span class="tag">${stockLabel}</span>` : ''}
             ${ratingHtml}
             ${targetHtml}
+            ${r.is_ai_generated ? `<span class="tag" style="background:var(--purple-100,#f3e8ff);color:var(--purple-700,#7c3aed);font-weight:600">AI</span>` : ''}
             ${sourceName ? `<span class="tag">${esc(sourceName)}</span>` : ''}
             ${r.pdf_url ? `<a href="${esc(r.pdf_url)}" target="_blank" class="tag" style="color:var(--accent-500);border-bottom:none" onclick="event.stopPropagation()">PDF</a>` : ''}
           </div>
@@ -999,6 +1000,7 @@ async function renderDetail(hash) {
       <div class="detail-meta">
         <span>증권사: ${esc(data.brokerage)}</span>
         <span>애널리스트: ${esc(data.analyst)}</span>
+        ${data.is_ai_generated ? `<span class="tag" style="background:var(--purple-100,#f3e8ff);color:var(--purple-700,#7c3aed);font-weight:600">AI 생성 리포트</span>` : ''}
       </div>
       <div class="detail-meta">
         ${data.stock_name ? `<span>종목: ${esc(data.stock_name)} (${esc(data.ticker)})</span>` : ''}

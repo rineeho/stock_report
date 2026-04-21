@@ -84,6 +84,7 @@ class NormalizationAgent(BaseAgent):
                     stock_name=stock_name,
                     sector=validated.sector,
                     market_type=validated.market_type,
+                    is_ai_generated=validated.is_ai_generated,
                     source_url=source_url,
                     body_text=body_text,
                     pdf_url=validated.pdf_url,

@@ -166,6 +166,43 @@ def extract_analyst_from_pdf_text(text: str | None) -> str | None:
     return None
 
 
+def _clean_sector(raw: str) -> str | None:
+    """Clean extracted sector string by removing trailing noise."""
+    # Remove known trailing noise from AI report disclaimer text
+    noise_phrases = [
+        "사용하여", "생성되었으며", "당사가", "정확성", "완전성", "보장",
+    ]
+    cleaned = raw.strip()
+    for phrase in noise_phrases:
+        idx = cleaned.find(phrase)
+        if idx > 0:
+            cleaned = cleaned[:idx].rstrip()
+    # Remove trailing particles/junk
+    cleaned = re.sub(r"[\s와과의에]+$", "", cleaned)
+    if not cleaned or len(cleaned) < 2:
+        return None
+    return cleaned
+
+
+# Known valid sector keywords for validation
+_SECTOR_KEYWORDS = frozenset({
+    "반도체", "디스플레이", "IT", "전자", "전기", "자동차", "부품",
+    "바이오", "제약", "의료", "헬스", "화학", "소재", "철강", "금속",
+    "건설", "건축", "조선", "기계", "방산", "항공", "우주",
+    "은행", "보험", "증권", "금융", "에너지", "유틸", "신재생",
+    "통신", "미디어", "엔터", "게임", "인터넷", "소프트", "하드웨어",
+    "유통", "소비", "식품", "음료", "화장품", "의류", "섬유",
+    "운송", "물류", "호텔", "레저", "정유", "가스", "전력",
+    "커뮤니케이션", "서비스", "산업재", "자본재", "필수소비재",
+    "경기관련", "내구소비재", "소비재", "제련", "통신장비",
+})
+
+
+def _is_valid_sector(sector: str) -> bool:
+    """Check if a sector string contains at least one known sector keyword."""
+    return any(kw in sector for kw in _SECTOR_KEYWORDS)
+
+
 def extract_sector_from_pdf_text(text: str | None) -> str | None:
     """Extract sector/industry classification from PDF text.
 
@@ -177,26 +214,35 @@ def extract_sector_from_pdf_text(text: str | None) -> str | None:
     header = text[:2000]
 
     patterns = [
-        # "KOSPI | 반도체" or "KOSDAQ | IT서비스" (AI report format)
-        r"KOS(?:PI|DAQ)\s*\|\s*([가-힣A-Za-z0-9/&·]+(?:[/\s]+[가-힣A-Za-z0-9/&·]+)*)",
+        # "KOSPI | 반도체" or "KOSDAQ | IT/전자와전기제품" (AI report format)
+        # Only capture up to known sector chars (Korean, alpha, digits, /, &, ·, ‧)
+        r"KOS(?:PI|DAQ)\s*\|\s*([가-힣A-Za-z0-9/&·‧]+(?:[/와과·‧][가-힣A-Za-z0-9]+)*)",
         # "업종: 반도체" or "업종 : IT"
-        r"업종\s*[:：]\s*([가-힣A-Za-z0-9/&·]+(?:[ \t]+[가-힣A-Za-z0-9/&·]+)*)",
+        r"업종\s*[:：]\s*([가-힣A-Za-z0-9/&·‧]+(?:[/와과·‧][가-힣A-Za-z0-9]+)*)",
         # "섹터: 자동차" or "Sector: Automotive"
-        r"(?:섹터|Sector)\s*[:：]\s*([가-힣A-Za-z0-9/&·]+(?:[ \t]+[가-힣A-Za-z0-9/&·]+)*)",
+        r"(?:섹터|Sector)\s*[:：]\s*([가-힣A-Za-z0-9/&·‧]+(?:[/와과·‧][가-힣A-Za-z0-9]+)*)",
         # "Industry: 반도체"
-        r"Industry\s*[:：]\s*([가-힣A-Za-z0-9/&·]+(?:[ \t]+[가-힣A-Za-z0-9/&·]+)*)",
+        r"Industry\s*[:：]\s*([가-힣A-Za-z0-9/&·‧]+(?:[/와과·‧][가-힣A-Za-z0-9]+)*)",
         # Analyst line with sector: "홍길동 반도체/IT" (name followed by Korean sector)
-        r"Analyst\s*[:：]?\s*[가-힣]{2,4}\s+([가-힣][가-힣A-Za-z0-9/&·]+(?:[/·]\s*[가-힣A-Za-z0-9]+)*)",
+        r"Analyst\s*[:：]?\s*[가-힣]{2,4}\s+([가-힣][가-힣A-Za-z0-9/&·‧]+(?:[/·‧][가-힣A-Za-z0-9]+)*)",
     ]
 
     for pattern in patterns:
         match = re.search(pattern, header, re.IGNORECASE)
         if match:
-            sector = match.group(1).strip()
-            if sector and len(sector) >= 2:
+            sector = _clean_sector(match.group(1))
+            if sector and _is_valid_sector(sector):
                 return sector
 
     return None
+
+
+def detect_ai_generated(text: str | None) -> bool:
+    """Detect if a report is AI-generated based on PDF text."""
+    if not text:
+        return False
+    header = text[:500]
+    return bool(re.search(r"AI\s*Report|AI\s*기업보고서|인공지능\s*\(?\s*AI\s*\)?\s*기술을\s*\n?\s*사용하여\s*생성", header))
 
 
 def extract_market_type_from_pdf_text(text: str | None) -> str | None:
