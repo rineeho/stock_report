@@ -13,6 +13,20 @@ from src.schemas.report import CanonicalReport, NormalizedReport
 
 logger = structlog.get_logger()
 
+# URL patterns that are PDF downloads, not detail pages
+_PDF_DOWNLOAD_PATTERNS = ("downpdf", "/download/", ".pdf")
+
+
+def _pick_primary_url(all_urls: list[str], default: str) -> str:
+    """Select the best primary URL, preferring browseable detail pages over PDF downloads."""
+    for url in all_urls:
+        if not any(pat in url for pat in _PDF_DOWNLOAD_PATTERNS):
+            return url
+    # No browseable URL found; fall back to list page for known sites
+    if "consensus.hankyung.com" in default:
+        return "https://consensus.hankyung.com/analysis/list?skinType=business"
+    return default
+
 
 class DeduplicationAgent(BaseAgent):
     """Groups NormalizedReports by duplicates and produces CanonicalReports.
@@ -50,6 +64,9 @@ class DeduplicationAgent(BaseAgent):
                 if member and member.source_url not in all_urls:
                     all_urls.append(member.source_url)
 
+            # Pick best primary_url: prefer detail page over PDF download
+            primary_url = _pick_primary_url(all_urls, canonical.source_url)
+
             results.append(
                 CanonicalReport(
                     canonical_id=group.canonical_id,
@@ -63,7 +80,7 @@ class DeduplicationAgent(BaseAgent):
                     market_type=canonical.market_type,
                     is_ai_generated=canonical.is_ai_generated,
                     source_urls=all_urls,
-                    primary_url=canonical.source_url,
+                    primary_url=primary_url,
                     body_text=canonical.body_text,
                     pdf_url=canonical.pdf_url,
                     has_revision=group.is_revision,

@@ -53,6 +53,24 @@ def _base_key(r: NormalizedReport) -> str:
     return f"{_normalize_title(r.title)}|{r.brokerage}|{r.published_date}|{r.ticker or ''}"
 
 
+def _cross_site_key(r: NormalizedReport) -> str:
+    """Build a dedup key from brokerage + date + ticker (title excluded)."""
+    return f"{r.brokerage}|{r.published_date}|{r.ticker or ''}"
+
+
+def _fuzzy_title_match(a: str, b: str) -> bool:
+    """Fuzzy title comparison to handle Naver's truncation (..) pattern."""
+    if a == b:
+        return True
+    shorter, longer = sorted([a, b], key=len)
+    # 수정본(revision) 차이는 여기서 잡지 않음 — Stage 3에서 처리
+    if _is_revision_variant(a, b):
+        return False
+    # 네이버 잘림 패턴: "제목.." 또는 "제목..."
+    clean = shorter.rstrip(".").rstrip()
+    return len(clean) >= 5 and longer.startswith(clean)
+
+
 def find_duplicates(reports: list[NormalizedReport]) -> list[DeduplicationGroup]:
     """Find duplicate groups among normalized reports.
 
@@ -118,6 +136,44 @@ def find_duplicates(reports: list[NormalizedReport]) -> list[DeduplicationGroup]
             new_remaining.extend(bucket)
 
     remaining = new_remaining
+
+    # Stage 2.5: Cross-site matching (brokerage + date + ticker, fuzzy title)
+    cross_buckets: dict[str, list[NormalizedReport]] = defaultdict(list)
+    for r in remaining:
+        if r.ticker:  # ticker가 None이면 스킵 (오탐 방지)
+            cross_buckets[_cross_site_key(r)].append(r)
+
+    new_remaining2 = [r for r in remaining if not r.ticker]
+    for _key, bucket in cross_buckets.items():
+        if len(bucket) > 1:
+            # 버킷 내 퍼지 매칭으로 그룹 형성
+            matched_ids: set[str] = set()
+            for i, a in enumerate(bucket):
+                for b in bucket[i + 1 :]:
+                    if _fuzzy_title_match(a.title, b.title):
+                        matched_ids.add(a.normalized_id)
+                        matched_ids.add(b.normalized_id)
+
+            if matched_ids:
+                member_ids = [r.normalized_id for r in bucket if r.normalized_id in matched_ids]
+                groups.append(
+                    DeduplicationGroup(
+                        group_id=str(uuid.uuid4()),
+                        canonical_id=member_ids[0],
+                        member_ids=member_ids,
+                        match_type=MatchType.CROSS_SITE,
+                        is_revision=False,
+                    )
+                )
+                grouped.update(matched_ids)
+                # 매칭 안 된 것만 남김
+                new_remaining2.extend(r for r in bucket if r.normalized_id not in matched_ids)
+            else:
+                new_remaining2.extend(bucket)
+        else:
+            new_remaining2.extend(bucket)
+
+    remaining = new_remaining2
 
     # Stage 3: Revision detection (normalized-title + brokerage + date + ticker)
     base_buckets: dict[str, list[NormalizedReport]] = defaultdict(list)

@@ -35,3 +35,30 @@ def load_daily_result(target_date: str, data_dir: Path = DATA_OUTPUT_DIR) -> Dai
     with open(json_path, encoding="utf-8") as f:
         raw = json.load(f)
     return DailyResult(**raw)
+
+
+def extract_ticker_consensus(result: DailyResult) -> dict[str, dict]:
+    """Extract per-ticker consensus data from a DailyResult.
+
+    Returns: {ticker: {stock_name, prices: list[float], ratings: list[str], count: int}}
+    """
+    summary_map = {s.canonical_id: s for s in result.summaries}
+    data: dict[str, dict] = {}
+    for report in result.reports:
+        if not report.ticker:
+            continue
+        if report.ticker not in data:
+            data[report.ticker] = {
+                "stock_name": report.stock_name or report.ticker,
+                "prices": [],
+                "ratings": [],
+                "count": 0,
+            }
+        data[report.ticker]["count"] += 1
+        sm = summary_map.get(report.canonical_id)
+        if sm:
+            if sm.extracted.target_price is not None:
+                data[report.ticker]["prices"].append(sm.extracted.target_price)
+            if sm.extracted.rating:
+                data[report.ticker]["ratings"].append(sm.extracted.rating)
+    return data

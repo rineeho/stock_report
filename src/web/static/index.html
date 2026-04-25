@@ -214,6 +214,116 @@ table.stats th { background: var(--tag-bg); font-weight: 600; }
 
 /* Empty state */
 .empty { text-align: center; padding: 2rem; color: var(--muted); font-size: .9rem; }
+
+/* Consensus Change TOP */
+.consensus-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.consensus-section h2 {
+  margin: 0 0 .8rem;
+  font-size: 1.1rem;
+}
+.consensus-item {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .45rem .3rem;
+  font-size: .92rem;
+  border-bottom: 1px solid var(--tag-bg);
+}
+.consensus-item:last-child { border-bottom: none; }
+.consensus-item .rank {
+  font-weight: 700;
+  color: var(--muted);
+  min-width: 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+.consensus-item .name {
+  font-weight: 600;
+  cursor: pointer;
+}
+.consensus-item .name:hover { color: var(--accent); }
+.consensus-item .arrow-up { color: var(--danger); font-weight: 700; }
+.consensus-item .arrow-down { color: var(--accent); font-weight: 700; }
+.consensus-item .desc { color: var(--muted); font-size: .85rem; }
+
+/* Ticker History (Detail page) */
+.ticker-history {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.ticker-history h3 {
+  font-size: .85rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin: 0 0 .4rem;
+  padding: 0;
+  border: none;
+}
+.history-flow {
+  font-size: .95rem;
+  font-weight: 600;
+  margin-bottom: .8rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .3rem;
+}
+.history-flow .arrow { color: var(--muted); font-weight: 400; }
+.history-flow .price-down { color: var(--accent); }
+.history-flow .price-up { color: var(--danger); }
+.history-flow .price-neutral { color: var(--text); }
+.history-counts {
+  display: flex;
+  gap: 1.5rem;
+  font-size: .88rem;
+  color: var(--muted);
+}
+.history-counts strong { color: var(--text); }
+
+/* Theme Cards (Enhanced) */
+.theme-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .8rem 1rem;
+  margin-bottom: .5rem;
+  cursor: pointer;
+  transition: box-shadow .15s;
+}
+.theme-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+.theme-card-header {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  font-weight: 600;
+  font-size: .95rem;
+  margin-bottom: .3rem;
+}
+.theme-card-header .count {
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+}
+.theme-card-header .fire { font-size: .9rem; }
+.theme-changes {
+  font-size: .82rem;
+  color: var(--muted);
+  padding-left: .2rem;
+}
+.theme-changes .change-item {
+  padding: .1rem 0;
+}
+.theme-changes .change-item::before {
+  content: '- ';
+}
 </style>
 </head>
 <body>
@@ -276,7 +386,11 @@ async function renderDashboard() {
     const params = new URLSearchParams(location.hash.split('?')[1] || '');
     const selectedDate = params.get('date') || dates[0];
 
-    const summary = await api(`/api/reports/${selectedDate}/summary`);
+    const [summary, consensusData, themeSummary] = await Promise.all([
+      api(`/api/reports/${selectedDate}/summary`),
+      api(`/api/reports/${selectedDate}/consensus-changes`).catch(() => ({changes:[]})),
+      api(`/api/reports/${selectedDate}/theme-summary`).catch(() => ({themes:[]})),
+    ]);
 
     let html = `
       <div class="date-bar">
@@ -285,7 +399,25 @@ async function renderDashboard() {
           ${dates.map(d => `<option value="${d}" ${d===selectedDate?'selected':''}>${d}</option>`).join('')}
         </select>
       </div>
+    `;
 
+    // Consensus Change TOP
+    if (consensusData.changes && consensusData.changes.length) {
+      html += `<div class="consensus-section"><h2>\u{1F525} 오늘 컨센서스 변화 TOP</h2>`;
+      consensusData.changes.forEach((c, i) => {
+        const arrow = c.direction === 'up' ? '<span class="arrow-up">\u2191</span>'
+                     : c.direction === 'down' ? '<span class="arrow-down">\u2193</span>' : '';
+        html += `<div class="consensus-item">
+          <span class="rank">${i+1}.</span>
+          <span class="name" onclick="location.hash='#/reports/${selectedDate}?ticker=${encodeURIComponent(c.ticker)}'">${esc(c.stock_name)}</span>
+          ${arrow}
+          <span class="desc">(${esc(c.description)})</span>
+        </div>`;
+      });
+      html += `</div>`;
+    }
+
+    html += `
       <div class="stat-grid">
         <div class="stat-card"><div class="value">${summary.report_count}</div><div class="label">수집 리포트</div></div>
         <div class="stat-card"><div class="value">${summary.total_validated}</div><div class="label">검증 통과</div></div>
@@ -317,14 +449,21 @@ async function renderDashboard() {
       html += `</div>`;
     }
 
-    // Theme chips
-    const themes = Object.entries(summary.theme_counts || {}).sort((a,b) => b[1]-a[1]);
-    if (themes.length) {
-      html += `<h2>테마별</h2><div class="chip-group">`;
-      for (const [theme, cnt] of themes) {
-        html += `<span class="chip" onclick="location.hash='#/reports/${selectedDate}?theme=${encodeURIComponent(theme)}'">${esc(theme)} <span class="count">${cnt}</span></span>`;
+    // Theme cards (enhanced with consensus info)
+    const themeItems = themeSummary.themes || [];
+    if (themeItems.length) {
+      html += `<h2>테마별</h2>`;
+      for (const t of themeItems) {
+        const fire = t.is_hot ? ' <span class="fire">\u{1F525}</span>' : '';
+        html += `<div class="theme-card" onclick="location.hash='#/reports/${selectedDate}?theme=${encodeURIComponent(t.theme)}'">
+          <div class="theme-card-header">
+            ${esc(t.theme)} <span class="count">(${t.report_count})</span>${fire}
+          </div>
+          <div class="theme-changes">
+            ${t.changes.map(c => `<div class="change-item">${esc(c)}</div>`).join('')}
+          </div>
+        </div>`;
       }
-      html += `</div>`;
     }
 
     // Pipeline stats
@@ -453,7 +592,58 @@ async function renderDetail(hash) {
     const data = await api(`/api/reports/${targetDate}/detail/${cid}`);
     const sm = data.summary;
 
+    // Fetch ticker history if ticker exists
+    let tickerHistory = null;
+    if (data.ticker) {
+      tickerHistory = await api(`/api/reports/${targetDate}/ticker-history/${encodeURIComponent(data.ticker)}`).catch(() => null);
+    }
+
     let html = `<a class="back" href="#/reports/${targetDate}">< 목록으로</a>`;
+
+    // Ticker consensus history
+    if (tickerHistory && tickerHistory.history && tickerHistory.history.length > 0) {
+      html += `<div class="ticker-history">`;
+
+      // Target price history
+      const priceEntries = tickerHistory.history.filter(h => h.avg_target_price != null);
+      if (priceEntries.length > 0) {
+        html += `<h3>목표주가 히스토리</h3><div class="history-flow">`;
+        priceEntries.forEach((h, i) => {
+          const p = h.avg_target_price;
+          let cls = 'price-neutral';
+          if (i > 0) {
+            const prev = priceEntries[i-1].avg_target_price;
+            if (p > prev) cls = 'price-up';
+            else if (p < prev) cls = 'price-down';
+          }
+          const label = p >= 1000 ? Math.round(p/1000) + 'k' : p.toLocaleString('ko-KR');
+          if (i > 0) html += `<span class="arrow">\u2192</span>`;
+          html += `<span class="${cls}" title="${h.date}: ${Number(p).toLocaleString('ko-KR')}\uC6D0">${label}</span>`;
+        });
+        html += `</div>`;
+      }
+
+      // Rating history
+      const ratingEntries = tickerHistory.history.filter(h => Object.keys(h.rating_counts).length > 0);
+      if (ratingEntries.length > 0) {
+        html += `<h3>의견 변화</h3><div class="history-flow">`;
+        ratingEntries.forEach((h, i) => {
+          const parts = Object.entries(h.rating_counts).map(([r,c]) => `${r} ${c}`).join(', ');
+          if (i > 0) html += `<span class="arrow">\u2192</span>`;
+          html += `<span title="${h.date}">${esc(parts)}</span>`;
+        });
+        html += `</div>`;
+      }
+
+      // Report counts
+      html += `<h3>리포트 수</h3>
+        <div class="history-counts">
+          <span>최근 7일: <strong>${tickerHistory.report_counts.last_7_days}건</strong></span>
+          <span>최근 30일: <strong>${tickerHistory.report_counts.last_30_days}건</strong></span>
+        </div>`;
+
+      html += `</div>`;
+    }
 
     html += `<div class="detail-header">
       <div class="title">${esc(data.title)}</div>

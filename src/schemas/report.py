@@ -51,6 +51,7 @@ class DateSource(StrEnum):
 class MatchType(StrEnum):
     URL_EXACT = "url_exact"
     METADATA_MATCH = "metadata_match"
+    CROSS_SITE = "cross_site"
     CONTENT_SIMILAR = "content_similar"
 
 

@@ -68,6 +68,8 @@ class NaverResearchParser(BaseSiteParser):
             report_url = urljoin(base_url, href) if href else ""
             if not report_url:
                 continue
+            # Remove &page= parameter from report URL (inherited from list page base_url)
+            report_url = re.sub(r"[&?]page=\d+", "", report_url)
 
             # Embed list-page metadata as a hint
             stock_link = stock_cell.find("a")

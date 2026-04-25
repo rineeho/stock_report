@@ -157,6 +157,80 @@ class TestRevisionDetection:
         assert groups[0].is_revision is True
 
 
+class TestCrossSiteDedup:
+    """Stage 2.5: cross-site dedup (Naver truncated title vs Hankyung full title)."""
+
+    def test_naver_truncated_title_deduplicates(self):
+        """네이버 잘린 제목 vs 한경 전체 제목 → 중복 처리."""
+        from src.dedup.matcher import find_duplicates
+
+        r1 = _make_normalized(
+            url="https://consensus.hankyung.com/r1",
+            title="삼성전자 2026년 1분기 실적 전망 및 목표주가 상향 조정",
+            brokerage="미래에셋증권",
+            ticker="005930",
+            normalized_id="n1",
+        )
+        r2 = _make_normalized(
+            url="https://finance.naver.com/r2",
+            title="삼성전자 2026년 1분기 실적 전망 및 목표주가 상향..",
+            brokerage="미래에셋증권",
+            ticker="005930",
+            normalized_id="n2",
+        )
+
+        groups = find_duplicates([r1, r2])
+        assert len(groups) == 1
+        assert groups[0].match_type == MatchType.CROSS_SITE
+        assert set(groups[0].member_ids) == {"n1", "n2"}
+
+    def test_same_key_different_title_not_deduplicated(self):
+        """같은 brokerage+date+ticker지만 제목이 완전히 다른 경우 → 중복 아님."""
+        from src.dedup.matcher import find_duplicates
+
+        r1 = _make_normalized(
+            url="https://consensus.hankyung.com/r1",
+            title="삼성전자 실적 전망",
+            brokerage="미래에셋증권",
+            ticker="005930",
+            normalized_id="n1",
+        )
+        r2 = _make_normalized(
+            url="https://finance.naver.com/r2",
+            title="삼성전자 목표주가 하향",
+            brokerage="미래에셋증권",
+            ticker="005930",
+            normalized_id="n2",
+        )
+
+        groups = find_duplicates([r1, r2])
+        assert len(groups) == 2
+
+    def test_ticker_none_skips_cross_site(self):
+        """ticker가 None인 경우 → 크로스사이트 매칭 스킵."""
+        from src.dedup.matcher import find_duplicates
+
+        r1 = _make_normalized(
+            url="https://consensus.hankyung.com/r1",
+            title="매크로 경제 전망 보고서",
+            brokerage="미래에셋증권",
+            ticker=None,
+            stock_name=None,
+            normalized_id="n1",
+        )
+        r2 = _make_normalized(
+            url="https://finance.naver.com/r2",
+            title="매크로 경제 전망 보고서..",
+            brokerage="미래에셋증권",
+            ticker=None,
+            stock_name=None,
+            normalized_id="n2",
+        )
+
+        groups = find_duplicates([r1, r2])
+        assert len(groups) == 2
+
+
 class TestSingleReport:
     """Single report → single group, no dedup."""
 
