@@ -286,6 +286,10 @@ a:hover { border-bottom-color: currentColor; }
   padding: 2px 8px;
   border-radius: var(--r-sm);
 }
+.alert-tag-count {
+  background: var(--ink-800);
+  color: var(--fg-secondary);
+}
 .alert-tag-buy {
   background: var(--success-bg);
   color: var(--success);
@@ -293,6 +297,10 @@ a:hover { border-bottom-color: currentColor; }
 .alert-tag-up {
   background: rgba(242, 54, 69, 0.14);
   color: var(--up-500);
+}
+.alert-tag-down {
+  background: rgba(54, 116, 242, 0.14);
+  color: var(--down-500);
 }
 .alert-tag-price {
   background: var(--ink-800);
@@ -1303,11 +1311,11 @@ function buildTickerSignals(dr) {
   const summaryMap = {};
   for (const s of (dr.summaries || [])) summaryMap[s.canonical_id] = s;
 
-  const signals = {}; // ticker → { reportCount, buyCount, upgrades, maxTarget, targets[] }
+  const signals = {}; // ticker → { reportCount, buyCount, upgrades, downgrades, maxTarget, targets[] }
   for (const r of (dr.reports || [])) {
     const t = r.ticker;
     if (!t) continue;
-    if (!signals[t]) signals[t] = { reportCount: 0, buyCount: 0, upgrades: 0, maxTarget: null, targets: [] };
+    if (!signals[t]) signals[t] = { reportCount: 0, buyCount: 0, upgrades: 0, downgrades: 0, maxTarget: null, targets: [] };
     const sig = signals[t];
     sig.reportCount++;
 
@@ -1328,16 +1336,10 @@ function buildTickerSignals(dr) {
         sig.maxTarget = ext.target_price;
       }
     }
-  }
 
-  // 상향 판별: 같은 종목에 목표주가가 여러개면 최고가 > 최저가 → 상향 존재
-  // 또는 제목에 "상향" 키워드 포함
-  for (const r of (dr.reports || [])) {
-    const t = r.ticker;
-    if (!t || !signals[t]) continue;
-    if (r.title && (r.title.includes('상향') || r.title.includes('목표가↑') || r.title.includes('목표주가 상향'))) {
-      signals[t].upgrades++;
-    }
+    // 목표주가 변동 방향 (LLM 추출값 사용)
+    if (ext.target_price_change === '상향') sig.upgrades++;
+    else if (ext.target_price_change === '하향') sig.downgrades++;
   }
 
   return signals;
@@ -1396,12 +1398,13 @@ function extractTickerConsensus(dr) {
   const data = {};
   for (const r of (dr.reports || [])) {
     if (!r.ticker) continue;
-    if (!data[r.ticker]) data[r.ticker] = { stockName: r.stock_name || r.ticker, prices: [], ratings: [], count: 0 };
+    if (!data[r.ticker]) data[r.ticker] = { stockName: r.stock_name || r.ticker, prices: [], ratings: [], changes: [], count: 0 };
     data[r.ticker].count++;
     const s = sm[r.canonical_id];
     if (s) {
       if (s.extracted && s.extracted.target_price != null) data[r.ticker].prices.push(s.extracted.target_price);
       if (s.extracted && s.extracted.rating) data[r.ticker].ratings.push(s.extracted.rating);
+      if (s.extracted && s.extracted.target_price_change) data[r.ticker].changes.push(s.extracted.target_price_change);
     }
   }
   return data;
@@ -1416,21 +1419,37 @@ function computeConsensusChanges(todayDr, prevDr) {
   for (const [ticker, td] of Object.entries(today)) {
     if (!td.prices.length && !td.ratings.length) continue;
     const pd = prev[ticker];
-    const ca = td.prices.length ? td.prices.reduce((a,b)=>a+b,0)/td.prices.length : null;
-    const pa = pd && pd.prices.length ? pd.prices.reduce((a,b)=>a+b,0)/pd.prices.length : null;
     let dir = 'neutral', desc = '', sk = 0;
-    if (!pd) {
-      dir = 'up';
+
+    // 1) LLM 추출 방향이 있으면 최우선 사용
+    const hasUp = td.changes && td.changes.includes('상향');
+    const hasDown = td.changes && td.changes.includes('하향');
+
+    if (hasUp && !hasDown) {
+      dir = 'up'; desc = '목표주가 상향'; sk = 40;
+    } else if (hasDown && !hasUp) {
+      dir = 'down'; desc = '목표주가 하향'; sk = 40;
+    } else if (hasUp && hasDown) {
+      // 같은 종목에 상향/하향 리포트가 섞여있으면 → 의견 분분
+      dir = 'neutral'; desc = '목표주가 의견 혼재'; sk = 20;
+    } else if (!pd) {
+      // 2) 전일 데이터 없는 신규 종목 (LLM 방향 없을 때)
+      dir = td.ratings.some(_isBuy) ? 'up' : 'neutral';
       desc = td.ratings.some(_isBuy) ? '신규 매수' : '신규 커버리지';
-      sk = 50;
-    } else if (ca != null && pa != null && pa > 0) {
-      const pct = (ca - pa) / pa * 100;
-      if (Math.abs(pct) >= 1) {
-        dir = pct > 0 ? 'up' : 'down';
-        desc = `목표주가 ${pct > 0 ? '+' : ''}${Math.round(pct)}%`;
-        sk = Math.abs(pct);
+      sk = td.ratings.some(_isBuy) ? 30 : 15;
+    } else {
+      // 3) Fallback: 전일 대비 평균 목표주가 변동률
+      const ca = td.prices.length ? td.prices.reduce((a,b)=>a+b,0)/td.prices.length : null;
+      const pa = pd.prices.length ? pd.prices.reduce((a,b)=>a+b,0)/pd.prices.length : null;
+      if (ca != null && pa != null && pa > 0) {
+        const pct = (ca - pa) / pa * 100;
+        if (Math.abs(pct) >= 1) {
+          dir = pct > 0 ? 'up' : 'down';
+          desc = `목표주가 ${pct > 0 ? '+' : ''}${Math.round(pct)}%`;
+          sk = Math.abs(pct);
+        } else { continue; }
       } else { continue; }
-    } else { continue; }
+    }
     changes.push({ ticker, stockName: td.stockName, direction: dir, description: desc, _sk: sk });
   }
   changes.sort((a,b) => b._sk - a._sk);
@@ -1455,14 +1474,23 @@ function computeThemeSummary(todayDr, prevDr) {
     for (const tk of tickers) {
       const td = tc[tk], pd = pc[tk];
       if (!td) continue;
-      const ca = td.prices.length ? td.prices.reduce((a,b)=>a+b,0)/td.prices.length : null;
-      const pa = pd && pd.prices.length ? pd.prices.reduce((a,b)=>a+b,0)/pd.prices.length : null;
-      if (!pd) { if (td.ratings.some(_isBuy)) nBuy++; }
-      else if (ca && pa && pa > 0) {
-        const pct = (ca-pa)/pa*100;
-        if (pct >= 1) tUp++; else if (pct <= -1) tDown++;
-        if (td.ratings.some(_isBuy) && !pd.ratings.some(_isBuy)) nBuy++;
+      // Use LLM-extracted direction when available
+      const hasUp = td.changes && td.changes.includes('상향');
+      const hasDown = td.changes && td.changes.includes('하향');
+      if (hasUp || hasDown) {
+        if (hasUp) tUp++;
+        if (hasDown) tDown++;
+      } else {
+        // Fallback: compare average prices across dates
+        const ca = td.prices.length ? td.prices.reduce((a,b)=>a+b,0)/td.prices.length : null;
+        const pa = pd && pd.prices.length ? pd.prices.reduce((a,b)=>a+b,0)/pd.prices.length : null;
+        if (pd && ca && pa && pa > 0) {
+          const pct = (ca-pa)/pa*100;
+          if (pct >= 1) tUp++; else if (pct <= -1) tDown++;
+        }
       }
+      if (!pd) { if (td.ratings.some(_isBuy)) nBuy++; }
+      else if (td.ratings.some(_isBuy) && !pd.ratings.some(_isBuy)) nBuy++;
     }
     const diff = cnt - (ptc[name]||0);
     const ch = [];
@@ -1472,7 +1500,7 @@ function computeThemeSummary(todayDr, prevDr) {
     if (diff > 0) ch.push(`리포트 증가 +${diff}`);
     else if (diff < 0) ch.push(`리포트 감소 ${diff}`);
     if (!ch.length) ch.push('변화 없음');
-    themes.push({ theme: name, reportCount: cnt, isHot: tUp > 0 || nBuy > 0 || diff > 2, changes: ch });
+    themes.push({ theme: name, reportCount: cnt, isHot: cnt >= 5 && (tUp > 0 || nBuy > 0 || diff > 2), changes: ch });
   }
   themes.sort((a,b) => (b.isHot - a.isHot) || (b.reportCount - a.reportCount));
   return themes;
@@ -1508,6 +1536,7 @@ window.addEventListener('DOMContentLoaded', route);
 function route() {
   const hash = location.hash || '#/';
   if (hash.startsWith('#/detail/')) return renderDetail(hash);
+  if (hash.startsWith('#/stock/')) return renderStock(hash);
   if (hash.startsWith('#/reports/')) return renderReportList(hash);
   if (hash.startsWith('#/dashboard')) return renderDashboard(hash);
   return renderHome();
@@ -1587,7 +1616,7 @@ async function renderHome() {
       consensusChanges.forEach((c, i) => {
         const arrow = c.direction === 'up' ? '<span class="arrow-up">\u2191</span>'
                      : c.direction === 'down' ? '<span class="arrow-down">\u2193</span>' : '';
-        html += `<div class="consensus-item" onclick="location.hash='#/reports/${latestDate}?ticker=${encodeURIComponent(c.ticker)}'">
+        html += `<div class="consensus-item" onclick="location.hash='#/stock/${encodeURIComponent(c.ticker)}'">
           <span class="rank">${i+1}</span>
           <span class="cs-name">${esc(c.stockName)}</span>
           ${arrow}
@@ -1605,10 +1634,10 @@ async function renderHome() {
       .filter(([, s]) => s.reportCount >= 2)
       .sort((a, b) => b[1].reportCount - a[1].reportCount);
 
-    // 블록 B: 목표가 상향 / 매수 의견
+    // 블록 B: 목표가 변동 / 매수 의견
     const upgradeTickers = Object.entries(tickerSignals)
-      .filter(([, s]) => s.upgrades > 0 || s.buyCount > 0)
-      .sort((a, b) => (b[1].upgrades * 3 + b[1].buyCount) - (a[1].upgrades * 3 + a[1].buyCount));
+      .filter(([, s]) => s.upgrades > 0 || s.downgrades > 0 || s.buyCount > 0)
+      .sort((a, b) => (b[1].upgrades * 3 + b[1].buyCount + b[1].downgrades) - (a[1].upgrades * 3 + a[1].buyCount + a[1].downgrades));
 
     if (hotTickers.length || upgradeTickers.length) {
       html += `<div class="home-section">
@@ -1624,14 +1653,13 @@ async function renderHome() {
           <div class="alert-list">`;
         for (const [ticker, sig] of hotTickers.slice(0, 6)) {
           const name = stockNames[ticker] || ticker;
-          html += `<div class="alert-item" onclick="location.hash='#/reports/${latestDate}?ticker=${encodeURIComponent(ticker)}'">
-            <span class="alert-badge">${sig.reportCount}</span>
+          html += `<div class="alert-item" onclick="location.hash='#/stock/${encodeURIComponent(ticker)}'">
             <span style="flex:1;min-width:0">
               <span style="font-weight:600;color:var(--fg-primary)">${esc(name)}</span>
               <span style="color:var(--fg-muted);font-size:12px">(${esc(ticker)})</span>
               <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:4px">
-                ${sig.buyCount > 0 ? `<span class="alert-tag alert-tag-buy">매수 ${sig.buyCount}</span>` : ''}
-                ${sig.maxTarget ? `<span class="alert-tag alert-tag-price">${fmtPrice(sig.maxTarget)}</span>` : ''}
+                <span class="alert-tag alert-tag-count">리포트 ${sig.reportCount}건</span>
+                ${sig.buyCount > 0 ? `<span class="alert-tag alert-tag-buy">매수 ${sig.buyCount}/${sig.reportCount}</span>` : ''}
               </div>
             </span>
           </div>`;
@@ -1639,21 +1667,22 @@ async function renderHome() {
         html += `</div></div>`;
       }
 
-      // 블록 B: 목표가 상향 · 매수
+      // 블록 B: 목표가 변동 · 매수
       if (upgradeTickers.length) {
         html += `<div class="alert-block">
           <div class="alert-block-header">
-            <span class="alert-block-icon">🔺</span> 목표가 상향 · 매수
+            <span class="alert-block-icon">📈</span> 목표가 변동 · 매수
           </div>
           <div class="alert-list">`;
         for (const [ticker, sig] of upgradeTickers.slice(0, 5)) {
           const name = stockNames[ticker] || ticker;
-          html += `<div class="alert-item" onclick="location.hash='#/reports/${latestDate}?ticker=${encodeURIComponent(ticker)}'">
+          html += `<div class="alert-item" onclick="location.hash='#/stock/${encodeURIComponent(ticker)}'">
             <span style="flex:1;min-width:0">
               <span style="font-weight:600;color:var(--fg-primary)">${esc(name)}</span>
               <span style="color:var(--fg-muted);font-size:12px">(${esc(ticker)})</span>
               <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:4px">
                 ${sig.upgrades > 0 ? `<span class="alert-tag alert-tag-up">목표가 상향 ${sig.upgrades}</span>` : ''}
+                ${sig.downgrades > 0 ? `<span class="alert-tag alert-tag-down">목표가 하향 ${sig.downgrades}</span>` : ''}
                 ${sig.buyCount > 0 ? `<span class="alert-tag alert-tag-buy">매수 ${sig.buyCount}</span>` : ''}
                 ${sig.maxTarget ? `<span class="alert-tag alert-tag-price">${fmtPrice(sig.maxTarget)}</span>` : ''}
               </div>
@@ -1700,7 +1729,7 @@ async function renderHome() {
         <div class="weekly-top">`;
       weekTickerEntries.forEach(([ticker, cnt], i) => {
         const name = weekStockNames[ticker] || ticker;
-        html += `<div class="weekly-top-card" onclick="location.hash='#/reports/${weekDates.join(',')}?ticker=${encodeURIComponent(ticker)}'">
+        html += `<div class="weekly-top-card" onclick="location.hash='#/stock/${encodeURIComponent(ticker)}'">
           <span class="wtc-rank">#${i + 1}</span>
           <span class="wtc-name">${esc(name)}</span>
           <span class="wtc-count">${cnt}건</span>
@@ -1809,7 +1838,7 @@ async function renderDashboard(hash) {
     const stockNames = summary.stock_names || {};
 
     // Date & mode selector
-    let html = `<a class="back" href="#/">&larr; 홈</a>`;
+    let html = `<a class="back" href="#/" onclick="if(history.length>1){history.back();return false}">&larr; 뒤로</a>`;
     html += `
       <div class="date-bar">
         <div class="mode-toggle">
@@ -1903,7 +1932,7 @@ function buildTickerCardSection(entries, reportDates, topCount = 5, initialCount
     <div class="top-scroll">`;
   for (const [name, cnt, ticker] of top) {
     const code = ticker || name;
-    html += `<div class="count-card top-card" onclick="location.hash='#/reports/${reportDates}?ticker=${encodeURIComponent(code)}'">
+    html += `<div class="count-card top-card" onclick="location.hash='#/stock/${encodeURIComponent(code)}'">
       <span class="card-badge ${badgeClass(cnt)}">${cnt}</span>
       <span class="card-name">${esc(name)}</span>
     </div>`;
@@ -1916,7 +1945,7 @@ function buildTickerCardSection(entries, reportDates, topCount = 5, initialCount
     const [name, cnt, ticker] = rest[i];
     const code = ticker || name;
     const hidden = i >= showInitial ? ' style="display:none"' : '';
-    html += `<div class="count-card" data-idx="${i}"${hidden} onclick="location.hash='#/reports/${reportDates}?ticker=${encodeURIComponent(code)}'">
+    html += `<div class="count-card" data-idx="${i}"${hidden} onclick="location.hash='#/stock/${encodeURIComponent(code)}'">
       <span class="card-name">${esc(name)}</span>
       <span class="card-badge ${badgeClass(cnt)}">${cnt}</span>
     </div>`;
@@ -2015,9 +2044,9 @@ async function renderReportList(hash) {
       else if (analyst) filterTitle = analyst;
     }
 
-    let html = `<a class="back" href="#/">&larr; 홈</a>`;
+    let html = `<a class="back" href="#/" onclick="if(history.length>1){history.back();return false}">&larr; 뒤로</a>`;
     if (ticker) {
-      html += `<h3 style="font-size:20px;font-weight:700;color:var(--accent-500);letter-spacing:-0.02em">${esc(filterTitle)}</h3>`;
+      html += `<h3 style="font-size:20px;font-weight:700;letter-spacing:-0.02em"><a href="#/stock/${encodeURIComponent(ticker)}" style="color:var(--accent-500);border-bottom:1px solid transparent" onmouseover="this.style.borderBottomColor='var(--accent-500)'" onmouseout="this.style.borderBottomColor='transparent'">${esc(filterTitle)}</a></h3>`;
     } else {
       html += `<h3 style="font-size:20px;font-weight:700;color:var(--accent-500);letter-spacing:-0.02em">${dateLabel}${filterTitle ? ' <span style="color:var(--fg-muted);font-weight:400;margin:0 4px">/</span> '+esc(filterTitle) : ''}</h3>`;
     }
@@ -2101,7 +2130,7 @@ async function renderReportList(hash) {
         // 종목 그룹 헤더
         if (stockKey !== '_none' && (stockName || stockTicker)) {
           html += `<div class="stock-group-header">
-            <span class="stock-group-name">${esc(stockName)}</span>
+            <a class="stock-group-name" href="#/stock/${encodeURIComponent(stockTicker || stockKey)}" style="border-bottom:1px solid transparent" onmouseover="this.style.borderBottomColor='var(--accent-500)'" onmouseout="this.style.borderBottomColor='transparent'">${esc(stockName)}</a>
             ${stockTicker ? `<span class="stock-group-ticker">${esc(stockTicker)}</span>` : ''}
             <span class="stock-group-count">${groupReports.length}건</span>
           </div>`;
@@ -2140,34 +2169,67 @@ async function renderReportList(hash) {
   }
 }
 
-// --- Report Detail ---
-async function renderDetail(hash) {
+// --- Stock Page ---
+async function renderStock(hash) {
   app.innerHTML = '<div class="loading">로딩 중...</div>';
   try {
-    const m = hash.match(/#\/detail\/([^/]+)\/(.+)/);
-    if (!m) { location.hash = '#/'; return; }
-    const [, targetDate, cid] = m;
+    const ticker = decodeURIComponent(hash.replace('#/stock/', ''));
+    if (!ticker) { location.hash = '#/'; return; }
 
-    const dr = await getDailyResult(targetDate);
-    const data = getReportDetail(dr, cid);
-    if (!data) { app.innerHTML = '<div class="empty">리포트를 찾을 수 없어요.</div>'; return; }
-    const sm = data.summary;
+    const tickerHist = await computeTickerHistory(ticker);
+    const stockName = tickerHist.stockName || ticker;
 
-    // Load ticker history
-    let tickerHist = null;
-    if (data.ticker) {
-      tickerHist = await computeTickerHistory(data.ticker).catch(() => null);
+    // Load all reports for this ticker across all dates
+    const dates = await getDates();
+    const allDr = await getMultiDayResult(dates);
+    const reports = getFilteredReports(allDr, { ticker });
+    reports.sort((a, b) => (b.published_date || '').localeCompare(a.published_date || ''));
+
+    // Compute consensus summary
+    const consensus = extractTickerConsensus(allDr)[ticker];
+    const avgPrice = consensus && consensus.prices.length
+      ? consensus.prices.reduce((a,b) => a+b, 0) / consensus.prices.length : null;
+    const ratingCounts = {};
+    if (consensus) {
+      for (const r of consensus.ratings) ratingCounts[r] = (ratingCounts[r]||0) + 1;
     }
+    const topRating = Object.entries(ratingCounts).sort((a,b) => b[1]-a[1])[0];
+    const marketType = reports.find(r => r.market_type)?.market_type || '';
 
-    let html = `<a class="back" href="#/reports/${targetDate}">&larr; 목록으로</a>`;
+    let html = `<a class="back" href="#/" onclick="if(history.length>1){history.back();return false}">&larr; 뒤로</a>`;
 
-    // Ticker consensus history
-    if (tickerHist && tickerHist.history.length > 0) {
-      html += `<div class="ticker-history">`;
+    // Header
+    html += `<div style="display:flex;align-items:baseline;gap:10px;margin-bottom:6px;flex-wrap:wrap">
+      <span style="font-size:22px;font-weight:700;color:var(--accent-500);letter-spacing:-0.02em">${esc(stockName)}</span>
+      <span style="font-size:14px;font-family:var(--font-mono);color:var(--fg-muted)">${esc(ticker)}</span>
+      ${marketType ? `<span class="tag">${esc(marketType)}</span>` : ''}
+    </div>`;
 
-      // Target price flow
+    // Consensus summary cards
+    html += `<div class="stat-grid" style="margin-top:16px">
+      <div class="stat-card">
+        <div class="value">${avgPrice != null ? fmtPrice(Math.round(avgPrice)) : '-'}</div>
+        <div class="label">평균 목표주가</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">${topRating ? `<span class="rating ${getRatingClass(topRating[0])}">${getRatingLabel(topRating[0])}</span>` : '-'}</div>
+        <div class="label">최빈 투자의견</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">${reports.length}</div>
+        <div class="label">총 리포트</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">${tickerHist.reportCounts.last7Days}</div>
+        <div class="label">최근 7일</div>
+      </div>
+    </div>`;
+
+    // Target price history
+    if (tickerHist.history.length > 0) {
       const priceEntries = tickerHist.history.filter(h => h.avgTargetPrice != null);
       if (priceEntries.length > 0) {
+        html += `<div class="ticker-history">`;
         html += `<div class="hist-label">목표주가 히스토리</div><div class="history-flow">`;
         priceEntries.forEach((h, i) => {
           const p = h.avgTargetPrice;
@@ -2182,33 +2244,87 @@ async function renderDetail(hash) {
           html += `<span class="${cls}" title="${h.date}: \u20A9${Number(p).toLocaleString('ko-KR')}">${label}</span>`;
         });
         html += `</div>`;
-      }
 
-      // Rating flow
-      const ratingEntries = tickerHist.history.filter(h => Object.keys(h.ratingCounts).length > 0);
-      if (ratingEntries.length > 0) {
-        html += `<div class="hist-label">의견 변화</div><div class="history-flow">`;
-        ratingEntries.forEach((h, i) => {
-          const parts = Object.entries(h.ratingCounts).map(([r,c]) => `${r} ${c}`).join(', ');
-          if (i > 0) html += `<span class="h-arrow">\u2192</span>`;
-          html += `<span title="${h.date}">${esc(parts)}</span>`;
-        });
+        // Rating flow
+        const ratingEntries = tickerHist.history.filter(h => Object.keys(h.ratingCounts).length > 0);
+        if (ratingEntries.length > 0) {
+          html += `<div class="hist-label">의견 변화</div><div class="history-flow">`;
+          ratingEntries.forEach((h, i) => {
+            const parts = Object.entries(h.ratingCounts).map(([r,c]) => `${r} ${c}`).join(', ');
+            if (i > 0) html += `<span class="h-arrow">\u2192</span>`;
+            html += `<span title="${h.date}">${esc(parts)}</span>`;
+          });
+          html += `</div>`;
+        }
+
         html += `</div>`;
       }
-
-      // Report counts
-      html += `<div class="hist-label">리포트 수</div>
-        <div class="history-counts">
-          <span>최근 7일: <strong>${tickerHist.reportCounts.last7Days}건</strong></span>
-          <span>최근 30일: <strong>${tickerHist.reportCounts.last30Days}건</strong></span>
-        </div>`;
-
-      html += `</div>`;
     }
+
+    // Guidance comparison table
+    if (reports.length > 0) {
+      const sorted = [...reports].sort((a, b) => {
+        const pa = a.summary?.extracted?.target_price;
+        const pb = b.summary?.extracted?.target_price;
+        if (pa != null && pb != null) return pb - pa;
+        if (pa != null) return -1;
+        if (pb != null) return 1;
+        return 0;
+      });
+      html += `<h2>가이던스 비교</h2>`;
+      html += `<div class="guidance-table"><table>
+        <thead><tr>
+          <th>증권사</th><th>애널리스트</th><th>발행일</th><th>투자의견</th><th>목표주가</th>
+        </tr></thead><tbody>`;
+      for (const r of sorted) {
+        const ext = r.summary?.extracted || {};
+        const rc = ext.rating ? getRatingClass(ext.rating) : '';
+        const rl = ext.rating ? getRatingLabel(ext.rating) : '-';
+        html += `<tr style="cursor:pointer" onclick="location.hash='#/detail/${r.published_date||''}/${r.canonical_id}'">
+          <td>${esc(r.brokerage||'-')}</td>
+          <td>${esc(r.analyst||'-')}</td>
+          <td class="mono">${esc(r.published_date||'-')}</td>
+          <td><span class="rating ${rc}">${rl}</span></td>
+          <td class="mono">${ext.target_price != null ? fmtPrice(ext.target_price) : '-'}</td>
+        </tr>`;
+      }
+      html += `</tbody></table></div>`;
+    }
+
+    // Full report list
+    html += `<h2>전체 리포트 (${reports.length}건)</h2>`;
+    if (reports.length) {
+      for (const r of reports) {
+        html += buildReportCard(r, dates, dates[0], { hideStock: true, showDate: true });
+      }
+    } else {
+      html += '<div class="empty">해당 종목의 리포트가 없어요.</div>';
+    }
+
+    app.innerHTML = html;
+  } catch (err) {
+    app.innerHTML = `<div class="empty">로드 실패: ${esc(err.message)}</div>`;
+  }
+}
+
+// --- Report Detail ---
+async function renderDetail(hash) {
+  app.innerHTML = '<div class="loading">로딩 중...</div>';
+  try {
+    const m = hash.match(/#\/detail\/([^/]+)\/(.+)/);
+    if (!m) { location.hash = '#/'; return; }
+    const [, targetDate, cid] = m;
+
+    const dr = await getDailyResult(targetDate);
+    const data = getReportDetail(dr, cid);
+    if (!data) { app.innerHTML = '<div class="empty">리포트를 찾을 수 없어요.</div>'; return; }
+    const sm = data.summary;
+
+    let html = `<a class="back" href="#/reports/${targetDate}" onclick="if(history.length>1){history.back();return false}">&larr; 뒤로</a>`;
 
     html += `<div class="detail-header">
       ${data.stock_name ? `<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:6px">
-        <span style="font-size:20px;font-weight:700;color:var(--accent-500);letter-spacing:-0.02em">${esc(data.stock_name)}</span>
+        <a href="#/stock/${encodeURIComponent(data.ticker)}" style="font-size:20px;font-weight:700;color:var(--accent-500);letter-spacing:-0.02em;border-bottom:1px solid transparent" onmouseover="this.style.borderBottomColor='var(--accent-500)'" onmouseout="this.style.borderBottomColor='transparent'">${esc(data.stock_name)}</a>
         <span style="font-size:14px;font-family:var(--font-mono);color:var(--fg-muted)">${esc(data.ticker)}</span>
         ${data.market_type ? `<span class="tag">${esc(data.market_type)}</span>` : ''}
       </div>` : ''}
