@@ -1,0 +1,1894 @@
+{
+  "result_id": "27cd2ec7-3b83-47ec-a4ee-45b2ee0635e4",
+  "target_date": "2026-04-15",
+  "total_discovered": 150,
+  "total_fetched": 150,
+  "total_validated": 150,
+  "total_unverified": 0,
+  "total_deduplicated": 46,
+  "reports": [
+    {
+      "canonical_id": "725a2d5b-fbc4-4847-9271-08f9be3625c2",
+      "title": "KKR과 전략적 협업 및 전환사채 발행 코멘트",
+      "published_date": "2026-04-15",
+      "brokerage": "한화투자증권",
+      "analyst": "N/A",
+      "ticker": "018260",
+      "stock_name": "삼성에스디에스",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91599&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91599&page=2",
+      "body_text": "삼성에스디에스, KKR과 전략적 협업 발표, 1.2조원 규모 전환사채 발행\n- 15일 삼성에스디에스는 글로벌 대형 사모펀드 KKR과 전략적 파트너십을 체결하고 1.2조 원 규모의 전환사채를 발행한다고 공시. 해당 CB는 신규 발행 물량으로 KKR은 이를 통해 삼성에스디에스 지분을 확보하는 구조\n- 전환가액은 180,000원(전일 종가 151,500원), 표면 및 만기 금리는 연 2.5% 수준, 2032년 만기까지 양도 및 매각 금지 조건이며 리픽싱 조항은 없음. 이재용 회장의 삼성에스디에스 지분율은 기존 9.2%에서 KKR 주식 전환 시 8.06%로 낮아질 전망\n삼성에스디에스 코멘트[201002760_699_A2_1].pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "ae256d3f-9592-4b1a-bc9b-987cd5f68fb7",
+      "title": "5개 분기 만의 증익",
+      "published_date": "2026-04-15",
+      "brokerage": "한화투자증권",
+      "analyst": "N/A",
+      "ticker": "088350",
+      "stock_name": "한화생명",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91598&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91598&page=2",
+      "body_text": "1Q26 순이익 1,744억원(+43% YoY)\n한화생명의 1Q26 별도 순이익은 1,744억원(+43% YoY)으로 시장 컨센서스에 부합하는 실적이 예상됨\nvs. 1Q25(YoY): 보험손익은 200억원 감소. 전년 동기에 손실계약으로 인식했던 특정 담보가 전년 중 이익계약으로 전환되었고, 전년 초의 부채 할인율 강화로 반영됐던 VFA 조정이 이번에는 축소되면서 손실계약비용이 감소한 것은 긍정적. 다만 예실차가 악화되고 사업비가 증가해 보험손익 감소를 야기. 투자손익(일반계정)은 이자손익이 증가한 가운데 대체투자 평가익이 발생하면서 1,750억원 증가할 전망\nvs. 4Q25(QoQ): 주로 전분기의 일회성 요인이 크게 작용. 연중 손실계약으로 인식했던 담보의 이익 전환으로 손실계약비용이 1,000억원대 환입을 나타낸 전분기보다 보험손익은 감소. 반면 계절적으로 가장 열위했던 4분기보다 보험금 예실차는 200억원대 개선될 전망. 투자손익(일반계정) 또한 전분기 중에는 1,000억원대 평가손이 발생하면서 적자를 기록했으나 당분기에는 흑자로 정상화될 전망\n보장성 신계약 물량은 전년 동기보다 5% 증가하지만 전분기보다 8% 감소할 것으로 추정. 이에 신계약 CSM은 5,400억원(-6% QoQ)으로 감소할 전망. CSM 잔액은 해지 증가에 따른 조정만을 반영하면서 4% QoQ 증가할 것으로 추정됨\n20260415 한화생명 1Q26 Preview.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "6632118c-d7b3-4328-8b67-8ac2d92c12c1",
+      "title": "1Q26 Preview: 메탈 효과가 이끈 신동, 방산..",
+      "published_date": "2026-04-15",
+      "brokerage": "한화투자증권",
+      "analyst": "N/A",
+      "ticker": "103140",
+      "stock_name": "풍산",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91597&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91597&page=2",
+      "body_text": "1Q26 Preview: 컨센서스 소폭 하회, 중기 방향성은 유지\n1Q26 연결 매출액은 1조 3,450억 원(YoY +16.3%, QoQ -5.6%), 영업이익은 884억 원(YoY +26.8%, QoQ -3.4%)으로 컨센서스를 소폭 하회할 전망이다. 구리 가격 상승에 따른 신동 부문 메탈게인 효과가 시장 기대를 상회하는 수준으로 반영되는 반면, 방산 부문은 수출 물량이 하반기에 집중되는 특성상 1분기 매출·이익 기여가 연중 가장 적은 구간으로, 신동의 메탈게인 효과를 일부 희석시키는 요인으로 작용한다. 다만 중기 실적 개선 방향성은 유효하다는 판단이다.\n260415_Poongsan 1Q26 Preview vFFF.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "cf45575d-4dbf-4e50-9a8f-b3611a8b6e96",
+      "title": "애널리스트 간담회 후기",
+      "published_date": "2026-04-15",
+      "brokerage": "한화투자증권",
+      "analyst": "N/A",
+      "ticker": "000880",
+      "stock_name": "한화",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91596&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91596&page=2",
+      "body_text": "애널리스트 간담회 후기\n한화는 14일 한화솔루션 유상증자 참여 관련 애널리스트 간담회를 진행했다. 간담회에서는 한화의 한화솔루션 유상증자 참여 배경 및 유상증자의 필요성과 향후 한화솔루션의 방향성에 대해 한화 경영진의 설명이 있었다. 한화는 한화솔루션의 유상증자에 120% 참여를 결정하였으며, 120% 참여 시 최대 8,439억원(유상증자 발행가 변경 시, 변동가능)을 출자할 예정이다. 한화는 차입없이 부동산 등 비핵심자산의 매각을 통해 유상증자 참여 대금을 마련할 계획이며, 유상증자 후 한화솔루션에 대한 지분율은 기존 36.3%에서 최대 36%로 소폭 낮아질 전망이다.\n한화솔루션은 금번 유상증자로 약 2.4조원을 확보할 예정이며, 이 중 1.5조원은 채무상환자금으로 활용하고 0.9조원은 페로브스카이트-텐덤셀에 집중 투자하여 미래 성장 동력 확보를 꾀할 방침이다. 중장기적으로는 30년 매출액 33조원, 영업이익 2.9조원을 목표로 하고 있으며, 부채비율 및 순차입금을 100%, 7조원으로 낮추고자 한다.\n한화 기업코멘트_260415.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "f36c82be-4d8e-457a-abcd-1fdcea8f3a5c",
+      "title": "기대가 상당 부분 반영된 주가",
+      "published_date": "2026-04-15",
+      "brokerage": "한화투자증권",
+      "analyst": "N/A",
+      "ticker": "032830",
+      "stock_name": "삼성생명",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91595&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91595&page=2",
+      "body_text": "1Q26 지배 순이익 7,518억원(+18% YoY) 추정\n삼성생명의 1Q26 연결 지배 순이익은 7,518억원(+18% YoY)으로 컨센서스에 부합하는 실적이 예상됨\nvs. 1Q25(YoY): 보험손익이 200억원 증가할 것으로 추정. 예상보험금 증가에 따른 보험금 예실차의 개선과 유배당계약發 손실계약비용의 축소를 가정한 결과. 투자손익(일반계)은 1,200억원 증가하는데, 주로 삼성전자로부터의 수취 배당액이 1,000억원 증가한 데 기인\nvs. 4Q25(QoQ): 보험금 예실차의 계절적 악화와 연말 경험조정에 따라 발생한 대규모 손실계약비용(2,320억원)으로 적자를 기록했던 전분기와 비교해 보험손익은 대폭 개선. 투자손익(일반계)은 4,400억원 증가. 전분기 중 채권과 부동산 자산에서 평가손이 반영된 반면, 당분기에는 채권 평가손만을 반영하고 배당수익이 계절적으로 증가한 영향\n직전 추정치 대비 별도 손익은 큰 변화가 없고 컨센서스와도 유사하나, 연결 지배 순익은 계열사 실적의 컨센서스를 감안해 5% 상향함\n한편 즉시연금 관련 소송의 승소로 인해 그간 적립한 소송부채(4,260억원)를 환입할 것으로 예상되는데, 시점이 불명확하므로 당사는 이를 2분기 실적 추정에 임의로 반영하였음. 현재 컨센서스는 해당 일회성 이익의 반영 여부가 엇갈려 형성된 상태로 보임\n신계약 CSM은 전분기 대비 물량 증가와 마진 개선이 동반되면서 8.040억원(+6% QoQ)으로 증가할 전망. CSM 잔액은 해지 증가에 따른 조정만 반영하면서 3% QoQ 증가할 것으로 예상됨\n20260415 삼성생명 1Q26 Preview.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "30d09ce0-544d-4ee4-81a7-1daf9edbc06e",
+      "title": "최고경영자 주관 간담회 후기: 바쁘다, 바빠",
+      "published_date": "2026-04-15",
+      "brokerage": "한화투자증권",
+      "analyst": "N/A",
+      "ticker": "271560",
+      "stock_name": "오리온",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91594&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91594&page=2",
+      "body_text": "부족한 공급, 그래서 기대되는 증설 이후\n국가별로 보면 [중국]은 현지 체감 경기가 여전히 부진한 가운데서도 간식점 채널의 급성장과 이커머스의 안정적 성장에 힘입어 구조적인 채널 전환이 이어지고 있다. 특히 간식점은 중국에서 중간 유통 수수료를 줄인 신흥 채널로 빠르게 확산되고 있으며, 오리온은 벌크형 과자·젤리, 전용 파이 제품 등 채널 맞춤형 SKU를 적극 확대하고 있다. 채널 변화에 맞춘 제품 전략이 단순한 유통 대응을 넘어 수익성 개선으로도 연결되고 있다는 점은 긍정적이다.\n[한국]은 진천·익산 공장 모두 주요 라인이 사실상 공급 부족에 직면한 상태로 당분간은 생산 여력이 남아있는 라인 중심으로 신제품 출시가 이뤄질 전망이다. 진천 공장은 2027년 8월 가동 예정이며, 그 전까지는 일부 제품을 해외 공장에서 국내로 들여오는 방식으로 대응할 계획이다.\n[베트남]과 [인도]는 성장 및 손익 구조 개선을 위한 법인 재정비가 마무리된 것으로 파악된다. 베트남은 초코파이에 이어 쌀과자가 새로운 성장 축으로 자리잡고 있으며 이를 중심으로 MT 채널 매출 확대가 본격화될 전망이다. 인도는 북동부 지역 중심의 확장 전략이 성과를 내기 시작한 것으로 보이며 2026년 8월 초코파이·카스타드 라인 추가 가동을 통해 생산체계가 한 단계 진전될 전망이다. 2028년에는 인도 법인의 흑자전환도 가능할 것으로 예상된다.\n[러시아] 역시 초코파이를 중심으로 공급 부족이 이어지고 있으며, 올해 초코파이 라인의 생산성 향상과 후레쉬파이 전용라인 신설, 젤리 가동률 상승 등을 통해 생산 기반을 확대하고 있다. 러시아 상위 유통사인 Tander, X-5와의 견고한 네트워크를 바탕으로 8월 증설 이후에는 다제품군 체제가 강화되며 러시아 법인의 매출 확대 속도도 더욱 가팔라질 전망이다.\n260414_기업코멘트_오리온_F.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "77a35736-e343-46b1-8b1d-7f5fd0e6f855",
+      "title": "1Q26 Pre: 일회성 비용 발생하나 펀더 이상 ..",
+      "published_date": "2026-04-15",
+      "brokerage": "DS투자증권",
+      "analyst": "N/A",
+      "ticker": "000990",
+      "stock_name": "DB하이텍",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91593&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91593&page=2",
+      "body_text": "일회성 비용 221억원 발생하나, 이를 제외 시 수익성 개선\n사내복지기금 복리후생비 221억원 반영으로 인해 1분기 실적은 기존 추정치를 하회하는 영업이익 530억원(-25% QoQ, OPM 14%)를 기록할 것으로 전망한다. 다만 일회성 비용을 제외하면 제품 믹스 개선으로 4분기 대비 수익성이 개선될 전망이다. 1Q26 가동률은 98% 이상으로 4Q25 가동률 96% 대비 2%p 이상 상승했을 것이다. 이에 따라 반도체 매출은 전분기 대비 3% 증가한 3,760억원을 전망한다. 다만 디스플레이 업황 둔화에 따라 연결 자회사 매출이 감소하면서 연결 매출액은 전분기 대비 -0.5% 감소할 것으로 전망한다.\nDB하이텍_기업리포트_260415.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "b2e947f6-433e-4bd0-a750-bc64a18426ba",
+      "title": "지나가는 바람일 뿐",
+      "published_date": "2026-04-15",
+      "brokerage": "DS투자증권",
+      "analyst": "N/A",
+      "ticker": "005380",
+      "stock_name": "현대차",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91592&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91592&page=2",
+      "body_text": "1Q26F Pre: 판매보증비와 원가 부담 확대로 컨센서스 하회 전망\n1Q26F 매출액 45.9조원(+3.3% 이하 YoY), 영업이익 2.6조원(-27.6%)으로 이익 컨센서스를 하회할 전망이다. 기말환율 급등에 따른 판매보증비 증가(3,000억원), 원자재 가격 상승, 팰리세이드 관련 일회성 비용(1,000억원 이내 예상) 인식이 주요하다. 도매판매(중국 제외)는 93.6만대(-3.7%)로 이란 사태에 따른 부진으로 감소했다. 다만 우호적 환율 및 HEV 믹스 성장이 외형 성장을 견인했다. 수익성은 이란 사태에 따른 원자재 가격 상승으로 예상 대비 부진이 불가피하다. 관세는 15% 온기 반영되어 약 1조원 발생할 것으로 예상된다.\n현대차_기업리포트_260415.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "0039b385-4e54-43cf-a659-8ec469e9d8b5",
+      "title": "스테이블 코인이 부상하면 ICTK에 주목해야 ..",
+      "published_date": "2026-04-15",
+      "brokerage": "하나증권",
+      "analyst": "N/A",
+      "ticker": "456010",
+      "stock_name": "아이씨티케이",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91591&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91591&page=2",
+      "body_text": "투자의견 매수, 12개월 목표주가 28,000원 유지\nICTK에 대한 투자의견 매수를 유지한다. 1) 최근 스테이블 코인의 미국 제도권 편입이 활발히 논의됨에 따라 보안 수단인 양자암호 중요성이 높아졌고, 2) 최근 앤트로픽의 AI가 미국 행정, 금융망 내 알려지지 않은 보안 취약점 수천개를 해킹한만큼 보안 리스크는 날이 갈수록 더욱 커지고 있으며, 3) 완전한 양자암호 솔루션이 구축되려면 보안키의 물리적 복제도 방지해야하는 만큼 ICTK의 PUF 기술이 각광받고 있고, 4) ICTK는 글로벌 스테이블 코인 보안 표준인 QSSN의 파트너사로서 향후 독점적인 보안 표준업체로 자리매김할 것으로 기대되기 때문이다.\nICTK_0414.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "2367cbee-22e0-44e5-87e0-f5b3575dd767",
+      "title": "미국 시장 최대 수혜주는 KMW입니다",
+      "published_date": "2026-04-15",
+      "brokerage": "하나증권",
+      "analyst": "N/A",
+      "ticker": "032500",
+      "stock_name": "케이엠더블유",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91590&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91590&page=2",
+      "body_text": "12개월 목표가 50,000원 유지, 단기 실적 부진이 매수 기회일 것\nKMW에 대한 투자의견 매수, 12개월 목표주가 5만원을 유지한다. 추천 사유는 다음과 같다. 1) 2026년 6월 미국 주파수 경매 개시 이후 관련 수혜주 찾기에 분주할 것인데 사실상 국내 대표 수혜 업체이고, 2) 미국 중국 장비/부품 수입 규제 강화로 미국 시장 내 M/S 상승이 예상되며, 3) 2년 뒤 미국/한국/유럽 내 매출 창출 능력을 감안하면 현 시가총액은 너무 낮고, 4) 광통신 장비 업체에 대한 관심이 높지만 시장 규모나 글로벌 경쟁 상황을 감안하면 KMW가 국내 광통신장비 업체보다 향후 높은 시가 총액을 기록할 가능성이 높기 때문이다. 최근 1분기 프리뷰 시즌에 돌입하면서 실적 우려로 KMW 주가 부진 양상이 나타나고 있다. 하지만 결국 KMW 주가는 장기 실적의 방향성과 기대 값으로 정해질 가능성이 크다. 최근과 같은 단기 주가 조정이 나타날 시 적극 매수로 대응할 것을 추천한다.\nKMW_0414.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "508266e6-7127-4542-9bbb-ce903266f162",
+      "title": "다시 보여줄 리딩뱅크의 위용과 저력",
+      "published_date": "2026-04-15",
+      "brokerage": "하나증권",
+      "analyst": "N/A",
+      "ticker": "105560",
+      "stock_name": "KB금융",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91589&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91589&page=2",
+      "body_text": "1분기 추정 순익은 약 1.9조원. 핵심이익 급증하는 가운데 1분기 ROE 12% 육박 예상\nKB금융에 대한 투자의견 매수와 목표주가 200,000원을 유지. 1분기 추정 순이익은 YoY 11.5% 증가한 약 1.9조원을 기록해 컨센서스를 크게 상회할 전망. 1) 1분기 은행 원화대출금은 0.4% 성장에 그치겠지만 2) NIM은 QoQ 2bp 상승해 순이자이익이 추가 개선되는데다 2) 증권 브로커리지수수료와 은행 신탁이익 증가 등에 힙입어 수수료이익이 대폭 확대될 것으로 예상되기 때문. 따라서 1분기 핵심이익(이자이익+수수료이익)은 4.8조원에 육박해 QoQ 6.9%, YoY로는 15.0% 급증할 전망. 3) 판관비는 큰 이슈가 없어 YoY 3.9% 증가에 그칠 것으로 예상되고, 4) 그룹 대손비용도 약 5,500억원 내외로 안정적인 수준이 유지될 것으로 추정. 1분기 예상 DPS는 1,090원으로 작년 1분기의 912원보다 약 19.5% 늘어날 것으로 전망. 분기 경상 순익 체력이 1.9조원대까지 확대되면서 1분기 ROE가 12%에 육박하는 등 리딩뱅크의 위용과 저력을 유감없이 보여줄 것으로 기대\nKBFG_1Q26Preview_20260415.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "451df647-34c5-4fb0-95d2-240fcda74056",
+      "title": "SMP 상한제가 다시 언급될 만큼 쉽지 않은 상..",
+      "published_date": "2026-04-15",
+      "brokerage": "하나증권",
+      "analyst": "N/A",
+      "ticker": "015760",
+      "stock_name": "한국전력",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91588&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91588&page=2",
+      "body_text": "목표주가 55,000원으로 하향, 투자의견 매수 유지\n한국전력의 목표주가를 55,000원으로 기존대비 24.7% 하향하며 투자의견 매수를 유지한다. 2026년 예상 BPS에 목표 PBR 0.7배를 적용했다. 1분기 영업실적은 시장 기대치에 부합할 것으로 예상된다. 분기 평균 SMP는 107원/kWh으로 전년대비 7.1% 하락한 것이 주된 요인이다. 다만 3월부터 아시아 LNG 가격이 급등했기 때문에 SMP는 점진적 우상향이 전망되며 3분기 중 180원/kWh 수준까지 도달할 수 있다. 원자재 가격 일부 하향 안정화를 가정해도 향후 실적에 대한 눈높이는 조정될 여지가 많다. 2026년 기준 PER 10.6배, PBR 0.5배다.\nKEPCO_260415_1Q26Pre.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "08a6908c-2055-4ce2-ad81-74cace7f810d",
+      "title": "올해 사상최대 영업이익 달성 가시화",
+      "published_date": "2026-04-15",
+      "brokerage": "하나증권",
+      "analyst": "N/A",
+      "ticker": "103140",
+      "stock_name": "풍산",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91587&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91587&page=2",
+      "body_text": "1분기 동가격 상승으로 호실적 기록 전망\n2026년 1분기 풍산의 매출액과 영업이익은 각각 1.5조원(YoY +25.5%, QoQ +1.8%)과 1,014억원(YoY +45.5%, QoQ +10.8%)으로 영업이익은 시장컨센서스인 903억원을 상회할 것으로 예상된다.\n1) 신동 판매량이 전분기대비 소폭 증가한 4.7만톤(YoY +5.2%, QoQ +0.4%)이 예상되는 가운데 2) 1분기 LME 전기동 평균 가격이 12,845불/톤(YoY +37.5%, QoQ +15.8%)을 기록하며 250억원 이상의 메탈 관련 이익이 발생한 것으로 추정된다. 3) 한편, 방산의 경우 계절적 비수기로 2,341억원(YoY +15.0%, QoQ -43.0%)의 매출이 예상되고 영업이익률은 4분기와 유사한 10% 초반을 기록할 전망이다. 4) 동가격 상승으로 PMX를 비롯한 해외 신동 관련 자회사들의 수익성도 전분기대비 개선될 것으로 예상된다.\nPoongsan_1Q26_Preview_260415.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "7ef137a8-550e-44c3-8f8b-b5b1855c314a",
+      "title": "[탐방노트] #국산화 #방산수출 #ASP상승",
+      "published_date": "2026-04-15",
+      "brokerage": "유안타증권",
+      "analyst": "N/A",
+      "ticker": "448710",
+      "stock_name": "코츠테크놀로지",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91586&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91586&page=3",
+      "body_text": "방산: 전방산업 성장 수혜\n동사는 방산제품의 디지털화, K-방산의 확산, K-방산의 국산화 등의 요인과 해외 경쟁사(GE, Abaco Systems, Mercury Systems 등) 대비 경쟁력(가격경쟁력, 납기 기간, 고객 대응력)을 보유하고 있어 26년에도 실적개선이 이어질 것으로 기대한다.\n현대화 및 디지털화로 인해 방산제품내 고성능 임베디드 시스템에 대한 필요성이 확대되고있으며, 실시간 전시 상황 분석을 위한 엣지 컴퓨팅 및 AI 가속기 탑재 모듈 수요 증가하고 있다. SBC의 성능 상향이 예상된다. ASP 상향 요인이다.\nK2전차, 천궁 등 국산 무기의 해외 진출 확대에 따른 동반 성장이 기대된다. K2는 중동, 중남미, 동유럽 등에 수출되고 있으며, 이라크, 페루, 루마니아, 사우디 등 다양한 국가들과 협상 중으로 알려져 있다. 천궁II는 UAE(22년)를 시작으로 사우디/이라크로 확산되었고 있다. 기수주 + 신규 수주를 통해 매출성장이 기대된다.\n해외진출도 모색하고 있다. 유럽 방산 거점 중심으로 해외 고객사 확보를 추진하고 있다. 해외 단독 직수출 확보시 수익성 개선에 기여할 수 있다.\n20260415073722683_0_ko.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "3f000c09-3ffe-4fd8-9636-67f2bf1cea92",
+      "title": "[탐방노트] #연료전지 #전장모듈",
+      "published_date": "2026-04-15",
+      "brokerage": "유안타증권",
+      "analyst": "N/A",
+      "ticker": "357580",
+      "stock_name": "아모센스",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91585&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91585&page=3",
+      "body_text": "블룸에너지 SOFC향 세라믹 기판\nSOFC(Solid Oxide Fuel Cell)는 설치 면적대비 전력밀도가 높으며, 설치시간이 짧다. DC-DC전력전송이 가능하다는 점에서 데이터센터에 적용이 확대될 것으로 기대된다. 반면 고온(600~1,000℃)에서 작동된다는 점에서 내열성/내구성/화학적 안정성이 우수한 세라믹이 사용된다. 동사는 SOFC 연료전지 제조기업인 블룸에너지와 23.12월 국산화 사업 체결 이후 R&D를 진행했으며, 1Q26부터 세라믹 기판(전해질 지지체) 판매가 시작되었다. 2H26에는 현재 대비 3배로 CAPA를 확대를 계획하고 있다. 경쟁사들이 존재하지만, 중국 기업이 포함되어 있어 고객사내 M/S거 상향될 가능성이 높다. 매출액 상승과 밸류에이션 상향요인으로 작용될 것이다.\n20260414182532073_0_ko.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "c5fef51e-20cd-439c-9c64-07a67d747be3",
+      "title": "불확실성 해소와 밸류업의 궤도 진입",
+      "published_date": "2026-04-15",
+      "brokerage": "대신증권",
+      "analyst": "N/A",
+      "ticker": "000880",
+      "stock_name": "한화",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91584&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91584&page=3",
+      "body_text": "투자의견 매수, 목표주가 163,000원으로 상향\n㈜한화에 대한 목표주가를 기존 130,000원에서 163,000원으로 25.4% 상향 조정. 당사 커버리지 신규 제시 이후 한화에어로스페이스 시가총액이 약 10조 원 급증(78조 8,892억 원)하며 전체 NAV 내 지분가치 비중이 85.4%까지 확대된 점이 목표가 상향의 핵심 근거. 아울러 2026년 최소 DPS 명문화 및 자사주 소각 등 밸류업 집행 의지를 반영하여 SOTP 할인율을 기존 67%에서 62%로 축소 적용.\n57140_260415_Hanwha_FINAL.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "6fd3b4a4-faf0-4eda-b959-ea4f5171b0bc",
+      "title": "지금이 바로 성장의 초입",
+      "published_date": "2026-04-15",
+      "brokerage": "대신증권",
+      "analyst": "N/A",
+      "ticker": "482630",
+      "stock_name": "삼양엔씨켐",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91583&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91583&page=3",
+      "body_text": "투자의견 매수, 목표주가 24,000원으로 커버리지 개시\n삼양엔씨켐에 대해 투자의견 매수, 목표주가 24,000원으로 커버리지를 개시. 목표주가는 12개월 선행 EPS 1,164원에 Target P/E 20배를 적용하여 산출 Target P/E 선정 기준은 동사의 주요 고객사인 동진쎄미켐의 EUV PR이 전방 고객사의 양산 라인에 최초 도입되기 시작한 시점(‘22년 11월~’23년 2월)의 평균 12개월 선행 PER을 적용. 동사는 ‘15년 반도체 노광 공정의 핵심 소재인 포토레지스트(Photoresist, PR)의 원료를 국산화. 기존 주력 제품인 KrF PR 소재 외에도 선단 소재인 ArF/EUV PR 소재로의 확장으로 현재 성장의 초입 구간 진입. 고마진의 선단 소재 비중 확대되면서 수익성 개선도 가속화 전망\n57143_260414_SAMYANG_F_260414180625.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "978a3aee-2a55-4da4-8cc9-a64921304147",
+      "title": "모든 기판 모멘텀 노출도 보유한 대장주",
+      "published_date": "2026-04-15",
+      "brokerage": "SK증권",
+      "analyst": "N/A",
+      "ticker": "353200",
+      "stock_name": "대덕전자",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91582&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91582&page=3",
+      "body_text": "매분기 개선되는 실적, 매우 긍정적인 업황\n1Q26 예상 매출액 3,360 억원(YoY+56%, 이하), OP 437 억원(흑전, OPM 13%)로 컨센서스 부합, '26 년 연간 매출액 1 조 4,680 억원(+38%), OP 2,022 억원(+312%, OPM 14%)로 컨센서스 OP(1,867 억원) 상회를 예상한다.\n컨센서스 상회 근거로는 1) 메모리용 패키징 기판 수요 강세 지속 및 공정효율화를 통한 추가 Capa 확대, 2) 네트워크 및 AI DC향 FC-BGA 수요 증가에 따른 가동률 상승 (4Q25 기준 63%, 1Q26 기준 추가 상승 예상)과 서버 네트워크용 대면적 신규 제품 진입, 3) 3Q 부터 MLB Capa 확대 반영 및 MLB 수요 강세 지속이 예상되기 때문이다. 기판 산업은 가동률 상승에 따른 영업레버리지가 큰 산업으로, 수요 지속에 따른 가동률 상승으로 매 분기 실적 우상향을 예상한다.\n20260415074651874_0_ko.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "fc9b0822-7941-44f9-be3a-2ed91ee1867d",
+      "title": "탑라인, 수익성 모두 1Q가 연중 저점",
+      "published_date": "2026-04-15",
+      "brokerage": "신한투자증권",
+      "analyst": "N/A",
+      "ticker": "214150",
+      "stock_name": "클래시스",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91581&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91581&page=3",
+      "body_text": "외형 성장 뚜렷, 수급이 이슈\n오버행에 따른 수급 불안정 리스크가 잔존하나, 외형 성장 방향성은 명확. EBD 전 에너지원 라인업 구축, 해외 현지 직영체제 전환, 글로벌 빅마켓 미국·유럽·브라질·중국 모두에 진입해 QoQ, YoY 계단식 성장 시현 전망\n신한투자증권 리서치 탐색기",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "2e268f61-f158-4ad9-aed9-ff7d745ac8b4",
+      "title": "커진 변동성, 방향성은 확실",
+      "published_date": "2026-04-15",
+      "brokerage": "신한투자증권",
+      "analyst": "N/A",
+      "ticker": "023160",
+      "stock_name": "태광",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91580&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91580&page=3",
+      "body_text": "성장 동력 확실, 굳건한 실적 성장 방향성\n올해부터 미국 LNG 발주 물량과 중동 시장을 중심으로 실적 성장 가시화 전망. 중동 전쟁으로 인해 불확실성이 커졌으나 큰 틀에서 방향성 유지. 고유가, 중동 재건 수요 등으로 피팅 수혜 전망. 기존 중동향 매출은 유지 혹은 소폭 성장을 전망했으나 중동 재건 수요 기대감이 커지고 있음\n신한투자증권 리서치 탐색기",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "38ccbc16-44ca-493f-819f-2d6ca93afc51",
+      "title": "최고경영자 간담회 후기",
+      "published_date": "2026-04-15",
+      "brokerage": "신한투자증권",
+      "analyst": "N/A",
+      "ticker": "271560",
+      "stock_name": "오리온",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91579&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91579&page=3",
+      "body_text": "매출 성장률 회복과 원가 부담 완화\n지난 2년간 외형 성장 부진하며 주가도 약세. 올해는 성공적인 성수기 시즌 마무리하며 제품 및 채널 경쟁력 강화에 따른 매출 성장률 및 주가 회복 기대. 지난해 상반기 톤당 10,000달러를 상회했던 카카오 가격은 올해 들어 3,200달러까지 하락, 2Q26부터는 마진 스프레드도 개선 전망\n신한투자증권 리서치 탐색기",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "575a2ee4-2bdd-44fe-b857-9abd603a29d0",
+      "title": "실적 개선과 신사업 기대감이 동시에",
+      "published_date": "2026-04-15",
+      "brokerage": "신한투자증권",
+      "analyst": "N/A",
+      "ticker": "181710",
+      "stock_name": "NHN",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91578&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91578&page=3",
+      "body_text": "조직 효율화 후 실적 개선과 GPUaaS 기대감이 겹쳤다\n웹보드 규제 완화와 정부 GPUaaS 사업 가시화로 플랫폼 업종에서 가장 좋은 주가 수익률 기록. 다음 분기 실적 성장에 대한 기대감 지속 전망\n신한투자증권 리서치 탐색기",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "7bbb8aa0-43e5-4f23-bd24-b874461a201a",
+      "title": "하반기에 집중된 실적 모멘텀",
+      "published_date": "2026-04-15",
+      "brokerage": "iM증권",
+      "analyst": "N/A",
+      "ticker": "122870",
+      "stock_name": "와이지엔터테인먼트",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91577&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91577&page=3",
+      "body_text": "목표주가 하향\n하반기 빅뱅 20주년 투어 개최가 예상된다. 10주년 투어 당시 한국/일본/홍콩에서만 100만명 이상의 관객을 동원한 만큼 상당한 이익 기여가 예상된다. 빅뱅의 코첼라 공연(현지시간 기준 4/12, 4/19) 이후 구체적인 일정이 발표될 것으로 기대되며, 실제 공연 규모나 음반/원 발매 여부에 따라 실적 추정치가 상향될 가능성도 있다. 또한 이연 수요를 감안하면 MD/라이선싱 매출 고성장도 더해지면서 단기적으로 주가 상승 모멘텀으로 작용할 수 있다. 다만 블랙핑크 추가 활동 부재 및 베이비몬스터 월드투어 재개 시점(6월 말) 조정으로 2분기 실적을 하향 조정하면서 실적 모멘텀은 하반기에 집중될 것으로 예상된다.\n[15074134]_122870.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "27e1432c-c842-43cb-8f03-8240ed36e166",
+      "title": "외형 성장보단 수익성에 집중",
+      "published_date": "2026-04-15",
+      "brokerage": "iM증권",
+      "analyst": "N/A",
+      "ticker": "041510",
+      "stock_name": "에스엠",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91576&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91576&page=3",
+      "body_text": "목표주가 하향\n작년 MD/라이선싱 매출 서프라이즈 및 디어유 연결 편입 효과로 기저가 높은 가운데, 올해 예상 영업이익은 2,050억원(+12% YoY)으로 전년 대비 성장률은 다소 둔화될 것이다. 올해는 지역 다변화를 위해 에스파 북미/유럽 투어 개최가 예상되는데, 이에 따라 회당 관객수는 아시아 투어 때 대비 감소할 수 있다. 다만 RIIZE, NCT WISH 등 저연차 그룹의 아시아 투어 규모 확대로 일부 상쇄될 것이다. SMTR25 예능 ‘응답하라 하이스쿨’은 4월 방영을 마쳤고, 오는 5월 한국/일본/태국에서 팬미팅 투어를 개최한다. 향후 SMTR25 내에서 2~3팀이 데뷔할 예정으로, 연내 1팀의 보이그룹 데뷔를 앞두고 있다. 데뷔 전부터 방송, 팬미팅 등을 통해 초기 코어 팬덤 기반을 다진 만큼 빠른 수익화가 기대된다. 고연차 IP 활동에 따른 안정적인 수익 기반 확보도 긍정적이다. EXO는 4월부터 월드투어를 재개했고, NCT도 10주년을 맞아 전방위적인 활동 확대가 예상된다. 디어유(표6)는 올해 분기 100억원 이상의 이익 기여가 가능할 것이며, 국내 공연 개최 증가에 따라 드림메이커(표7) 실적 개선 또한 지속될 것이다. SME Japan은 최근 3개년 사업 계획을 발표하면서 KPI를 기존의 외형 성장 지표(공연 모객수 등)에서 수익성 지표(영업이익률)로 변경했다. 엔저 및 인플레이션에 따른 외부 비용 상승에 대응해 비용 통제와 고마진 사업 비중 확대에 집중할 계획이다. 올해는 지역 다변화와 저연차 IP의 가파른 수익화가 중요한 한 해로, 외형 확대보다는 비용 통제를 통한 수익성 방어에 집중할 것으로 보인다. 12MF P/E 기준 14배인 현재 주가 수준에서는 흥행 지표가 확인되면 저가 매수세가 유입될 가능성이 있다. 다만 업종 밸류에이션 하락을 반영해 Target P/E는 23배로 하향 조정해 목표주가를 140,000원으로 13% 하향한다. 중국, 미국 등 주요 지역에서 유의미한 성과가 가시화되면 밸류에이션 리레이팅이 가능할 것이다.\n260415_황지원_에스엠.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "c5799e43-801c-48f4-bd66-8ae39fbf6ca2",
+      "title": "반도체 패키징 병목 속 이익개선 확대",
+      "published_date": "2026-04-15",
+      "brokerage": "iM증권",
+      "analyst": "N/A",
+      "ticker": "064290",
+      "stock_name": "인텍플러스",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91575&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91575&page=3",
+      "body_text": "‘26년도부터 마진 개선이 빠르게 나타날 것으로 보인다\n‘26년 동사의 GPM, OPM은 각각 약 51.7%, 18.8%(‘25년 GPM 33.1%, OPM -3.6%)로 급격하게 개선될 전망이다. 이에 따라 ‘26년 동사 실적은 매출액 1,042억(+16.1%, YoY), 영업이익 194억원(흑전, YoY, OPM 18.8%)이 기대된다. 마진 개선의 가장 큰 이유는 고마진 반도체 외관검사 중심으로의 포트폴리오 재편이다. ①올해 반도체 외관검사장비 매출 비중은 70%를 상회할 전망이며, 반도체 검사장비는 사양에 따라 이차전지 장비 대비 수익성이 약 2배 높다. ②또한 2차전지 장비 부문 인력 감축에 따른 ‘25년 인건비 하락(260억→225억) 역시 수익성 개선에 기여할 전망이다.\n[15072156]_064290.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "9bc6b821-801f-4c5a-8d63-1aea5f791923",
+      "title": "IR 後記: 전장 및 로봇 사업 진행은 순항 중",
+      "published_date": "2026-04-15",
+      "brokerage": "유진투자증권",
+      "analyst": "N/A",
+      "ticker": "290740",
+      "stock_name": "액트로",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91574&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91574&page=3",
+      "body_text": "\" IR 후기: 장비 사업 이외에 전장 및 로봇 부품 사업 등 사업 다변화 추진 중.\n동사는 2012년 설립 이후 모바일용 액추에이터 및 자동화 장비 등을 제조 및 판매하고 있음. 모바일용 액추에이터 시장은 안정적으로 Cashcow 역할을 하고 있는 가운데, 자동화 및 검사 장비 사업으로 확대해왔으며, 최근에는 전방 및 로봇 부품 사업까지도 확대하면서 사업다변화를 추진하고 있음. ① 자동화 및 검사장비 부문은 기존의 세척공정장비, 조립공정장비, 외관 및 성능 검사 장비 등으로 제품을 다양화하고 있음. 신규 사업으로 이차전지 음극재에 적용할 크래핀 코팅 장비, 반도체 검사기인 테라헤르츠파 검사장비 등을 개발하고 있음. 지난해 매출비중은 8.9%로 점차 비중을 확대 중임. ② 전장 및 로봇 부문의 사업도 순항 중임. 전장용 부품 사업은 올해 5월 중으로 양산을 준비하고 있으며, 올해는 약 50억원의 초도 매출을 예상하고 있음. 내년에는 올해 대비 4배 수준으로 매출이 증가하고, 수익성 개선에 기여할 것으로 예상함. 로봇 부품 사업도 올해 4분기에 양산 예정으로 투자를 진행 중이며, 올해는 약 20억원의 초도 매출을 기대하고 있음. 내년에는 올해 대비 5배 수준의 매출 성장을 기대하고 있음. 베트남 2공장에 추진하고 있는 전장 및 로봇 부문의 투자는 지속적으로 확대 예정임. 최종적으로 투자가 완료된 후 2공장의 전장 및 로봇 부품 매출은 각각 최대 800억원, 1,500억원까지 가능할 것으로 추정, 향후 액추에이터 부문 매출 수준까지 도달이 가능할 것으로 전망함.\n\" 1Q26 Preview: 1분기는 비수기로 실적 부진 지속 예상.\n당사 추정 올해 1분기 예상실적(연결 기준)은 전형적인 비수기로서, 매출액 500억원, 영업손실 2억원으로 전년동기 대비 매출액은 5.8% 감소하고, 영업이익은 적자를 지속하지만, 적자 폭은 감소할 것으로 예상함.\n\" 2026 Preview: 사업 다변화 추진으로 신규사업 매출 가시화 기대.\n당사 추정 2026년 예상 실적(연결 기준)은 매출액 2,599억원, 영업이익 118억원으로 전년대비 각각 6.1%, 79.1% 증가하면서 최대 매출액 갱신과 함께 수익성 개선이 지속될 것으로 예상함. 2026년 실적에서 긍정적으로 보이는 것은 사업 사변화의 효과가 가시화될 것이라는 점임. ① 액추에이터 매출액은 신규 플래그십 모델 탑재 확대를 통한 Cashcow 역할을 지속하는 가운데, ② 북미향 OIS 6측 검사기, 테라헤르츠 검사 등의 신규 매출을 포함한 ‘자동화 및 검사장비’ 매출이 증가할 것으로 예상함. ③ 또한, 북미 완성차향 전장 및 휴머노이드 로봇용 초도 매출을 기대하고 있음.\n\" Valuation: 주가 조정 이후 상승세 전환, Valuation 매력 보유\n현재주가는 2026년 실적 기준 PER 17.5배로, 국내 유사체 및 동종업체(자화전자, 엠씨넥스, 파트론, 동운아나텍, 삼성전기) 평균 PER 30.75배 대비 할인되어 거래 중임. 특히, 신규 사업인 북미 완성차향 전장 및 로봇 부품 매출 가시화 기대감 등을 감안하면 Valuation 매력을 보유.\n20260415_290740_jongsun.park_2581.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "31d2aebc-3042-40e3-aafb-7445a214c98c",
+      "title": "탐방노트: ETF 시장 급속 확대의 최대 수혜주",
+      "published_date": "2026-04-15",
+      "brokerage": "유진투자증권",
+      "analyst": "N/A",
+      "ticker": "064850",
+      "stock_name": "에프앤가이드",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91573&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91573&page=3",
+      "body_text": "\" 회사 소개: 국내 민간 최초 실시간 지수 서비스를 제공하는 선도 업체.\n2000년 설립. 2013년 코넥스 시장 상장, 2020년 코스닥 시장 이전 상장. 동사의 주요사업은 온라인을 기반으로 금융정보를 제공하는 서비스이며, 크게 금융정보서비스 부문, 인덱스 개발 및 제공 부문, 펀드 평가 부문 등을 구분. 주요 고객은 증권사, 자산운용사, 투자자문사, 은행 등 금융기관과 대학교, 연구소 등의 연구기관임. 매출 비중(2025년 기준)은 금융정보서비스 부문 57.0%, 인덱스 부문 30.4%, 펀드평가 부문 5.3%, 기타 7.3%. 동사는 안정적인 매물 성장과 함께 2006년 이후 20년 연속 영업이익 흑자 지속.\n\" 2025 Review: ETF 시장의 성장과 지배력 확대 기반 인덱스 부문 성장 중.\n2025년 연간 실적(연결 기준)은 매출액 354억원, 영업이익 107억원으로, 전년대비 각각 12.0%, 39.4% 증가하면서 연간 최대 매출액과 영업이익을 달성하였음. 경쟁요인 완화 및 부가가치 확대로 큰 폭의 수익성 개선이 지속(OPM: 2024A, 24.2% → 2025A, 30.1%, +5.9%pYoY)된 것이 긍정적임. 특히, 수익성이 양호한 인덱스 부문이 전년 대비 39.2% 증가하면서 성장을 견인하였음. 국내 ETF(Exchange Traded Fund, 상장지수펀드) 순자산총액이 증가(ETF순자산총액: 2024년 173조원 → 2025년 297조원)한 가운데 동사의 시장점유율이 증가(2024년 8.3% → 2025년 11.0%)하면서 동사의 AUM(Asset Under Management, 운용자산)이 증가(동사 AUM: 2024년 14조원 → 2025년 33조원)했기 때문임.\n\" 2026 Preview: ETF 시장의 급속 성장과 함께 최대 실적 달성 지속 전망.\n2026년 연간 예상실적(연결 기준)은 매출액 496억원, 영업이익 204억원으로, 전년대비 각각 40.1%, 91.1% 증가하면서 최대 실적 달성을 지속할 것으로 전망함. 실적 성장을 기대하는 이유는, ① 인덱스 부문 매출이 전년대비 106.0% 증가하면서 성장을 견인할 것으로 예상하기 때문임. 이미 국내 ETF순자산총액이 1분기에 361조원에 이르고 동사의 시장점유율이 13.9%까지 상승하면서 1분기말 동사의 AUM이 50조원에 이르면서 관련 매출이 급증하고 있음. 특히 국내 ETF 순자산총액은 여전히 증가세를 유지하고 있고, 동사의 시장점유율이 확대되면서 성장폭은 더 확대될 것으로 예상함. ② 이외에도 금융정보서비스 부문도 사용자 친화적 환경 구축 및 AI기술을 활용한 신규 서비스 및 솔루션 사업 진출 등으로 관련 매출이 전년대비 12.8% 증가할 것으로 예상함. 이러한 매출 성장과 함께 영업이익률은 지난해 30%대 달성에 이어 올해는 40%대를 달성할 것으로 예상함.\n\" Valuation: 최근 주가 상승에도 불구, 여전히 Valuation 매력 보유\n현재주가는 2026년 실적 기준 PER 15.4배로, 국내 주요 소프트웨어 업체(NICE평가정보, 한글과컴퓨터, 더존비즈온, 헥토파이낸셜, 아이티센글로벌) 평균 PER 22.5배 대비 할인되어 거래 중임. 특히, Peer 그룹 대비 높은 매출 성장률, 높은 ROE, 높은 영업이익률을 감안하면 Valuation 매력을 보유.\n20260415_064850_jongsun.park_2580.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "dda37415-a823-4cc6-86d7-3a29e1337f4d",
+      "title": "1Q26 Pre_견조한 실적, R&D 모멘텀 본격화",
+      "published_date": "2026-04-15",
+      "brokerage": "SK증권",
+      "analyst": "N/A",
+      "ticker": "195940",
+      "stock_name": "HK이노엔",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91572&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91572&page=3",
+      "body_text": "1Q26 Pre: 국내외 케이캡의 견조한 성장 지속, 컨센 부합 전망\nHK 이노엔의 26 년 1 분기 매출액은 2,607 억원(+5.4%YoY, -10.7% QoQ), 영업이익은 301 억원(+18.6%YoY, -24.9%QoQ, OPM 11.5%)으로 컨센서스 매출액 2,641 억원 및 컨센서스 영업이익 291 억원에 부합할 것으로 전망한다.\n1)국내 처방 실적과 중남미 지역의 수출 성장에 힘입어 케이캡 매출(532 억원, +12%YoY, +1.1%QoQ)은 견조한 성장을 지속, 2)헬리코박터 제균요법의 중국 국가 의료보험약품목록(NRDL) 등재에 따른 처방량 증가로 중국 로열티 매출 성장(약 42 억원 추정), 3)전공의 파업 철회 이후 의료 정상화로 수액 사업부 매출(365 억원, +9%YoY, +2.9%QoQ)은 안정적 회복세를 유지, 4)숙취해소제 경쟁 심화로 성장이 정체된 컨디션 매출 영향으로 HB&B 사업부는 219 억원(+2.3% YoY, +3.4%QoQ)을 기록할 것으로 전망한다.\n20260414205046805_0_ko.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "47ec8242-d092-459c-b83f-18eb604d527c",
+      "title": "SMR로 연간 2,000억원 이상 영업이익 기대",
+      "published_date": "2026-04-15",
+      "brokerage": "키움증권",
+      "analyst": "N/A",
+      "ticker": "375500",
+      "stock_name": "DL이앤씨",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91571&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91571&page=3",
+      "body_text": "표준화 설계를 통한 X-Energy 프로젝트 반복 참여 전망\n원전 건설의 주요 문제 중 하나는 EPC 파트너를 구하는 것이다. 특히, 미국의 경우 Vogtle 3, 4 호기 건설 당시 공기 지연에 따른 비용 상승이 가장 큰 문제로 대두된 바 있다. X-Energy 또한 SEC에 제출한 S-1에서도 이런 문제가 언급되면서, 주요 EPC 파트너와의 프로젝트 반복의 중요성을 강조하고 있다. DL이앤씨는 ‘25년 10월 X-Energy와 표준화 설계 용역 계약을 체결한 바 있으며, 연내 후속 프로젝트로의 확대 가능성도 있다 판단된다. X-Energy는 이를 통해 SMR 사업 기간을 줄이고, 비용을 줄이면서 Xe-100 모델 확대에 노력할 것으로 파악된다. DL이앤씨가 직접 표준화 설계를 한 만큼 설계 이해도가 높음에 따라 프로젝트의 참여 가능성이 증가할 수 있다 판단된다. X-Energy의 주요 EPC 파트너로 지목된 만큼 향후 X-Energy의 프로젝트에서 반복적인 참여가 기대된다.\nrfCR12005.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "06c895d1-c745-49ee-bc5f-45d723840291",
+      "title": "Memory를 System으로 봐야 그림이 보인다",
+      "published_date": "2026-04-15",
+      "brokerage": "IBK투자증권",
+      "analyst": "N/A",
+      "ticker": "000660",
+      "stock_name": "SK하이닉스",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91570&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91570&page=3",
+      "body_text": "26년 1분기 사상 최대 수준\nSK하이닉스의 26년 1분기 매출액은 25년 4분기 대비 51.9% 증가한 49조 8,770억원으로 전망한다. 이전 전망 대비 증가한 규모이다. DRAM과 NAND 모두 큰 폭으로 상향 조정되었다. ASP가 이전 전망 대비 크게 상향된 영향이다. DRAM 매출액은 25년 4분기 대비 52.6% 증가할 것으로 예상한다. B/G는 0%, ASP는 +65.0%로 추정한다. NAND 매출액은 25년 4분기 대비 51.4% 증가했다. B/G는 -3.0%, ASP는 70%로 추정한다. 26년 1분기 영업이익은 25년 4분기 대비 2배 증가한 38.46조원으로 전망한다. 이전 전망 대비 증가한 규모이다.\n[IBK투자증권] SK하이닉스_20260415vS.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "db71e267-16f2-4748-b9f6-e604675ba106",
+      "title": "2분기 실적 기대감 확대",
+      "published_date": "2026-04-15",
+      "brokerage": "IBK투자증권",
+      "analyst": "N/A",
+      "ticker": "229640",
+      "stock_name": "LS에코에너지",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91569&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91569&page=3",
+      "body_text": "1Q26 영업이익, 시장 기대치를 약 20% 상회\n1분기 연결 매출액과 영업이익이 각각 2,964억원(+29.8% yoy), 201억원(+31.0% yoy)을 기록, 컨센서스(2,532억원/171억원)와 당사 추정치(2,459억원/167억원)를 모두 상회했다. LSCV 실적은 예상대로 다소 부진했으나, LS-VINA가 이를 충분히 상쇄하며 1분기 기준 사상 최대 실적을 달성했다. 수주잔고는 1억 5,356만 달러(한화 약 2,268억원, +14.4 yoy, +11.5% qoq)로 확대됐다.\n법인별로, LS-VINA는 매출액 3,068억원(+29.5% yoy), 영업이익 169억원(+45.1% yoy)을 기록해 당사 추정치(2,643억원/145억원)를 각각 16% 상회했다. 초고압케이블 및 소재 부문의 판매 호조가 실적을 견인했다. 베트남 내수 프로젝트 수주 확대와 덴마크향 수출이 지속되며 초고압케이블 매출은 전년 대비 176.5% 증가했고, 소재 부문 역시 전기동 임가공 물량 확대로 32.0% 늘었다. 구리 가격 상승분이 판가에 반영되면서 영업이익률도 0.6%p(yoy) 개선됐다.\nLSCV는 매출액 677억원(+10.2% yoy), 영업이익 41억원(-7.1% yoy)을 기록했다. 미국향 통신케이블(UTP)에 약 40%의 관세가 적용되며 수익성 하락은 불가피했으나, 통신케이블 판매 증가와 인도네시아 등 동남아 지역으로의 부스덕트(Busduct) 수출 확대에 힘입어 매출은 당사 추정치(593억원/41억원)를 상회했다.\n20260414174729553_ko.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "1113789e-0ea1-4692-910a-fc380815ac9a",
+      "title": "인내는 쓰나 그 열매는 달다",
+      "published_date": "2026-04-15",
+      "brokerage": "iM증권",
+      "analyst": "N/A",
+      "ticker": "000100",
+      "stock_name": "유한양행",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91568&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91568&page=3",
+      "body_text": "마일스톤 이연에 따른 실적 컨센서스 하회 전망\n동사의 연결 기준 1분기 매출 및 영업이익을 5,237억원(YoY +7%), 67억원(YoY +4%, OPM 1%)으로 전망한다. 시장 컨센서스(매출 5,455억원, 영업이익 280억원) 대비 하회하는 실적이 예상된다. 당분기 중 인식될 것으로 예상했던 렉라자의 유럽 허가 마일스톤 약 450억원이 이연된 영향이며, 나머지 사업부에서의 큰 특이사항은 현재로써는 없는 것으로 확인된다.\n약품사업은 비처방약과 처방약 모두에서 견조하다. 자디앙 등 주요 품목에서의 약가 인하가 발생했지만 전략적 품목의 성장을 통해 포트폴리오의 다변화를 추구하고 있다. 해외사업은 글로벌 원료의약품 시장의 탈중국화 추세가 일어나고 있어 이를 통한 간접적인 수혜가 기대되며, 동사의 사업부 중 가장 큰 성장을 보일 것으로 기대된다. 현재 캐파는 100만리터이며 풀 가동 상태다. 고객사들의 공급 요청에 대응하기 위해 30만리터를 추가로 증설하고 있으며, 2028년 중순부터 본격적인 매출이 반영될 수 있을 것으로 예상한다.\n260415_유한양행_r1.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "7989d344-593b-4429-b051-61f0b65359ab",
+      "title": "한화솔루션 유상증자 120% 초과 청약, 그룹 ..",
+      "published_date": "2026-04-15",
+      "brokerage": "키움증권",
+      "analyst": "N/A",
+      "ticker": "000880",
+      "stock_name": "한화",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91567&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91567&page=3",
+      "body_text": "◎ 한화, 4/8 공시를 통해 한화솔루션 유상증자 참여 및 8,439 억원 출자 계획 발표\n>> 한화그룹에서 신재생에너지, 소재 사업 등을 영위하는 한화솔루션은 지난 3월 26일 유상증자 계획 발표\n>> 한화솔루션 유상증자의 예정 발행 규모는 2.4조원, 채무상환과 시설 투자에 각각 1.5조원/0.9조원 사용 계획\n>> 해당 유상증자 공시에 대해 금융당국은 4/9 정정신고서 제출을 요구했으며, 3개월 이내 제출해야 하는 상황\n>> 언론 보도에 따르면 증권사와 잔액인수 계약을 체결하여 당국의 심사를 통과한다면 자금 조달에는 문제가 없을 것으로 전망\n>> 한화솔루션의 최대주주인 한화(보유지분 36.7%)는 이번 유상증자에 참여하여 8,439억원을 출자할 계획으로, 이는 배정된 물량의 120%로 초과하여 청약하는 것\nrfSN3701.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "7d2e5d44-7611-44d6-9961-17875d9f92d0",
+      "title": "우주에서도 선택 받을 비중국 폴리실리콘",
+      "published_date": "2026-04-15",
+      "brokerage": "키움증권",
+      "analyst": "N/A",
+      "ticker": "010060",
+      "stock_name": "OCI홀딩스",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91566&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91566&page=3",
+      "body_text": "◎ ‘스페이스X’향 폴리실리콘 장기 공급 계약 체결 보도\n>> 4월 14일 장후, OCI TerraSus와 스페이스X가 폴리실리콘 장기 공급 계약을 체결했다는 언론 보도 공개\n>> 보도에 따르면, 두 업체 간 다년 공급 계약이 체결됐으며 현재 세부 조건을 조율 중인 것으로 파악\n해당 보도에서는 약 1조원 규모의 3~5년 장기 공급 계약이 유력할 것으로 예측\n비중국 폴리실리콘 평균 가격 고려 시, 연간 판매 물량은 8,000~11,000톤 정도로 추정\n>> 정규 시장 종가(188,100원) 대비 After Market 종가 +22.8% 상승. 시가총액은 약 8,000억원 상승\n스페이스X향 연간 매출액 2,500억원, EBITDA 마진율 30~35% 가정 시, EBITDA 750~875억원\nTarget EV/EBITDA 10배(Peer 평균 12개월 EV/EBITDA 20% 할인) 적용 시, 약 8,000억원 도출\n>> 다만, 위 장기 공급 계약이 단기 실적에 미치는 영향은 제한적\nOCI TerraSus의 폴리실리콘 CAPA는 연 35,000톤\n현재 OCI TerraSus 2026~2027년 실적 추정치는 폴리실리콘 가동률 80~90%를 이미 반영\n따라서, 가동률 90%를 가정(연간 판매량 31,500톤)하더라도, 현재로서는 Q 상승 여력이 제한적\nrfSN3700.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "726df0d2-24c4-46c7-8682-d321da978899",
+      "title": "시대를 향한 웅대한 비상",
+      "published_date": "2026-04-15",
+      "brokerage": "키움증권",
+      "analyst": "N/A",
+      "ticker": "044490",
+      "stock_name": "태웅",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91565&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91565&page=3",
+      "body_text": "원전 단조 시장 특징: 높은 진입장벽\n원전 기자재/소재 시장은 진입장벽이 높다. 먼저 대규모 설비 투자가 요구된다. 대형 프레스, 가열로/열처리로 등 단조 설비에만 수 천억원이 투입된다. 고품질/고사양 잉곳을 원하는 시점에 활용하기 위해선 제강 시설(전기로)도 자체적으로 보유해야 한다. 이를 더하면, 조 단위 투자 비용과 3년 이상의 시간이 소요된다. 신규 업체가 설비 투자 후 시장에 진입하더라도, 단조 기술력과 노하우 습득까지 많은 시간이 필요하다.\n무엇보다도 원전은 안전성이 가장 중요한 만큼, 관련 레퍼런스를 보유한 업체 외에는 시장 진입 자체가 어렵다. 동사는 작년에 글로벌 SMR 고객사로부터 보조기기 단조 소재를 수주 받았다. 올해는 미국 T사향 주기기 단조 소재 수주가 예상된다. 해당 수주는 단순히 내년 실적 성장에 기여한다는 점을 넘어, SMR 주기기향 수주 레퍼런스를 확보한다는 점에서 의미가 크다. 이를 기반으로 다양한 SMR 고객사와의 협업 기회가 보다 확대될 전망이다.\nrfCR12004.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "62983ef6-316d-448a-8cd9-b30b3ed1dcbb",
+      "title": "리노베이션 및 비용 부담으로 컨센 하회 전망",
+      "published_date": "2026-04-15",
+      "brokerage": "키움증권",
+      "analyst": "N/A",
+      "ticker": "035250",
+      "stock_name": "강원랜드",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91564&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91564&page=3",
+      "body_text": "1분기 영업이익 컨센 하회 전망\n1분기 매출액은 3,626억원(QoQ -0.8%, YoY -1.0%), 영업이익은 537억원(QoQ +80.7%, YoY -27.7%)을 기록할 것으로 전망된다. 매출액은 시장 예상치에 부합할 것으로 보이나, 영업이익은 컨센서스를 하회할 전망이다. 카지노 부문의 핵심 지표인 드롭액은 1.5조원(YoY +2.0%)으로 전년과 유사한 흐름을 유지한 것으로 추정된다. 다만, 3월부터 시작되는 메인호텔 및 마운틴 콘도의 대규모 리노베이션은 향후 실적에 부담 요인으로 작용할 전망이다. 약 2년간 진행되는 공사 기간 중 객실 공급 부족으로 인한 매출 손실이 불가피하며, 연간 리조트 부문의 기회손실 비용은 보수적인 관점에서 약 290억원 규모로 추산된다. 1분기 감가상각비는 전년 동기 191억원에서 증가한 230억원 수준이 예상되며, 인건비 또한 성과급 선반영분 약 47억원과 명예퇴직금 약 44억원이 일시에 반영되면서 전년 대비 약 30% 증가할 것으로 보인다.\nrfCR12003.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "17df64b7-8a76-4e11-a03f-67d530bcb989",
+      "title": "강력한 실적 모멘텀!",
+      "published_date": "2026-04-15",
+      "brokerage": "IBK투자증권",
+      "analyst": "N/A",
+      "ticker": "004170",
+      "stock_name": "신세계",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91563&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91563&page=3",
+      "body_text": "1분기 실적 Preview: 성수기 만큼 강력한 실적 기대\n동사의 2026년 1분기 실적은 시장 기대치를 큰 폭으로 상회할 것으로 예상한다. 연결 기준 매출액은 1조 8,591억 원(YoY +11.6%), 영업이익 1,794억 원(YoY +35.6%)으로 시장 기대치 및 당사의 추정치를 약 13.6% 상회할 전망이다. 큰 폭의 실적 성장을 전망하는 근거는 1) 자산가치 상승 및 본점 리뉴얼 확장에 따른 효과로 명품 성장률이 20%를 상회할 것으로 보이고, 2) 의류 성장률 회복에 따른 성장이 지난 4분기부터 이어져오고 있으며, 3) 주요 종속회사 실적 회복(신세계인터내셔날) 및 실적 성장(신세계센트럴), 4) 면세점 수익성 전략에 따라 추정치를 상회하는 실적을 기대하기 때문이다. 1분기 실적 추정치를 올린 가장 큰 이유는 예상치를 상회하는 명품 성장이다. 특히, 본점 리뉴얼 오픈에 따른 효과가 기대치를 상회하고 있다. 또한, 당초 신세계DF의 경우에도 임대료 증가에 따른 부담을 예상했지만, 수익성 개선 효과로 적자폭 확대는 예상보다 크지 않을 것으로 전망한다.\n20260414141141017_ko.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "9e7e1ed6-6c8b-499d-b6c9-8c4c488dcb2f",
+      "title": "[AI] 차량용 소프트웨어 플랫폼 개발 및 공급..",
+      "published_date": "2026-04-15",
+      "brokerage": "한국IR협의회",
+      "analyst": "N/A",
+      "ticker": "352910",
+      "stock_name": "오비고",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91562&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91562&page=3",
+      "body_text": "1 주요 제품 및 연혁\n오비고는 차량용 소프트웨어 플랫폼 개발 및 공급을 주된 사업으로 영위한다. 핵심 서비스는 차량 내 인포테인먼트(IVI, InVehicle Infotainment) 시스템에 탑재되는 브라우저 및 미들웨어(소프트웨어와 운영체제 사이를 연결하는 중간 소프트웨어) 플랫폼으로, 자동차 제조사 및 1차 부품 공급사(Tier 1)를 주요 고객으로 한다. 오비고의 서비스는 차량 내에서 웹 기반 콘텐츠와 애플리케이션을 구동할 수 있도록 지원하며, 스마트폰과 연동되는 커넥티드카(Connected Car) 환경에서 필수적인 소프트웨어 인프라를 제공한다.\n오비고는 2003년 설립되어 차량용 브라우저 기술 개발을 시작으로 사업 기반을 구축했다. 설립 초기부터 글로벌 완성차 업체 및 Tier 1 부품사에 차량용 브라우저 솔루션을 공급하며 기술력을 축적했으며, 이후 단순 브라우저에서 벗어나 차량용 앱 스토어 플랫폼, 미들웨어, 소프트웨어 개발 키트(SDK) 등으로 서비스 영역을 확장했다. 이러한 성장 과정을 바탕으로 2021년 코스닥 시장에 상장했다.\n오비고_252H_보고서.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "e2c49729-1016-4c52-9879-89be895e4842",
+      "title": "[AI] 데이터보안, 애플리케이션보안, 정보보..",
+      "published_date": "2026-04-15",
+      "brokerage": "한국IR협의회",
+      "analyst": "N/A",
+      "ticker": "150900",
+      "stock_name": "파수",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91561&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91561&page=3",
+      "body_text": "1 주요 제품 및 연혁\n파수는 2000년 6월 설립된 정보보안 소프트웨어 기업으로, 데이터보안, 애플리케이션보안, 정보보호컨설팅을 주된 사업으로 영위한다. 핵심 서비스는 기업 내 문서와 데이터를 암호화하여 권한 없는 접근과 유출을 차단하는 E-DRM(Enterprise Digital Rights Management) 기반의 데이터보안 솔루션이며, 이를 중심으로 클라우드 환경, 모바일 플랫폼, 외부 협업 등 다양한 환경에 대응하는 제품군을 구축하고 있다. 대표 제품으로는 Fasoo Enterprise DRM(FED) 시리즈, Fasoo Data Radar(FDR), Fasoo Smart Print(FSP), Fasoo Cloud Bridge(FCB) 등이 있으며, 최근에는 Fasoo Enterprise LLM(Ellm), AI-R Privacy, AI-R DLP 등 인공지능(AI) 기반 보안 서비스로 제품 영역을 확장하고 있다.\n애플리케이션보안 부문은 자회사 주식회사 스패로우를 통해 운영되며, 소프트웨어 개발 과정에서 보안 취약점을 탐지·제거하는 소스코드 정적분석 솔루션(SAST)을 핵심 서비스로 제공한다. Sparrow 제품군은 행정자치부 소프트웨어 개발보안(시큐어코딩) 47개 항목을 지원하고, CWE/SANS Top 25, OWASP Top 10, CERT 등 국제표준 레퍼런스 검출 기능을 갖추고 있다. 또한 정적분석(SAST)과 동적분석(DAST)을 통합 제공하고, 웹 애플리케이션 공격을 실시간 탐지·차단하는 자기방어솔루션(RASP), 오픈소스 라이선스 및 보안 취약점 진단 도구(SCA) 등을 포함한 통합 플랫폼(Sparrow Enterprise)을 운영한다. 정보보호컨설팅 부문에서는 ISMS, ISO27001, ISMS-P 인증 체계구축, 기반시설 취약점 분석·평가, 자동차 사이버보안 인증 컨설팅 등 공공·금융·제조·통신 등 다양한 산업군을 대상으로 서비스를 제공한다.\n파수_252H_보고서.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "2931fbf0-ed85-4491-944a-a6e372163f1a",
+      "title": "[AI] 디스플레이 및 반도체 레이저 장비 전문..",
+      "published_date": "2026-04-15",
+      "brokerage": "한국IR협의회",
+      "analyst": "N/A",
+      "ticker": "265520",
+      "stock_name": "AP시스템",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91560&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91560&page=3",
+      "body_text": "1 주요 제품 및 연혁\nAP시스템은 반도체 및 디스플레이 제조 공정에 사용되는 레이저 장비와 열처리 장비를 주된 제품으로 영위하는 장비 전문 기업이다. 핵심 제품군은 디스플레이 패널 제조에 적용되는 ELA(Excimer Laser Annealing, 엑시머 레이저 어닐링) 장비와 반도체 공정용 레이저 장비로 구성된다. ELA 장비는 비정질 실리콘을 다결정 실리콘으로 변환하는 공정(저온 다결정 실리콘 형성)에 사용되며, LTPS(Low Temperature Poly Silicon) OLED 패널 생산의 핵심 공정 장비로 자리한다. 이 외에도 레이저 리프트오프(LLO, Laser Lift-Off) 장비, 레이저 커팅 장비 등 다양한 레이저 응용 장비를 공급하며 디스플레이 장비 분야에서의 제품 포트폴리오를 확장해왔다.\nAP시스템의 사업 기반은 삼성디스플레이 등 국내 주요 디스플레이 패널 제조사를 핵심 고객으로 하는 공급 구조에서 출발했다. OLED 패널 시장이 스마트폰을 중심으로 빠르게 성장하면서 LTPS 공정 장비에 대한 수요가 확대되었고, AP시스템은 이에 대응하는 ELA 장비 공급을 통해 사업 규모를 키워왔다. 이후 Flexible OLED 패널 채용 확대에 따라 LLO 장비 수요도 증가하였으며, AP시스템은 해당 공정 장비를 추가 공급하며 고객사 내 공정 커버리지를 넓혔다. 반도체 부문에서도 레이저 기반 공정장비를 공급하며 사업 영역을 다각화하는 방향으로 성장 경로를 구성해왔다.\nAP시스템_252H_보고서.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "6d8def41-212e-4f09-aacb-6b37c3bec956",
+      "title": "[AI] 시각특수효과 및 콘텐츠 제작 전문기업",
+      "published_date": "2026-04-15",
+      "brokerage": "한국IR협의회",
+      "analyst": "N/A",
+      "ticker": "206560",
+      "stock_name": "덱스터",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91559&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91559&page=3",
+      "body_text": "1 주요 제품 및 연혁\n덱스터는 시각특수효과(VFX, Visual Effects) 서비스와 콘텐츠 제작을 주된 사업으로 영위한다. VFX란 영화, 드라마, 광고 등 영상 콘텐츠에서 실제 촬영으로는 구현하기 어려운 장면을 디지털 기술로 합성·제작하는 서비스를 말한다. 덱스터는 국내 영화 및 드라마 시장에서 VFX 서비스를 제공하는 기업으로, 대형 상업 영화와 OTT(온라인 동영상 서비스) 드라마 시리즈 등 다양한 영상 콘텐츠를 대상으로 서비스를 공급해왔다. 주요 서비스 영역은 디지털 합성, 3D 컴퓨터 그래픽(CG), 모션 캡처(동작 인식기술), 색보정(DI, Digital Intermediate) 등으로 구성되며, 영상 후반 제작 전 과정에 걸쳐 서비스를 제공한다.\n덱스터는 2011년 설립 이후 국내 대형 영화 프로젝트에 VFX 서비스를 공급하며 사업 기반을 구축했다. 설립 초기부터 국내 블록버스터 영화에 참여하며 기술력을 축적했고, 이후 한국 영화산업의 성장과 함께 수주 규모를 확대했다. 2015년에는 코스닥 시장에 상장하며 외부 성장 자금을 확보했다. 이후 OTT 플랫폼의 확산으로 드라마 및 시리즈물 수요가 증가함에 따라 덱스터의 서비스 대상도 영화에서 드라마·OTT 콘텐츠로 확장되었다. 글로벌 OTT 플랫폼의 한국 콘텐츠 투자 확대는 덱스터의 수주 기회를 넓히는 구조적 변화로 작용했다.\n덱스터_252H_보고서.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "3496f905-4fd0-4f97-842e-ffe600b96264",
+      "title": "[AI] 전자재료 및 부품 전문기업",
+      "published_date": "2026-04-15",
+      "brokerage": "한국IR협의회",
+      "analyst": "N/A",
+      "ticker": "088390",
+      "stock_name": "이녹스",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91558&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91558&page=3",
+      "body_text": "1 주요 제품 및 연혁\n이녹스는 2001년 11월 새한마이크로닉스로 설립된 뒤 2005년 4월 현재 사명으로 변경했고, 2006년 10월 20일 코스닥시장에 상장했다. 2017년 6월에는 존속회사 이녹스와 신설회사 이녹스첨단소재로 인적분할을 단행하며 지주회사 체제로 전환했고, 이후 그룹 전반의 성장 전략 수립과 자금 조달 지원, 신규 사업 발굴을 중심으로 사업영역을 재편했다. 현재 본사를 거점으로 한국·중국·베트남에 걸친 종속회사를 통해 사업 포트폴리오를 운영하며, 단순 투자지주를 넘어 사업 구조를 설계하고 자회사 경쟁력을 키우는 역할을 맡고 있다.\n이녹스의 수익 구조는 지주사업과 자회사 사업이 유기적으로 맞물린 형태다. 별도 기준으로는 자회사 지배와 경영지도, 자금 지원, 브랜드 및 상표권 관리, 컨설팅이 중심이며, 연결 기준으로는 지주부문 외에 레저·투자·소재 부문이 함께 실적을 형성한다. 2025년 연결 매출은 591억원으로 집계됐고, 이 가운데 레저부문이 321억원으로 54.40%, 지주부문이 228억원으로 38.70%, 소재부문이 71억원으로 12.10%를 차지했다. 지주부문에서는 브랜드 로열티, 지분법수익, 배당수익, 임대수익이 결합돼 현금흐름의 안정성을 높이는 구조가 특징이다.\n이녹스_252H_보고서.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "f9c6956a-60fa-4dbe-b54c-f69cccc5140a",
+      "title": "[AI] 3D 검사 장비 전문기업, 반도체 및 전자..",
+      "published_date": "2026-04-15",
+      "brokerage": "한국IR협의회",
+      "analyst": "N/A",
+      "ticker": "098460",
+      "stock_name": "고영",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91557&page=3"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91557&page=3",
+      "body_text": "1 주요 제품 및 연혁\n고영은 3D 검사 장비(반도체 및 전자 부품의 형상을 3차원으로 측정하는 장비)를 핵심 사업으로 영위하는 기업이다. 주력 제품은 SPI(Solder Paste Inspection, 솔더 페이스트 도포 검사 장비)와 AOI(Automated Optical Inspection, 자동 광학 검사 장비)로, 인쇄회로기판(PCB) 제조 공정에서 솔더 페이스트 도포 상태 및 부품 실장 불량을 검출하는 역할을 수행한다. 이 외에도 반도체 패키지 검사 장비와 의료용 3D 뇌수술 로봇 시스템으로 사업 영역을 확장하고 있다. 고영의 제품은 독자 개발한 모아레(Moir?) 기반 3D 측정 기술을 핵심으로 하며, 이를 통해 미세 결함을 고속·고정밀로 검출하는 기능을 제공한다.\n고영은 2002년 설립 이후 PCB 검사 장비 분야에서 기술력을 축적하며 성장해왔다. 설립 초기부터 3D 측정 기술 개발에 집중하여 SPI 장비 시장에서 글로벌 고객사를 확보하기 시작했으며, 이후 AOI 장비 라인업을 추가하며 제품 포트폴리오를 확대했다. 2012년 코스닥 시장에 상장하였으며, 상장 이후에도 반도체 패키지 검사 장비 개발 및 의료 로봇 분야 진출을 통해 사업 다각화를 지속해왔다. 특히 반도체 패키지 검사 장비는 고밀도 패키지 수요 증가에 대응하여 개발된 제품으로, 기존 PCB 검사 장비와 동일한 3D 측정 기술 기반 위에 구축되었다.\n고영_252H_보고서.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "235568db-00a3-4e0f-912b-cdff85ab4a75",
+      "title": "[AI] 카지노용 디스플레이 전문 제조기업",
+      "published_date": "2026-04-15",
+      "brokerage": "한국IR협의회",
+      "analyst": "N/A",
+      "ticker": "052330",
+      "stock_name": "코텍",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91556&page=4"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91556&page=4",
+      "body_text": "1 주요 제품 및 연혁\n코텍은 카지노용 전자기기 및 게이밍 모니터 제품을 주된 사업으로 영위하는 제조기업이다. 핵심 제품은 카지노 슬롯머신(Slot Machine)에 탑재되는 전용 모니터와 카지노 게이밍 기기로, 전 세계 카지노 장비 제조사에 부품 및 완제품 형태로 공급한다. 카지노용 디스플레이는 일반 상업용 모니터와 달리 고내구성, 장시간 연속 가동 요건, 각국 규제기관의 인증 요건을 충족해야하는 특수 제품군에 해당하며, 코텍은 이 분야에서 30년 이상의 제조 이력을 보유하고 있다.\n코텍은 1987년 설립 이후 카지노 전용 모니터 시장에 집중하며 사업 기반을 구축했다. 설립 초기부터 북미·유럽 등 주요 카지노 시장의 글로벌 장비 제조사를 고객으로 확보하였으며, 이후 아시아 카지노 시장 확대와 함께 공급처를 다변화했다. 2001년 코스닥 시장에 상장하였으며, 이후 제품 라인업을 슬롯머신용 곡면 모니터, 터치스크린 모니터, 비디오 포커 전용 모니터 등으로 확장하며 카지노 디스플레이 전문 제조사로서의 입지를 넓혔다. 특히 LCD 전환 시기에 CRT 기반 제품에서 LCD 기반 제품으로의 전환을 성공적으로 완료하며 기술 연속성을 유지했다.\n코텍_252H_보고서.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "dfa48531-9300-40b5-a25b-2018f0aa4297",
+      "title": "[AI] GaN 기반 반도체 소자 및 모듈 전문기업",
+      "published_date": "2026-04-15",
+      "brokerage": "한국IR협의회",
+      "analyst": "N/A",
+      "ticker": "218410",
+      "stock_name": "RFHIC",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91555&page=4"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91555&page=4",
+      "body_text": "1 주요 제품 및 연혁\nRFHIC는 GaN(질화갈륨, Gallium Nitride) 기반 반도체 소자 및 모듈 제품을 주된 사업으로 영위한다. GaN은 실리콘(Si) 대비 고전압·고주파 환경에서 전력 효율이 높은 차세대 반도체 소재로, RFHIC는 이를 활용한 RF(무선주파수) 전력증폭기, 트랜지스터, MMIC(단일 집적 마이크로파 회로) 등의 제품을 설계·제조하여 통신 장비, 방위산업, 위성통신 등 다양한 분야에 공급한다. 주요 제품군은 기지국용 전력증폭기 모듈과 GaN 트랜지스터이며, 5G 통신 인프라 확산과 함께 수요 기반이 형성되어 있다.\nRFHIC는 1999년 설립 이후 GaN 기반 RF 반도체 분야에서 기술력을 축적해왔다. 설립 초기부터 GaN-on-SiC(탄화규소 기판 위 질화갈륨) 공정을 중심으로 제품 개발에 집중하였으며, 국내외 통신 장비 업체 및 방산 분야 고객사에 제품을 공급하며 사업 기반을 확장했다. 이후 글로벌 통신 장비 제조사들을 주요 고객으로 확보하였고, 2017년 9월 코스닥 시장에 상장했다.\nRFHIC_252H_보고서.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "11359fc5-7c99-43dd-91b7-fead8555a341",
+      "title": "[AI] 동물용 사료 및 사료 원료 제조·판매 ..",
+      "published_date": "2026-04-15",
+      "brokerage": "한국IR협의회",
+      "analyst": "N/A",
+      "ticker": "218150",
+      "stock_name": "미래생명자원",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91554&page=4"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91554&page=4",
+      "body_text": "1 주요 제품 및 연혁\n미래생명자원은 사료와 식품을 양축으로 사업영역을 확장해 온 기업이다. 사료 부문에서는 특수가공원료(EP, 곡물의 항영양인자를 줄이고 영양 이용성을 높인 원료), 기능성 원료, 기능성 첨가제, 프리믹스 첨가제를 공급하며, 식품 부문에서는 식용란 유통, 기능성 소재, 건강기능식품, 음료 생산까지 포트폴리오를 넓혔다. 2025년 국내 매출은 총 675억5,456만원이며, 이 중 사료부문이 352억2,969만원으로 52.15%, 식품부문이 323억2,486만원으로 47.85%를 차지한다.\n핵심 제품은 축산 생산성 향상에 초점을 둔 사료 원료와 첨가제, 그리고 반려동물·건강식품으로 이어지는 기능성 제품군이다. 특수가공원료는 콘플러스, 소이플러스, 오트베이스 등으로 구성되며, 프리믹스 첨가제 ML-F1은 GABA(감마아미노부티르산) 기반 스트레스 완화용 보조사료로 제품 차별화를 이끈다. 반려동물 부문에서는 자체 브랜드 옵티펫과 OEM·ODM 생산 56개 제품을 운영하고, 식품 부문에서는 옵티헬스를 통해 구강·장·수면·피부 건강 제품을 판매한다. 여기에 건강마을의 파우치 음료생산 역량이 더해지며 제품/서비스 차별화가 제조기술과 브랜드 운영 양쪽에서 구현되고 있다.\n미래생명자원_252H_보고서.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    }
+  ],
+  "summaries": [
+    {
+      "summary_id": "ad35678c-89d0-47fa-953f-47545b4164d2",
+      "canonical_id": "725a2d5b-fbc4-4847-9271-08f9be3625c2",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "삼성에스디에스는 KKR과 전략적 파트너십을 체결했다.",
+          "1.2조 원 규모의 전환사채를 발행한다.",
+          "이재용 회장의 지분율이 기존 9.2%에서 8.06%로 낮아질 전망이다."
+        ],
+        "one_line": "삼성에스디에스가 KKR과 협업하고 1.2조 원 규모의 전환사채를 발행한다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "3805de19-1869-402e-8d80-8b7410ad47d8",
+      "canonical_id": "ae256d3f-9592-4b1a-bc9b-987cd5f68fb7",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1Q26 순이익 1,744억원(+43% YoY)"
+      },
+      "generated": {
+        "key_points": [
+          "1Q26 별도 순이익은 1,744억원으로 시장 컨센서스에 부합하는 실적 예상",
+          "보장성 신계약 물량은 전년 동기보다 5% 증가하지만 전분기보다 8% 감소할 것으로 추정",
+          "투자손익(일반계정)은 이자손익 증가와 대체투자 평가익 발생으로 1,750억원 증가할 전망"
+        ],
+        "one_line": "한화생명이 5개 분기 만에 증익을 기록하며 순이익이 1,744억원에 달할 것으로 예상된다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "3f5c7258-0d09-48c8-8c13-9b999f2e96de",
+      "canonical_id": "6632118c-d7b3-4328-8b67-8ac2d92c12c1",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1Q26 연결 매출액은 1조 3,450억 원(YoY +16.3%, QoQ -5.6%), 영업이익은 884억 원(YoY +26.8%, QoQ -3.4%)으로 컨센서스를 소폭 하회할 전망이다."
+      },
+      "generated": {
+        "key_points": [
+          "구리 가격 상승에 따른 신동 부문 메탈게인 효과가 시장 기대를 상회하는 수준으로 반영됨.",
+          "방산 부문은 수출 물량이 하반기에 집중되어 1분기 매출·이익 기여가 적음.",
+          "중기 실적 개선 방향성은 유효하다는 판단."
+        ],
+        "one_line": "1Q26 실적은 컨센서스를 소폭 하회할 전망이나 중기 실적 개선 방향성은 유지됨.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "7ef79116-ffa4-485d-b968-25a2b36b21de",
+      "canonical_id": "cf45575d-4dbf-4e50-9a8f-b3611a8b6e96",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "한화는 한화솔루션 유상증자에 120% 참여를 결정하였으며, 최대 8,439억원을 출자할 예정이다.",
+          "유상증자 후 한화솔루션에 대한 지분율은 기존 36.3%에서 최대 36%로 소폭 낮아질 전망이다.",
+          "한화솔루션은 유상증자로 약 2.4조원을 확보할 예정이며, 이 중 1.5조원은 채무상환자금으로 활용할 계획이다."
+        ],
+        "one_line": "한화는 한화솔루션 유상증자에 120% 참여하며, 비핵심자산 매각을 통해 자금을 마련할 계획이다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "40498bda-9e76-4367-be33-1ff9e6741c72",
+      "canonical_id": "f36c82be-4d8e-457a-abcd-1fdcea8f3a5c",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1Q26 지배 순이익 7,518억원(+18% YoY) 추정"
+      },
+      "generated": {
+        "key_points": [
+          "보험손익이 200억원 증가할 것으로 추정됨.",
+          "투자손익(일반계)은 1,200억원 증가할 것으로 예상됨.",
+          "신계약 CSM은 8,040억원(+6% QoQ)으로 증가할 전망."
+        ],
+        "one_line": "삼성생명의 1Q26 연결 지배 순이익은 7,518억원으로 예상됨.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "15c34e9d-bce6-45fd-84be-8e2c391eb9d7",
+      "canonical_id": "30d09ce0-544d-4ee4-81a7-1daf9edbc06e",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "중국에서 간식점 채널의 급성장과 이커머스의 안정적 성장으로 구조적인 채널 전환이 이어지고 있다.",
+          "한국의 진천 공장은 2027년 8월 가동 예정이며, 공급 부족에 대응하기 위해 일부 제품을 해외에서 들여오는 방식으로 대응할 계획이다.",
+          "베트남과 인도에서 성장 및 손익 구조 개선을 위한 법인 재정비가 마무리되었으며, 인도 법인은 2028년 흑자전환이 가능할 것으로 예상된다."
+        ],
+        "one_line": "오리온은 글로벌 시장에서 공급 부족과 채널 변화에 대응하며 성장 전략을 강화하고 있다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "4215d36d-7e3c-4d51-946c-d9363b0d266d",
+      "canonical_id": "77a35736-e343-46b1-8b1d-7f5fd0e6f855",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1분기 영업이익 530억원(-25% QoQ, OPM 14%)"
+      },
+      "generated": {
+        "key_points": [
+          "일회성 비용 221억원 발생",
+          "1Q26 가동률 98% 이상",
+          "반도체 매출 3,760억원 전망"
+        ],
+        "one_line": "DB하이텍은 일회성 비용 발생에도 불구하고 수익성 개선이 예상된다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "57f71548-e5fc-496e-969d-f66768f2dd9c",
+      "canonical_id": "b2e947f6-433e-4bd0-a750-bc64a18426ba",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1Q26F 매출액 45.9조원(+3.3% 이하 YoY), 영업이익 2.6조원(-27.6%)"
+      },
+      "generated": {
+        "key_points": [
+          "판매보증비와 원가 부담 확대로 컨센서스 하회 전망",
+          "도매판매(중국 제외)는 93.6만대(-3.7%)로 감소",
+          "관세는 15% 온기 반영되어 약 1조원 발생할 것으로 예상"
+        ],
+        "one_line": "현대차는 1Q26F에 매출과 영업이익이 모두 감소할 것으로 전망된다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "4687862d-20ec-4afd-8aa7-c9be7f22c6da",
+      "canonical_id": "0039b385-4e54-43cf-a659-8ec469e9d8b5",
+      "extracted": {
+        "target_price": 28000.0,
+        "rating": "매수",
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "스테이블 코인의 미국 제도권 편입 논의로 양자암호 중요성 증가",
+          "앤트로픽의 AI 해킹으로 보안 리스크 증가",
+          "ICTK의 PUF 기술이 각광받고 있으며 QSSN의 파트너사로 기대"
+        ],
+        "one_line": "스테이블 코인 부상에 따라 ICTK의 보안 기술이 주목받고 있다.",
+        "opinion_summary": "ICTK에 대한 매수 의견을 유지하며, 향후 독점적인 보안 표준업체로 자리매김할 것으로 기대됨."
+      }
+    },
+    {
+      "summary_id": "e80cd835-93df-4db2-8769-d66770d0edcb",
+      "canonical_id": "2367cbee-22e0-44e5-87e0-f5b3575dd767",
+      "extracted": {
+        "target_price": 50000.0,
+        "rating": "매수",
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "2026년 6월 미국 주파수 경매 개시 이후 KMW가 국내 대표 수혜 업체로 주목받을 것",
+          "미국 중국 장비/부품 수입 규제 강화로 M/S 상승 예상",
+          "KMW의 현 시가총액은 낮으며 향후 높은 시가 총액 기록 가능성"
+        ],
+        "one_line": "KMW는 미국 시장에서 최대 수혜주로 평가받고 있으며, 단기 실적 부진이 매수 기회로 작용할 것.",
+        "opinion_summary": "단기 주가 조정 시 적극 매수 추천"
+      }
+    },
+    {
+      "summary_id": "53a5891a-0815-4b84-a435-174948d53eb6",
+      "canonical_id": "508266e6-7127-4542-9bbb-ce903266f162",
+      "extracted": {
+        "target_price": 200000.0,
+        "rating": "매수",
+        "earnings": "1분기 추정 순익은 약 1.9조원, YoY 11.5% 증가"
+      },
+      "generated": {
+        "key_points": [
+          "1분기 ROE 12% 육박 예상",
+          "1분기 핵심이익 4.8조원에 육박, QoQ 6.9%, YoY 15.0% 급증 전망",
+          "1분기 예상 DPS는 1,090원으로 작년 1분기보다 약 19.5% 증가할 것으로 전망"
+        ],
+        "one_line": "KB금융은 1분기 순익이 1.9조원에 이를 것으로 예상되며, ROE는 12%에 육박할 것으로 보인다.",
+        "opinion_summary": "KB금융에 대한 긍정적인 투자 의견 유지"
+      }
+    },
+    {
+      "summary_id": "ef9cb8b9-3b4f-427d-a0d5-46146452f386",
+      "canonical_id": "451df647-34c5-4fb0-95d2-240fcda74056",
+      "extracted": {
+        "target_price": 55000.0,
+        "rating": "매수",
+        "earnings": "1분기 영업실적은 시장 기대치에 부합할 것으로 예상된다."
+      },
+      "generated": {
+        "key_points": [
+          "한국전력의 목표주가가 24.7% 하향 조정됨.",
+          "SMP는 점진적 우상향이 전망되며 3분기 중 180원/kWh 수준 도달 가능성.",
+          "원자재 가격 안정화 가정에도 실적 조정 여지가 있음."
+        ],
+        "one_line": "하나증권은 한국전력의 목표주가를 하향 조정하고 매수 의견을 유지했다.",
+        "opinion_summary": "투자의견 매수 유지, 향후 실적 조정 가능성 존재."
+      }
+    },
+    {
+      "summary_id": "9125167d-81c4-42e5-9ee7-f95e7ba620fd",
+      "canonical_id": "08a6908c-2055-4ce2-ad81-74cace7f810d",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "2026년 1분기 매출액 1.5조원, 영업이익 1,014억원"
+      },
+      "generated": {
+        "key_points": [
+          "1분기 동가격 상승으로 호실적 기록 전망",
+          "신동 판매량이 전분기대비 소폭 증가한 4.7만톤 예상",
+          "방산 부문은 계절적 비수기로 매출 2,341억원 예상"
+        ],
+        "one_line": "풍산은 2026년 1분기에 사상최대 영업이익 달성이 가시화되고 있다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "24e045f2-560d-45fb-b21d-7aeac7ed3542",
+      "canonical_id": "7ef137a8-550e-44c3-8f8b-b5b1855c314a",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "방산제품의 디지털화 및 K-방산의 확산으로 실적 개선 기대",
+          "K2전차와 천궁의 해외 진출 확대에 따른 동반 성장",
+          "유럽 방산 거점 중심으로 해외 고객사 확보 추진"
+        ],
+        "one_line": "코츠테크놀로지는 방산 분야에서 디지털화와 해외 진출을 통해 실적 개선이 기대된다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "eec28a9d-7e78-4288-b4fd-3893db3ad30b",
+      "canonical_id": "3f000c09-3ffe-4fd8-9636-67f2bf1cea92",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "SOFC는 설치 면적대비 전력밀도가 높고 설치시간이 짧다.",
+          "동사는 블룸에너지와 국산화 사업을 체결하고 R&D를 진행 중이다.",
+          "2026년 1분기부터 세라믹 기판 판매가 시작되며, 2026년 하반기에는 CAPA를 3배로 확대할 계획이다."
+        ],
+        "one_line": "아모센스는 블룸에너지와 협력하여 SOFC 세라믹 기판을 개발하고 있으며, 매출 상승이 기대된다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "9bcd1806-bb32-4e79-8ea9-4d4c6dbf3298",
+      "canonical_id": "c5fef51e-20cd-439c-9c64-07a67d747be3",
+      "extracted": {
+        "target_price": 163000.0,
+        "rating": "매수",
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "㈜한화 목표주가를 기존 130,000원에서 163,000원으로 25.4% 상향 조정",
+          "한화에어로스페이스 시가총액이 약 10조 원 급증하며 전체 NAV 내 지분가치 비중이 85.4%까지 확대",
+          "2026년 최소 DPS 명문화 및 자사주 소각 등 밸류업 집행 의지 반영"
+        ],
+        "one_line": "한화의 목표주가가 25.4% 상향 조정되며 매수 의견을 유지.",
+        "opinion_summary": "투자의견 매수, 목표주가 상향"
+      }
+    },
+    {
+      "summary_id": "6fbb5e6a-18e2-43ba-a8fb-a414e9e2f690",
+      "canonical_id": "6fd3b4a4-faf0-4eda-b959-ea4f5171b0bc",
+      "extracted": {
+        "target_price": 24000.0,
+        "rating": "매수",
+        "earnings": "12개월 선행 EPS 1,164원"
+      },
+      "generated": {
+        "key_points": [
+          "삼양엔씨켐의 커버리지 개시",
+          "고마진의 선단 소재 비중 확대",
+          "성장 초입 구간 진입"
+        ],
+        "one_line": "삼양엔씨켐은 성장의 초입에 있으며, 매수 의견과 목표주가 24,000원을 제시하였다.",
+        "opinion_summary": "투자의견 매수, 목표주가 24,000원"
+      }
+    },
+    {
+      "summary_id": "ebbcd11e-c1b3-4279-872a-81d96f51663e",
+      "canonical_id": "978a3aee-2a55-4da4-8cc9-a64921304147",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1Q26 예상 매출액 3,360 억원(YoY+56%), OP 437 억원(흑전, OPM 13%), '26 년 연간 매출액 1 조 4,680 억원(+38%), OP 2,022 억원(+312%, OPM 14%)"
+      },
+      "generated": {
+        "key_points": [
+          "매분기 개선되는 실적과 매우 긍정적인 업황",
+          "메모리용 패키징 기판 수요 강세 지속 및 공정효율화",
+          "가동률 상승과 MLB 수요 강세 지속 예상"
+        ],
+        "one_line": "대덕전자는 매분기 실적 개선과 긍정적인 업황을 보이며, 가동률 상승과 수요 강세가 예상된다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "3c7a1bfa-9305-46d6-bbb9-34e07123b6a5",
+      "canonical_id": "fc9b0822-7941-44f9-be3a-2ed91ee1867d",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "외형 성장 방향성이 명확하다.",
+          "EBD 전 에너지원 라인업 구축이 이루어졌다.",
+          "글로벌 빅마켓에 진입하여 계단식 성장이 예상된다."
+        ],
+        "one_line": "클래시스는 외형 성장이 뚜렷하며, 글로벌 시장 진입으로 성장 전망이 밝다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "9e09eaeb-4378-4363-afcc-711a05600486",
+      "canonical_id": "2e268f61-f158-4ad9-aed9-ff7d745ac8b4",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "올해부터 미국 LNG 발주 물량과 중동 시장을 중심으로 실적 성장 가시화 전망. 중동 전쟁으로 인해 불확실성이 커졌으나 큰 틀에서 방향성 유지."
+      },
+      "generated": {
+        "key_points": [
+          "미국 LNG 발주 물량과 중동 시장을 통한 실적 성장 가시화 전망",
+          "중동 전쟁으로 인한 불확실성 증가",
+          "고유가와 중동 재건 수요로 피팅 수혜 전망"
+        ],
+        "one_line": "태광은 중동 시장과 미국 LNG 발주 물량을 통해 실적 성장이 기대된다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "671ce166-be95-4ae3-a1b4-b53a71e0cef7",
+      "canonical_id": "38ccbc16-44ca-493f-819f-2d6ca93afc51",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "매출 성장률 회복과 원가 부담 완화",
+          "올해 성공적인 성수기 시즌 마무리",
+          "카카오 가격 하락으로 마진 스프레드 개선 전망"
+        ],
+        "one_line": "오리온은 매출 성장률 회복과 원가 부담 완화로 주가 회복이 기대된다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "8dafad08-e7a9-4c7e-988f-808d9b90311c",
+      "canonical_id": "575a2ee4-2bdd-44fe-b857-9abd603a29d0",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "조직 효율화 후 실적 개선과 GPUaaS 기대감이 겹쳤다"
+      },
+      "generated": {
+        "key_points": [
+          "웹보드 규제 완화",
+          "정부 GPUaaS 사업 가시화",
+          "다음 분기 실적 성장에 대한 기대감 지속 전망"
+        ],
+        "one_line": "실적 개선과 신사업 기대감이 동시에 나타나고 있다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "4aa45ad5-25b2-47e8-95b5-64aa3a540e0e",
+      "canonical_id": "7bbb8aa0-43e5-4f23-bd24-b874461a201a",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "2분기 실적을 하향 조정하면서 실적 모멘텀은 하반기에 집중될 것으로 예상된다."
+      },
+      "generated": {
+        "key_points": [
+          "하반기 빅뱅 20주년 투어 개최 예상",
+          "MD/라이선싱 매출 고성장 가능성",
+          "블랙핑크 추가 활동 부재로 실적 하향 조정"
+        ],
+        "one_line": "하반기에 집중된 실적 모멘텀과 빅뱅 투어로 인한 이익 기여 기대.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "6e1c26c8-cde1-4d6c-92f6-81fb35e3be9b",
+      "canonical_id": "27e1432c-c842-43cb-8f03-8240ed36e166",
+      "extracted": {
+        "target_price": 140000.0,
+        "rating": null,
+        "earnings": "올해 예상 영업이익은 2,050억원(+12% YoY)"
+      },
+      "generated": {
+        "key_points": [
+          "올해는 지역 다변화와 저연차 IP의 가파른 수익화가 중요한 한 해로 예상됨.",
+          "SME Japan은 KPI를 외형 성장 지표에서 수익성 지표로 변경.",
+          "EXO와 NCT의 활동 확대가 기대됨."
+        ],
+        "one_line": "에스엠은 외형 성장보다는 수익성 방어에 집중할 계획.",
+        "opinion_summary": "업종 밸류에이션 하락을 반영해 목표주가를 하향 조정."
+      }
+    },
+    {
+      "summary_id": "3b76227c-0664-4ec1-ab4e-bf7c1526b29f",
+      "canonical_id": "c5799e43-801c-48f4-bd66-8ae39fbf6ca2",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "‘26년 동사의 GPM, OPM은 각각 약 51.7%, 18.8%(‘25년 GPM 33.1%, OPM -3.6%)로 급격하게 개선될 전망이다. 이에 따라 ‘26년 동사 실적은 매출액 1,042억(+16.1%, YoY), 영업이익 194억원(흑전, YoY, OPM 18.8%)이 기대된다."
+      },
+      "generated": {
+        "key_points": [
+          "‘26년도부터 마진 개선이 빠르게 나타날 것으로 보인다.",
+          "고마진 반도체 외관검사 중심으로의 포트폴리오 재편이 주요 원인이다.",
+          "2차전지 장비 부문 인력 감축에 따른 인건비 하락이 수익성 개선에 기여할 전망이다."
+        ],
+        "one_line": "인텍플러스는 2026년부터 급격한 마진 개선과 실적 성장이 기대된다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "fc9e9657-0994-4017-834d-33422ed83d7e",
+      "canonical_id": "9bc6b821-801f-4c5a-8d63-1aea5f791923",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "2026년 예상 실적(연결 기준)은 매출액 2,599억원, 영업이익 118억원으로 전년대비 각각 6.1%, 79.1% 증가할 것으로 예상."
+      },
+      "generated": {
+        "key_points": [
+          "전장 및 로봇 부품 사업이 순항 중이며, 올해 초도 매출 예상.",
+          "2026년 실적에서 사업 다변화의 효과가 가시화될 것으로 기대.",
+          "현재 주가는 PER 17.5배로, 유사체 평균 PER 30.75배 대비 할인되어 거래 중."
+        ],
+        "one_line": "액트로는 전장 및 로봇 사업을 통해 사업 다변화를 추진하며, 2026년 실적 개선이 기대된다.",
+        "opinion_summary": "Valuation 매력을 보유하고 있으며, 신규 사업의 매출 가시화 기대감이 긍정적."
+      }
+    },
+    {
+      "summary_id": "df6d6436-87b6-4264-bef4-03770c114005",
+      "canonical_id": "31d2aebc-3042-40e3-aafb-7445a214c98c",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "2025년 연간 실적(연결 기준)은 매출액 354억원, 영업이익 107억원으로, 전년대비 각각 12.0%, 39.4% 증가"
+      },
+      "generated": {
+        "key_points": [
+          "에프앤가이드는 국내 민간 최초 실시간 지수 서비스를 제공하는 업체로, 20년 연속 영업이익 흑자를 기록하고 있음.",
+          "2026년 연간 예상실적은 매출액 496억원, 영업이익 204억원으로, 전년대비 각각 40.1%, 91.1% 증가할 것으로 전망됨.",
+          "현재 주가는 2026년 실적 기준 PER 15.4배로, 주요 소프트웨어 업체 평균 PER 22.5배 대비 할인되어 거래 중임."
+        ],
+        "one_line": "에프앤가이드는 ETF 시장의 급속 성장에 힘입어 실적이 지속적으로 증가할 것으로 전망됨.",
+        "opinion_summary": "Valuation 매력이 있으며, 높은 매출 성장률과 영업이익률을 보유하고 있음."
+      }
+    },
+    {
+      "summary_id": "87a726cf-5797-4c5b-904f-b79b3f7e1ab5",
+      "canonical_id": "dda37415-a823-4cc6-86d7-3a29e1337f4d",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "26년 1분기 매출액 2,607억 원(+5.4%YoY, -10.7%QoQ), 영업이익 301억 원(+18.6%YoY, -24.9%QoQ, OPM 11.5%)"
+      },
+      "generated": {
+        "key_points": [
+          "국내외 케이캡의 견조한 성장 지속",
+          "헬리코박터 제균요법의 중국 국가 의료보험약품목록 등재에 따른 처방량 증가",
+          "전공의 파업 철회 이후 의료 정상화로 수액 사업부 매출 안정적 회복"
+        ],
+        "one_line": "HK 이노엔은 1Q26에 견조한 실적을 기록하며 R&D 모멘텀을 본격화할 전망이다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "083f7d5a-9422-4ef0-a0db-9ba006d17299",
+      "canonical_id": "47ec8242-d092-459c-b83f-18eb604d527c",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "연간 2,000억원 이상 영업이익 기대"
+      },
+      "generated": {
+        "key_points": [
+          "DL이앤씨는 X-Energy와 표준화 설계 용역 계약을 체결하였다.",
+          "X-Energy의 프로젝트에서 DL이앤씨의 반복적인 참여가 기대된다.",
+          "X-Energy는 SMR 사업 기간과 비용을 줄이기 위해 노력할 것이다."
+        ],
+        "one_line": "DL이앤씨는 X-Energy와의 협력을 통해 SMR 사업에서 영업이익을 기대하고 있다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "65daeb02-4fcc-4d2c-b571-5d0fea4d2789",
+      "canonical_id": "06c895d1-c745-49ee-bc5f-45d723840291",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "26년 1분기 영업이익은 25년 4분기 대비 2배 증가한 38.46조원으로 전망한다."
+      },
+      "generated": {
+        "key_points": [
+          "26년 1분기 매출액은 25년 4분기 대비 51.9% 증가한 49조 8,770억원으로 전망한다.",
+          "DRAM 매출액은 25년 4분기 대비 52.6% 증가할 것으로 예상된다.",
+          "NAND 매출액은 25년 4분기 대비 51.4% 증가했다."
+        ],
+        "one_line": "SK하이닉스는 26년 1분기 사상 최대 매출을 기록할 것으로 전망된다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "e369e258-db09-4bbc-abd2-cf4bea1d8eba",
+      "canonical_id": "db71e267-16f2-4748-b9f6-e604675ba106",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1분기 연결 매출액 2,964억원(+29.8% yoy), 영업이익 201억원(+31.0% yoy)"
+      },
+      "generated": {
+        "key_points": [
+          "1Q26 영업이익, 시장 기대치를 약 20% 상회",
+          "LS-VINA가 사상 최대 실적을 달성하며 LSCV 실적 부진을 상쇄",
+          "수주잔고는 1억 5,356만 달러로 확대"
+        ],
+        "one_line": "LS에코에너지가 1분기 실적에서 시장 기대치를 초과 달성하며 긍정적인 전망을 보이고 있다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "e46f945c-53f5-4f07-8ff1-fcbed1d1ef87",
+      "canonical_id": "1113789e-0ea1-4692-910a-fc380815ac9a",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1분기 매출 5,237억원(YoY +7%), 영업이익 67억원(YoY +4%, OPM 1%)"
+      },
+      "generated": {
+        "key_points": [
+          "렉라자의 유럽 허가 마일스톤 약 450억원이 이연되어 실적이 하회할 전망",
+          "약품사업은 비처방약과 처방약 모두에서 견조한 성과",
+          "해외사업은 글로벌 원료의약품 시장의 탈중국화 추세로 간접적인 수혜 기대"
+        ],
+        "one_line": "유한양행은 1분기 실적이 시장 컨센서스를 하회할 것으로 예상된다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "b9baeda4-12ff-49dd-a036-c6e0000f5395",
+      "canonical_id": "7989d344-593b-4429-b051-61f0b65359ab",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "한화는 한화솔루션 유상증자에 참여하여 8,439억원 출자 계획을 발표했다.",
+          "한화솔루션의 유상증자 예정 발행 규모는 2.4조원이며, 채무상환과 시설 투자에 각각 1.5조원과 0.9조원을 사용할 계획이다.",
+          "한화는 배정된 물량의 120%를 초과하여 청약할 예정이다."
+        ],
+        "one_line": "한화가 한화솔루션 유상증자에 8,439억원을 출자할 계획이다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "216c81c7-599e-462b-8b60-bbd03b68fbd7",
+      "canonical_id": "7d2e5d44-7611-44d6-9961-17875d9f92d0",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "스페이스X향 연간 매출액 2,500억원, EBITDA 750~875억원"
+      },
+      "generated": {
+        "key_points": [
+          "OCI TerraSus와 스페이스X가 폴리실리콘 장기 공급 계약 체결",
+          "계약 규모는 약 1조원, 연간 판매 물량은 8,000~11,000톤으로 추정",
+          "OCI TerraSus의 폴리실리콘 CAPA는 연 35,000톤"
+        ],
+        "one_line": "OCI홀딩스가 스페이스X와 폴리실리콘 장기 공급 계약을 체결했다.",
+        "opinion_summary": "위 장기 공급 계약이 단기 실적에 미치는 영향은 제한적"
+      }
+    },
+    {
+      "summary_id": "a6befcbb-3d35-407e-9b33-58694f58651c",
+      "canonical_id": "726df0d2-24c4-46c7-8682-d321da978899",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "원전 기자재/소재 시장은 높은 진입장벽이 존재한다.",
+          "태웅은 글로벌 SMR 고객사로부터 보조기기 단조 소재를 수주 받았다.",
+          "올해 미국 T사향 주기기 단조 소재 수주가 예상되며, 이는 SMR 주기기향 수주 레퍼런스를 확보하는 데 의미가 크다."
+        ],
+        "one_line": "태웅은 원전 단조 시장에서 중요한 레퍼런스를 확보하며 성장 가능성을 보이고 있다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "57f22791-cc4d-4eb9-b76e-ac3a18ff52e9",
+      "canonical_id": "62983ef6-316d-448a-8cd9-b30b3ed1dcbb",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1분기 매출액은 3,626억원(QoQ -0.8%, YoY -1.0%), 영업이익은 537억원(QoQ +80.7%, YoY -27.7%)을 기록할 것으로 전망된다."
+      },
+      "generated": {
+        "key_points": [
+          "1분기 영업이익이 컨센서스를 하회할 전망",
+          "카지노 부문의 드롭액은 1.5조원(YoY +2.0%)으로 전년과 유사한 흐름 유지",
+          "대규모 리노베이션으로 인한 매출 손실이 불가피하며, 연간 기회손실 비용은 약 290억원으로 추산"
+        ],
+        "one_line": "강원랜드는 리노베이션과 비용 부담으로 1분기 영업이익이 컨센서스를 하회할 전망이다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "c9de153f-e039-4412-8380-7cd77ab2da04",
+      "canonical_id": "17df64b7-8a76-4e11-a03f-67d530bcb989",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "2026년 1분기 실적은 연결 기준 매출액 1조 8,591억 원(YoY +11.6%), 영업이익 1,794억 원(YoY +35.6%)으로 시장 기대치 및 당사의 추정치를 약 13.6% 상회할 전망"
+      },
+      "generated": {
+        "key_points": [
+          "명품 성장률이 20%를 상회할 것으로 예상",
+          "의류 성장률 회복에 따른 성장이 지속",
+          "주요 종속회사 실적 회복 및 면세점 수익성 전략"
+        ],
+        "one_line": "신세계의 2026년 1분기 실적은 강력한 성장이 예상된다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "0d23a964-7609-441a-92c3-a32f8b3c2207",
+      "canonical_id": "9e7e1ed6-6c8b-499d-b6c9-8c4c488dcb2f",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "오비고는 차량용 소프트웨어 플랫폼 개발 및 공급을 주된 사업으로 영위한다.",
+          "주요 고객은 자동차 제조사 및 1차 부품 공급사(Tier 1)이다.",
+          "오비고는 2003년 설립되어 2021년 코스닥 시장에 상장했다."
+        ],
+        "one_line": "오비고는 차량용 소프트웨어 플랫폼을 개발 및 공급하는 기업으로, 2003년에 설립되어 2021년에 상장했다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "b0e56919-fd94-48e9-a0e8-dafe09e06fd8",
+      "canonical_id": "e2c49729-1016-4c52-9879-89be895e4842",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "파수는 2000년 6월 설립된 정보보안 소프트웨어 기업이다.",
+          "핵심 서비스는 E-DRM 기반의 데이터보안 솔루션이다.",
+          "애플리케이션보안 부문은 자회사 스패로우를 통해 운영된다."
+        ],
+        "one_line": "파수는 다양한 정보보안 솔루션을 제공하는 기업이다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "40b26d42-1cd7-41ba-981e-e3638ae9b46b",
+      "canonical_id": "2931fbf0-ed85-4491-944a-a6e372163f1a",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "AP시스템은 반도체 및 디스플레이 제조 공정에 사용되는 레이저 장비와 열처리 장비를 주된 제품으로 영위하는 장비 전문 기업이다.",
+          "핵심 제품군은 ELA 장비와 반도체 공정용 레이저 장비로 구성된다.",
+          "AP시스템은 삼성디스플레이 등 국내 주요 디스플레이 패널 제조사를 핵심 고객으로 하여 사업을 확장해왔다."
+        ],
+        "one_line": "AP시스템은 디스플레이 및 반도체 제조 공정에 필요한 레이저 장비를 전문으로 하는 기업이다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "9f8cda31-4daf-4dfd-ae23-72553dd1c1d0",
+      "canonical_id": "6d8def41-212e-4f09-aacb-6b37c3bec956",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "덱스터는 시각특수효과(VFX) 서비스와 콘텐츠 제작을 주된 사업으로 영위한다.",
+          "2011년 설립 이후 국내 대형 영화 프로젝트에 VFX 서비스를 공급하며 사업 기반을 구축했다.",
+          "OTT 플랫폼의 확산으로 드라마 및 시리즈물 수요가 증가하며 서비스 대상이 영화에서 드라마·OTT 콘텐츠로 확장되었다."
+        ],
+        "one_line": "덱스터는 VFX 서비스와 콘텐츠 제작을 전문으로 하는 기업으로, OTT 플랫폼의 성장에 따라 사업 영역을 확장하고 있다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "5ee20cb2-91fe-4ca3-9de1-b9036b7e5602",
+      "canonical_id": "3496f905-4fd0-4f97-842e-ffe600b96264",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "2025년 연결 매출은 591억원으로 집계됐고, 이 가운데 레저부문이 321억원으로 54.40%, 지주부문이 228억원으로 38.70%, 소재부문이 71억원으로 12.10%를 차지했다."
+      },
+      "generated": {
+        "key_points": [
+          "이녹스는 2001년 설립되어 2006년 코스닥시장에 상장했다.",
+          "2017년 인적분할을 통해 지주회사 체제로 전환했다.",
+          "수익 구조는 지주사업과 자회사 사업이 유기적으로 맞물려 있다."
+        ],
+        "one_line": "이녹스는 전자재료 및 부품 전문기업으로, 지주회사 체제로 전환 후 사업 포트폴리오를 운영하고 있다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "78d8e1b8-5e76-42fa-9a56-ced4dc5dd01b",
+      "canonical_id": "f9c6956a-60fa-4dbe-b54c-f69cccc5140a",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "고영은 3D 검사 장비를 핵심 사업으로 영위하는 기업이다.",
+          "주력 제품은 SPI와 AOI로, PCB 제조 공정에서 검사 역할을 수행한다.",
+          "고영은 2002년 설립 이후 기술력을 축적하며 사업 다각화를 지속해왔다."
+        ],
+        "one_line": "고영은 3D 검사 장비 전문기업으로, PCB 검사 및 반도체 패키지 검사 장비를 주력으로 하고 있다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "3144998a-fa96-464e-86c4-60e4e34f3885",
+      "canonical_id": "235568db-00a3-4e0f-912b-cdff85ab4a75",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "코텍은 카지노용 전자기기 및 게이밍 모니터 제품을 주된 사업으로 영위하는 제조기업이다.",
+          "코텍은 30년 이상의 제조 이력을 보유하고 있으며, 카지노 전용 모니터 시장에 집중하고 있다.",
+          "2001년 코스닥 시장에 상장하였으며, 제품 라인업을 슬롯머신용 곡면 모니터, 터치스크린 모니터 등으로 확장하였다."
+        ],
+        "one_line": "코텍은 카지노용 디스플레이 전문 제조기업으로, 30년 이상의 역사를 가지고 있다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "d07ea6bf-1671-4353-82fc-978f770f4a34",
+      "canonical_id": "dfa48531-9300-40b5-a25b-2018f0aa4297",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "RFHIC는 GaN 기반 반도체 소자 및 모듈 제품을 주된 사업으로 영위한다.",
+          "주요 제품군은 기지국용 전력증폭기 모듈과 GaN 트랜지스터이다.",
+          "RFHIC는 1999년 설립 이후 GaN 기반 RF 반도체 분야에서 기술력을 축적해왔다."
+        ],
+        "one_line": "RFHIC는 GaN 기반 반도체 소자 및 모듈 전문기업으로, 5G 통신 인프라 확산에 따른 수요 기반을 형성하고 있다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "81b97111-b409-40a4-b9f8-35c01da0d61e",
+      "canonical_id": "11359fc5-7c99-43dd-91b7-fead8555a341",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "2025년 국내 매출은 총 675억5,456만원이며, 이 중 사료부문이 352억2,969만원으로 52.15%, 식품부문이 323억2,486만원으로 47.85%를 차지한다."
+      },
+      "generated": {
+        "key_points": [
+          "미래생명자원은 사료와 식품을 양축으로 사업영역을 확장해 온 기업이다.",
+          "핵심 제품은 축산 생산성 향상에 초점을 둔 사료 원료와 첨가제, 기능성 제품군이다.",
+          "반려동물 부문에서는 자체 브랜드 옵티펫과 OEM·ODM 생산 56개 제품을 운영하고 있다."
+        ],
+        "one_line": "미래생명자원은 사료와 식품 부문에서 다양한 기능성 제품을 제공하는 기업이다.",
+        "opinion_summary": null
+      }
+    }
+  ],
+  "classifications": {
+    "by_brokerage": {
+      "한화투자증권": [
+        "725a2d5b-fbc4-4847-9271-08f9be3625c2",
+        "ae256d3f-9592-4b1a-bc9b-987cd5f68fb7",
+        "6632118c-d7b3-4328-8b67-8ac2d92c12c1",
+        "cf45575d-4dbf-4e50-9a8f-b3611a8b6e96",
+        "f36c82be-4d8e-457a-abcd-1fdcea8f3a5c",
+        "30d09ce0-544d-4ee4-81a7-1daf9edbc06e"
+      ],
+      "DS투자증권": [
+        "77a35736-e343-46b1-8b1d-7f5fd0e6f855",
+        "b2e947f6-433e-4bd0-a750-bc64a18426ba"
+      ],
+      "하나증권": [
+        "0039b385-4e54-43cf-a659-8ec469e9d8b5",
+        "2367cbee-22e0-44e5-87e0-f5b3575dd767",
+        "508266e6-7127-4542-9bbb-ce903266f162",
+        "451df647-34c5-4fb0-95d2-240fcda74056",
+        "08a6908c-2055-4ce2-ad81-74cace7f810d"
+      ],
+      "유안타증권": [
+        "7ef137a8-550e-44c3-8f8b-b5b1855c314a",
+        "3f000c09-3ffe-4fd8-9636-67f2bf1cea92"
+      ],
+      "대신증권": [
+        "c5fef51e-20cd-439c-9c64-07a67d747be3",
+        "6fd3b4a4-faf0-4eda-b959-ea4f5171b0bc"
+      ],
+      "SK증권": [
+        "978a3aee-2a55-4da4-8cc9-a64921304147",
+        "dda37415-a823-4cc6-86d7-3a29e1337f4d"
+      ],
+      "신한투자증권": [
+        "fc9b0822-7941-44f9-be3a-2ed91ee1867d",
+        "2e268f61-f158-4ad9-aed9-ff7d745ac8b4",
+        "38ccbc16-44ca-493f-819f-2d6ca93afc51",
+        "575a2ee4-2bdd-44fe-b857-9abd603a29d0"
+      ],
+      "iM증권": [
+        "7bbb8aa0-43e5-4f23-bd24-b874461a201a",
+        "27e1432c-c842-43cb-8f03-8240ed36e166",
+        "c5799e43-801c-48f4-bd66-8ae39fbf6ca2",
+        "1113789e-0ea1-4692-910a-fc380815ac9a"
+      ],
+      "유진투자증권": [
+        "9bc6b821-801f-4c5a-8d63-1aea5f791923",
+        "31d2aebc-3042-40e3-aafb-7445a214c98c"
+      ],
+      "키움증권": [
+        "47ec8242-d092-459c-b83f-18eb604d527c",
+        "7989d344-593b-4429-b051-61f0b65359ab",
+        "7d2e5d44-7611-44d6-9961-17875d9f92d0",
+        "726df0d2-24c4-46c7-8682-d321da978899",
+        "62983ef6-316d-448a-8cd9-b30b3ed1dcbb"
+      ],
+      "IBK투자증권": [
+        "06c895d1-c745-49ee-bc5f-45d723840291",
+        "db71e267-16f2-4748-b9f6-e604675ba106",
+        "17df64b7-8a76-4e11-a03f-67d530bcb989"
+      ],
+      "한국IR협의회": [
+        "9e7e1ed6-6c8b-499d-b6c9-8c4c488dcb2f",
+        "e2c49729-1016-4c52-9879-89be895e4842",
+        "2931fbf0-ed85-4491-944a-a6e372163f1a",
+        "6d8def41-212e-4f09-aacb-6b37c3bec956",
+        "3496f905-4fd0-4f97-842e-ffe600b96264",
+        "f9c6956a-60fa-4dbe-b54c-f69cccc5140a",
+        "235568db-00a3-4e0f-912b-cdff85ab4a75",
+        "dfa48531-9300-40b5-a25b-2018f0aa4297",
+        "11359fc5-7c99-43dd-91b7-fead8555a341"
+      ]
+    },
+    "by_ticker": {
+      "018260": [
+        "725a2d5b-fbc4-4847-9271-08f9be3625c2"
+      ],
+      "088350": [
+        "ae256d3f-9592-4b1a-bc9b-987cd5f68fb7"
+      ],
+      "103140": [
+        "6632118c-d7b3-4328-8b67-8ac2d92c12c1",
+        "08a6908c-2055-4ce2-ad81-74cace7f810d"
+      ],
+      "000880": [
+        "cf45575d-4dbf-4e50-9a8f-b3611a8b6e96",
+        "c5fef51e-20cd-439c-9c64-07a67d747be3",
+        "7989d344-593b-4429-b051-61f0b65359ab"
+      ],
+      "032830": [
+        "f36c82be-4d8e-457a-abcd-1fdcea8f3a5c"
+      ],
+      "271560": [
+        "30d09ce0-544d-4ee4-81a7-1daf9edbc06e",
+        "38ccbc16-44ca-493f-819f-2d6ca93afc51"
+      ],
+      "000990": [
+        "77a35736-e343-46b1-8b1d-7f5fd0e6f855"
+      ],
+      "005380": [
+        "b2e947f6-433e-4bd0-a750-bc64a18426ba"
+      ],
+      "456010": [
+        "0039b385-4e54-43cf-a659-8ec469e9d8b5"
+      ],
+      "032500": [
+        "2367cbee-22e0-44e5-87e0-f5b3575dd767"
+      ],
+      "105560": [
+        "508266e6-7127-4542-9bbb-ce903266f162"
+      ],
+      "015760": [
+        "451df647-34c5-4fb0-95d2-240fcda74056"
+      ],
+      "448710": [
+        "7ef137a8-550e-44c3-8f8b-b5b1855c314a"
+      ],
+      "357580": [
+        "3f000c09-3ffe-4fd8-9636-67f2bf1cea92"
+      ],
+      "482630": [
+        "6fd3b4a4-faf0-4eda-b959-ea4f5171b0bc"
+      ],
+      "353200": [
+        "978a3aee-2a55-4da4-8cc9-a64921304147"
+      ],
+      "214150": [
+        "fc9b0822-7941-44f9-be3a-2ed91ee1867d"
+      ],
+      "023160": [
+        "2e268f61-f158-4ad9-aed9-ff7d745ac8b4"
+      ],
+      "181710": [
+        "575a2ee4-2bdd-44fe-b857-9abd603a29d0"
+      ],
+      "122870": [
+        "7bbb8aa0-43e5-4f23-bd24-b874461a201a"
+      ],
+      "041510": [
+        "27e1432c-c842-43cb-8f03-8240ed36e166"
+      ],
+      "064290": [
+        "c5799e43-801c-48f4-bd66-8ae39fbf6ca2"
+      ],
+      "290740": [
+        "9bc6b821-801f-4c5a-8d63-1aea5f791923"
+      ],
+      "064850": [
+        "31d2aebc-3042-40e3-aafb-7445a214c98c"
+      ],
+      "195940": [
+        "dda37415-a823-4cc6-86d7-3a29e1337f4d"
+      ],
+      "375500": [
+        "47ec8242-d092-459c-b83f-18eb604d527c"
+      ],
+      "000660": [
+        "06c895d1-c745-49ee-bc5f-45d723840291"
+      ],
+      "229640": [
+        "db71e267-16f2-4748-b9f6-e604675ba106"
+      ],
+      "000100": [
+        "1113789e-0ea1-4692-910a-fc380815ac9a"
+      ],
+      "010060": [
+        "7d2e5d44-7611-44d6-9961-17875d9f92d0"
+      ],
+      "044490": [
+        "726df0d2-24c4-46c7-8682-d321da978899"
+      ],
+      "035250": [
+        "62983ef6-316d-448a-8cd9-b30b3ed1dcbb"
+      ],
+      "004170": [
+        "17df64b7-8a76-4e11-a03f-67d530bcb989"
+      ],
+      "352910": [
+        "9e7e1ed6-6c8b-499d-b6c9-8c4c488dcb2f"
+      ],
+      "150900": [
+        "e2c49729-1016-4c52-9879-89be895e4842"
+      ],
+      "265520": [
+        "2931fbf0-ed85-4491-944a-a6e372163f1a"
+      ],
+      "206560": [
+        "6d8def41-212e-4f09-aacb-6b37c3bec956"
+      ],
+      "088390": [
+        "3496f905-4fd0-4f97-842e-ffe600b96264"
+      ],
+      "098460": [
+        "f9c6956a-60fa-4dbe-b54c-f69cccc5140a"
+      ],
+      "052330": [
+        "235568db-00a3-4e0f-912b-cdff85ab4a75"
+      ],
+      "218410": [
+        "dfa48531-9300-40b5-a25b-2018f0aa4297"
+      ],
+      "218150": [
+        "11359fc5-7c99-43dd-91b7-fead8555a341"
+      ]
+    },
+    "by_sector": {},
+    "by_analyst": {
+      "N/A": [
+        "725a2d5b-fbc4-4847-9271-08f9be3625c2",
+        "ae256d3f-9592-4b1a-bc9b-987cd5f68fb7",
+        "6632118c-d7b3-4328-8b67-8ac2d92c12c1",
+        "cf45575d-4dbf-4e50-9a8f-b3611a8b6e96",
+        "f36c82be-4d8e-457a-abcd-1fdcea8f3a5c",
+        "30d09ce0-544d-4ee4-81a7-1daf9edbc06e",
+        "77a35736-e343-46b1-8b1d-7f5fd0e6f855",
+        "b2e947f6-433e-4bd0-a750-bc64a18426ba",
+        "0039b385-4e54-43cf-a659-8ec469e9d8b5",
+        "2367cbee-22e0-44e5-87e0-f5b3575dd767",
+        "508266e6-7127-4542-9bbb-ce903266f162",
+        "451df647-34c5-4fb0-95d2-240fcda74056",
+        "08a6908c-2055-4ce2-ad81-74cace7f810d",
+        "7ef137a8-550e-44c3-8f8b-b5b1855c314a",
+        "3f000c09-3ffe-4fd8-9636-67f2bf1cea92",
+        "c5fef51e-20cd-439c-9c64-07a67d747be3",
+        "6fd3b4a4-faf0-4eda-b959-ea4f5171b0bc",
+        "978a3aee-2a55-4da4-8cc9-a64921304147",
+        "fc9b0822-7941-44f9-be3a-2ed91ee1867d",
+        "2e268f61-f158-4ad9-aed9-ff7d745ac8b4",
+        "38ccbc16-44ca-493f-819f-2d6ca93afc51",
+        "575a2ee4-2bdd-44fe-b857-9abd603a29d0",
+        "7bbb8aa0-43e5-4f23-bd24-b874461a201a",
+        "27e1432c-c842-43cb-8f03-8240ed36e166",
+        "c5799e43-801c-48f4-bd66-8ae39fbf6ca2",
+        "9bc6b821-801f-4c5a-8d63-1aea5f791923",
+        "31d2aebc-3042-40e3-aafb-7445a214c98c",
+        "dda37415-a823-4cc6-86d7-3a29e1337f4d",
+        "47ec8242-d092-459c-b83f-18eb604d527c",
+        "06c895d1-c745-49ee-bc5f-45d723840291",
+        "db71e267-16f2-4748-b9f6-e604675ba106",
+        "1113789e-0ea1-4692-910a-fc380815ac9a",
+        "7989d344-593b-4429-b051-61f0b65359ab",
+        "7d2e5d44-7611-44d6-9961-17875d9f92d0",
+        "726df0d2-24c4-46c7-8682-d321da978899",
+        "62983ef6-316d-448a-8cd9-b30b3ed1dcbb",
+        "17df64b7-8a76-4e11-a03f-67d530bcb989",
+        "9e7e1ed6-6c8b-499d-b6c9-8c4c488dcb2f",
+        "e2c49729-1016-4c52-9879-89be895e4842",
+        "2931fbf0-ed85-4491-944a-a6e372163f1a",
+        "6d8def41-212e-4f09-aacb-6b37c3bec956",
+        "3496f905-4fd0-4f97-842e-ffe600b96264",
+        "f9c6956a-60fa-4dbe-b54c-f69cccc5140a",
+        "235568db-00a3-4e0f-912b-cdff85ab4a75",
+        "dfa48531-9300-40b5-a25b-2018f0aa4297",
+        "11359fc5-7c99-43dd-91b7-fead8555a341"
+      ]
+    }
+  },
+  "pipeline_stats": {
+    "total_discovered": 150,
+    "total_fetched": 150,
+    "total_parsed": 150,
+    "total_validated": 150,
+    "total_unverified": 0,
+    "total_rejected": 0,
+    "total_normalized": 46,
+    "total_deduplicated": 46,
+    "total_summarized": 46,
+    "total_classified": 1,
+    "duration_ms": 277999
+  },
+  "created_at": "2026-04-16T23:08:35.491303+09:00"
+}
