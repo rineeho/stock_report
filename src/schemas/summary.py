@@ -15,6 +15,8 @@ class ExtractedInfo(BaseModel):
     """원문에서 직접 추출한 정보. 없으면 null."""
 
     target_price: float | None = None
+    previous_target_price: float | None = None
+    target_price_change: str | None = None  # "상향" / "하향" / "유지" / null
     rating: str | None = None
     earnings: str | None = None
     analyst: str | None = None
@@ -27,7 +29,6 @@ class GeneratedSummary(BaseModel):
     key_points: list[str] = Field(min_length=1, max_length=5)
     one_line: str = Field(min_length=1)
     opinion_summary: str | None = None
-    full_summary: str | None = None
 
 
 class Summary(BaseModel):

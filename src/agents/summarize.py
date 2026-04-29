@@ -78,6 +78,8 @@ class SummarizationAgent(BaseAgent):
 
         extracted = ExtractedInfo(
             target_price=extracted_data.get("target_price"),
+            previous_target_price=extracted_data.get("previous_target_price"),
+            target_price_change=extracted_data.get("target_price_change"),
             rating=extracted_data.get("rating"),
             earnings=extracted_data.get("earnings"),
             analyst=extracted_data.get("analyst"),
@@ -92,7 +94,6 @@ class SummarizationAgent(BaseAgent):
             key_points=key_points[:5],
             one_line=generated_data.get("one_line", report.title),
             opinion_summary=generated_data.get("opinion_summary"),
-            full_summary=generated_data.get("full_summary"),
         )
 
         return Summary(
@@ -123,6 +124,5 @@ class SummarizationAgent(BaseAgent):
                 key_points=["요약 생성 실패"],
                 one_line=report.title,
                 opinion_summary=None,
-                full_summary=None,
             ),
         )

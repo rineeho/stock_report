@@ -40,7 +40,7 @@ def load_daily_result(target_date: str, data_dir: Path = DATA_OUTPUT_DIR) -> Dai
 def extract_ticker_consensus(result: DailyResult) -> dict[str, dict]:
     """Extract per-ticker consensus data from a DailyResult.
 
-    Returns: {ticker: {stock_name, prices: list[float], ratings: list[str], count: int}}
+    Returns: {ticker: {stock_name, prices: list[float], ratings: list[str], changes: list[str], count: int}}
     """
     summary_map = {s.canonical_id: s for s in result.summaries}
     data: dict[str, dict] = {}
@@ -52,6 +52,7 @@ def extract_ticker_consensus(result: DailyResult) -> dict[str, dict]:
                 "stock_name": report.stock_name or report.ticker,
                 "prices": [],
                 "ratings": [],
+                "changes": [],
                 "count": 0,
             }
         data[report.ticker]["count"] += 1
@@ -61,4 +62,6 @@ def extract_ticker_consensus(result: DailyResult) -> dict[str, dict]:
                 data[report.ticker]["prices"].append(sm.extracted.target_price)
             if sm.extracted.rating:
                 data[report.ticker]["ratings"].append(sm.extracted.rating)
+            if sm.extracted.target_price_change:
+                data[report.ticker]["changes"].append(sm.extracted.target_price_change)
     return data

@@ -24,7 +24,7 @@ class LLMConfig:
             return self.model
         if self.provider == "anthropic":
             return "claude-sonnet-4-5-20250929"
-        return "gpt-4.1"
+        return "gpt-4.1-mini"
 
 
 @dataclass

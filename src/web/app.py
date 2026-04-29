@@ -121,41 +121,45 @@ def create_app(data_dir: Path = DATA_OUTPUT_DIR) -> FastAPI:
                 continue
 
             pd = prev_data.get(ticker)
-            curr_avg = sum(td["prices"]) / len(td["prices"]) if td["prices"] else None
-            prev_avg = sum(pd["prices"]) / len(pd["prices"]) if pd and pd["prices"] else None
-
             direction = "neutral"
             description = ""
             sort_key = 0.0
 
-            if pd is None:
-                has_buy = any("매수" in r or "buy" in r.lower() for r in td["ratings"])
+            # 1) LLM 추출 방향 최우선
+            has_up = "상향" in td.get("changes", [])
+            has_down = "하향" in td.get("changes", [])
+
+            if has_up and not has_down:
                 direction = "up"
+                description = "목표주가 상향"
+                sort_key = 40.0
+            elif has_down and not has_up:
+                direction = "down"
+                description = "목표주가 하향"
+                sort_key = 40.0
+            elif has_up and has_down:
+                direction = "neutral"
+                description = "목표주가 의견 혼재"
+                sort_key = 20.0
+            elif pd is None:
+                # 2) 전일 데이터 없는 신규 종목
+                has_buy = any("매수" in r or "buy" in r.lower() for r in td["ratings"])
+                direction = "up" if has_buy else "neutral"
                 description = "신규 매수" if has_buy else "신규 커버리지"
-                sort_key = 50.0
-            elif curr_avg is not None and prev_avg is not None and prev_avg > 0:
-                pct = (curr_avg - prev_avg) / prev_avg * 100
-                if abs(pct) >= 1:
-                    direction = "up" if pct > 0 else "down"
-                    sign = "+" if pct > 0 else ""
-                    description = f"목표주가 {sign}{pct:.0f}%"
-                    sort_key = abs(pct)
-                else:
-                    today_dom = Counter(td["ratings"]).most_common(1)[0][0] if td["ratings"] else None
-                    prev_dom = Counter(pd["ratings"]).most_common(1)[0][0] if pd and pd["ratings"] else None
-                    if today_dom and today_dom != prev_dom:
-                        direction = "up" if "매수" in today_dom else "down"
-                        description = f"의견 변경 → {today_dom}"
-                        sort_key = 10.0
+                sort_key = 30.0 if has_buy else 15.0
+            else:
+                # 3) Fallback: 전일 대비 평균 목표주가 변동률
+                curr_avg = sum(td["prices"]) / len(td["prices"]) if td["prices"] else None
+                prev_avg = sum(pd["prices"]) / len(pd["prices"]) if pd and pd["prices"] else None
+                if curr_avg is not None and prev_avg is not None and prev_avg > 0:
+                    pct = (curr_avg - prev_avg) / prev_avg * 100
+                    if abs(pct) >= 1:
+                        direction = "up" if pct > 0 else "down"
+                        sign = "+" if pct > 0 else ""
+                        description = f"목표주가 {sign}{pct:.0f}%"
+                        sort_key = abs(pct)
                     else:
                         continue
-            else:
-                today_dom = Counter(td["ratings"]).most_common(1)[0][0] if td["ratings"] else None
-                prev_dom = Counter(pd["ratings"]).most_common(1)[0][0] if pd and pd["ratings"] else None
-                if today_dom and today_dom != prev_dom:
-                    direction = "up" if "매수" in today_dom else "down"
-                    description = f"의견 변경 → {today_dom}"
-                    sort_key = 10.0
                 else:
                     continue
 
@@ -267,20 +271,29 @@ def create_app(data_dir: Path = DATA_OUTPUT_DIR) -> FastAPI:
                 if td is None:
                     continue
 
-                curr_avg = sum(td["prices"]) / len(td["prices"]) if td["prices"] else None
-                prev_avg = sum(pd["prices"]) / len(pd["prices"]) if pd and pd["prices"] else None
+                # Use LLM-extracted direction when available
+                has_up = "상향" in td.get("changes", [])
+                has_down = "하향" in td.get("changes", [])
+                if has_up or has_down:
+                    if has_up:
+                        target_up += 1
+                    if has_down:
+                        target_down += 1
+                else:
+                    # Fallback: compare average prices across dates
+                    curr_avg = sum(td["prices"]) / len(td["prices"]) if td["prices"] else None
+                    prev_avg = sum(pd["prices"]) / len(pd["prices"]) if pd and pd["prices"] else None
+                    if pd and curr_avg and prev_avg and prev_avg > 0:
+                        pct = (curr_avg - prev_avg) / prev_avg * 100
+                        if pct >= 1:
+                            target_up += 1
+                        elif pct <= -1:
+                            target_down += 1
 
                 if pd is None:
                     if any("매수" in r or "buy" in r.lower() for r in td["ratings"]):
                         new_buy += 1
-                elif curr_avg and prev_avg and prev_avg > 0:
-                    pct = (curr_avg - prev_avg) / prev_avg * 100
-                    if pct >= 1:
-                        target_up += 1
-                    elif pct <= -1:
-                        target_down += 1
-
-                if pd is not None:
+                elif pd is not None:
                     prev_buy = any("매수" in r or "buy" in r.lower() for r in (pd.get("ratings") or []))
                     curr_buy = any("매수" in r or "buy" in r.lower() for r in td["ratings"])
                     if curr_buy and not prev_buy:
@@ -303,7 +316,7 @@ def create_app(data_dir: Path = DATA_OUTPUT_DIR) -> FastAPI:
             if not change_items:
                 change_items.append("변화 없음")
 
-            is_hot = target_up > 0 or new_buy > 0 or count_diff > 2
+            is_hot = report_count >= 5 and (target_up > 0 or new_buy > 0 or count_diff > 2)
 
             themes.append({
                 "theme": theme_name,

@@ -214,8 +214,8 @@ class HankyungConsensusParser(BaseSiteParser):
             if not sector:
                 sector = extract_sector_from_pdf_text(raw.pdf_text)
             market_type = extract_market_type_from_pdf_text(raw.pdf_text)
-            if not body_text or len(body_text) < 100:
-                body_text = raw.pdf_text
+            # Always prefer PDF full text over HTML snippet
+            body_text = raw.pdf_text
 
         # Required fields check
         if not title:

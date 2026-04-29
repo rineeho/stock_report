@@ -80,6 +80,8 @@ class MockLLMClient(BaseLLMClient):
             {
                 "extracted": {
                     "target_price": None,
+                    "previous_target_price": None,
+                    "target_price_change": None,
                     "rating": None,
                     "earnings": None,
                     "analyst": None,
@@ -89,7 +91,6 @@ class MockLLMClient(BaseLLMClient):
                     "key_points": ["테스트 요약 포인트"],
                     "one_line": "테스트 한 줄 요약",
                     "opinion_summary": None,
-                    "full_summary": None,
                 },
             },
             ensure_ascii=False,

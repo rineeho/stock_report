@@ -8,8 +8,7 @@ SYSTEM_PROMPT = """당신은 한국 주식 리포트 요약 전문가입니다.
 2. 원문에 없는 수치(목표주가, 실적 등)를 절대 생성하지 마십시오.
 3. 정보가 없으면 반드시 null로 표시하십시오.
 4. 모든 출력은 한국어로 작성하십시오.
-5. 반드시 아래 JSON 형식으로만 응답하십시오.
-6. full_summary는 본문 전체를 기반으로 500자 내외의 상세 요약을 작성하십시오. 핵심 투자포인트, 실적 전망, 리스크 요인을 포함하십시오."""
+5. 반드시 아래 JSON 형식으로만 응답하십시오."""
 
 SUMMARY_PROMPT_TEMPLATE = """다음 주식 리포트를 분석하여 JSON 형식으로 요약하십시오.
 
@@ -25,6 +24,8 @@ SUMMARY_PROMPT_TEMPLATE = """다음 주식 리포트를 분석하여 JSON 형식
 {{
   "extracted": {{
     "target_price": <목표주가 숫자 또는 null>,
+    "previous_target_price": <이전 목표주가 숫자 또는 null>,
+    "target_price_change": "<목표주가 변동 방향: 상향/하향/유지 또는 null>",
     "rating": "<투자의견 문자열 또는 null>",
     "earnings": "<실적 정보 문자열 또는 null>",
     "analyst": "<애널리스트 이름(한국어 2-4자) 또는 null>",
@@ -33,12 +34,14 @@ SUMMARY_PROMPT_TEMPLATE = """다음 주식 리포트를 분석하여 JSON 형식
   "generated": {{
     "key_points": ["<핵심 포인트 1>", "<핵심 포인트 2>", "<핵심 포인트 3>"],
     "one_line": "<한 줄 요약>",
-    "opinion_summary": "<투자 의견 요약 또는 null>",
-    "full_summary": "<본문 기반 500자 내외 상세 요약 또는 null>"
+    "opinion_summary": "<투자 의견 요약 또는 null>"
   }}
 }}
 
-중요: extracted 필드는 본문에서 직접 추출한 값만 사용하십시오. 본문에 없는 정보는 반드시 null로 작성하십시오."""
+중요:
+- extracted 필드는 본문에서 직접 추출한 값만 사용하십시오. 본문에 없는 정보는 반드시 null로 작성하십시오.
+- previous_target_price: 리포트에서 "기존 목표주가", "종전 목표가", "목표주가 NN만원에서 NN만원으로" 등의 표현에서 이전 목표주가를 추출하십시오.
+- target_price_change: 목표주가가 이전 대비 올랐으면 "상향", 내렸으면 "하향", 동일하면 "유지"로 표시하십시오. 본문에 "상향", "하향", "유지" 등의 직접적 표현이 있으면 그대로 따르십시오. 판단할 수 없으면 null로 작성하십시오."""
 
 INACCESSIBLE_BODY_PROMPT = """이 리포트는 본문에 접근할 수 없습니다.
 
@@ -51,14 +54,15 @@ INACCESSIBLE_BODY_PROMPT = """이 리포트는 본문에 접근할 수 없습니
 {{
   "extracted": {{
     "target_price": null,
+    "previous_target_price": null,
+    "target_price_change": null,
     "rating": null,
     "earnings": null
   }},
   "generated": {{
     "key_points": ["본문 접근 불가"],
     "one_line": "본문 접근 불가 - 메타데이터만 확인 가능",
-    "opinion_summary": null,
-    "full_summary": null
+    "opinion_summary": null
   }}
 }}"""
 
@@ -87,5 +91,5 @@ def build_summary_prompt(
         brokerage=brokerage,
         stock_name=stock_name or "N/A",
         ticker=ticker or "N/A",
-        body_text=body_text[:6000],  # truncate very long texts
+        body_text=body_text[:15000],  # truncate very long texts
     )
