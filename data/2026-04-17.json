@@ -1,0 +1,1538 @@
+{
+  "result_id": "1d0311a7-7ca3-4179-bd5e-cd2026ce5402",
+  "target_date": "2026-04-17",
+  "total_discovered": 150,
+  "total_fetched": 150,
+  "total_validated": 150,
+  "total_unverified": 0,
+  "total_deduplicated": 36,
+  "reports": [
+    {
+      "canonical_id": "b240b8bd-27c3-4da6-9953-5ba8a5fe8700",
+      "title": "견고한 업황, 수급 안정화가 마지막 허들",
+      "published_date": "2026-04-17",
+      "brokerage": "한화투자증권",
+      "analyst": "N/A",
+      "ticker": "010950",
+      "stock_name": "S-Oil",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91682&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91682&page=1",
+      "body_text": "1분기: 유가 상승에 따른 재고평가이익 극대화\n동사의 1분기 실적은 매출액 9.4조 원, 영업이익 1.1조 원으로 추정된다. 1) 정유 부문 영업이익은 1.0조 원(QoQ +7,370억 원)으로 예상된다. 유가 상승에 따른 재고평가이익 5,985억 원과 정제마진이 개선된 영향이다. 1Q26 기준 복합 정제마진(Spot)은 $19/b로 QoQ +4.6/b 상승ㅇ했다. 2) 화학 부문도 1~2월 PX/BZ 스프레드가 견조했다. 3월에는 공장을 셧다운하며 연초 확보한 수익성을 바탕으로 흑자 전환이 예상된다. 3) 윤활기유 부문은 전쟁 여파로 제품 스프레드의 변동성이 심화되었으나, 분기 평균으로는 소폭 감소에 그친 것으로 예상된다.\n260416_S-Oil 1Q26 프리뷰_pre.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/16/20260417_company_155137000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "24ea742e-812c-4b84-848c-5a0b407063c3",
+      "title": "점프업을 위한 준비",
+      "published_date": "2026-04-17",
+      "brokerage": "한화투자증권",
+      "analyst": "N/A",
+      "ticker": "317400",
+      "stock_name": "자이에스앤디",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91681&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91681&page=1",
+      "body_text": "1Q26 Preview: 1분기 영업이익 흑자전환 예상\n자이에스앤디의 1분기 매출액은 2831억 원, 영업이익은 108억 원으로 전년동기 대비 각각 -9.5%, 흑자전환을 기록한 것으로 추정된다. 기 수주 및 착공 현장들의 공사 초기단계로 매출 증가는 아직까지 부재한 것으로 파악되나, 작년 하반기 건축부문의 흑자기조와 4분기 주택 대손상각비 반영 마무리 등을 감안했을 때 영업이익의 흑자전환에는 무리가 없을 것으로 예상한다.\n1Q26 Preview_자이에스앤디.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/16/20260417_company_928643000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "7313c393-c4c6-4daf-9923-db534ee5b292",
+      "title": "상사를 넘어, 에너지로 증명되는 성장",
+      "published_date": "2026-04-17",
+      "brokerage": "유안타증권",
+      "analyst": "N/A",
+      "ticker": "047050",
+      "stock_name": "포스코인터내셔널",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91680&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91680&page=1",
+      "body_text": "Summary\n동사는 트레이딩 중심 종합상사에서 벗어나 가스전(E&P)과 팜 농장을 중심으로 한 Upstream 자산 기반 이익 구조로 전환된 상태이다. 특히 LNG 밸류체인을 기반으로 가스 생산-저장-트레이딩-발전으로 이어지는 사업 구조가 구축되며, 실질적으로는 에너지 중심 기업으로 재편되고 있다. 매출은 여전히 소재 비중이 높으나, 영업이익은 에너지 비중이 50%를 상회하며 수익성이 높은 사업 중심으로 재편된 점이 특징이다.\n2026년은 이러한 구조 변화가 실적에서 본격적으로 확인되는 첫 해이다. SENEX 증산에 따른 생산량 확대와 인도네시아 팜 인수 및 정제사업 진출 효과가 동시에 반영되며, 전사 영업이익 증가분의 대부분을 두 사업이 설명하는 구조이다. 이는 단순 업황 개선이 아닌 생산능력 확대와 밸류체인 확장에 기반한 구조적 성장으로, 2026년을 기점으로 이익 레벨이 한 단계 상향되고 이후에도 지속적인 실적 개선 흐름이 이어질 가능성이 높다.\n또한 LNG 터미널 증설 이후 트레이딩 및 Midstream 사업 확장 여지가 확대되고 있으며, 이는 LNG 도입 포트폴리오 최적화와 추가적인 수익 창출 기회로 연결될 수 있다. 여기에 최근 유가 상승 환경까지 감안할 경우 가스 사업의 수익성 개선 가능성도 유효한 상황이다.\n중장기적으로는 모빌리티 및 희토류 밸류체인이 추가 성장 축으로 작용할 전망이다. 구동모터코어를 중심으로 한 모빌리티 사업은 물량 성장 구간에 진입하고 있으며, 희토류-영구자석-부품으로 이어지는 수직형 밸류체인 구축을 통해 소재·부품 영역으로 사업 포트폴리오가 확장되고 있다. 해당 사업은 2028년 이후 본격적인 매출 기여가 예상되며, 2030년 기준 희토류 약 1.3조원, 영구자석 약 1.6조원 규모로 성장할 가능성이 있다는 점에서 밸류에이션 프리미엄 요인으로 작용할 수 있다.\n현재 주가는 26F PER 15.7배 수준으로 일본 종합상사 대비 다소 저평가되어 있으며, 구조적 증익과 성장 옵션을 감안할 경우 추가적인 멀티플 확장이 가능하다고 판단한다. 이에 투자의견 ‘매수’를 제시하며 커버리지를 개시한다. 26F EPS에 Target PER 21배를 적용하여 목표주가 97,000원을 제시한다.\n20260413142325453_0_ko.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/18/20260417_company_828831000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "bd9eed01-fd5d-48af-aae7-087fce65d787",
+      "title": "화이자 펩타이드 경구제 개발 의지 확인",
+      "published_date": "2026-04-17",
+      "brokerage": "DS투자증권",
+      "analyst": "N/A",
+      "ticker": "347850",
+      "stock_name": "디앤디파마텍",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91679&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91679&page=1",
+      "body_text": "디앤디파마텍 - 멧세라 기존 총 6종 계약 유지\n과거 디앤디파마텍은 Metsera와 비만 경구제 총 6종 개발 계약을 체결하였다. 2025년 9월, Pfizer-Metsera 인수에 따라 해당 개발 계약의 주체는 Metsera에서 Pfizer로 변경되었다.\n17일 발표된 Pfizer와의 총 18억원 규모의 연구용역계약은 구 Metsera와 체결한 총 6종의 오랄링크 계약 중 dual agonist 관련 discovery 연구용역으로 추정한다. 화이자 인수 이전에도 Metsera는 디앤디파마텍에게 다수의 연구용역을 수주한 바 있다. 이번 용역계약은 별도의 파이프라인이나 플랫폼 기술수출 계약이 아니며 통상적인 용역계약 수준에서 계약금이 체결된 것으로 판단한다.\n디앤디파마텍_기업리포트_260417.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/66/20260417_company_17566000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "d16ce166-0500-48ae-8537-c6aa0b0eaab8",
+      "title": "ICTK가 국내 양자솔루션 수출 1호 기업이 될 ..",
+      "published_date": "2026-04-17",
+      "brokerage": "하나증권",
+      "analyst": "N/A",
+      "ticker": "456010",
+      "stock_name": "아이씨티케이",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91678&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91678&page=1",
+      "body_text": "투자의견 매수, 12개월 목표주가 40,000원으로 상향\nICTK에 대한 투자의견 매수를 유지한다. 한편 목표주가를 40,000원으로 상향한다. 1) 스테이블 코인의 제도권 금융 편입, 앤트로픽 AI발 해킹 등으로 양자암호의 중요성이 날로 높아지고 있으며, 2) 양자컴퓨터 발전속도와 미중 기술 경쟁을 감안했을 때 미국발 양자산업 지원책이 연일 쏟아질 것으로 예상하고, 3) ICTK는 BTQ의 Q퍼펙트가 보유한 양자 시뮬레이션 기술을 통해 단순한 양자암호업체가 아닌 풀스택 양자솔루션 업체로 사업 모델을 강화하고 있으며, 4) 이를 기반으로 향후 국내 양자솔루션 수출 1호 기업이 될 것으로 기대하기 때문이다. 전술한 요인들과 글로벌 양자업체들의 PBR을 감안하여 ICTK의 타겟 PBR을 12배로 적용, 목표주가를 40,000원으로 상향한다.\nICTK_0416.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/57/20260417_company_687040000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "0d18ad5b-046a-48aa-94f0-34b05936be8b",
+      "title": "기업가치로 보면 여전히 극심한 저평가 상황..",
+      "published_date": "2026-04-17",
+      "brokerage": "하나증권",
+      "analyst": "N/A",
+      "ticker": "050890",
+      "stock_name": "쏠리드",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91677&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91677&page=1",
+      "body_text": "12개월 목표가 30,000원으로 상향, 국내외 통신장비주와 비교해 보세요\n쏠리드 12개월 목표주가를 30,000원으로 상향 조정한다. 아직은 실적 전망치를 이전 수준으로 유지하지만 국내외 통신장비 업체 주가 상승을 고려해 Target Multiple을 상향 조정한 결과이다. 목표주가 3만원은 Target PBR 5배에 해당한다. 한편 쏠리드에 대한 투자의견을 매수로 유지하는데 추천 사유는 다음과 같다. 1) 전세계 1/3을 차지하는 미국 통신장비 시장이 6월 주파수 경매를 시작으로 본격 개화할 것으로 보여 이에 따른 수혜가 예상되고. 2) 엠페놀, 화웨이 등 미국/중국 장비와의 꾸준한 경쟁 속에서도 전세계 탑3에 들 정도로 우수한 기술/가격 경쟁력을 확보하고 있으며, 3) 추정 PBR로 보면 대표적인 글로벌 통신장비대비 절대 저평가되어 있고, 4) 2027년 하반기 이후 본격 이익 성장 형태가 나타날 전망이나 과거 사례로 볼 때 주가 선반영 양상이 강할 것으로 판단되기 때문이다. 상대 비교를 통해서 보면 여전히 부담 없는 주가를 형성 중이라 비중확대를 지속할 것을 추천 한다.\nSolid.2_0416.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/57/20260417_company_603672000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "62fe626c-4f07-4bb9-b8ac-a49b07d6b3e6",
+      "title": "이제 5G SA 시대에 적응하셔야 합니다",
+      "published_date": "2026-04-17",
+      "brokerage": "하나증권",
+      "analyst": "N/A",
+      "ticker": "017670",
+      "stock_name": "SK텔레콤",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91676&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91676&page=1",
+      "body_text": "12개월 목표주가 14만원으로 상향, 매수 투자 의견 및 통신업종 탑픽 유지\nSKT 12개월 TP를 14만원으로 상향 조정한다. 미국은 물론 국내에서도 연내 5G SA 상용 서비스 도입과 더불어 요금제 개편 논의가 시작되고 있어 PBR 상승, 배당수익률 밴드 하향 기조가 뚜렷할 것이기 때문이다. SKT 목표주가 14만원은 2026년 추정 실적 기준 PBR 2배, 기대배당수익률 2.6%에 해당한다. 더불어 SKT에 대한 매수 투자의견, 국내 통신서비스 업종 내 12개월/4~5월 Top Pick으로 제시한다. 추천 사유는 1) 2026년 들어 2배 가까운 주가 상승을 기록 중이지만 5G SA 시대로의 진입이 본격화되고 있음을 감안하면 여전히 매력적인 주가 수준이고, 2) 낮은 기저로 2026년도엔 통신 3사 중 괄목할만한 주가 상승을 나타낼 전망이며, 3) 현금 흐름 개선으로 2026년 조기 배당금 정상화가 예상되며, 4) 최근 5G SA 상용화로 인한 통신장비 주가 급등세가 통신서비스 주가 상승으로 이어지는 양상이라 이동전화매출액 비중이 높고 외국인 보유 비중이 낮은 SKT로 투자가들의 매수세가 유입될 가능성이 높기 때문이다.\nSKT_0416.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/57/20260417_company_603114000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "9410f5bf-b1c0-4662-8666-b2ef533e428d",
+      "title": "제한적인 공급 내 수요 확장세 지속",
+      "published_date": "2026-04-17",
+      "brokerage": "하나증권",
+      "analyst": "N/A",
+      "ticker": "009150",
+      "stock_name": "삼성전기",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91675&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91675&page=1",
+      "body_text": "목표주가 81만원으로 상향\n삼성전기 목표주가를 81만원으로 상향한다. 목표주가는 27년 EPS 22,874원에 글로벌 FCBGA 기업(Ibiden, Unimicron)의 27년 평균 PER 35.4배를 적용했다. 27년 영업이익을 기존 추정치 대비 36% 상향조정했는데 MLCC 가격 인상 사이클 진입과 FCBGA 공급 제약 심화에 따른 고부가 제품 중심의 믹스 개선이 중장기 이익 성장을 견인할 것으로 판단한다. AI 서버를 중심으로 형성된 수요가 네트워크 및 위성 영역까지 확장되며 MLCC와 FCBGA 모두 구조적 성장 국면에 진입하고 있다는 점을 감안할 때 이익 성장 구간은 장기화 될 것으로 기대된다.\nSEMCO_260417_rev.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/57/20260417_company_168647000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "7ceb93ba-9ec1-4a7a-bc4b-30803b8a729e",
+      "title": "크게 보면 더 잘 보여요",
+      "published_date": "2026-04-17",
+      "brokerage": "유진투자증권",
+      "analyst": "N/A",
+      "ticker": "298040",
+      "stock_name": "효성중공업",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91674&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91674&page=1",
+      "body_text": "\" 1분기 매출액과 영업이익은 각각 1.3조원(+22.6% yoy)과 1,266억원(+9.6% yoy)으로 매출액은 시장예상치에 부합하나 이익은 소폭 하회할 것으로 전망. 북미 매출분의 완제품 선적 후 인도 과정에서 프로젝트 별 인도 시기가 분기 이후로 인식되며 이연되는 이슈 있는 것으로 파악중,\n\" 이란 - 호르무즈 사태의 영향권인 중동 매출 비중은 분기 매출 기준 10% 내외 수준, 1분기에도 유사한 수준이 영향을 받을 것으로 전망하나 선적 기준으로 매출 인식하는 프로젝트 몰려 분기 매출에 큰 이슈는 없을 것으로 판단, 현재 벌어지고 있는 물류 차질은 선적이 아닌 인도 과정에서 벌어지고 있기 때문.\n\" 연간 실적은 기존 추정치를 유지, 2026년 매출액과 영업이익은 6.9조원(+16.1% yoy)과 1.2조원(+63.8% yoy)을 예상하며 상저하고의 분기실적 흐름을 전망, 반덤핑관세 불확실성 대응 차원에서 보수적으로 물량 대응한 것이 경쟁사 대비 낮은 최근 마진률의 원인 중 하나인데 하반기부터 창원공장 물량 확대 및 증가한 수주물량들 인식이 본격화되며 북미 매출비중 유의미하게 상승할 수 있을 것으로 전망, 북미 매출비중이 본격화되는 하반기(3,4분기)의 전사 평균 영업이익률은 21%를 예상\n\" 이외 현재 진행중인 맴피스 공장의 증설은 브라운필드 증설 특징으로 인해 단계적인 물량증가로 전사 실적에 기여하고 있으며 그린필드 램프업까지 완료되는 28년 이후에는 미국 현지의 765kV 초고압 변압기 제조가능 공장으로 인한 프리미엄 본격화될 것.\n\" 북미 전력난 현재 진행형이며, 가장 병목으로 지목되는 초고압변압기의 프리미엄도 지속중, 연결 인프라의 노후화가 발전원의 연결에 이어 고부하 수용가의 연결까지 병목으로 붙잡는 사이클이 유지되는 중. PJM의 2027년 2028년 피크부하 예측치는 전년 경매 대비 5GW 증가했으며 해당증가분의 90% 이상이 데이터센터 등 고부하 수용가, 해당 수요를 위한 신규자원으로 15GW의 보완조달을 완료한 상태. 높아지는 수용가의 전력수요에 대응하기위한 발전원 설치과정의 병목인 초고압변압기 프리미엄 지속 판단\n\" 현재 주가는 2027년 실적 기준 P/E 24배 수준, 수주 프로젝트 별로 매출 인식 시기가 달라 단기 실적 변동성 있을 수 있으나 중장기적 펀더멘탈은 꾸준히 강화중, 늘어가는 수주잔고와 밸류체인 내 장기 병목의 지속여부가 밸류에이션 프리미엄을 정당화할 것으로 판단하며 하반기부터 본격화될 북미매출 비중 증가로 인해 전사 마진률 증가추세와 3년수준으로 늘어난 초고압변압기 리드타임으로 인해 2029년과 2030년의 실적 가시성도 높아지고 있다고 판단. 투자의견 BUY와 목표주가 4,000,000원 유지\n20260417_298040_js_heo_69.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/63/20260417_company_976732000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "f4fd2f4a-6586-4d32-aecf-2cf5adb89305",
+      "title": "비상(飛上)",
+      "published_date": "2026-04-17",
+      "brokerage": "신한투자증권",
+      "analyst": "N/A",
+      "ticker": "082920",
+      "stock_name": "비츠로셀",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91673&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91673&page=1",
+      "body_text": "주가의 상방이 열리다\n저평가 해소 국면, 목표주가 155% 상향. 근거는 1) 고온전지 부문 글로벌 리더, 2) 매출 고성장세의 방산 부문 프리미엄 부여, 3) 열전지 글로벌 리더 기업 대부분이 비상장 기업, 직접투자가 가능한 열전지 전문 상장사로 희소성 부각, 4) 경쟁사 대비 높은 수익성(영업이익률 10% vs 30%) 확보\n신한투자증권 리서치 탐색기",
+      "pdf_url": null,
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "e1abe91c-b235-49a0-81f5-72e8511c6e9b",
+      "title": "멀티플 리레이팅 이제 시작",
+      "published_date": "2026-04-17",
+      "brokerage": "SK증권",
+      "analyst": "N/A",
+      "ticker": "062040",
+      "stock_name": "산일전기",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91672&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91672&page=1",
+      "body_text": "1Q26 Preview\n1Q26 실적은 매출액 1,480억원(YoY +49.8%), 영업이익 544억원(YoY +44.9%, OPM 36.7%)으로 전망한다. 제 2 공장 가동률 점진적 확대에 따른 CAPA 증설 기반의 외형성장이 나타나고 있다. 특별한 일회성 요인 없이, 우호적인 환율 및 규모의 경제 시현 통한 증익 구조 이어질 예정이다. 다만 대손상각비 환입으로 인한 높은 기저로 1Q26 영업이익률은 전분기(4Q25 OPM 38.7%) 대비 소폭 둔화 예상한다.\n20260415140209017_0_ko.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/64/20260417_company_384830000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "86792e01-3758-42b7-bfc7-3323869d4581",
+      "title": "높지만 정당한 멀티플",
+      "published_date": "2026-04-17",
+      "brokerage": "SK증권",
+      "analyst": "N/A",
+      "ticker": "010120",
+      "stock_name": "LS ELECTRIC",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91671&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91671&page=1",
+      "body_text": "Target PER 50 배, 높은 멀티플에 대한 고민\n다음을 근거로 동사의 높은 멀티플이 유지 가능하다고 판단한다. (1) 전력기기 업체뿐만 아니라 EPC 까지 확산되는 멀티플 상향이 나타나고 있다. Quanta Services 는 전통적인 EPC 업체들의 밸류에이션 밴드를 크게 상회한 Forward PER 45.2 배에 거래되고 있다. 이는 전력 인프라 사이클에 대한 시장의 믿음을 보여준다. (2) 데이터센터 시장의 폭발적 성장이 나타나고 있다. Quanta Services 가 26 년 가이던스에서 제시한 시장별 26 년 매출액 성장률을 보면, 전력 그리드 및 가스 유틸리티 YoY +10~20% 대비해 기술 및 로드센터(데이터센터 포함) 성장률은 YoY +60~80%로 압도적이다. 결론적으로 미국 전력수요의 구조적 성장으로 멀티플 유지 가능할 것으로 판단한다.\n20260416142637891_0_ko.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/64/20260417_company_293352000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "8667b589-8e2c-4b0f-b7f8-71ea3f003c41",
+      "title": "AI와 DTC 전략의 성과, 숫자로 증명한다",
+      "published_date": "2026-04-17",
+      "brokerage": "SK증권",
+      "analyst": "N/A",
+      "ticker": "192080",
+      "stock_name": "더블유게임즈",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91670&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91670&page=1",
+      "body_text": "1Q26 Preview\n매출액 2,032억원(+25.4% YoY, +1.7% QoQ), 영업이익 667억원(+21.8% YoY, +4.4% QoQ), 지배주주순이익 425 억원(+24.1% YoY, +30.6% QoQ)으로 영업이익은 컨센서스 640 억원을 소폭 상회할 것으로 전망한다.\n팍시게임즈의 AI 게임 비중이 4Q25 50% 수준에서 1Q26 추가적으로 상승한 것으로 파악된다. 실시간 데이터 분석 기반의 유저 프로모션과 최근 인기 하이퍼캐주얼 게임을 벤치마킹하는 전략이 성과를 거두고 있다. 소셜카지노 부문에서는 DTC 비중이 QoQ 상승했다. 일반 유저 대상 자체 결제 유도 확대 및 결제 프로세스 간소화에 힘입어 DTC 비중이 빠르게 확대되고 있으며, 중장기 목표치인 40% 달성도 연내 가능할 것으로 판단된다.\n20260416140043260_0_ko.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/64/20260417_company_388494000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "6c935f1f-fcd7-458c-a08e-d37fe5c687d8",
+      "title": "뼈대는 그대로, 덩치는 커지는",
+      "published_date": "2026-04-17",
+      "brokerage": "iM증권",
+      "analyst": "N/A",
+      "ticker": "006280",
+      "stock_name": "녹십자",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91669&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91669&page=1",
+      "body_text": "알리글로의 성장 추이가 1분기에도 보일 것으로 전망\n동사의 연결 기준 1분기 매출은 4,355억원(YoY +14%), 영업이익은 118억원(YoY +48%, OPM 3%)으로 전망한다. 매출은 시장의 기대치에 부합하나 영업이익은 하회하는 실적이다. 주력 사업부인 혈액제제 및 백신의 매출이 2, 3분기에 집중되기에 통상적으로 동사의 실적은 1분기가 가장 낮은 경향성을 보인다. 이 추세는 변동이 없지만 알리글로의 성장은 분기가 거듭될수록 증명될 것이 예상된다.\n당사가 추정하는 알리글로의 당분기 미국 매출은 370억원으로 작년 1분기 알리글로의 미국 매출 86억원 대비 300%가 넘는 성장을 기록할 것으로 판단한다. 이는 미국 내 면역글로불린 시장의 공급 부족이 지속되는 상황 속에서 판매채널 확장, 약가 상승, 현지 학술대회 참석을 통한 브랜드 인지도 제고 등 다양한 요인이 맞물린 결과다. 또한 최근 발표한 의약품 관세 조치 내역에서 혈장제제(Plasma-derived product)는 특수 의약품 카테고리에 포함되었으며, 특수 의약품 범위에 속하는 품목에 대해서는 무관세를 적용하기로 발표했다는 점 역시 긍정적이다.\n[16213120]_006280.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/61/20260417_company_342930000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "f6e6025c-5e0c-4dee-a5fc-704ca00208dd",
+      "title": "보험에 플랫폼 사업을 입히다",
+      "published_date": "2026-04-17",
+      "brokerage": "키움증권",
+      "analyst": "N/A",
+      "ticker": "462980",
+      "stock_name": "아이지넷",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91668&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91668&page=1",
+      "body_text": "◎ 보험의 디지털 전환을 이끄는 업체\n>> 동사는 보험과 기술의 합성인 인슈어테크 전문 업체이다. 주요 서비스는 마이데이터 기반의 보험 진단 및 추천앱 ‘보닥’ 서비스이며, 그외에 B2B 솔루션(마이리얼플랜, 클락패스)과 자회사 ‘더파트너스’를 통해 GA(보험대리점) 사업도 영위 중이다. 25년 매출 기준 플랫폼 보험 수수료 비중이 97.7%로 대부분을 차지하고 있으며 그 외에 플랫폼 입점 수수료 1.7%, B2B 솔루션 부문이 0.6%를 차지한다.\n>> 동사의 향후 성장성에 대한 판단을 위해서는 핵심 솔루션인 ‘보닥’의 구조와 보험 산업 내 역할에 대한 이해가 필요하다. 보험 시장은 상품을 만드는 ‘보험사’와 영업 조직인 ‘GA’, 계약을 성사시키는 ‘설계사’로 이루어진 구조이다. 해당 구조에서는 설계사가 고객 발굴과 고객의 보험 진단(가입 여부 및 보장 분석), 상품 추천 등을 전적으로 담당했기에 GA로부터 받는 수수료 또한 높게 설정된다. 그러나 ‘보닥’과 같은 보험 진단 및 추천 플랫폼은 기존 설계사 업무의 상당 부분을 담당해준다. 이에 GA 입장에서는 적은 수수료 배정이 가능해지며, 설계사 입장에서는 더 많은 고객 풀 접근 및 업무 효율화가 가능해 플랫폼 사용 수요가 커지는 효과가 있다.\nrfSN3704.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/39/20260417_company_522859000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "162e3e4a-4a89-41f6-a85a-3c29951c4f4b",
+      "title": "꼬마 선장처럼 지금 울고 몇 분 후에 갈게",
+      "published_date": "2026-04-17",
+      "brokerage": "키움증권",
+      "analyst": "N/A",
+      "ticker": "214450",
+      "stock_name": "파마리서치",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91667&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91667&page=1",
+      "body_text": "외국인이 좋으면서 아쉽고, 한국인 수요로 선방\n1Q26 실적은 매출액 1,446억(YoY +23.7%, QoQ +0.9%), 영업이익 540억(YoY +20.6%, QoQ +4.0%, 영업이익률 37.3%)으로 추정한다. 지난 3월 17일에 발간한 ‘미자천하지대본(美者天下之大本): 아름다움은 천하의 가장 큰 근본’ 산업 보고서에서 전망한 수치와 크게 다르지 않다.\nrfCR12012.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/39/20260417_company_208769000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "a6aaa72d-5c89-4d3d-aa84-ccc8cb94f96a",
+      "title": "올해는 특수선 사업의 성과 기대",
+      "published_date": "2026-04-17",
+      "brokerage": "키움증권",
+      "analyst": "N/A",
+      "ticker": "042660",
+      "stock_name": "한화오션",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91666&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91666&page=1",
+      "body_text": "1분기 영업이익 3,716억원, 시장 기대치 부합 전망\n1분기 매출액 3조 3,398억원(yoy +6.3%), 영업이익 3,716억원(yoy +43.7%, OPM 11.1%)를 달성하며 시장 기대치에 부합할 것으로 전망한다. 직전 분기 대비 조업일수와 제품 믹스가 유사하여 매출은 견조한 흐름을 보일 것으로 예상한다. 비용 측면에서 고가 선박의 매출 확대, 긍정적인 환율 효과가 수익성 개선을 이끌 것으로 판단한다. 이번 분기 상선 부문의 제품 믹스는 고부가가치 LNG선 비중이 여전히 60%를 유지하고 있고, VLCC의 비중이 소폭 증가한 반면 컨테이너선의 비중은 소폭 감소한 것으로 추정한다.\nrfCR12011.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/39/20260417_company_928727000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "fa871e7a-55f7-4899-9c6c-4676bbdf6d8c",
+      "title": "LNG 공급망의 중심 축",
+      "published_date": "2026-04-17",
+      "brokerage": "키움증권",
+      "analyst": "N/A",
+      "ticker": "010140",
+      "stock_name": "삼성중공업",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91665&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91665&page=1",
+      "body_text": "1분기 영업이익 3,255억원, 컨센서스 하회 전망\n1분기 매출액 2조 8,751억원(yoy +15.3%), 영업이익 3,255억원(yoy +164.4%, OPM 11.3%)를 달성하며 시장 기대치를 하회할 것으로 전망한다. 이번 분기는 지난 4Q25와 조업일수와 제품 믹스 측면에서 유사하기 때문에 매출과 이익 개선 폭이 제한적일 것으로 판단한다. 2Q26부터 2도크 가동이 본격화되며 매출 성장이 가속화될 전망이다. 제품 믹스 측면에서도 선가가 높았던 23년 이후 수주 물량의 반영이 늘어나고 해양 사업부 매출이 확대되며 수익성 개선이 지속될 것으로 판단한다.\nrfCR12010.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/39/20260417_company_837276000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "d923cc4f-29f0-4f7d-976a-0438ad934dbe",
+      "title": "그룹사 해외 조선 사업 확대의 핵심",
+      "published_date": "2026-04-17",
+      "brokerage": "키움증권",
+      "analyst": "N/A",
+      "ticker": "009540",
+      "stock_name": "HD한국조선해양",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91664&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91664&page=1",
+      "body_text": "1분기 영업이익 1조 1,229억원, 컨센서스 부합 전망\n1분기 매출액 7조 6,847억원(yoy +13.5%), 영업이익 1조 1,229억원(yoy +30.7%, OPM 14.6%)를 달성하며 시장 기대치에 부합할 것으로 전망한다. 핵심 자회사인 HD현대중공업, HD현대삼호중공업의 실적 개선이 지속되며 전사 성장을 이끌 것으로 판단한다. 특히, 상선 부문에서 고선가 선박의 매출 확대 및 생산성 개선 기조 지속과 긍정적인 환율 효과가 주효했다.\nrfCR12008.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/39/20260417_company_524361000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "31552450-bf72-46e6-9da1-87029ace51f5",
+      "title": "우호적인 상선 업황과 군함 사업 확대 기대감",
+      "published_date": "2026-04-17",
+      "brokerage": "키움증권",
+      "analyst": "N/A",
+      "ticker": "329180",
+      "stock_name": "HD현대중공업",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91663&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91663&page=1",
+      "body_text": "1분기 영업이익 7,635억원, 컨센서스 부합 전망\n1분기 매출액 5조 4,395억원(yoy +42.3%), 영업이익 7,635억원(yoy +76.0%, OPM 14.0%)를 달성하며 시장 기대치에 부합할 것으로 전망한다. HD현대미포의 온기 실적 반영, 제품 믹스 및 생산성 개선 지속, 긍정적인 환율 효과 등이 반영되며 매출과 이익의 개선세가 지속될 것으로 판단한다. 상선 부문에서는 23년 이후 고선가 수주 물량의 매출 확대와 지속적인 생산성 개선에 힘입어 실적 개선 흐름이 이어질 것으로 판단한다. 또한, 해양 부문도 2개 프로젝트 진행률이 올라오며 매출 성장이 본격화되는 구간으로 진입했다.\nrfCR12009.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/39/20260417_company_981909000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "a640c8be-546a-420e-9fcd-cae9d4083bab",
+      "title": "매출액 감소보단 수익성 증가 영향이 큰 상황",
+      "published_date": "2026-04-17",
+      "brokerage": "키움증권",
+      "analyst": "N/A",
+      "ticker": "294870",
+      "stock_name": "IPARK현대산업개발",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91662&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91662&page=1",
+      "body_text": "1분기 영업이익 시장 컨센서스 부합\nIPARK현대산업개발의 1분기 연결 영업이익은 1,041억원(YoY +93%)으로 시장 컨센서스(1,010억원)에 부합할 것으로 전망된다. 매출액은 작년 반영되었던 수원IPC 인도 매출과 일부 고원가 현장들의 준공에 따라서 감소할 것으로 전망된다. 그러나, 부문별 매출총이익률은 여전히 높은 수준이 유지될 것으로 전망된다. 자체주택은 서울원 아이파크의 매출 비중이 상승함에 따라 작년 4분기 기록한 수준의 매출총이익률이 유지될 것으로 전망된다. 외주주택은 작년 4분기 일회성 요인을 제거한 수준보다 높은 매출총이익률이 나올 것으로 전망된다. 1분기 분양은 예정대로 총 2,094세대가 진행된 것으로 파악되며, 주요 현장이 천안 아이파크 시티 5, 6단지의 분양도 2단지 대비 높은 초기 분양률을 보인것으로 파악된다.\nrfCR12007.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/39/20260417_company_95335000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "98dbfefb-ba20-46fb-bb38-714caa0b0402",
+      "title": "[AI] 웹소설·웹툰 IP 기반 콘텐츠 사업 전문..",
+      "published_date": "2026-04-17",
+      "brokerage": "한국IR협의회",
+      "analyst": "N/A",
+      "ticker": "263720",
+      "stock_name": "디앤씨미디어",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91661&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91661&page=1",
+      "body_text": "1 주요 제품 및 연혁\n디앤씨미디어는 2012년 1월 4일 설립된 콘텐츠 기업으로, 현재 웹소설과 웹툰 IP(지식재산권)를 기획·제작·유통하는 사업영역을 중심으로 성장해 왔다. 사업 구조는 단순 출판에 머무르지 않고, 작가와의 출판권 및 배타적발행권 확보를 바탕으로 전자책과 종이책을 제작해 카카오엔터테인먼트, 네이버시리즈, 리디북스 등 주요 플랫폼에 공급하는 방식으로 확장돼 있다. 연결 기준 종속회사도 2025년 말 현재 3개사를 보유하고 있으며, 웹툰 제작, 애니메이션 및 디지털 콘텐츠 제작까지 사업 포트폴리오를 넓혔다. 2017년 8월 1일 코스닥시장 상장 이후에는 자체 IP를 기반으로 한 2차 저작물 제작 역량까지 강화하며 콘텐츠 밸류체인 전반으로 사업 범위를 확장해 왔다.\n회사의 주요 서비스는 웹소설과 웹툰 전자책 유통이며, 여기에 종이책 출판과 상품·기타 매출이 결합되는 구조다. 2025년 연결 매출 854억7,200만원 가운데 웹툰 전자책이 404억3,900만원으로 47%를 차지해 가장 큰 비중을 기록했고, 웹소설 전자책은 193억1,800만원으로 23%를 차지했다. 종이책은 웹소설 36억2,600만원, 웹툰 22억4,300만원으로 각각 4%, 3% 수준이며, 상품 및 기타 매출도 198억4,600만원으로 23%에 달했다. 전자책은 회당 결제 또는 권당 대여·구매 방식으로 서비스되며, 종이책은 온오프라인 서점과 총판 유통망을 통해 공급된다. 디앤씨미디어의 경쟁우위는 단일 히트작 판매보다, 웹소설 원천 IP를 확보한 뒤 웹툰·단행본·영상화로 이어지는 확장 구조를 갖추고 있다는 점에 있다.\n디앤씨미디어_ 웹소설·웹툰 IP 기반 콘텐츠 사업 전문기업.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/74/20260417_company_991160000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "6fa326cb-22b0-476f-8879-d2a907898522",
+      "title": "[AI] 자동차 차체 부품 전문 제조 기업",
+      "published_date": "2026-04-17",
+      "brokerage": "한국IR협의회",
+      "analyst": "N/A",
+      "ticker": "013310",
+      "stock_name": "아진산업",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91660&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91660&page=1",
+      "body_text": "1 주요 제품 및 연혁\n아진산업은 자동차 차체 부품 제조를 주된 사업으로 영위하는 자동차 부품 전문 기업이다. 주요 제품은 자동차 차체(Body)를 구성하는 프레스 패널(Press Panel) 및 용접 조립 부품(Welding Assembly Parts)으로, 승용차와 상용차에 적용되는 다양한 차체 구조 부품을 생산한다. 아진산업은 현대자동차 및 기아 등 완성차 업체에 차체 부품을 공급하는 1차 협력사로서, 국내 자동차 산업의 공급망 내에서 핵심적인 위치를 점하고 있다.\n아진산업은 1974년 설립 이후 자동차 차체 부품 생산 역량을 지속적으로 확대해왔다. 설립 초기부터 프레스 금형 설계 및 제작 기술을 내재화하여 부품 개발 단계부터 양산까지 일관된 생산 체계를 구축했다. 이후 국내 완성차 업체의 생산 확대에 맞춰 생산 설비와 공장 규모를 꾸준히 증설하며 공급 능력을 강화했다. 아진산업은 유가증권시장에 상장되어 있으며, 종목코드는 013310이다.\n아진산업_ 자동차 차체 부품 전문 제조 기업.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/74/20260417_company_849813000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "48e8c2d2-939f-499a-bba7-333db265e7d1",
+      "title": "[AI] IT 인프라 유통 및 서비스 전문기업",
+      "published_date": "2026-04-17",
+      "brokerage": "한국IR협의회",
+      "analyst": "N/A",
+      "ticker": "173130",
+      "stock_name": "오파스넷",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91659&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91659&page=1",
+      "body_text": "1 주요 제품 및 연혁\n오파스넷은 네트워크 통합(NI, Network Integration) 및 시스템 통합(SI, System Integration)을 주요 사업으로 영위하며, Total ICT 서비스 업체로의 성장을 추구한다. 네트워크 통합 사업은 Cisco Systems가 생산하는 네트워크 장비를 활용하여 고객사의 네트워크를 구축하는 용역을 중심으로 진행되며, 네트워크, SW 및 라이선스, 무선랜, UCS/IPT, 기타 장비 공급 및 유지보수 서비스를 제공한다. 2025년 기준 네트워크 구축 매출이 전체 매출의 44.0%를 차지하며, 유지보수 매출이 35.6%를 기록하는 등 안정적인 수익 구조를 확보하고 있다. 오파스넷은 단순 장비 납품을 넘어 효율적인 네트워크 제안·설계, 시스템 운용상의 신뢰성을 제공하며, 기술력, 수행 경험, 품질관리 역량을 바탕으로 경쟁 우위를 확보하고 있다.\n오파스넷은 2004년 10월 설립 이후 네트워크 통합 및 시스템 통합 분야에서 기술력을 축적해왔다. 2011년 Cisco SI Gold 파트너인증을 획득하며 네트워크 분야에서의 기술력을 인정받았고, 2012년부터 SK텔레콤, 삼성SDS, 금융권, 공공기관 등 주요 고객사에 네트워크 솔루션을 공급하기 시작했다. 2016년 12월 코넥스시장에 상장한 데 이어, 2018년 8월 코스닥시장으로 이전상장하며 성장 기반을 확대했다. 2023년 8월에는 가산 데이터센터를 개소하며 사업 영역을 확장했으며, 2024년 3월 한국평가데이터로부터 신용평가 A+ 등급을 획득하며 재무 안정성을 인정받았다.\n오파스넷_ IT 인프라 유통 및 서비스 전문기업.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/74/20260417_company_767579000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "c61ef0a9-bb40-48b7-8e37-db66c4f536e6",
+      "title": "[AI] 천연물 기반 화장품 및 건강기능식품 원..",
+      "published_date": "2026-04-17",
+      "brokerage": "한국IR협의회",
+      "analyst": "N/A",
+      "ticker": "052260",
+      "stock_name": "현대바이오랜드",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91658&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91658&page=1",
+      "body_text": "1 주요 제품 및 연혁\n현대바이오랜드는 천연 유래 소재 기반의 화장품 원료 및 건강기능식품 원료 제조·판매를 주된 사업으로 영위한다. 핵심 제품은 히알루론산(Hyaluronic Acid, 피부 보습 및 관절 건강에 활용되는 고분자 다당류), 콜라겐, 식물 추출물 등 바이오 소재로, 이를 화장품 제조사 및 건강기능식품 업체에 원료 형태로 공급한다. 국내 화장품 원료 시장에서 천연 발효 기술을 기반으로 한 히알루론산 생산 역량을 바탕으로 사업 기반을 구축해왔으며, 국내외 다수의 화장품 및 건강기능식품 기업을 고객사로 확보하고 있다.\n현대바이오랜드는 화장품 원료 사업에서 출발하여 건강기능식품 원료 사업으로 사업 영역을 확장해왔다. 히알루론산을 비롯한 다양한 바이오 소재의 생산·공급을 통해 B2B(기업 간 거래) 원료 공급 구조를 유지하며, 화장품 완제품 제조사 및 건강기능식품 브랜드사에 소재를 납품하는 방식으로 수익을 창출한다. 또한 자체 연구개발(R&D) 역량을 바탕으로 신규 기능성 소재 개발에 지속적으로 투자하며 제품 포트폴리오를 확대해왔다. 코스닥 시장에 상장되어 있으며(종목코드 052260), 국내 화장품·건강기능식품 원료 시장에서 오랜 사업 이력을 보유하고 있다.\n사본(1) - 현대바이오랜드_ 천연물 기반 화장품 및 건강기능식품 원료 전문기업.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/74/20260417_company_47673000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "5f5cec7f-d811-4283-8746-254272afa1dd",
+      "title": "[AI] 광섬유 센서 기반 계측 및 모니터링 장..",
+      "published_date": "2026-04-17",
+      "brokerage": "한국IR협의회",
+      "analyst": "N/A",
+      "ticker": "368770",
+      "stock_name": "파이버프로",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91657&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91657&page=1",
+      "body_text": "1 주요 제품 및 연혁\n파이버프로는 광섬유 센서(Fiber Optic Sensor) 기반의 계측 및 모니터링 장비를 주된 사업으로 영위한다. 광섬유 센서란 빛의 물리적 특성 변화를 이용해 온도, 변형률, 압력 등 다양한 물리량을 측정하는 센서로, 전자기 간섭에 강하고 장거리 측정이 가능하다는 특성을 지닌다. 파이버프로의 핵심 제품은 광섬유 브래그 격자(FBG, Fiber Bragg Grating) 기반 센서 및 계측 시스템으로, 구조물 건전성 모니터링(SHM, Structural Health Monitoring), 에너지 인프라, 방산, 철도 등 다양한 산업 분야에 적용된다. 광섬유 센서는 기존 전기식 센서 대비 내구성과 정밀도 측면에서 차별화된 특성을 보유하며, 장기 모니터링이 요구되는 사회기반시설 및 산업 현장에서 활용된다.\n파이버프로는 1997년 설립 이후 광섬유 센서 분야에서 기술 기반을 구축해왔다. 설립 초기부터 FBG 인터로게이터(광신호 분석 장치), 분산형 온도 센서(DTS, Distributed Temperature Sensing) 시스템 등 핵심 계측 장비를 자체 개발하며 제품 포트폴리오를 확장했다. 국내 주요 SOC(사회간접자본) 프로젝트 및 에너지 인프라 현장에 계측 시스템을 공급하며 국내 시장에서의 사업 기반을 다졌고, 이후 해외 시장으로 공급처를 넓혔다. 2022년 3월 코스닥 시장에 상장하며 공개 기업으로 전환했다.\n사본(1) - 파이버프로_ 광섬유 센서 기반 계측 및 모니터링 장비 전문기업.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/74/20260417_company_765314000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "5caa308e-cd93-4014-bc82-619ab1cc1be6",
+      "title": "[AI] AI·모바일 플랫폼 전문기업의 사업 확..",
+      "published_date": "2026-04-17",
+      "brokerage": "한국IR협의회",
+      "analyst": "N/A",
+      "ticker": "088340",
+      "stock_name": "유라클",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91656&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91656&page=1",
+      "body_text": "1 주요 제품 및 연혁\n유라클은 AI·모바일 플랫폼 전문기업으로, 기업의 업무 시스템 구축 및 운영을 지원하는 사업을 주된 사업으로 영위한다. 핵심 서비스는 모바일 플랫폼 '모피어스 스위트(Morpheus Suite)'와 AI 플랫폼 '아테나(Athena)'로 구성되며, 이를 기반으로 한 운영·유지보수 서비스와 자회사를 통한 모바일 기기 유통 사업도 함께 운영한다. 2025년 말 기준 총 52건의 저작권, 상표권, 소프트웨어 품질인증을 보유하고 있으며, 모바일 플랫폼 및 AI 플랫폼 관련 핵심 소프트웨어에 대해 GS 인증 1등급을 취득했다.\n유라클은 2001년 1월 19일 ㈜아이엠넷피아로 설립되어 PDA 기반 증권서비스를 시작으로 모바일 사업에 진입했다. 설립 직후인 2001년 4월 서울지방중소기업청으로부터 벤처기업 인증을 획득했으며, 같은 해 12월에는 '모바일로' 서비스로 금융감독원 금융 신상품 대상을 수상하며 초기 기술력을 인정받았다. 이후 스마트폰 확산에 대비하여 2011년 5월 기업용 모바일 플랫폼 '모피어스'를 출시했고, 2013년 4월 GS 인증 1등급을 취득하며 시장 내 입지를 확보했다. 2007년 6월에는 법인명을 ㈜유라클로 변경했으며, 2024년 8월 코스닥 시장에 상장했다.\n사본(1) - 유라클_ AI·모바일 플랫폼 전문기업의 사업 확장.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/74/20260417_company_27264000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "cd5c962c-ef0e-4996-aaa8-13bbb10b4ff5",
+      "title": "[AI] 수동소자 제조 전문기업의 실적 턴어라..",
+      "published_date": "2026-04-17",
+      "brokerage": "한국IR협의회",
+      "analyst": "N/A",
+      "ticker": "036010",
+      "stock_name": "아비코전자",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91655&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91655&page=1",
+      "body_text": "1 주요 제품 및 연혁\n아비코전자는 전자부품 제조를 주된 사업으로 영위하는 기업으로, 저항기(Resistor), 인덕터(Inductor) 등 수동소자(Passive Component) 제품군을 핵심 사업영역으로 삼고 있다. 수동소자는 전자회로에서 전류·전압·신호를 제어하는 기초 부품으로, 스마트폰·자동차·산업기기·통신장비 등 거의 모든 전자제품에 필수적으로 탑재된다. 아비코전자는 칩 저항기(Chip Resistor), 권선형 저항기(Wire-wound Resistor), 칩 인덕터(Chip Inductor) 등 다양한 규격의 수동소자 제품을 생산하며, 국내외 전자 부품 시장에 공급하고 있다.\n아비코전자의 주요 제품인 칩 저항기는 표면실장형(SMD: Surface Mount Device) 방식으로 제작되어 전자기기의 소형화·경량화 추세에 부합하는 제품이다. 인덕터 제품군은 전원회로에서 노이즈(Noise) 억제 및 에너지 저장 기능을 수행하며, 전기차(EV)·하이브리드차(HEV) 등 친환경 자동차와 5G 통신 인프라 확대에 따른 수요 증가에 대응하고 있다. 아비코전자는 국내 생산 기반을 바탕으로 품질 관리 체계를 구축하고, 글로벌 전자부품 고객사에 제품을 공급하는 사업 구조를 유지하고 있다.\n사본(1) - 아비코전자_ 수동소자 제조 전문기업의 실적 턴어라운드.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/74/20260417_company_75586000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "0a6b3e49-cbaf-4d75-a97f-01d88e8ed3c7",
+      "title": "[AI] 3D 비전 기반 로봇 지능화 솔루션 전문..",
+      "published_date": "2026-04-17",
+      "brokerage": "한국IR협의회",
+      "analyst": "N/A",
+      "ticker": "475400",
+      "stock_name": "씨메스",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91654&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91654&page=1",
+      "body_text": "1 주요 제품 및 연혁\n씨메스는 3D 비전 기반 로봇 지능화 솔루션을 핵심 사업으로 영위한다. 주요 제품은 3D 비전 센서(물체의 3차원 형상을 인식하는 장치)와 이를 기반으로 한 로봇 자동화 소프트웨어로, 제조 현장에서 로봇이 물체를 인식·파지(집어 올리는 동작)·조립할 수 있도록 하는 기술을 제공한다. 씨메스의 솔루션은 빈 피킹(Bin Picking, 무작위로 쌓인 부품을 로봇이 자동으로 집어내는 기술), 물류 자동화, 품질 검사 등 다양한 제조·물류 공정에 적용된다. 기존 2D 카메라 기반 자동화 시스템이 갖는 형상 인식의 한계를 3D 비전 기술로 극복하며, 복잡한 형상의 부품이나 무작위 적재 환경에서도 로봇의 정밀 작업을 가능하게 한다.\n씨메스는 2014년 설립 이후 3D 비전 센서 하드웨어와 로봇 제어 소프트웨어를 자체 개발하며 기술 기반을 구축했다. 설립 초기부터 자동차 부품, 전자 부품 등 정밀 제조 분야를 중심으로 국내 주요 제조사에 솔루션을 공급하기 시작했으며, 이를 통해 산업용 로봇 자동화 시장에서 입지를 다졌다. 씨메스는 하드웨어 단독 공급에서 나아가 비전 소프트웨어, 로봇 제어 알고리즘, 시스템 통합(SI)까지 아우르는 토털 솔루션 체계를 갖추었다. 이후 자동차, 이차전지, 반도체, 물류 등 다양한 산업군으로 적용 범위를 확대하며 사업 영역을 넓혔고, 2024년 코스닥 시장에 상장했다.\n사본(1) - 씨메스_ 3D 비전 기반 로봇 지능화 솔루션 전문기업.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/74/20260417_company_304782000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "b80f07fe-966b-465a-a02d-ad3dd57f9714",
+      "title": "[AI] 건설자재 및 화학제품 제조·판매 전문..",
+      "published_date": "2026-04-17",
+      "brokerage": "한국IR협의회",
+      "analyst": "N/A",
+      "ticker": "003310",
+      "stock_name": "대주산업",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91653&page=1"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91653&page=1",
+      "body_text": "1 주요 제품 및 연혁\n대주산업은 배합사료와 펫푸드, 동물용 의약품 관련 사업을 함께 영위하는 제조기업이다. 주력 사업영역은 축산용 배합사료 생산이며, 연결 기준 주요 제품 매출에서 배합사료가 1,003억7,100만원으로 99.39%를 차지해 사업의 중심축을 이룬다. 인천 공장에서는 닭·소·돼지용 양축사료를 생산하고, 충남 서천 장항공장에서는 반려동물용 펫푸드를 제조하는 이원화 생산체계를 운영한다. 여기에 종속회사를 통해 사료용 원료 성격의 동물용 의약품과 첨가제 사업도 병행하면서 제품군을 넓히고 있다.\n주요 제품은 축종별로 세분화된 배합사료와 반려동물용 사료, 고양이캔, 첨가제 제품으로 구성된다. 배합사료는 코끼리표, 펫푸드는 도그랑 등의 상표로 판매되고 있으며, 각 제품은 사육 목적과 동물 특성에 맞춰 설계된다는 점이 특징이다. 대주산업은 두 생산거점 모두 HACCP 인증 기반 설비를 갖추고 제품 특성에 맞는 장비를 운영하고 있다. 이는 단순한 생산능력보다 품질관리 체계와 생산효율을 동시에 확보하는 핵심기술 기반으로 작용하며, 원료 투입부터 완제품 관리까지 일관된 제조 경쟁우위를 형성하는 요소다.\n대주산업_ 건설자재 및 화학제품 제조·판매 전문기업.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/74/20260417_company_581732000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "fedb2082-057e-45fb-aabf-88fcd37712a6",
+      "title": "빠른 제품 기획과 외주 생산 기반 글로벌 시..",
+      "published_date": "2026-04-17",
+      "brokerage": "서울평가정보",
+      "analyst": "N/A",
+      "ticker": "226340",
+      "stock_name": "본느",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91652&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91652&page=2",
+      "body_text": "■ 외주 기반 ODM과 브랜드 사업을 결합해 글로벌 시장을 공략하는 화장품 기업\n■ 브랜드·콘텐츠 중심으로 진화하며 수출과 온라인 기반으로 성장 중\n■ 유통·자본 구조 변화를 통해 브랜드 중심 글로벌 사업 전환 추진 중\n260416_경기관련소비재_본느(226340)_빠른 제품 기획과 외주 생산 기반 글로벌 시장을 공략하는 화장품 기업_서울평가정보(주).pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/75/20260417_company_592631000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "8163e40a-60fe-4546-bd41-1b28f8d45913",
+      "title": "동물용 백신 및 의약품 기반 동물 헬스케어 ..",
+      "published_date": "2026-04-17",
+      "brokerage": "NICE평가정보",
+      "analyst": "N/A",
+      "ticker": "018620",
+      "stock_name": "우진비앤지",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91651&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91651&page=2",
+      "body_text": "■ 동물용 의약품 및 백신 중심의 동물 헬스케어 전문기업\n■ 백신 기술 기반 성장 동력 확보 및 실적 개선\n■ 글로벌 시장 확대 및 백신 중심 중장기 성장 전략\n260416_건강관리_우진비앤지(018620)_동물용 백신 및 의약품 기반 동물 헬스케어 솔루션 기업_나이스평가정보.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/69/20260417_company_409400000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "734a2375-e440-48f9-bcbb-60d7dc85f4d8",
+      "title": "PEGylation 기술 기반 바이오의약품 및 약물..",
+      "published_date": "2026-04-17",
+      "brokerage": "NICE평가정보",
+      "analyst": "N/A",
+      "ticker": "067370",
+      "stock_name": "선바이오",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91650&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91650&page=2",
+      "body_text": "■ PEGylation 기반 바이오의약품 및 의료기기 개발 기업\n■ PEG 유도체 생산 및 기술이전 기반 수익모델 확보\n■ 바이오신약 및 차세대 플랫폼 확장 통한 성장 기반 확보\n260416_건강관리_선바이오(067370)_PEGylation 기술 기반 바이오의약품 및 약물전달 플랫폼 기업_NICE평가정보.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/69/20260417_company_554748000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "231b40ad-bd52-4cbc-8d5b-9cfe00ee9ba6",
+      "title": "제제기술 기반 개량신약 개발 중심의 의약품 ..",
+      "published_date": "2026-04-17",
+      "brokerage": "서울평가정보",
+      "analyst": "N/A",
+      "ticker": "204840",
+      "stock_name": "지엘팜텍",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91649&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91649&page=2",
+      "body_text": "■ 개량신약 개발 및 사업화 구조를 갖춘 연구개발형 제약기업\n■ R&D 서비스와 완제의약품 시장의 동반 성장 구조\n■ 임상 성과 기반 파이프라인 확대 및 실적 성장 가능성\n260409_건강관리_지엘팜텍(204840)_제제기술 기반 개량신약 개발 중심의 의약품 연구개발 기업_서울평가정보(주).pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/75/20260417_company_727152000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "1504f093-3257-4536-925d-642be84be713",
+      "title": "글로벌 산업용 잉크젯 프린팅 시장을 선도하..",
+      "published_date": "2026-04-17",
+      "brokerage": "NICE평가정보",
+      "analyst": "N/A",
+      "ticker": "043360",
+      "stock_name": "디지아이",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91648&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91648&page=2",
+      "body_text": "■ 디지털 잉크젯 프린팅 기반 글로벌 산업용 장비 전문기업\n■ 핵심 잉크젯 기술 내재화 기반 제품 포트폴리오 다각화\n■ 패키징 프린터 진출을 통한 신규 매출 기반 확보 추진\n260409_IT_디지아이(043360)_글로벌 산업용 잉크젯 프린팅 시장을 선도하는 디지털 프린팅 솔루션 기업_NICE평가정보.pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/69/20260417_company_603579000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    },
+    {
+      "canonical_id": "a4b9d056-05b1-4ba3-9ae8-4cb3be545ef0",
+      "title": "네오디뮴 자석 기술 기반 전자·전장용 자석..",
+      "published_date": "2026-04-17",
+      "brokerage": "서울평가정보",
+      "analyst": "N/A",
+      "ticker": "285490",
+      "stock_name": "노바텍",
+      "sector": null,
+      "source_urls": [
+        "https://finance.naver.com/research/company_read.naver?nid=91647&page=2"
+      ],
+      "primary_url": "https://finance.naver.com/research/company_read.naver?nid=91647&page=2",
+      "body_text": "■ IT 고객사를 통한 자석 설계·제조 및 차폐자석 기술 기반 경쟁력 확보\n■ 전장용 제품 포트폴리오 다양화 및 신규 응용처 확대\n■ 희토류 대응 소재 기술 및 공급망 리스크 대응 전략 강화\n260402_IT_노바텍(285490)_네오디뮴 자석 기술 기반 전자·전장용 자석부품 전문기업_서울평가정보(주).pdf",
+      "pdf_url": "https://stock.pstatic.net/stock-research/company/75/20260417_company_33716000.pdf",
+      "has_revision": false,
+      "duplicate_count": 1
+    }
+  ],
+  "summaries": [
+    {
+      "summary_id": "0c1962a3-b50e-44e1-b02f-df8936684dcd",
+      "canonical_id": "b240b8bd-27c3-4da6-9953-5ba8a5fe8700",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1분기 실적은 매출액 9.4조 원, 영업이익 1.1조 원으로 추정된다."
+      },
+      "generated": {
+        "key_points": [
+          "정유 부문 영업이익은 1.0조 원으로 예상되며, 유가 상승에 따른 재고평가이익이 5,985억 원이다.",
+          "화학 부문은 1~2월 PX/BZ 스프레드가 견조했으며, 3월에는 공장을 셧다운하여 흑자 전환이 예상된다.",
+          "윤활기유 부문은 전쟁 여파로 제품 스프레드의 변동성이 심화되었으나, 분기 평균으로는 소폭 감소할 것으로 예상된다."
+        ],
+        "one_line": "S-Oil의 1분기 실적은 유가 상승에 따른 재고평가이익 극대화로 긍정적 전망을 보인다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "494f96b1-91fa-4926-8032-7828d4f51b70",
+      "canonical_id": "24ea742e-812c-4b84-848c-5a0b407063c3",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1분기 매출액은 2831억 원, 영업이익은 108억 원으로 전년동기 대비 각각 -9.5%, 흑자전환을 기록한 것으로 추정된다."
+      },
+      "generated": {
+        "key_points": [
+          "자이에스앤디의 1분기 영업이익 흑자전환 예상",
+          "매출 증가는 아직 부재한 것으로 파악",
+          "작년 하반기 건축부문의 흑자기조와 4분기 주택 대손상각비 반영 마무리"
+        ],
+        "one_line": "자이에스앤디는 1분기 영업이익이 흑자전환할 것으로 예상된다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "41610e83-2dff-448c-9120-2a49d3129e58",
+      "canonical_id": "7313c393-c4c6-4daf-9923-db534ee5b292",
+      "extracted": {
+        "target_price": 97000.0,
+        "rating": "매수",
+        "earnings": "2026년은 이러한 구조 변화가 실적에서 본격적으로 확인되는 첫 해이다."
+      },
+      "generated": {
+        "key_points": [
+          "포스코인터내셔널은 에너지 중심 기업으로 재편되고 있다.",
+          "2026년부터 가스전 증산과 팜 인수 효과로 영업이익 증가가 예상된다.",
+          "모빌리티 및 희토류 밸류체인이 중장기 성장 축으로 작용할 전망이다."
+        ],
+        "one_line": "포스코인터내셔널은 에너지 중심으로 재편되며 중장기 성장 가능성이 높다.",
+        "opinion_summary": "투자의견 '매수'를 제시하며 추가적인 멀티플 확장이 가능하다고 판단한다."
+      }
+    },
+    {
+      "summary_id": "f9245150-a994-4a8e-a7ca-9380fe15dec3",
+      "canonical_id": "bd9eed01-fd5d-48af-aae7-087fce65d787",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "디앤디파마텍은 Metsera와 비만 경구제 총 6종 개발 계약을 체결하였다.",
+          "2025년 9월, Pfizer-Metsera 인수에 따라 개발 계약의 주체가 Metsera에서 Pfizer로 변경되었다.",
+          "17일 발표된 연구용역계약은 dual agonist 관련 discovery 연구용역으로 추정된다."
+        ],
+        "one_line": "디앤디파마텍은 화이자와의 연구용역계약을 통해 경구제 개발 의지를 확인하였다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "bd327a2c-64ae-4101-9c91-ebe5f88395c4",
+      "canonical_id": "d16ce166-0500-48ae-8537-c6aa0b0eaab8",
+      "extracted": {
+        "target_price": 40000.0,
+        "rating": "매수",
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "양자암호의 중요성이 높아지고 있다.",
+          "ICTK는 풀스택 양자솔루션 업체로 사업 모델을 강화하고 있다.",
+          "향후 국내 양자솔루션 수출 1호 기업이 될 것으로 기대된다."
+        ],
+        "one_line": "ICTK는 양자솔루션 분야에서 중요한 역할을 할 것으로 예상된다.",
+        "opinion_summary": "투자의견을 매수로 유지하며 목표주가를 40,000원으로 상향 조정하였다."
+      }
+    },
+    {
+      "summary_id": "414b3f0a-5f11-445f-a4c7-61998ee439cb",
+      "canonical_id": "0d18ad5b-046a-48aa-94f0-34b05936be8b",
+      "extracted": {
+        "target_price": 30000.0,
+        "rating": "매수",
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "미국 통신장비 시장의 본격 개화로 인한 수혜 예상",
+          "전세계 탑3에 드는 기술/가격 경쟁력 확보",
+          "대표적인 글로벌 통신장비 대비 절대 저평가"
+        ],
+        "one_line": "쏠리드는 여전히 저평가된 상태로, 매수 의견을 유지한다.",
+        "opinion_summary": "비중 확대를 지속할 것을 추천"
+      }
+    },
+    {
+      "summary_id": "34b5f91c-48b6-46fa-8e3c-1da1d9f094c1",
+      "canonical_id": "62fe626c-4f07-4bb9-b8ac-a49b07d6b3e6",
+      "extracted": {
+        "target_price": 140000.0,
+        "rating": "매수",
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "5G SA 상용 서비스 도입과 요금제 개편 논의가 시작됨.",
+          "2026년 통신 3사 중 괄목할만한 주가 상승 전망.",
+          "현금 흐름 개선으로 2026년 조기 배당금 정상화 예상."
+        ],
+        "one_line": "SK텔레콤은 5G SA 시대에 적응하며 매수 추천.",
+        "opinion_summary": "SK텔레콤은 매수 투자 의견과 함께 통신업종 내 탑픽으로 제시됨."
+      }
+    },
+    {
+      "summary_id": "f24791ae-4f78-4932-8cfb-87460a273806",
+      "canonical_id": "9410f5bf-b1c0-4662-8666-b2ef533e428d",
+      "extracted": {
+        "target_price": 810000.0,
+        "rating": null,
+        "earnings": "27년 영업이익을 기존 추정치 대비 36% 상향조정"
+      },
+      "generated": {
+        "key_points": [
+          "삼성전기 목표주가를 81만원으로 상향",
+          "MLCC 가격 인상 사이클 진입과 FCBGA 공급 제약 심화로 중장기 이익 성장 기대",
+          "AI 서버 수요가 네트워크 및 위성 영역으로 확장"
+        ],
+        "one_line": "삼성전기의 목표주가가 81만원으로 상향 조정되었으며, 중장기 이익 성장에 대한 기대가 커지고 있다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "9e60a99c-4e4f-4479-b571-4dc727cefb96",
+      "canonical_id": "7ceb93ba-9ec1-4a7a-bc4b-30803b8a729e",
+      "extracted": {
+        "target_price": 4000000.0,
+        "rating": "BUY",
+        "earnings": "1분기 매출액 1.3조원(+22.6% yoy), 영업이익 1,266억원(+9.6% yoy)"
+      },
+      "generated": {
+        "key_points": [
+          "북미 매출 비중이 하반기부터 유의미하게 상승할 것으로 전망",
+          "현재 진행 중인 맴피스 공장의 증설이 전사 실적에 기여",
+          "초고압변압기 프리미엄이 지속되고 있으며, 전력 수요 증가에 대응하기 위한 발전원 설치 과정에서 병목 현상이 유지"
+        ],
+        "one_line": "효성중공업은 북미 매출 비중 증가와 초고압변압기 수요 증가로 긍정적인 실적 전망을 보이고 있다.",
+        "opinion_summary": "투자의견은 BUY로 유지되며, 중장기적 펀더멘탈이 강화되고 있다고 판단"
+      }
+    },
+    {
+      "summary_id": "94f4a641-fbe4-45ee-85a5-8fc631334959",
+      "canonical_id": "f4fd2f4a-6586-4d32-aecf-2cf5adb89305",
+      "extracted": {
+        "target_price": 155.0,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "고온전지 부문 글로벌 리더",
+          "매출 고성장세의 방산 부문 프리미엄 부여",
+          "열전지 글로벌 리더 기업 대부분이 비상장 기업"
+        ],
+        "one_line": "비츠로셀의 주가는 저평가 해소 국면에 있으며, 목표주가가 155% 상향 조정되었다.",
+        "opinion_summary": "비츠로셀은 경쟁사 대비 높은 수익성을 확보하고 있어 긍정적인 투자 의견을 제시한다."
+      }
+    },
+    {
+      "summary_id": "13f97a9a-0d4a-4ffb-91de-8fb387de4ccd",
+      "canonical_id": "e1abe91c-b235-49a0-81f5-72e8511c6e9b",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1Q26 실적은 매출액 1,480억원(YoY +49.8%), 영업이익 544억원(YoY +44.9%, OPM 36.7%)으로 전망"
+      },
+      "generated": {
+        "key_points": [
+          "제 2 공장 가동률 점진적 확대에 따른 CAPA 증설 기반의 외형성장",
+          "우호적인 환율 및 규모의 경제 시현 통한 증익 구조",
+          "1Q26 영업이익률은 전분기 대비 소폭 둔화 예상"
+        ],
+        "one_line": "산일전기의 1Q26 실적은 매출과 영업이익 모두 증가할 것으로 전망됨.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "03df2708-12ce-4f65-8e8f-f13186114d40",
+      "canonical_id": "86792e01-3758-42b7-bfc7-3323869d4581",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "전력기기 업체 및 EPC의 멀티플 상향",
+          "Quanta Services의 Forward PER 45.2 배",
+          "데이터센터 시장의 폭발적 성장"
+        ],
+        "one_line": "LS ELECTRIC의 높은 멀티플은 전력 인프라 사이클과 데이터센터 시장의 성장에 기반하여 유지 가능할 것으로 판단된다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "67bd0b5f-c6b7-48ff-999e-214621a456b5",
+      "canonical_id": "8667b589-8e2c-4b0f-b7f8-71ea3f003c41",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "매출액 2,032억원(+25.4% YoY, +1.7% QoQ), 영업이익 667억원(+21.8% YoY, +4.4% QoQ), 지배주주순이익 425억원(+24.1% YoY, +30.6% QoQ)"
+      },
+      "generated": {
+        "key_points": [
+          "팍시게임즈의 AI 게임 비중이 4Q25 50% 수준에서 1Q26 추가 상승",
+          "소셜카지노 부문에서 DTC 비중이 QoQ 상승",
+          "중장기 목표치인 DTC 비중 40% 달성 가능성"
+        ],
+        "one_line": "더블유게임즈는 AI와 DTC 전략을 통해 긍정적인 실적 성장을 보일 것으로 전망된다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "a9e9f2e2-9c26-45e8-9a75-379d7855975d",
+      "canonical_id": "6c935f1f-fcd7-458c-a08e-d37fe5c687d8",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1분기 매출은 4,355억원(YoY +14%), 영업이익은 118억원(YoY +48%, OPM 3%)으로 전망"
+      },
+      "generated": {
+        "key_points": [
+          "알리글로의 1분기 미국 매출은 370억원으로 작년 1분기 대비 300% 성장할 것으로 예상",
+          "혈액제제 및 백신의 매출이 2, 3분기에 집중되어 1분기가 가장 낮은 경향성을 보임",
+          "특수 의약품 범위에 속하는 혈장제제는 무관세 적용 발표"
+        ],
+        "one_line": "녹십자는 1분기 매출 성장에도 불구하고 영업이익은 시장 기대치를 하회할 것으로 전망됨.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "56635c94-1b37-415c-b8b7-1849828d4e8d",
+      "canonical_id": "f6e6025c-5e0c-4dee-a5fc-704ca00208dd",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "아이지넷은 인슈어테크 전문 업체로, 보험과 기술을 결합한 서비스 제공.",
+          "주요 서비스는 마이데이터 기반의 보험 진단 및 추천앱 '보닥'이며, GA 사업도 영위.",
+          "25년 매출 기준 플랫폼 보험 수수료 비중이 97.7%로 대부분을 차지."
+        ],
+        "one_line": "아이지넷은 보험 디지털 전환을 이끄는 인슈어테크 전문 업체로, '보닥' 서비스를 통해 성장 가능성을 보인다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "5d2e0d95-026f-4518-9831-918ce1c32d77",
+      "canonical_id": "162e3e4a-4a89-41f6-a85a-3c29951c4f4b",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1Q26 실적은 매출액 1,446억(YoY +23.7%, QoQ +0.9%), 영업이익 540억(YoY +20.6%, QoQ +4.0%, 영업이익률 37.3%)으로 추정"
+      },
+      "generated": {
+        "key_points": [
+          "외국인 수요가 좋으나 아쉬움",
+          "한국인 수요로 선방",
+          "실적 추정치가 산업 보고서와 유사"
+        ],
+        "one_line": "파마리서치의 1Q26 실적은 긍정적인 성장세를 보일 것으로 예상됨.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "dc0ea0e1-9bfa-4589-9c7c-0272a8f0738f",
+      "canonical_id": "a6aaa72d-5c89-4d3d-aa84-ccc8cb94f96a",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1분기 매출액 3조 3,398억원(yoy +6.3%), 영업이익 3,716억원(yoy +43.7%, OPM 11.1%)"
+      },
+      "generated": {
+        "key_points": [
+          "1분기 영업이익 3,716억원으로 시장 기대치 부합 전망",
+          "고부가가치 LNG선 비중 60% 유지",
+          "비용 측면에서 긍정적인 환율 효과가 수익성 개선에 기여할 것으로 판단"
+        ],
+        "one_line": "올해 1분기 한화오션의 영업이익이 시장 기대치에 부합할 것으로 전망된다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "6b8984a2-709d-4364-afee-7c41b5baa0ee",
+      "canonical_id": "fa871e7a-55f7-4899-9c6c-4676bbdf6d8c",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1분기 매출액 2조 8,751억원(yoy +15.3%), 영업이익 3,255억원(yoy +164.4%, OPM 11.3%)"
+      },
+      "generated": {
+        "key_points": [
+          "1분기 영업이익이 시장 기대치를 하회할 것으로 전망됨",
+          "2Q26부터 2도크 가동이 본격화되어 매출 성장이 가속화될 전망",
+          "해양 사업부 매출이 확대되며 수익성 개선이 지속될 것으로 판단"
+        ],
+        "one_line": "삼성중공업은 1분기 영업이익이 시장 기대치를 하회할 것으로 보이며, 2분기부터 매출 성장이 가속화될 전망이다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "c4dc7911-23cd-4ad9-b1b6-9e705e28ae19",
+      "canonical_id": "d923cc4f-29f0-4f7d-976a-0438ad934dbe",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1분기 매출액 7조 6,847억원, 영업이익 1조 1,229억원"
+      },
+      "generated": {
+        "key_points": [
+          "1분기 영업이익 1조 1,229억원, 컨센서스 부합 전망",
+          "핵심 자회사 실적 개선 지속",
+          "상선 부문에서 고선가 선박 매출 확대 및 긍정적인 환율 효과"
+        ],
+        "one_line": "HD한국조선해양은 1분기 영업이익이 시장 기대치에 부합할 것으로 전망된다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "a39a95eb-d3cf-4724-bbf0-ca1fb361fe88",
+      "canonical_id": "31552450-bf72-46e6-9da1-87029ace51f5",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1분기 매출액 5조 4,395억원(yoy +42.3%), 영업이익 7,635억원(yoy +76.0%, OPM 14.0%)"
+      },
+      "generated": {
+        "key_points": [
+          "HD현대미포의 온기 실적 반영 및 긍정적인 환율 효과로 매출과 이익 개선세 지속",
+          "상선 부문에서 고선가 수주 물량의 매출 확대와 생산성 개선으로 실적 개선 흐름 지속",
+          "해양 부문에서 2개 프로젝트 진행률 상승으로 매출 성장 본격화"
+        ],
+        "one_line": "우호적인 상선 업황과 군함 사업 확대 기대감으로 실적 개선이 지속될 것으로 전망.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "2eb3c526-50bb-4a18-a53d-2a73a8fa7bb0",
+      "canonical_id": "a640c8be-546a-420e-9fcd-cae9d4083bab",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "1분기 연결 영업이익은 1,041억원(YoY +93%)으로 시장 컨센서스(1,010억원)에 부합할 것으로 전망된다."
+      },
+      "generated": {
+        "key_points": [
+          "매출액은 감소할 것으로 전망되지만, 부문별 매출총이익률은 높은 수준을 유지할 것으로 전망된다.",
+          "자체주택의 매출 비중 상승으로 매출총이익률이 유지될 것으로 보인다.",
+          "1분기 분양은 총 2,094세대가 진행되었으며, 주요 현장이 높은 초기 분양률을 보였다."
+        ],
+        "one_line": "IPARK현대산업개발은 매출액 감소에도 불구하고 수익성이 증가할 것으로 전망된다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "4fab5d77-67d0-4138-a7d0-001f2515395d",
+      "canonical_id": "98dbfefb-ba20-46fb-bb38-714caa0b0402",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": "2025년 연결 매출 854억7,200만원 가운데 웹툰 전자책이 404억3,900만원으로 47%를 차지하고, 웹소설 전자책은 193억1,800만원으로 23%를 차지한다."
+      },
+      "generated": {
+        "key_points": [
+          "디앤씨미디어는 웹소설과 웹툰 IP 기반 콘텐츠 사업을 중심으로 성장해온 기업이다.",
+          "회사는 2017년 코스닥시장에 상장하였으며, 콘텐츠 밸류체인을 확장하고 있다.",
+          "주요 매출원은 웹툰 전자책, 웹소설 전자책, 종이책 출판 및 상품·기타 매출이다."
+        ],
+        "one_line": "디앤씨미디어는 웹소설과 웹툰 IP를 기반으로 한 콘텐츠 사업을 전문으로 하는 기업이다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "308be2f4-04f3-4a33-a3c0-a4c09689a5a2",
+      "canonical_id": "6fa326cb-22b0-476f-8879-d2a907898522",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "아진산업은 자동차 차체 부품 제조를 주된 사업으로 영위하는 전문 기업이다.",
+          "주요 제품은 프레스 패널 및 용접 조립 부품으로, 현대자동차 및 기아에 공급한다.",
+          "1974년 설립 이후 생산 역량을 지속적으로 확대해왔다."
+        ],
+        "one_line": "아진산업은 자동차 차체 부품을 전문으로 하는 1차 협력사이다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "9fc9bd19-d579-4872-90e5-8a89e4ca0eee",
+      "canonical_id": "48e8c2d2-939f-499a-bba7-333db265e7d1",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "오파스넷은 네트워크 통합 및 시스템 통합을 주요 사업으로 영위하며, Total ICT 서비스 업체로 성장하고자 한다.",
+          "2025년 기준 네트워크 구축 매출이 전체 매출의 44.0%를 차지하고, 유지보수 매출이 35.6%를 기록하는 안정적인 수익 구조를 확보하고 있다.",
+          "오파스넷은 2004년 설립 이후 기술력을 축적하고, 2016년 코넥스시장에 상장 후 2018년 코스닥시장으로 이전상장하며 성장 기반을 확대했다."
+        ],
+        "one_line": "오파스넷은 네트워크 통합 및 시스템 통합 전문기업으로 안정적인 수익 구조와 기술력을 바탕으로 성장하고 있다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "c28d2be7-4792-4c1e-aa9e-c4faed4031e1",
+      "canonical_id": "c61ef0a9-bb40-48b7-8e37-db66c4f536e6",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "현대바이오랜드는 천연 유래 소재 기반의 화장품 원료 및 건강기능식품 원료 제조·판매를 주된 사업으로 영위한다.",
+          "핵심 제품은 히알루론산, 콜라겐, 식물 추출물 등 바이오 소재로, 이를 화장품 제조사 및 건강기능식품 업체에 원료 형태로 공급한다.",
+          "자체 연구개발 역량을 바탕으로 신규 기능성 소재 개발에 지속적으로 투자하며 제품 포트폴리오를 확대해왔다."
+        ],
+        "one_line": "현대바이오랜드는 천연물 기반 화장품 및 건강기능식품 원료 전문기업이다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "a5dbbdcd-edcb-4fc4-a80c-8f7feb89ea2c",
+      "canonical_id": "5f5cec7f-d811-4283-8746-254272afa1dd",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "파이버프로는 광섬유 센서 기반의 계측 및 모니터링 장비를 주된 사업으로 영위한다.",
+          "핵심 제품은 광섬유 브래그 격자(FBG) 기반 센서 및 계측 시스템이다.",
+          "2022년 3월 코스닥 시장에 상장하며 공개 기업으로 전환했다."
+        ],
+        "one_line": "파이버프로는 광섬유 센서 기술을 기반으로 한 계측 장비 전문 기업이다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "1abb359e-4534-41ea-9d76-7b121dbed316",
+      "canonical_id": "5caa308e-cd93-4014-bc82-619ab1cc1be6",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "유라클은 AI·모바일 플랫폼 전문기업으로, 업무 시스템 구축 및 운영 지원 사업을 영위한다.",
+          "핵심 서비스는 모바일 플랫폼 '모피어스 스위트'와 AI 플랫폼 '아테나'로 구성된다.",
+          "2025년 말 기준 총 52건의 저작권, 상표권, 소프트웨어 품질인증을 보유하고 있다."
+        ],
+        "one_line": "유라클은 AI와 모바일 플랫폼을 전문으로 하는 기업으로, 다양한 인증을 보유하고 있다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "cc707cb3-6d6e-4908-9708-620551125249",
+      "canonical_id": "cd5c962c-ef0e-4996-aaa8-13bbb10b4ff5",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "아비코전자는 전자부품 제조를 주된 사업으로 영위하는 기업이다.",
+          "주요 제품군은 저항기와 인덕터 등 수동소자 제품이다.",
+          "친환경 자동차와 5G 통신 인프라 확대에 따른 수요 증가에 대응하고 있다."
+        ],
+        "one_line": "아비코전자는 수동소자 제조 전문기업으로, 다양한 전자제품에 필수적인 부품을 공급하고 있다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "a7f74ba4-45d4-46e7-b2c0-8e61c020c314",
+      "canonical_id": "0a6b3e49-cbaf-4d75-a97f-01d88e8ed3c7",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "씨메스는 3D 비전 기반 로봇 지능화 솔루션을 핵심 사업으로 영위한다.",
+          "주요 제품은 3D 비전 센서와 로봇 자동화 소프트웨어로, 다양한 제조·물류 공정에 적용된다.",
+          "씨메스는 2014년 설립 이후 기술 기반을 구축하고, 2024년 코스닥 시장에 상장 예정이다."
+        ],
+        "one_line": "씨메스는 3D 비전 기술을 활용한 로봇 자동화 솔루션 전문 기업이다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "2a006415-b519-4b95-bda6-1c18851b82d1",
+      "canonical_id": "b80f07fe-966b-465a-a02d-ad3dd57f9714",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "대주산업은 배합사료와 펫푸드, 동물용 의약품 관련 사업을 영위하는 제조기업이다.",
+          "주력 사업영역은 축산용 배합사료 생산이며, 배합사료가 주요 제품 매출의 99.39%를 차지한다.",
+          "대주산업은 HACCP 인증 기반 설비를 갖추고 있으며, 품질관리 체계와 생산효율을 동시에 확보하고 있다."
+        ],
+        "one_line": "대주산업은 축산용 배합사료와 반려동물용 사료를 주력으로 하는 제조기업이다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "5205b560-ac61-4ea2-9c8f-5eaa01cffa26",
+      "canonical_id": "fedb2082-057e-45fb-aabf-88fcd37712a6",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "외주 기반 ODM과 브랜드 사업을 결합해 글로벌 시장을 공략하는 화장품 기업",
+          "브랜드·콘텐츠 중심으로 진화하며 수출과 온라인 기반으로 성장 중",
+          "유통·자본 구조 변화를 통해 브랜드 중심 글로벌 사업 전환 추진 중"
+        ],
+        "one_line": "본느는 외주 기반 ODM과 브랜드 사업을 통해 글로벌 시장을 공략하는 화장품 기업이다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "e13f6430-4c19-4069-9536-98d6df8285b0",
+      "canonical_id": "8163e40a-60fe-4546-bd41-1b28f8d45913",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "동물용 의약품 및 백신 중심의 동물 헬스케어 전문기업",
+          "백신 기술 기반 성장 동력 확보 및 실적 개선",
+          "글로벌 시장 확대 및 백신 중심 중장기 성장 전략"
+        ],
+        "one_line": "우진비앤지는 동물용 백신 및 의약품을 중심으로 성장하는 동물 헬스케어 전문기업이다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "b0a01317-b532-49f7-9689-c0e811a30b0d",
+      "canonical_id": "734a2375-e440-48f9-bcbb-60d7dc85f4d8",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "PEGylation 기반 바이오의약품 및 의료기기 개발 기업",
+          "PEG 유도체 생산 및 기술이전 기반 수익모델 확보",
+          "바이오신약 및 차세대 플랫폼 확장 통한 성장 기반 확보"
+        ],
+        "one_line": "선바이오는 PEGylation 기술을 기반으로 한 바이오의약품 및 의료기기 개발 기업이다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "ff93e0c2-0f82-449e-9615-60a6e3692c18",
+      "canonical_id": "231b40ad-bd52-4cbc-8d5b-9cfe00ee9ba6",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "개량신약 개발 및 사업화 구조를 갖춘 연구개발형 제약기업",
+          "R&D 서비스와 완제의약품 시장의 동반 성장 구조",
+          "임상 성과 기반 파이프라인 확대 및 실적 성장 가능성"
+        ],
+        "one_line": "지엘팜텍은 개량신약 개발에 중점을 둔 연구개발형 제약기업이다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "7a7b0457-5815-4338-9477-e6d662c8dcfa",
+      "canonical_id": "1504f093-3257-4536-925d-642be84be713",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "디지털 잉크젯 프린팅 기반 글로벌 산업용 장비 전문기업",
+          "핵심 잉크젯 기술 내재화 기반 제품 포트폴리오 다각화",
+          "패키징 프린터 진출을 통한 신규 매출 기반 확보 추진"
+        ],
+        "one_line": "디지아이는 글로벌 산업용 잉크젯 프린팅 시장을 선도하는 디지털 프린팅 솔루션 기업이다.",
+        "opinion_summary": null
+      }
+    },
+    {
+      "summary_id": "8cf9cdb6-95d7-4a93-8093-6ee402ebd1e3",
+      "canonical_id": "a4b9d056-05b1-4ba3-9ae8-4cb3be545ef0",
+      "extracted": {
+        "target_price": null,
+        "rating": null,
+        "earnings": null
+      },
+      "generated": {
+        "key_points": [
+          "IT 고객사를 통한 자석 설계·제조 및 차폐자석 기술 기반 경쟁력 확보",
+          "전장용 제품 포트폴리오 다양화 및 신규 응용처 확대",
+          "희토류 대응 소재 기술 및 공급망 리스크 대응 전략 강화"
+        ],
+        "one_line": "노바텍은 네오디뮴 자석 기술을 기반으로 전자 및 전장용 자석 부품 전문기업으로서 경쟁력을 강화하고 있다.",
+        "opinion_summary": null
+      }
+    }
+  ],
+  "classifications": {
+    "by_brokerage": {
+      "한화투자증권": [
+        "b240b8bd-27c3-4da6-9953-5ba8a5fe8700",
+        "24ea742e-812c-4b84-848c-5a0b407063c3"
+      ],
+      "유안타증권": [
+        "7313c393-c4c6-4daf-9923-db534ee5b292"
+      ],
+      "DS투자증권": [
+        "bd9eed01-fd5d-48af-aae7-087fce65d787"
+      ],
+      "하나증권": [
+        "d16ce166-0500-48ae-8537-c6aa0b0eaab8",
+        "0d18ad5b-046a-48aa-94f0-34b05936be8b",
+        "62fe626c-4f07-4bb9-b8ac-a49b07d6b3e6",
+        "9410f5bf-b1c0-4662-8666-b2ef533e428d"
+      ],
+      "유진투자증권": [
+        "7ceb93ba-9ec1-4a7a-bc4b-30803b8a729e"
+      ],
+      "신한투자증권": [
+        "f4fd2f4a-6586-4d32-aecf-2cf5adb89305"
+      ],
+      "SK증권": [
+        "e1abe91c-b235-49a0-81f5-72e8511c6e9b",
+        "86792e01-3758-42b7-bfc7-3323869d4581",
+        "8667b589-8e2c-4b0f-b7f8-71ea3f003c41"
+      ],
+      "iM증권": [
+        "6c935f1f-fcd7-458c-a08e-d37fe5c687d8"
+      ],
+      "키움증권": [
+        "f6e6025c-5e0c-4dee-a5fc-704ca00208dd",
+        "162e3e4a-4a89-41f6-a85a-3c29951c4f4b",
+        "a6aaa72d-5c89-4d3d-aa84-ccc8cb94f96a",
+        "fa871e7a-55f7-4899-9c6c-4676bbdf6d8c",
+        "d923cc4f-29f0-4f7d-976a-0438ad934dbe",
+        "31552450-bf72-46e6-9da1-87029ace51f5",
+        "a640c8be-546a-420e-9fcd-cae9d4083bab"
+      ],
+      "한국IR협의회": [
+        "98dbfefb-ba20-46fb-bb38-714caa0b0402",
+        "6fa326cb-22b0-476f-8879-d2a907898522",
+        "48e8c2d2-939f-499a-bba7-333db265e7d1",
+        "c61ef0a9-bb40-48b7-8e37-db66c4f536e6",
+        "5f5cec7f-d811-4283-8746-254272afa1dd",
+        "5caa308e-cd93-4014-bc82-619ab1cc1be6",
+        "cd5c962c-ef0e-4996-aaa8-13bbb10b4ff5",
+        "0a6b3e49-cbaf-4d75-a97f-01d88e8ed3c7",
+        "b80f07fe-966b-465a-a02d-ad3dd57f9714"
+      ],
+      "서울평가정보": [
+        "fedb2082-057e-45fb-aabf-88fcd37712a6",
+        "231b40ad-bd52-4cbc-8d5b-9cfe00ee9ba6",
+        "a4b9d056-05b1-4ba3-9ae8-4cb3be545ef0"
+      ],
+      "NICE평가정보": [
+        "8163e40a-60fe-4546-bd41-1b28f8d45913",
+        "734a2375-e440-48f9-bcbb-60d7dc85f4d8",
+        "1504f093-3257-4536-925d-642be84be713"
+      ]
+    },
+    "by_ticker": {
+      "010950": [
+        "b240b8bd-27c3-4da6-9953-5ba8a5fe8700"
+      ],
+      "317400": [
+        "24ea742e-812c-4b84-848c-5a0b407063c3"
+      ],
+      "047050": [
+        "7313c393-c4c6-4daf-9923-db534ee5b292"
+      ],
+      "347850": [
+        "bd9eed01-fd5d-48af-aae7-087fce65d787"
+      ],
+      "456010": [
+        "d16ce166-0500-48ae-8537-c6aa0b0eaab8"
+      ],
+      "050890": [
+        "0d18ad5b-046a-48aa-94f0-34b05936be8b"
+      ],
+      "017670": [
+        "62fe626c-4f07-4bb9-b8ac-a49b07d6b3e6"
+      ],
+      "009150": [
+        "9410f5bf-b1c0-4662-8666-b2ef533e428d"
+      ],
+      "298040": [
+        "7ceb93ba-9ec1-4a7a-bc4b-30803b8a729e"
+      ],
+      "082920": [
+        "f4fd2f4a-6586-4d32-aecf-2cf5adb89305"
+      ],
+      "062040": [
+        "e1abe91c-b235-49a0-81f5-72e8511c6e9b"
+      ],
+      "010120": [
+        "86792e01-3758-42b7-bfc7-3323869d4581"
+      ],
+      "192080": [
+        "8667b589-8e2c-4b0f-b7f8-71ea3f003c41"
+      ],
+      "006280": [
+        "6c935f1f-fcd7-458c-a08e-d37fe5c687d8"
+      ],
+      "462980": [
+        "f6e6025c-5e0c-4dee-a5fc-704ca00208dd"
+      ],
+      "214450": [
+        "162e3e4a-4a89-41f6-a85a-3c29951c4f4b"
+      ],
+      "042660": [
+        "a6aaa72d-5c89-4d3d-aa84-ccc8cb94f96a"
+      ],
+      "010140": [
+        "fa871e7a-55f7-4899-9c6c-4676bbdf6d8c"
+      ],
+      "009540": [
+        "d923cc4f-29f0-4f7d-976a-0438ad934dbe"
+      ],
+      "329180": [
+        "31552450-bf72-46e6-9da1-87029ace51f5"
+      ],
+      "294870": [
+        "a640c8be-546a-420e-9fcd-cae9d4083bab"
+      ],
+      "263720": [
+        "98dbfefb-ba20-46fb-bb38-714caa0b0402"
+      ],
+      "013310": [
+        "6fa326cb-22b0-476f-8879-d2a907898522"
+      ],
+      "173130": [
+        "48e8c2d2-939f-499a-bba7-333db265e7d1"
+      ],
+      "052260": [
+        "c61ef0a9-bb40-48b7-8e37-db66c4f536e6"
+      ],
+      "368770": [
+        "5f5cec7f-d811-4283-8746-254272afa1dd"
+      ],
+      "088340": [
+        "5caa308e-cd93-4014-bc82-619ab1cc1be6"
+      ],
+      "036010": [
+        "cd5c962c-ef0e-4996-aaa8-13bbb10b4ff5"
+      ],
+      "475400": [
+        "0a6b3e49-cbaf-4d75-a97f-01d88e8ed3c7"
+      ],
+      "003310": [
+        "b80f07fe-966b-465a-a02d-ad3dd57f9714"
+      ],
+      "226340": [
+        "fedb2082-057e-45fb-aabf-88fcd37712a6"
+      ],
+      "018620": [
+        "8163e40a-60fe-4546-bd41-1b28f8d45913"
+      ],
+      "067370": [
+        "734a2375-e440-48f9-bcbb-60d7dc85f4d8"
+      ],
+      "204840": [
+        "231b40ad-bd52-4cbc-8d5b-9cfe00ee9ba6"
+      ],
+      "043360": [
+        "1504f093-3257-4536-925d-642be84be713"
+      ],
+      "285490": [
+        "a4b9d056-05b1-4ba3-9ae8-4cb3be545ef0"
+      ]
+    },
+    "by_sector": {},
+    "by_analyst": {
+      "N/A": [
+        "b240b8bd-27c3-4da6-9953-5ba8a5fe8700",
+        "24ea742e-812c-4b84-848c-5a0b407063c3",
+        "7313c393-c4c6-4daf-9923-db534ee5b292",
+        "bd9eed01-fd5d-48af-aae7-087fce65d787",
+        "d16ce166-0500-48ae-8537-c6aa0b0eaab8",
+        "0d18ad5b-046a-48aa-94f0-34b05936be8b",
+        "62fe626c-4f07-4bb9-b8ac-a49b07d6b3e6",
+        "9410f5bf-b1c0-4662-8666-b2ef533e428d",
+        "7ceb93ba-9ec1-4a7a-bc4b-30803b8a729e",
+        "f4fd2f4a-6586-4d32-aecf-2cf5adb89305",
+        "e1abe91c-b235-49a0-81f5-72e8511c6e9b",
+        "86792e01-3758-42b7-bfc7-3323869d4581",
+        "8667b589-8e2c-4b0f-b7f8-71ea3f003c41",
+        "6c935f1f-fcd7-458c-a08e-d37fe5c687d8",
+        "f6e6025c-5e0c-4dee-a5fc-704ca00208dd",
+        "162e3e4a-4a89-41f6-a85a-3c29951c4f4b",
+        "a6aaa72d-5c89-4d3d-aa84-ccc8cb94f96a",
+        "fa871e7a-55f7-4899-9c6c-4676bbdf6d8c",
+        "d923cc4f-29f0-4f7d-976a-0438ad934dbe",
+        "31552450-bf72-46e6-9da1-87029ace51f5",
+        "a640c8be-546a-420e-9fcd-cae9d4083bab",
+        "98dbfefb-ba20-46fb-bb38-714caa0b0402",
+        "6fa326cb-22b0-476f-8879-d2a907898522",
+        "48e8c2d2-939f-499a-bba7-333db265e7d1",
+        "c61ef0a9-bb40-48b7-8e37-db66c4f536e6",
+        "5f5cec7f-d811-4283-8746-254272afa1dd",
+        "5caa308e-cd93-4014-bc82-619ab1cc1be6",
+        "cd5c962c-ef0e-4996-aaa8-13bbb10b4ff5",
+        "0a6b3e49-cbaf-4d75-a97f-01d88e8ed3c7",
+        "b80f07fe-966b-465a-a02d-ad3dd57f9714",
+        "fedb2082-057e-45fb-aabf-88fcd37712a6",
+        "8163e40a-60fe-4546-bd41-1b28f8d45913",
+        "734a2375-e440-48f9-bcbb-60d7dc85f4d8",
+        "231b40ad-bd52-4cbc-8d5b-9cfe00ee9ba6",
+        "1504f093-3257-4536-925d-642be84be713",
+        "a4b9d056-05b1-4ba3-9ae8-4cb3be545ef0"
+      ]
+    }
+  },
+  "pipeline_stats": {
+    "total_discovered": 150,
+    "total_fetched": 150,
+    "total_parsed": 150,
+    "total_validated": 150,
+    "total_unverified": 0,
+    "total_rejected": 0,
+    "total_normalized": 36,
+    "total_deduplicated": 36,
+    "total_summarized": 36,
+    "total_classified": 1,
+    "duration_ms": 244929
+  },
+  "created_at": "2026-04-18T00:56:07.219099+09:00"
+}

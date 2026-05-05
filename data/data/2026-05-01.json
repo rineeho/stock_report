@@ -1,0 +1,32 @@
+{
+  "result_id": "25600827-45f8-4fde-a3fd-54b823a7dfd5",
+  "target_date": "2026-05-01",
+  "total_discovered": 150,
+  "total_fetched": 150,
+  "total_validated": 150,
+  "total_unverified": 0,
+  "total_deduplicated": 0,
+  "reports": [],
+  "summaries": [],
+  "classifications": {
+    "by_brokerage": {},
+    "by_ticker": {},
+    "by_sector": {},
+    "by_analyst": {},
+    "by_theme": {}
+  },
+  "pipeline_stats": {
+    "total_discovered": 150,
+    "total_fetched": 150,
+    "total_parsed": 150,
+    "total_validated": 150,
+    "total_unverified": 0,
+    "total_rejected": 0,
+    "total_normalized": 0,
+    "total_deduplicated": 0,
+    "total_summarized": 0,
+    "total_classified": 1,
+    "duration_ms": 694095
+  },
+  "created_at": "2026-05-02T01:10:04.486739+09:00"
+}
